@@ -1,7 +1,7 @@
 {
   "name": "agentic-software-steward",
-  "version": "0.2.0",
-  "description": "A Codex skill suite for active agent-built software stewardship: intention discovery, senior architecture, repo memory, no-theater software, UI/design routing, security/data safety, release hygiene, brand/copy coordination, repo audits, and remediation plans.",
+  "version": "0.3.0",
+  "description": "A Codex skill suite for active agent-built software stewardship: intention discovery, senior architecture, repo memory, no-theater software, UI/design routing, security/data safety, live/dev environment safety, release hygiene, brand/copy coordination, repo audits, and remediation plans.",
   "author": {
     "name": "Adam / Codex"
   },

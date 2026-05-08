@@ -1,6 +1,6 @@
 ---
 name: software-steward
-description: Orchestrate active agent-built software work with senior engineering discipline. Use for new app planning, existing repo audits, vibe-coded repo rescue, production-readiness, feature planning, UI/product work, refactors, security/data-sensitive changes, project memory, no-theater software checks, remediation planning, and coordinating companion skills such as impeccable, ai-brand-voice, and 100-year-copywriting-engine.
+description: Orchestrate active agent-built software work with senior engineering discipline. Use for new app planning, existing repo audits, vibe-coded repo rescue, production-readiness, feature planning, UI/product work, refactors, security/data-sensitive changes, live/dev environment setup, project memory, no-theater software checks, remediation planning, and coordinating companion skills such as impeccable, ai-brand-voice, and 100-year-copywriting-engine.
 ---
 
 # Software Steward
@@ -35,8 +35,9 @@ Before meaningful planning or edits:
 4. Check current branch and git status.
 5. Classify the task: greenfield, existing repo bootstrap, feature, UI, copy, refactor, security/data, release, cleanup.
 6. Classify risk: low, medium, high, or critical.
-7. Ask only intention questions that would change the plan.
-8. Route to specialist skills when available.
+7. If the project is live or touches external APIs, classify environment safety level.
+8. Ask only intention questions that would change the plan.
+9. Route to specialist skills when available.
 
 ## Human Question Protocol
 
@@ -78,6 +79,7 @@ Default if you do not care:
 - Project memory drift or new architecture knowledge: use `project-memory-steward`.
 - Any dashboard, workflow, page, button, integration, or data display that might be fake: use `no-theater-software`.
 - Auth, permissions, secrets, private data, migrations, payments, deletion, or external integrations: use `security-data-safety`.
+- Live apps, preview deploys, staging/dev setup, environment variables, API sandboxing, MCP/plugin connector setup, or direct-to-main pressure: use `live-environment-steward`.
 - UI/UX or frontend craft: use `impeccable` if installed; otherwise use `design-system-steward` fallback and offer to install Impeccable if appropriate.
 - Product design context: create or update `PRODUCT.md`.
 - Visual design system: create or update `DESIGN.md`.
@@ -96,10 +98,11 @@ For forward testing, read `references/validation-scenarios.md`.
 4. Risk classification.
 5. Design/brand foundation if UI exists.
 6. Vertical-slice implementation plan.
-7. Security/data plan.
-8. Verification plan.
-9. Project memory seed.
-10. Build in small real slices.
+7. Environment plan: live plus live-dev/preview from the beginning when possible.
+8. Security/data plan.
+9. Verification plan.
+10. Project memory seed.
+11. Build in small real slices.
 
 ## Existing Repo Order
 

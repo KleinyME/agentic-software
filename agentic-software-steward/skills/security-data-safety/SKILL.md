@@ -21,6 +21,7 @@ Use this skill for:
 - Deletion or destructive actions.
 - Public APIs.
 - Deployment or environment changes.
+- Live API mutations when no sandbox/dev environment exists.
 
 ## Review Questions
 
@@ -32,6 +33,8 @@ Use this skill for:
 - Is there a backup or rollback path?
 - What failure states should users see?
 - What logs are useful without leaking sensitive data?
+- Is this using production credentials, sandbox credentials, or read-only access?
+- Can this be tested with dry-run mode or adapter tests before touching live data?
 
 ## High-Risk Requirements
 
@@ -46,3 +49,21 @@ For high-risk changes:
 
 For critical-risk changes, stop and ask for explicit approval before proceeding.
 
+## Live External API Policy
+
+If a change writes to a live external system, treat it as high risk by default.
+
+Examples:
+
+- Shopify inventory adjustments, order edits, product updates, refunds, fulfillment changes.
+- Payment captures, charges, refunds, subscriptions.
+- Customer emails, SMS, or notifications.
+- Destructive database operations.
+
+Requirements:
+
+- Prefer sandbox/test credentials.
+- If sandbox setup is unavailable, build and test the payload path with dry-run mode or mocked adapter tests first.
+- Show the target account/store/project, current state, requested change, and expected after-state before live submission.
+- Require explicit user confirmation for live mutation behavior.
+- Record rollback/undo instructions.

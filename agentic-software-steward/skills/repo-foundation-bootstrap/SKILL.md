@@ -49,6 +49,7 @@ Create when relevant:
 - `docs/quality/definition-of-done.md`
 - `docs/quality/no-theater-software.md`
 - `docs/security/threat-model.md`
+- `docs/ops/live-environment-policy.md`
 - `docs/architecture/decisions/*.md`
 - `docs/brand/voice.md`
 
