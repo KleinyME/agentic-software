@@ -33,3 +33,31 @@ powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1 -
 ```
 
 Avoid silent auto-updates by default. If the suite later gets a scheduled update job, it should be opt-in and should report what changed.
+
+## Personal Auto-Update
+
+If this skill suite is only for you and you are the person changing the repo, auto-update is reasonable.
+
+Install an auto-update hook that updates installed skills at logon:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install-auto-update.ps1
+```
+
+The installer tries to create a Windows scheduled task. If Windows denies that, it falls back to a per-user Startup shortcut.
+
+The auto-update hook:
+
+- runs at user logon
+- executes `scripts/update-installed-skills.ps1`
+- pulls with `git pull --ff-only`
+- syncs bundled skills into `~\.codex\skills`
+- writes logs to `.\logs\skill-auto-update.log`
+
+It does not merge, rebase, or resolve conflicts. If the repo cannot fast-forward, it fails closed and leaves the installed skills as-is.
+
+Remove it with:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\uninstall-auto-update.ps1
+```
