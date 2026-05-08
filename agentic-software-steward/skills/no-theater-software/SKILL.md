@@ -36,6 +36,21 @@ Prefer the smallest working version over a larger pretend version.
 
 For analytics, one real event stored and displayed is better than twelve fake charts.
 
+## Active Detection Pass
+
+When auditing a repo, search for:
+
+- Hard-coded chart numbers and arrays in production UI.
+- `mock`, `fake`, `sample`, `dummy`, `fixture`, `placeholder`, `stub`.
+- Buttons with no handlers or handlers that only log.
+- Forms without submit persistence.
+- API routes returning static data.
+- Settings pages without read/write persistence.
+- Auth screens without server-side permission checks.
+- TODOs that describe missing wiring.
+
+For each suspect item, classify it as real, prototype, demo, fixture, or stub. If it is not real but appears shipped, create a finding.
+
 ## Deferred Work Rule
 
 Any deferred item must include:
@@ -46,4 +61,3 @@ Any deferred item must include:
 - Where it should be wired.
 - How to verify it works.
 - Risk if it remains unfinished.
-

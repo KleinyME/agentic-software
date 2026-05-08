@@ -1,6 +1,6 @@
 ---
 name: software-steward
-description: Orchestrate agent-built software work with senior engineering discipline. Use for new app planning, existing repo audits, vibe-coded repo rescue, production-readiness, feature planning, UI/product work, refactors, security/data-sensitive changes, project memory, no-theater software checks, and coordinating companion skills such as impeccable, ai-brand-voice, and 100-year-copywriting-engine.
+description: Orchestrate active agent-built software work with senior engineering discipline. Use for new app planning, existing repo audits, vibe-coded repo rescue, production-readiness, feature planning, UI/product work, refactors, security/data-sensitive changes, project memory, no-theater software checks, remediation planning, and coordinating companion skills such as impeccable, ai-brand-voice, and 100-year-copywriting-engine.
 ---
 
 # Software Steward
@@ -10,6 +10,20 @@ Act as the lead steward for agent-built software. Preserve intention, route work
 ## Operating Principle
 
 Ask humans about intention. Make agents handle architecture. Ship working software, not theater. Leave memory for the next mind.
+
+## Active Stewardship Contract
+
+Running this skill against a repo must produce an active outcome, not only new documentation.
+
+Unless the user explicitly asks for "docs only" or "foundation only", do all of the following:
+
+1. Create or update the project foundation.
+2. Inspect the code for real risks and fake/unwired behavior.
+3. Produce findings with severity, evidence, and concrete next actions.
+4. Identify the first safe remediation step.
+5. Implement the first low-risk remediation when it is clearly safe, or explain why code changes should wait.
+
+Do not end a repo run by saying only that docs were created. Foundation docs are the beginning of stewardship, not the finish line.
 
 ## Universal Preflight
 
@@ -95,8 +109,10 @@ For forward testing, read `references/validation-scenarios.md`.
 4. Create or update foundation files.
 5. Mark facts as Known from code, Inferred from code, Confirmed by user, Open question, or Risk.
 6. Detect theater software, fake data, duplicate implementations, stale docs, and dead code.
-7. Create a prioritized remediation plan.
-8. Implement only after enough foundation exists to avoid random churn.
+7. Create `docs/quality/repo-audit.md` or equivalent findings with severity, evidence, and suggested fixes.
+8. Create a prioritized remediation plan.
+9. Implement the first low-risk remediation if safe; otherwise explain the blocker and exact next action.
+10. Implement only after enough foundation exists to avoid random churn.
 
 ## Done Means
 
@@ -110,3 +126,5 @@ Before final handoff, report:
 - Risks and concrete follow-up items.
 
 Do not call a feature done if it only looks done.
+
+Do not call a repo run done if it only created docs.
