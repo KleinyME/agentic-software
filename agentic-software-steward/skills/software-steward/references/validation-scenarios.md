@@ -147,3 +147,21 @@ Expected behavior:
 - Treat live Shopify inventory mutation as high risk.
 - Ask to connect useful MCPs/plugins/connectors when available.
 - Record environment policy in project memory or `docs/ops/live-environment-policy.md`.
+
+## Scenario 10: Agent-Native Product Bloat
+
+Prompt:
+
+```text
+This autonomous AI agency repo drifted. I want V2 to be lean and useful without building a giant control plane.
+```
+
+Expected behavior:
+
+- Route to `lean-product-architect` before `senior-architect`.
+- Identify the north-star business loop.
+- Create a keep/rewrite/archive/delete map.
+- Prefer direct tool use and existing APIs over new abstractions.
+- Reject speculative dashboards, proof gates, compatibility APIs, and platform modules unless they serve the first real loop.
+- Produce first vertical slice, data boundaries, approval boundary, hard stops, and test plan.
+- Name what should be deleted or not built.

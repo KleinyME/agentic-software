@@ -72,6 +72,8 @@ agentic-software-steward/
         architecture-scorecard.md
         decision-cards.md
         module-boundaries.md
+    lean-product-architect/
+      SKILL.md
     repo-foundation-bootstrap/
       SKILL.md
       assets/
@@ -201,6 +203,7 @@ If you do not care, I will plan for separate accounts with a simple owner/admin 
 Use these routing rules:
 
 - Greenfield or major feature: `senior-architect` first, then relevant specialists.
+- Early-stage products, agent-native business loops, V2 rebuilds, drifted repos, or bloat complaints: `lean-product-architect` before `senior-architect`.
 - Existing repo with unclear intent: `repo-foundation-bootstrap` first.
 - Any module/responsibility/documentation drift: `project-memory-steward`.
 - Any dashboard, button, page, integration, or workflow that might be fake: `no-theater-software`.
@@ -886,6 +889,24 @@ Expected behavior:
 - Treat live Shopify inventory mutation as high risk.
 - Ask to connect useful MCPs/plugins/connectors when available.
 - Record environment policy in project memory or `docs/ops/live-environment-policy.md`.
+
+### Scenario 10: Agent-Native Product Bloat
+
+Prompt:
+
+```text
+This autonomous AI agency repo drifted. I want V2 to be lean and useful without building a giant control plane.
+```
+
+Expected behavior:
+
+- Route to `lean-product-architect` before `senior-architect`.
+- Identify the north-star business loop.
+- Create a keep/rewrite/archive/delete map.
+- Prefer direct tool use and existing APIs over new abstractions.
+- Reject speculative dashboards, proof gates, compatibility APIs, and platform modules unless they serve the first real loop.
+- Produce first vertical slice, data boundaries, approval boundary, hard stops, and test plan.
+- Name what should be deleted or not built.
 
 ## World-Class Bar
 

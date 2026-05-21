@@ -1,6 +1,6 @@
 ---
 name: software-steward
-description: Orchestrate active agent-built software work with senior engineering discipline. Use for new app planning, existing repo audits, vibe-coded repo rescue, production-readiness, feature planning, UI/product work, refactors, security/data-sensitive changes, live/dev environment setup, project memory, no-theater software checks, remediation planning, and coordinating companion skills such as impeccable, ai-brand-voice, and 100-year-copywriting-engine.
+description: Orchestrate active agent-built software work with senior engineering discipline. Use for new app planning, lean product architecture, existing repo audits, vibe-coded repo rescue, production-readiness, feature planning, UI/product work, refactors, security/data-sensitive changes, live/dev environment setup, project memory, no-theater software checks, remediation planning, and coordinating companion skills such as impeccable, ai-brand-voice, and 100-year-copywriting-engine.
 ---
 
 # Software Steward
@@ -74,6 +74,7 @@ Default if you do not care:
 
 ## Routing Rules
 
+- Early-stage products, agent-native business loops, V2 rebuilds, "repo drifted" rescue, bloat complaints, autonomous AI workflows, or small owner-operated automation: use `lean-product-architect` before `senior-architect`.
 - Greenfield software or major feature: use `senior-architect`.
 - Existing repo with unclear intent: use `repo-foundation-bootstrap`.
 - Project memory drift or new architecture knowledge: use `project-memory-steward`.
@@ -94,15 +95,16 @@ For forward testing, read `references/validation-scenarios.md`.
 
 1. Intention interview.
 2. Product brief.
-3. Architecture plan.
-4. Risk classification.
-5. Design/brand foundation if UI exists.
-6. Vertical-slice implementation plan.
-7. Environment plan: live plus live-dev/preview from the beginning when possible.
-8. Security/data plan.
-9. Verification plan.
-10. Project memory seed.
-11. Build in small real slices.
+3. Choose architecture mode: `lean-product-architect` for early-stage/agent-native/bloat-sensitive work, otherwise `senior-architect`.
+4. Architecture plan.
+5. Risk classification.
+6. Design/brand foundation if UI exists.
+7. Vertical-slice implementation plan.
+8. Environment plan: live plus live-dev/preview from the beginning when possible.
+9. Security/data plan.
+10. Verification plan.
+11. Project memory seed.
+12. Build in small real slices.
 
 ## Existing Repo Order
 
