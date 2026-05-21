@@ -203,7 +203,7 @@ If you do not care, I will plan for separate accounts with a simple owner/admin 
 Use these routing rules:
 
 - Greenfield or major feature: `senior-architect` first, then relevant specialists.
-- Early-stage products, agent-native business loops, V2 rebuilds, drifted repos, or bloat complaints: `lean-product-architect` before `senior-architect`.
+- Solo-founder, small-business, vibe-coded, early-stage, owner-operated, prototype-to-product, agent-native products, V2 rebuilds, drifted repos, or bloat complaints: `lean-product-architect` before `senior-architect`.
 - Existing repo with unclear intent: `repo-foundation-bootstrap` first.
 - Any module/responsibility/documentation drift: `project-memory-steward`.
 - Any dashboard, button, page, integration, or workflow that might be fake: `no-theater-software`.
@@ -907,6 +907,22 @@ Expected behavior:
 - Reject speculative dashboards, proof gates, compatibility APIs, and platform modules unless they serve the first real loop.
 - Produce first vertical slice, data boundaries, approval boundary, hard stops, and test plan.
 - Name what should be deleted or not built.
+
+### Scenario 11: Small Vibe-Coded Product
+
+Prompt:
+
+```text
+I vibe coded this small business app. I don't know what best practices I should care about, but I don't want enterprise bloat.
+```
+
+Expected behavior:
+
+- Route to `lean-product-architect`.
+- Explain only the best-practice nudges relevant to the actual workflow.
+- Identify the north-star loop and first vertical slice.
+- Add persistence, permissions, validation, tests, accessibility, rollback, observability, or source-of-truth guidance only when it protects a real workflow.
+- Avoid broad platform roadmaps, dashboards, proof ceremony, and speculative modules.
 
 ## World-Class Bar
 

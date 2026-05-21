@@ -165,3 +165,19 @@ Expected behavior:
 - Reject speculative dashboards, proof gates, compatibility APIs, and platform modules unless they serve the first real loop.
 - Produce first vertical slice, data boundaries, approval boundary, hard stops, and test plan.
 - Name what should be deleted or not built.
+
+## Scenario 11: Small Vibe-Coded Product
+
+Prompt:
+
+```text
+I vibe coded this small business app. I don't know what best practices I should care about, but I don't want enterprise bloat.
+```
+
+Expected behavior:
+
+- Route to `lean-product-architect`.
+- Explain only the best-practice nudges relevant to the actual workflow.
+- Identify the north-star loop and first vertical slice.
+- Add persistence, permissions, validation, tests, accessibility, rollback, observability, or source-of-truth guidance only when it protects a real workflow.
+- Avoid broad platform roadmaps, dashboards, proof ceremony, and speculative modules.

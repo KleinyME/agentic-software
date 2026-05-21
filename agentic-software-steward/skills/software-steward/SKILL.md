@@ -1,6 +1,6 @@
 ---
 name: software-steward
-description: Orchestrate active agent-built software work with senior engineering discipline. Use for new app planning, lean product architecture, existing repo audits, vibe-coded repo rescue, production-readiness, feature planning, UI/product work, refactors, security/data-sensitive changes, live/dev environment setup, project memory, no-theater software checks, remediation planning, and coordinating companion skills such as impeccable, ai-brand-voice, and 100-year-copywriting-engine.
+description: Orchestrate active agent-built software work with senior engineering discipline. Use for new app planning, lean small-product architecture, vibe-coded software, existing repo audits, vibe-coded repo rescue, production-readiness, feature planning, UI/product work, refactors, security/data-sensitive changes, live/dev environment setup, project memory, no-theater software checks, remediation planning, and coordinating companion skills such as impeccable, ai-brand-voice, and 100-year-copywriting-engine.
 ---
 
 # Software Steward
@@ -24,6 +24,23 @@ Unless the user explicitly asks for "docs only" or "foundation only", do all of 
 5. Implement the first low-risk remediation when it is clearly safe, or explain why code changes should wait.
 
 Do not end a repo run by saying only that docs were created. Foundation docs are the beginning of stewardship, not the finish line.
+
+## Lean Mode Override
+
+When `lean-product-architect` triggers, its complexity budget overrides the active stewardship contract.
+
+Do not create foundation docs, repo audits, ADRs, module docs, dashboards, queues, or remediation plans until the north-star loop and first vertical slice are named.
+
+For bloat, drift, V2 rebuild, small-business, vibe-coded, or early-stage product tasks, first output:
+
+- North-star loop.
+- Keep/rewrite/archive/delete map when brownfield.
+- First vertical slice.
+- What not to build.
+
+Only implement after the user confirms the slice, or when the request clearly asks for execution and the first slice is already obvious.
+
+For early-stage small products, dashboards are observational surfaces only. Do not plan dashboards before the workflow they observe works end to end.
 
 ## Universal Preflight
 
@@ -74,7 +91,7 @@ Default if you do not care:
 
 ## Routing Rules
 
-- Early-stage products, agent-native business loops, V2 rebuilds, "repo drifted" rescue, bloat complaints, autonomous AI workflows, or small owner-operated automation: use `lean-product-architect` before `senior-architect`.
+- Solo-founder, small-business, vibe-coded, early-stage, owner-operated, prototype-to-product, agent-native, V2 rebuilds, "repo drifted" rescue, bloat complaints, autonomous AI workflows, or small automation: use `lean-product-architect` before `senior-architect`.
 - Greenfield software or major feature: use `senior-architect`.
 - Existing repo with unclear intent: use `repo-foundation-bootstrap`.
 - Project memory drift or new architecture knowledge: use `project-memory-steward`.

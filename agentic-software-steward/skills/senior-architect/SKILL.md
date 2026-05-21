@@ -1,11 +1,17 @@
 ---
 name: senior-architect
-description: Senior engineering and system architecture workflow for translating user intention into modular, maintainable, secure, testable software plans. Use for greenfield planning, major features, architectural decisions, module boundaries, tradeoff explanations, and making agent-built software understandable to future human engineers.
+description: Senior engineering and system architecture workflow for translating user intention into modular, maintainable, secure, testable software plans. Use for greenfield planning, major features, architectural decisions, module boundaries, tradeoff explanations, and making agent-built software understandable to future human engineers. If the user mentions bloat, drift, V2 rebuild, vibe-coded small software, agent-native workflow, small business loop, almost starting over, or avoiding enterprise ceremony, use lean-product-architect first.
 ---
 
 # Senior Architect
 
 Translate product intention into a practical architecture plan.
+
+## Lean Redirect
+
+If the user mentions bloat, drift, V2 rebuild, vibe-coded small software, agent-native workflow, small business loop, almost starting over, or avoiding enterprise ceremony, stop and use `lean-product-architect` first.
+
+Return to this skill only when the lean slice needs durable architecture for multiple teams, complex permissions, important data migrations, high scale, compliance, deep integrations, or expensive-to-reverse decisions.
 
 ## Inputs To Gather
 
@@ -55,4 +61,3 @@ Produce:
 ## Decision Cards
 
 When user input is required for a technical decision, explain the human tradeoff and recommend a default. Never ask for technology names unless the user already introduced them.
-

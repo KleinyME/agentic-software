@@ -1,7 +1,7 @@
 {
   "name": "agentic-software-steward",
-  "version": "0.4.0",
-  "description": "A Codex skill suite for active agent-built software stewardship: intention discovery, lean product architecture, senior architecture, repo memory, no-theater software, UI/design routing, security/data safety, live/dev environment safety, release hygiene, brand/copy coordination, repo audits, and remediation plans.",
+  "version": "0.5.0",
+  "description": "A Codex skill suite for active agent-built software stewardship: intention discovery, lean small-product architecture, senior architecture, repo memory, no-theater software, UI/design routing, security/data safety, live/dev environment safety, release hygiene, brand/copy coordination, repo audits, and remediation plans.",
   "author": {
     "name": "Adam / Codex"
   },
@@ -18,7 +18,7 @@
   "interface": {
     "displayName": "Agentic Software Steward",
     "shortDescription": "Make agents plan, build, verify, and remember software like a disciplined senior team.",
-    "longDescription": "Agentic Software Steward coordinates lean and senior architecture, project memory, UI/UX, brand voice, copywriting, security, release hygiene, and no-theater software rules so agent-built repos stay understandable, modular, secure, and genuinely working without unnecessary ceremony.",
+    "longDescription": "Agentic Software Steward coordinates lean small-product architecture, senior architecture, project memory, UI/UX, brand voice, copywriting, security, release hygiene, and no-theater software rules so agent-built repos stay understandable, modular, secure, and genuinely working without enterprise cosplay.",
     "developerName": "Adam / Codex",
     "category": "Engineering",
     "capabilities": [

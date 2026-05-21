@@ -1,13 +1,13 @@
 ---
 name: lean-product-architect
-description: Lean, anti-bloat architecture for early-stage products, small business automations, agent-native tools, autonomous AI workflows, V2 rebuilds, and drifted repos. Use when the user wants the smallest real business loop, complains about bloat, ceremony, control planes, dashboards, gates, proof systems, speculative modules, or says an agent-built repo drifted. Prefer direct tool use, deletion, and one working vertical loop over platform architecture.
+description: Lean small-product architecture for solo-founder, small-business, vibe-coded, early-stage, owner-operated, prototype-to-product, agent-native, V2 rebuild, and drifted repos. Use when the user wants useful software without enterprise bloat, needs best-practice guidance they may not know to ask for, wants the smallest real business loop, complains about bloat, ceremony, control planes, dashboards, gates, proof systems, speculative modules, or says an agent-built repo drifted. Prefer one working vertical loop, direct tool use, shared memory, and deletion over platform architecture.
 ---
 
 # Lean Product Architect
 
-Design the smallest real business loop that works. Prevent architecture theater.
+Design the smallest real business loop that works. Teach small, practical best practices without enterprise cosplay. Prevent architecture theater.
 
-Use this skill before `senior-architect` when the product is early-stage, owner-operated, agent-native, or already bloated.
+Use this skill before `senior-architect` when the product is solo-founder, small-business, vibe-coded, early-stage, owner-operated, prototype-to-product, agent-native, or already bloated.
 
 ## Bias
 
@@ -24,7 +24,7 @@ If not, do not add it.
 
 ## Complexity Budget
 
-For early-stage products:
+For small and early-stage products:
 
 - One primary user loop.
 - One durable state model.
@@ -41,9 +41,29 @@ If the plan exceeds the budget, remove scope before adding architecture.
 
 ## Agent-Native Architecture
 
-Do not build a second brain around an AI agent.
+Avoid a second agent brain. Use shared memory deliberately.
 
-Use the agent, tools, skills, memory, and existing backend APIs directly.
+Use the agent, tools, skills, OpenBrain/shared memory, project memory, and existing backend APIs directly.
+
+OpenBrain/shared memory is good when it stores compact, reusable learning:
+
+- Owner preferences.
+- Skill/tool usefulness.
+- Audit deltas.
+- Project patterns.
+- Blockers and resolutions.
+- What worked or failed.
+
+Do not replace shared memory with app-specific memory machinery unless there is a concrete product need.
+
+Do not build app code that tries to replicate the agent's reasoning:
+
+- Planner engines.
+- Generic operator brains.
+- Proof ceremony.
+- Internal job rituals.
+- Large bespoke memory systems.
+- Dashboards that exist mostly for the agent to reassure itself.
 
 Add wrappers only for:
 
@@ -54,6 +74,23 @@ Add wrappers only for:
 - A real user-facing workflow.
 
 Keep adapters thin. Prefer direct tool calls and existing services over building internal control planes.
+
+## Best-Practice Nudge
+
+Teach the missing best practice briefly when it matters. Explain the human consequence, then choose the smallest useful implementation.
+
+Nudge for:
+
+- Persistence when data should survive refresh, restart, deploy, or agent handoff.
+- Permissions when different people should see or do different things.
+- Validation when user input can break workflows, data, money, or trust.
+- Tests when behavior must not regress.
+- Accessibility when UI is user-facing.
+- Rollback when live changes can harm users or data.
+- Observability when failures need diagnosis.
+- Source of truth when the same fact can live in code, admin/CMS, database, external service, docs, or memory.
+
+Do not use best practices as ceremony. Use the smallest version that protects the real workflow.
 
 ## Existing Repo Rescue
 
@@ -119,9 +156,10 @@ Stop or escalate to companion skills when:
 - The repo needs branch/deploy/rollback discipline: use `release-steward`.
 - The work has grown beyond a small business loop and needs durable multi-user architecture: use `senior-architect`.
 
+Use `senior-architect` when the product has multiple teams, complex permissions, important data migrations, high scale, compliance, deep integrations, or architectural decisions that are expensive to reverse.
+
 ## Final Check
 
 Before finalizing a plan, name what was removed to keep the system lean.
 
 If nothing was removed, reconsider whether the plan is still too bloated.
-
