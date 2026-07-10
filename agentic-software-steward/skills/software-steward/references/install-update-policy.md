@@ -8,9 +8,15 @@ Before using a companion skill, check whether it is available in the current ski
 
 Expected companions:
 
-- `impeccable` for high-quality UI/UX craft.
-- `ai-brand-voice` for creating brand voice files.
+- Installed frontend/design craft skills for high-quality implementation and polish.
+- `imagegen` for generated or edited raster imagery.
 - `100-year-copywriting-engine` for copywriting, ads, emails, landing pages, headlines, and sales copy.
+
+Bundled specialists that should be used directly when this suite is installed:
+
+- `brand-direction` for reference-led brand direction and anti-anchoring.
+- `visual-direction` for art direction, client asset collection, and generated imagery.
+- `ai-writing-audit` for context-aware final editorial review.
 
 ## If Present
 
@@ -35,9 +41,6 @@ impeccable:
   path: .agents/skills/impeccable
   license: Apache-2.0
   note: preserve LICENSE and NOTICE if vendored
-
-ai-brand-voice:
-  source: bundled in this package when present
 
 100-year-copywriting-engine:
   source: bundled in this package when present

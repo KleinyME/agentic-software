@@ -1,63 +1,94 @@
 ---
 name: no-theater-software
-description: Prevent fake, unwired, or demo-only software from being presented as complete. Use for dashboards, charts, settings, buttons, forms, integrations, auth screens, generated UI, analytics, or any feature that might look done without real behavior or data.
+description: Keep prototypes, simulations, fixtures, sandbox integrations, production candidates, and verified production behavior honestly separated without limiting the intended design. Use for client-review previews, dashboards, charts, settings, buttons, forms, auth, payments, integrations, generated UI, analytics, deployment readiness, or any surface that may look complete before its production dependencies are connected.
 ---
 
 # No Theater Software
 
-A feature is not done because it looks done. Build real behavior or clearly label it as prototype/demo/stub.
+No-theater governs how maturity is represented, not what may be imagined, designed, simulated, or presented for client approval.
 
-## Banned As Done
+## Stage Model
 
-- Analytics dashboard with hard-coded production-looking numbers.
-- Settings page that does not save.
-- Button that does nothing.
-- Form that does not submit, validate, or persist as expected.
-- Chart not connected to real data or a labeled fixture.
-- Auth UI without real auth boundaries.
-- Integration screen with no integration.
-- "Coming later" feature that looks shipped.
+Declare the actual stage instead of defaulting to `real`:
 
-## Truthfulness Levels
+- `concept-preview`: complete look, copy, layout, claims, intended journey, and realistic simulation for client review.
+- `functional-preview`: working frontend behavior using deterministic fixtures, local adapters, or sandbox services.
+- `production-candidate`: required client-owned content, services, credentials, data, and controls are connected and awaiting promotion.
+- `production-verified`: the official production workflow has been exercised successfully.
 
-Use one of:
+A deployed URL is not automatically production. The project must designate its official production target.
 
-- `real`: wired to real behavior/data.
-- `prototype`: exploratory and not production.
-- `demo`: sample mode, clearly labeled.
-- `fixture`: dev/test data, isolated from production paths.
-- `stub`: unfinished and not presented as complete.
+## What Is Allowed In Preview
 
-Default to `real`.
+Encourage:
 
-## Vertical Slice Rule
+- Full intended dashboards using realistic fixture data.
+- Form validation and simulated success/error flows.
+- Complete login, membership, checkout, onboarding, and account experiences.
+- Buttons that navigate through simulated workflows.
+- Proposed marketing claims and proof sections.
+- Generated or provisional imagery.
+- Loading, empty, denied, error, recovery, and success states.
 
-Prefer the smallest working version over a larger pretend version.
+Do not reduce the intended experience because the backend is not connected yet.
 
-For analytics, one real event stored and displayed is better than twelve fake charts.
+Use a broad visual prototype and a narrow real vertical slice together. The preview establishes intent; the vertical slice proves the production architecture.
 
-## Active Detection Pass
+## Clean Preview And External Notes
 
-When auditing a repo, search for:
+Do not pollute the rendered page with warnings, badges, placeholder labels, audit tags, or implementation notes.
 
-- Hard-coded chart numbers and arrays in production UI.
-- `mock`, `fake`, `sample`, `dummy`, `fixture`, `placeholder`, `stub`.
-- Buttons with no handlers or handlers that only log.
-- Forms without submit persistence.
-- API routes returning static data.
-- Settings pages without read/write persistence.
-- Auth screens without server-side permission checks.
-- TODOs that describe missing wiring.
+Document outside the page:
 
-For each suspect item, classify it as real, prototype, demo, fixture, or stub. If it is not real but appears shipped, create a finding.
+- Proposed claims and missing proof.
+- Provisional images and source decisions.
+- Simulated functions and intended production behavior.
+- Client decisions and requested refinements.
 
-## Deferred Work Rule
+Use `CLIENT_REVIEW.md` during concept approval. After approval, use `DEPLOYMENT_READINESS.md` for production work.
 
-Any deferred item must include:
+## Production Gate
 
-- What is unfinished.
-- Why it is deferred.
-- What must be built to make it real.
-- Where it should be wired.
-- How to verify it works.
-- Risk if it remains unfinished.
+Before calling a capability production-ready:
+
+- Every visible enabled control performs its stated action.
+- Forms validate, submit, persist or deliver, and show real failure states.
+- Dashboards use the designated real data source or an explicitly approved permanent demo mode.
+- Auth has server-side identity and authorization boundaries.
+- Payments use the correct client-owned account, products, prices, and webhooks.
+- Integrations use intended production credentials and have exercised success/failure behavior.
+- Workers and scheduled flows have been run, observed, and recovered from representative failure.
+- Testimonials, customers, metrics, certifications, comparisons, links, and documentary imagery are verified or removed.
+
+## Truth States Per Capability
+
+Use:
+
+- `simulated`
+- `fixture`
+- `sandbox`
+- `connected`
+- `verified`
+- `not-required`
+
+Track state in deployment readiness, not inside the product UI.
+
+## Audit Existing Repos
+
+Search for hard-coded production-looking data, mock routes, empty handlers, console-only actions, unwired forms, static API responses, missing authorization, TODO wiring, skipped tests, and placeholder content.
+
+Classify findings by current environment and intended stage. A fixture in a protected preview is not a defect. The same fixture on an official production path without disclosure is.
+
+## Deferred Work
+
+Every unresolved production item must record:
+
+- Intended final behavior.
+- Current simulated or sandbox behavior.
+- Required production resource.
+- Owner.
+- Implementation step.
+- Verification method.
+- Whether it blocks promotion.
+
+Do not call the system production complete until required items are connected and exercised.

@@ -1,30 +1,30 @@
-# No Theater Software
+# Stage-Aware No-Theater Policy
 
-Do not present software as complete when it only looks complete.
+No-theater governs how maturity is represented, not what may be designed or simulated.
 
-## Banned As Done
+## Stages
 
-- Fake analytics dashboard not connected to events or real data.
-- Settings page that does not save.
-- Buttons that do nothing.
-- Forms that do not submit or validate.
-- Charts with hard-coded production-looking numbers.
-- Auth UI with no real auth boundary.
-- "Coming later" features that look shipped.
+- `concept-preview`: complete visual, copy, claims, and intended workflow for client approval.
+- `functional-preview`: frontend behavior using fixtures, local adapters, or sandbox services.
+- `production-candidate`: required production resources are connected.
+- `production-verified`: the official workflow has been exercised in production.
 
-## Allowed Only When Explicitly Labeled
+## Preview Rules
 
-- Prototype
-- Demo
-- Fixture
-- Seed data
-- Stub
+- Build the complete intended experience.
+- Realistic fixtures and simulated flows are allowed.
+- Keep internal labels, claim flags, and implementation notes in `CLIENT_REVIEW.md`, not in the page.
+- Do not call a preview production.
 
-## Deferred Work Must Include
+## Production Rules
 
-- What is unfinished.
-- Why it is deferred.
-- What must be built to make it real.
-- How to verify it works.
-- Risk if left unfinished.
+- Visible controls perform their stated actions.
+- Data comes from the designated real source or an approved permanent demo mode.
+- Auth, forms, payments, APIs, workers, and integrations use intended production resources.
+- Claims, proof, links, and documentary assets are verified or removed.
+- Required behavior is exercised after promotion.
+
+## Deferred Production Work
+
+Record intended behavior, current state, required resource, owner, implementation step, verification method, and whether it blocks promotion.
 

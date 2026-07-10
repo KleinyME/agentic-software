@@ -1,943 +1,126 @@
-# Agentic Software Steward Skill Suite Definition
+# Agentic Software Steward Suite
 
 ## Purpose
 
-Build a Codex skill package that makes agents behave like a disciplined senior software team:
+Make agents capable of turning a client's intention, references, existing materials, and desired outcome into a truthful, distinctive, beautiful, working experience that can be reviewed, connected to real production resources, safely promoted, and understood by the next agent or human.
 
-- Ask non-technical users about intention, not implementation trivia.
-- Translate intention into architecture, risk, design, security, copy, verification, and handoff.
-- Prefer smaller real vertical slices over larger fake or unwired features.
-- Preserve project memory in the repository so future agents and human engineers can understand why the software exists, how it works, and how it can break.
-- Use specialist skills for UI/UX, design systems, brand voice, and copywriting instead of one giant overloaded skill.
+The suite is not a documentation generator, a copy encyclopedia, or a second control plane. It is one delivery workflow with specialist skills.
 
-The suite should be called:
+## North-Star Loop
 
 ```text
-agentic-software-steward
+Intent and evidence
+-> brand and visual direction
+-> bold clean preview
+-> client refinement and approval
+-> production connection
+-> promotion and live verification
+-> durable memory
 ```
 
-The lead skill should be:
-
-```text
-software-steward
-```
-
-Use "senior architect" as a role inside the suite, but the package should feel broader than one engineer. It is a project stewardship operating system for agent-built software.
-
-## Research Inputs To Encode
-
-The suite should encode operating habits from these sources:
-
-- Impeccable: use `PRODUCT.md` and `DESIGN.md`, distinguish brand vs product UI, shape before craft, use browser inspection and polish loops. Source: https://github.com/pbakaus/impeccable
-- Google DESIGN.md: keep machine-readable design tokens plus human-readable rationale in a root `DESIGN.md`; tokens are the normative values and prose explains application. Source: https://github.com/google-labs-code/design.md
-- Senior engineer handbook: senior engineering combines communication, software design, system design, reliability, UX, leadership, and technical writing. Source: https://github.com/jordan-cutler/path-to-senior-engineer-handbook
-- C4 model: use system context, container, component, and code views as lightweight architecture mapping levels. Source: https://c4model.com/
-- arc42: document goals, constraints, context, building blocks, runtime, deployment, decisions, risks, and glossary. Source: https://arc42.org/overview
-- Architecture Decision Records: keep small, modular decision records for architecturally significant decisions, with context, decision, status, and consequences. Source: https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions
-- OWASP ASVS: use a real security verification standard for web application controls. Source: https://owasp.org/www-project-application-security-verification-standard/
-- NIST SSDF: treat security as part of the software development lifecycle, not a late cleanup step. Source: https://csrc.nist.gov/pubs/sp/800/218/final
-- Microsoft threat modeling: define security requirements, diagram the application, identify threats, mitigate them, and validate mitigations. Source: https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling
-- Twelve-Factor App: declare dependencies, store config in the environment, separate build/release/run, keep dev/prod parity, treat logs as event streams. Source: https://12factor.net/
-- Google SRE SLOs: define what users care about before choosing operational metrics. Source: https://sre.google/sre-book/service-level-objectives/
-- DORA Four Keys: use deployment frequency, lead time, time to restore, and change failure rate as delivery health signals when deployments exist. Source: https://github.com/dora-team/fourkeys
-- Practical Test Pyramid: use balanced automated tests and acceptance tests that prove user behavior works. Source: https://martinfowler.com/articles/practical-test-pyramid.html
-- Diataxis: keep docs focused by separating tutorials, how-to guides, reference, and explanation. Source: https://diataxis.qubitpi.org/
-- OpenSSF Scorecard and SLSA: use dependency and supply-chain checks as optional hardening layers for serious projects. Sources: https://openssf.org/projects/scorecard/ and https://slsa.dev/
-
-## Exact Skill Package Structure
-
-Recommended repository or plugin layout:
-
-```text
-agentic-software-steward/
-  .codex-plugin/
-    plugin.json
-  skills/
-    software-steward/
-      SKILL.md
-      references/
-        orchestration.md
-        question-protocol.md
-        routing-rules.md
-        risk-levels.md
-        definition-of-done.md
-        repo-foundation.md
-        project-memory.md
-        no-theater-software.md
-        install-update-policy.md
-        validation-scenarios.md
-    senior-architect/
-      SKILL.md
-      references/
-        architecture-scorecard.md
-        decision-cards.md
-        module-boundaries.md
-    lean-product-architect/
-      SKILL.md
-    repo-foundation-bootstrap/
-      SKILL.md
-      assets/
-        AGENTS.template.md
-        PROJECT_MEMORY.template.md
-        PRODUCT.template.md
-        docs/
-          architecture-overview.template.md
-          module.template.md
-          adr.template.md
-          definition-of-done.template.md
-          no-theater-software.template.md
-          security-threat-model.template.md
-    project-memory-steward/
-      SKILL.md
-    no-theater-software/
-      SKILL.md
-    security-data-safety/
-      SKILL.md
-    live-environment-steward/
-      SKILL.md
-    release-steward/
-      SKILL.md
-    brand-copy-steward/
-      SKILL.md
-    ai-brand-voice/
-      SKILL.md
-    100-year-copywriting-engine/
-      SKILL.md
-      references/
-        ...
-    impeccable/
-      SKILL.md
-      reference/
-        ...
-      scripts/
-        ...
-  third_party/
-    impeccable/
-      LICENSE
-      NOTICE.md
-  README-for-humans.md
-```
-
-If we want a lighter v1, start with:
-
-```text
-skills/
-  software-steward/
-  repo-foundation-bootstrap/
-  project-memory-steward/
-  no-theater-software/
-  security-data-safety/
-  brand-copy-steward/
-```
-
-Then make `impeccable`, `ai-brand-voice`, and `100-year-copywriting-engine` companion skills. The orchestrator should call them when present and offer to install them when missing.
-
-## Orchestrator Routing Rules
-
-The `software-steward` skill is the router. It should load first for broad requests like:
-
-- "Build an app"
-- "Audit this repo"
-- "Make this production ready"
-- "Refactor this vibe-coded repo"
-- "Plan this software"
-- "Make sure this is not fake"
-- "Improve the UI/UX"
-- "Make this human-engineer ready"
-
-### Universal Preflight
-
-Before meaningful edits:
-
-1. Read `AGENTS.md` if present.
-2. Read `PROJECT_MEMORY.md` if present.
-3. If UI work, read `PRODUCT.md` and `DESIGN.md` if present.
-4. Check git status and current branch.
-5. Classify the task type: greenfield, repo bootstrap, feature, UI, copy, refactor, security/data, release, cleanup.
-6. Classify risk level.
-7. Decide which specialist skill should own each part.
-8. Ask only intention questions that would change the plan.
-9. Convert technical questions into plain-language decision cards with a recommended default.
-
-### Human Question Protocol
-
-Ask humans about intention:
-
-- What should this help someone do?
-- Who uses it?
-- What would make it feel successful?
-- What would be embarrassing, harmful, expensive, or dangerous if wrong?
-- What information should the software remember?
-- Should different people see or do different things?
-- Should this feel like a quick prototype, a serious product, or a foundation for growth?
-
-Do not ask:
-
-- "Do you want RBAC?"
-- "Postgres or Mongo?"
-- "Microservices or monolith?"
-- "What state management library?"
-
-Instead ask a decision card:
-
-```text
-Decision: Should different people have different permissions?
-
-Why it matters:
-This affects privacy, safety, and how hard the app is to manage later.
-
-Options:
-1. One owner account: fastest, simplest.
-2. Separate user accounts: better for teams, still manageable.
-3. Roles and permissions: strongest control, more complexity.
-
-Recommendation:
-Start with separate accounts and one owner/admin role if this may become a team product.
-
-Default:
-If you do not care, I will plan for separate accounts with a simple owner/admin distinction.
-```
-
-### Specialist Routing
-
-Use these routing rules:
-
-- Greenfield or major feature: `senior-architect` first, then relevant specialists.
-- Solo-founder, small-business, vibe-coded, early-stage, owner-operated, prototype-to-product, agent-native products, V2 rebuilds, drifted repos, or bloat complaints: `lean-product-architect` before `senior-architect`.
-- Existing repo with unclear intent: `repo-foundation-bootstrap` first.
-- Any module/responsibility/documentation drift: `project-memory-steward`.
-- Any dashboard, button, page, integration, or workflow that might be fake: `no-theater-software`.
-- Auth, permissions, secrets, private data, migrations, payments, deletion, external integrations: `security-data-safety`.
-- Live apps, preview deploys, staging/dev setup, environment variables, API sandboxing, MCP/plugin connector setup, or direct-to-main pressure: `live-environment-steward`.
-- UI/UX or frontend craft: use `impeccable` if installed. If missing, offer install, then fallback to `design-system-steward` rules.
-- Visual identity/design tokens: create or update `DESIGN.md`.
-- Product/design context: create or update `PRODUCT.md`.
-- User-facing copy, empty states, onboarding, marketing, landing pages: `brand-copy-steward`, then `ai-brand-voice` or `100-year-copywriting-engine` if available.
-- Branching, cleanup, final merge readiness: `release-steward`.
-
-### Routing Order For New Software
-
-```text
-1. Intention interview
-2. Product brief
-3. Architecture plan
-4. Risk classification
-5. Design/brand foundation if UI exists
-6. Vertical-slice implementation plan
-7. Security/data plan
-8. Verification plan
-9. Project memory seed
-10. Build in small real slices
-```
-
-### Routing Order For Existing Repos
-
-```text
-1. Read existing docs and repo structure
-2. Identify entry points, data, auth, dependencies, routes, tests, config
-3. Ask user intention questions only for missing intent
-4. Create/update foundation files
-5. Mark facts as Known / Inferred / Confirmed / Open Question / Risk
-6. Detect theater software, fake data, duplicate implementations, dead code
-7. Create prioritized remediation plan
-8. Implement only after the foundation is sufficient
-```
-
-## Risk-Level Checklist
+## Core Principles
 
-### Low Risk
+### Ask For Intention
 
-Examples:
+Research first. Ask humans about audience, desired feeling, meaningful differences, business outcome, non-negotiables, and approval. Let agents handle implementation choices.
 
-- Copy changes
-- Small isolated style fix
-- Non-critical UI polish
-- Documentation clarification
+For reversible choices, state assumptions and build. Tangible previews are easier to refine than long abstract interviews.
 
-Required:
+### Create Boldly, Promote Precisely
 
-- Check current branch/status.
-- Run focused validation if available.
-- Update memory only if intention changed.
+Concept work should be persuasive and ambitious. Strong claims, realistic fixtures, simulated workflows, provisional imagery, and complete intended UI are allowed in client-review previews.
 
-### Medium Risk
+Production promotion is a separate gate. Before production, resolve claims, proof, content, real backends, auth, payments, forms, APIs, workers, credentials, ownership, and verification.
 
-Examples:
+### Keep Review Notes Off The Page
 
-- New feature
-- Component or route changes
-- New dependency
-- Moderate refactor
-- UI flow changes
+The customer-facing preview must remain visually complete. Put proposed claims, simulated functionality, provisional assets, and open decisions in `CLIENT_REVIEW.md`. Put production implementation and verification in `DEPLOYMENT_READINESS.md`.
 
-Required:
+### Treat Existing Work As Evidence
 
-- Work on a branch unless repo policy says otherwise.
-- Define acceptance criteria.
-- Add or update tests for meaningful behavior.
-- Check no-theater rules.
-- Update relevant project/module/design memory.
+For redesigns, extract facts and useful assets, then reimagine from a blank page. Do not preserve weak copy, section order, or visual patterns merely because they already exist.
 
-### High Risk
+### No Theater By Stage
 
-Examples:
+No-theater does not ban prototypes. It prevents the suite from calling simulated or sandbox behavior production-verified. Track each capability as simulated, fixture, sandbox, connected, verified, or not required.
 
-- Auth, permissions, roles
-- Private data
-- Payments
-- Data migrations
-- Deletion/destructive actions
-- External integrations
-- Large refactors
-- Deployment or environment changes
+### Prove Visual Quality
 
-Required:
+Do not explain why a site is beautiful. Establish a business-appropriate direction, implement it, inspect desktop and mobile screenshots, and polish the rendered result.
 
-- Branch required.
-- Plain-language decision card if user intent matters.
-- Security/data review.
-- Rollback or recovery plan.
-- Tests for success and failure paths.
-- Update `PROJECT_MEMORY.md`, module memory, and ADR if architecture changed.
-- Verify secrets/config are not hard-coded.
+## Skill Roles
 
-### Critical Risk
-
-Examples:
-
-- Production database mutation
-- Irreversible data deletion
-- Credential handling
-- Public release of sensitive functionality
-- Compliance-heavy domains
-
-Required:
-
-- Stop and ask for explicit approval.
-- Produce a change plan before editing.
-- Require backup/rollback notes.
-- Prefer human review when available.
-- Do not proceed if verification cannot be performed.
-
-## Live Environment Safety
-
-Small live apps often cannot justify full staging immediately, but direct-to-main live edits should not be the default for risky changes.
-
-The suite should use a safety ladder:
-
-- Level 0: direct-to-main only for docs, copy, tiny styling, and clearly reversible edits.
-- Level 1: branch plus local checks for most small app work.
-- Level 2: branch plus preview deploy for UI, routes, workflow changes, and user-visible behavior.
-- Level 3: preview plus sandbox/test API credentials for auth, payments, webhooks, inventory, orders, emails, and external writes.
-- Level 4: full staging environment for real users, important data, money, repeated release pain, or teams.
-
-For new software, prefer setting up production and live-dev/preview from the beginning:
-
-- `main` deploys production.
-- Feature branches deploy preview/live-dev.
-- Production and dev secrets are separate.
-- External writes use sandbox/test credentials until explicitly promoted.
-- Project memory records environment URLs, credential locations, live mutation policy, and rollback notes.
-
-When an MCP, plugin, or connector can set up or inspect the environment safely, the agent should ask the user to connect it. Examples include GitHub for branches/checks, Vercel for preview deploys/logs, Supabase for separate projects/databases, and commerce/admin APIs for dev stores or test credentials.
-
-If the right setup is not feasible today, the agent should choose the safest smaller path: branch, read-only first slice, hidden/internal route, local checks, dry-run mode, adapter tests, explicit confirmation for live writes, and rollback notes.
-
-## Install And Update Policy For Companion Skills
-
-Companion skills should never be silently installed.
-
-Policy:
-
-1. Detect whether the needed companion skill exists.
-2. If present, use it.
-3. If missing and the task benefits from it, ask permission to install from a pinned GitHub repo/path.
-4. Prefer pinned refs, release tags, or lockfiles over pulling from `main` for serious projects.
-5. Preserve third-party `LICENSE` and `NOTICE` files when vendoring.
-6. After installing a skill, tell the user Codex may need a restart to pick it up.
-7. If install is not possible, use a built-in fallback checklist and record the limitation.
-
-Recommended companion sources:
-
-```text
-impeccable:
-  repo: https://github.com/pbakaus/impeccable
-  path: .agents/skills/impeccable
-  license: Apache-2.0, preserve NOTICE
+### Lead
 
-design.md CLI:
-  package: @google/design.md
-  use: lint/diff/export DESIGN.md when network/dependencies allow
+- `software-steward`: preflight, routing, stage boundaries, active outcome, and final handoff.
 
-ai-brand-voice:
-  source: user's packaged skill
+### Direction And Communication
 
-100-year-copywriting-engine:
-  source: user's packaged skill
-```
+- `brand-direction`: reference-led positioning, audience, feeling, differences, anti-anchoring, and provisional claims.
+- `visual-direction`: business-appropriate style, client asset collection, generated imagery, and image placement.
+- `brand-copy-steward`: persuasive human copy, claim handling, and clean preview separation.
+- `100-year-copywriting-engine`: optional creative accelerator for headlines, offers, frameworks, and strong claims.
+- `ai-writing-audit`: context-aware final editorial pass that preserves approved voice.
+- `ai-brand-voice`: assistant/chatbot persona built from an existing brand direction.
 
-Update policy:
+### Product And Engineering
 
-- Do not auto-update vendored companion skills during ordinary product work.
-- Provide a separate "update companion skills" workflow.
-- Before updating, record current version/ref.
-- After updating, run skill validation and at least one UI/copy regression scenario.
-- If Impeccable changes, preserve its license/notice and run at least one UI validation scenario.
+- `lean-product-architect`: smallest real business loop and deletion-first small-product architecture.
+- `senior-architect`: durable architecture for complex, expensive-to-reverse systems.
+- `repo-foundation-bootstrap`: working-truth audit and minimum useful project foundation.
+- `project-memory-steward`: durable intention, architecture, operating truth, and reusable learning.
 
-## Project Foundation Files
+### Truth, Safety, And Delivery
 
-The suite should create a minimal foundation, not documentation sprawl.
+- `no-theater-software`: stage-aware simulation and production truth.
+- `security-data-safety`: permissions, sensitive data, destructive actions, and external writes.
+- `live-environment-steward`: preview, sandbox, production resources, credentials, and environment boundaries.
+- `release-steward`: branch discipline, promotion, live baseline preservation, rollback, and proof.
 
-Recommended repo files:
+### Design
 
-```text
-AGENTS.md
-PROJECT_MEMORY.md
-PRODUCT.md
-DESIGN.md
-docs/
-  architecture/
-    overview.md
-    decisions/
-      0001-template.md
-  modules/
-    _template.md
-  quality/
-    definition-of-done.md
-    no-theater-software.md
-  security/
-    threat-model.md
-  ops/
-    live-environment-policy.md
-  brand/
-    voice.md
-```
+- Installed frontend/design specialists own distinctive implementation, adaptation, polish, accessibility, and responsive QA.
+- `design-system-steward` preserves project-local product and design memory and acts as fallback guidance.
 
-Do not create every file blindly. Bootstrap the minimum useful set:
+## Client Experience Stages
 
-- Always: `AGENTS.md`, `PROJECT_MEMORY.md`.
-- If product/UI exists: `PRODUCT.md`, `DESIGN.md`.
-- If modules are clear: `docs/modules/*.md`.
-- If risky architecture decision exists: ADR.
-- If auth/data/secrets exist: security threat model.
-- If the app is live or has external APIs: live environment policy.
-- If user-facing copy matters: brand voice.
+### Concept Preview
 
-## Template: AGENTS.md
+Approve audience, positioning, look, feeling, layout, copy, proposed claims, imagery, and intended customer journey.
 
-```markdown
-# Agent Guide
+Allowed: complete simulated flows, realistic fixtures, proposed proof sections, generated imagery, and bold claims.
 
-## Start Here
+### Functional Preview
 
-1. Read `PROJECT_MEMORY.md`.
-2. For UI work, read `PRODUCT.md` and `DESIGN.md`.
-3. For module work, read the matching file in `docs/modules/`.
-4. Check git status and current branch before editing.
+Exercise real frontend behavior using deterministic fixtures, local adapters, or sandbox services. Prove critical states and one narrow vertical slice.
 
-## Project Rules
+### Production Candidate
 
-- Main/master should stay shippable.
-- Prefer small working vertical slices over large fake features.
-- Do not present fake data, dead buttons, or unwired UI as complete.
-- Update project memory when architecture, module ownership, data, security, setup, or meaningful product intent changes.
-- Remove replaced code when safe. If not safe, record why and create a dated removal plan.
+Connect required client-owned content, accounts, data, auth, payments, forms, APIs, workers, monitoring, domains, and credentials. Resolve deployment-readiness blockers.
 
-## Verification
+### Production Verified
 
-Before saying done, report:
+Promote to the official target and exercise the promised workflow against production resources. Record evidence and rollback.
 
-- What works now.
-- How it was verified.
-- Tests or checks run.
-- Any fake/demo/stub data remaining.
-- Any risks or follow-up items.
-```
+## Required Review Artifacts
 
-## Template: PROJECT_MEMORY.md
+Create only when relevant:
 
-```markdown
-# Project Memory
+- `CLIENT_REVIEW.md`: plain-language client decisions, claims, imagery, provisional content, and simulated functions.
+- `DEPLOYMENT_READINESS.md`: production resources, owners, blockers, tests, and verification.
+- `PRODUCT.md`, `DESIGN.md`, and `docs/brand/voice.md`: durable product, visual, and voice direction.
+- `PROJECT_MEMORY.md`: working truth, architecture, commands, risks, and recent meaningful changes.
 
-## Product Intention
+## Validation Bar
 
-Status: Confirmed | Inferred | Open
+The suite succeeds when it can:
 
-[Plain-language description of what this software is for and who it serves.]
-
-## Current Working Truth
-
-- [What currently works end to end.]
-- [What is partially built.]
-- [What is prototype/demo/stub only.]
-
-## What Must Not Break
-
-- [Critical workflows.]
-- [Important data.]
-- [Security/privacy promises.]
-
-## Architecture Map
-
-- UI:
-- API/server:
-- Domain logic:
-- Data/storage:
-- Auth/permissions:
-- External integrations:
-- Background jobs:
-
-## Module Ownership
-
-| Module | Owns | Must Not Own | Depends On | Memory |
-|---|---|---|---|---|
-
-## Data And Security Notes
-
-- Sensitive data:
-- Secrets/config:
-- Backup/rollback notes:
-- Permissions model:
-
-## Environments And Release Safety
-
-- Production URL/app/project:
-- Live-dev/preview URL/app/project:
-- Hosting/deployment:
-- Production secrets location:
-- Dev/test secrets location:
-- External API sandbox/test accounts:
-- Current safety level:
-- Live mutation policy:
-- Rollback/revert notes:
-
-## Verification Commands
-
-- Install:
-- Dev:
-- Test:
-- Build:
-- Lint/typecheck:
-
-## Known Risks
-
-| Risk | Severity | Why It Matters | Mitigation |
-|---|---|---|---|
-
-## Open Questions
-
-| Question | Why It Matters | Default Assumption |
-|---|---|---|
-
-## Recent Meaningful Changes
-
-- YYYY-MM-DD: [Architecture/product/security/design change.]
-```
-
-## Template: PRODUCT.md
-
-```markdown
-# Product
-
-## Register
-
-product
-
-## Users
-
-[Who uses this, their context, frequency, and job to be done.]
-
-## Product Purpose
-
-[What this product helps them do and how success is recognized.]
-
-## Primary Workflows
-
-1. [Workflow]
-2. [Workflow]
-
-## Brand Personality
-
-[3-5 traits. Include tone boundaries.]
-
-## Anti-References
-
-[What this should not feel like, look like, or behave like.]
-
-## Design Principles
-
-- [Principle tied to user/product intent.]
-
-## Accessibility And Inclusion
-
-[WCAG expectations, motion, contrast, keyboard, screen reader, language.]
-```
-
-For brand/marketing sites, `Register` should be `brand`. For app surfaces, use `product`.
-
-## Template: DESIGN.md
-
-Follow the Google DESIGN.md format:
-
-- YAML frontmatter for machine-readable tokens.
-- Markdown prose for rationale.
-- Tokens are normative.
-- Prose explains how and why to apply them.
-
-Minimum sections:
-
-```markdown
----
-name: [Project Name]
-description: [One-line design purpose]
-colors:
-  primary: "#000000"
-typography:
-  body:
-    fontFamily: "system-ui, sans-serif"
-    fontSize: "1rem"
-rounded:
-  sm: "4px"
-  md: "8px"
-spacing:
-  sm: "8px"
-  md: "16px"
----
-
-# Design System: [Project Name]
-
-## Overview
-
-## Colors
-
-## Typography
-
-## Layout
-
-## Elevation & Depth
-
-## Shapes
-
-## Components
-
-## Do's and Don'ts
-```
-
-For production UI, run `npx @google/design.md lint DESIGN.md` when dependency/network access is available.
-
-## Template: Definition Of Done
-
-```markdown
-# Definition Of Done
-
-A feature is done only when:
-
-- The promised behavior works end to end.
-- User-facing UI is wired to real behavior or explicitly labeled demo/prototype.
-- Primary actions perform the action they claim.
-- Data persists when users would reasonably expect persistence.
-- Empty, loading, error, success, disabled, and permission states exist where relevant.
-- Tests or checks cover important behavior.
-- Security/data risks were reviewed for the change.
-- Replaced code, unused imports, duplicate helpers, and stale docs were removed when safe.
-- `PROJECT_MEMORY.md`, `DESIGN.md`, module memory, or ADRs were updated if intent or architecture changed.
-- The final handoff says what was verified and what remains risky or unfinished.
-```
-
-## Template: No Theater Software
-
-```markdown
-# No Theater Software
-
-Do not present software as complete when it only looks complete.
-
-## Banned As Done
-
-- Fake analytics dashboard not connected to events or real data.
-- Settings page that does not save.
-- Buttons that do nothing.
-- Forms that do not submit or validate.
-- Charts with hard-coded production-looking numbers.
-- Auth UI with no real auth boundary.
-- "Coming later" features that look shipped.
-
-## Allowed Only When Explicitly Labeled
-
-- Prototype
-- Demo
-- Fixture
-- Seed data
-- Stub
-
-## Deferred Work Must Include
-
-- What is unfinished.
-- Why it is deferred.
-- What must be built to make it real.
-- How to verify it works.
-- Risk if left unfinished.
-```
-
-## Template: Module Memory
-
-```markdown
-# Module: [Name]
-
-## Owns
-
-[Responsibilities.]
-
-## Must Not Own
-
-[Boundaries.]
-
-## Public Interfaces
-
-[Functions, routes, events, schemas, components other modules rely on.]
-
-## Dependencies
-
-[Internal and external dependencies.]
-
-## How This Can Break The System
-
-[Failure modes.]
-
-## Tests
-
-[Where tests live and what they prove.]
-
-## Common Mistakes To Avoid
-
-[Agent/human traps.]
-```
-
-## Template: ADR
-
-```markdown
-# ADR 0001: [Decision Title]
-
-## Status
-
-Proposed | Accepted | Superseded
-
-## Context
-
-[Forces, constraints, tradeoffs.]
-
-## Decision
-
-We will [decision].
-
-## Consequences
-
-- Positive:
-- Negative:
-- Neutral:
-
-## Revisit When
-
-[Trigger that makes this decision worth reviewing.]
-```
-
-## Validation Scenarios
-
-Use these scenarios to forward-test whether the suite behaves correctly.
-
-### Scenario 1: Vague Greenfield App
-
-Prompt:
-
-```text
-Build me an analytics dashboard for my marketplace.
-```
-
-Expected behavior:
-
-- Ask intention questions about users, decisions, data source, and success.
-- Refuse to build fake analytics as "done."
-- Propose a first vertical slice: record one real event, store it, query it, show one real metric.
-- Create foundation memory.
-
-### Scenario 2: Existing Vibe-Coded Repo With Fake Dashboard
-
-Prompt:
-
-```text
-Audit this repo and make it production ready.
-```
-
-Expected behavior:
-
-- Inspect repo before asking questions.
-- Identify fake data, dead buttons, duplicate implementations, stale docs.
-- Create/update `PROJECT_MEMORY.md`.
-- Produce a staged remediation plan.
-- Mark known vs inferred facts.
-
-### Scenario 3: UI Redesign With Impeccable Available
-
-Prompt:
-
-```text
-Make the onboarding flow feel world class.
-```
-
-Expected behavior:
-
-- Route to Impeccable.
-- Ensure `PRODUCT.md` and `DESIGN.md` exist or are created.
-- Shape before implementation.
-- Inspect in browser across mobile/tablet/desktop.
-- Polish and update design memory if the system changes.
-
-### Scenario 4: UI Work Without Impeccable
-
-Prompt:
-
-```text
-Improve this settings page.
-```
-
-Expected behavior:
-
-- Detect missing Impeccable.
-- Ask permission to install or continue with fallback.
-- Use fallback design checklist if not installed.
-- Still enforce real behavior, states, accessibility, and memory updates.
-
-### Scenario 5: High-Risk Auth Change
-
-Prompt:
-
-```text
-Add team accounts and admin roles.
-```
-
-Expected behavior:
-
-- Classify high risk.
-- Ask plain-language permission/ownership questions.
-- Create a branch.
-- Produce a security/data plan.
-- Add tests for permission boundaries.
-- Update project memory and ADR.
-
-### Scenario 6: Brand/Copy Heavy Landing Page
-
-Prompt:
-
-```text
-Write and build the landing page.
-```
-
-Expected behavior:
-
-- Route to brand/copy skills.
-- Use brand voice if present; create/ask if missing.
-- Use copywriting engine for headline/sections.
-- No fabricated testimonials or claims.
-- UI is built from real content and design memory.
-
-### Scenario 7: Refactor Cleanup
-
-Prompt:
-
-```text
-Clean up the old listing code and simplify it.
-```
-
-Expected behavior:
-
-- Search references before deletion.
-- Identify duplicate functions and active call paths.
-- Remove replaced code when safe.
-- Run tests/checks.
-- Update module memory.
-- If removal is unsafe, create dated removal plan.
-
-### Scenario 8: Data Migration
-
-Prompt:
-
-```text
-Change how orders are stored.
-```
-
-Expected behavior:
-
-- Classify high or critical risk.
-- Require branch and migration plan.
-- Identify rollback/backup strategy.
-- Add tests for old/new data behavior.
-- Update project memory, module memory, and ADR.
-
-### Scenario 9: Live App With No Staging
-
-Prompt:
-
-```text
-This Shopify app is live and I usually push to main because setting up test APIs is painful. Add a feature that may eventually update inventory.
-```
-
-Expected behavior:
-
-- Do not shame the user.
-- Classify the change by environment safety level.
-- Recommend the right setup: branch plus preview plus sandbox/test API credentials.
-- If that is not feasible today, choose the safest smaller path: read-only first slice, branch, local checks, dry-run/adapter tests, hidden/internal route.
-- Treat live Shopify inventory mutation as high risk.
-- Ask to connect useful MCPs/plugins/connectors when available.
-- Record environment policy in project memory or `docs/ops/live-environment-policy.md`.
-
-### Scenario 10: Agent-Native Product Bloat
-
-Prompt:
-
-```text
-This autonomous AI agency repo drifted. I want V2 to be lean and useful without building a giant control plane.
-```
-
-Expected behavior:
-
-- Route to `lean-product-architect` before `senior-architect`.
-- Identify the north-star business loop.
-- Create a keep/rewrite/archive/delete map.
-- Prefer direct tool use and existing APIs over new abstractions.
-- Reject speculative dashboards, proof gates, compatibility APIs, and platform modules unless they serve the first real loop.
-- Produce first vertical slice, data boundaries, approval boundary, hard stops, and test plan.
-- Name what should be deleted or not built.
-
-### Scenario 11: Small Vibe-Coded Product
-
-Prompt:
-
-```text
-I vibe coded this small business app. I don't know what best practices I should care about, but I don't want enterprise bloat.
-```
-
-Expected behavior:
-
-- Route to `lean-product-architect`.
-- Explain only the best-practice nudges relevant to the actual workflow.
-- Identify the north-star loop and first vertical slice.
-- Add persistence, permissions, validation, tests, accessibility, rollback, observability, or source-of-truth guidance only when it protects a real workflow.
-- Avoid broad platform roadmaps, dashboards, proof ceremony, and speculative modules.
-
-## World-Class Bar
-
-The suite is working when a future human senior engineer can enter the repo and quickly answer:
-
-- What is this software for?
-- What actually works?
-- What is fake, stubbed, or deferred?
-- Where is the core domain logic?
-- What data matters?
-- What must not break?
-- What risks are known?
-- How do I run, test, and ship it?
-- Why were the important decisions made?
-- How should the UI look and sound?
-- What should the next agent avoid breaking?
-
-The product is not world-class because it is complex. It is world-class when intention, behavior, architecture, design, security, and verification line up cleanly enough that the next contributor can move faster without guessing.
+- Turn sparse reference-led input into a distinctive direction without a long interview.
+- Reimagine an existing site without anchoring to its current expression.
+- Generate bold marketing copy without hedging every claim.
+- Keep claim and simulation notes outside the rendered page.
+- Select and produce imagery that fits the business and brand.
+- Build a complete review preview without pretending it is production.
+- Convert approval into a concrete production checklist.
+- Preserve the official live baseline while promoting verified work.
+- Leave evidence and memory that help the next contributor move faster.

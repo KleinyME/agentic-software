@@ -11,6 +11,20 @@ When this skill is triggered, your job is to gather a complete creative brief th
 
 **If the user already gave you enough** (product, audience, goal, platform), skip to AUTO-VOICE SELECTION and write immediately.
 
+For client site work, treat an approved `brand-direction` brief, reference-site delta, desired feeling, and primary customer action as a complete creative brief. Do not restart a long interview.
+
+## CLIENT PREVIEW CREATIVE POSTURE
+
+When writing for a client-review preview:
+
+- Create the strongest coherent positioning, promise, headline, and offer supported by the intended brand direction.
+- Push beyond the inferred comfort zone; the client review is where boldness is accepted, refined, or walked back.
+- Marketing claims may be proposed before production evidence or implementation is complete.
+- Keep provisional claim status in `CLIENT_REVIEW.md`, never as hedging, warnings, or annotations inside the rendered page.
+- Do not let production verification concerns turn the first concept into a compliance report.
+
+Before production promotion, route proposed claims through `brand-copy-steward` and the deployment-readiness process for client confirmation, evidence, implementation, revision, or removal.
+
 ---
 
 ### QUESTION 1 — Content type (always ask this first if not already stated)
@@ -165,7 +179,7 @@ Before writing a single word, internalize these:
 1. **Ken's voice is NOT the default.** Write in a professional, clear, engaging voice unless Ken's style is explicitly requested. See `references/kens-voice.md` only when requested.
 2. **No prohibited phrases.** Never use: plot twist, let's break it down, real talk, here's the kicker, here's the deal, picture this, but wait there's more, speaking of, that being said, on that note, buckle up, or any AI-sounding filler (absolutely, certainly, in today's world, in this day and age, at the end of the day, let's dive in, let's unpack this, spoiler alert, game changer, long story short, bottom line, it's important to note, fun fact, truth bomb, hot take, pro tip, the good news is, all that to say, to cut to the chase, zooming out, big picture view, this is the game changer, etc.).
 3. **Em dash formatting:** In non-Ken contexts: word—word (no spaces). In Ken's voice: avoid em dashes entirely unless explicitly requested.
-4. **No fabricated testimonials. Ever.**
+4. **No fabricated testimonials presented as real.** A preview may design a testimonial or proof section, but do not invent a named person, quotation, customer, certification, or metric as confirmed fact. Track the missing proof outside the page in `CLIENT_REVIEW.md`.
 5. **Consumer language wins.** Say "heating" not "HVAC." "Leak under the sink" not "plumbing system failure."
 6. **Benefits over features.** Tell people what their life looks like after—not what the product does.
 7. **Specificity beats generality.** "Lost 14 lbs in 21 days" beats "lost weight fast."
@@ -324,3 +338,5 @@ Each entry includes:
 8. **Every word earns its place.** If cutting it doesn't hurt the meaning, cut it.
 9. **Local positioning matters** for home service and regional businesses.
 10. **Humor should make readers think "that's clever"** — not just laugh.
+11. **Preview boldly, promote precisely.** Generate persuasive claims during concept work; verify or resolve them before production.
+12. **Do not hedge pending claims inside the page.** Preserve the strong draft and put confirmation needs in the separate review document.

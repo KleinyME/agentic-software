@@ -1,37 +1,81 @@
 ---
 name: brand-copy-steward
-description: Route and review product copy, marketing copy, onboarding, empty states, loading messages, landing pages, ads, emails, and brand voice work. Use when user-facing words matter, when a brand voice should be created or applied, or when copy should use ai-brand-voice or 100-year-copywriting-engine companion skills.
+description: Route, create, and review user-facing product and marketing copy across landing pages, websites, onboarding, empty states, ads, emails, and applications. Use when words must establish a brand, make persuasive claims, translate reference-led direction into copy, avoid robotic or ultra-literal language, use the 100-year-copywriting-engine, audit AI-writing patterns, or keep provisional review notes separate from the rendered customer experience.
 ---
 
 # Brand Copy Steward
 
-Make product language clear, truthful, useful, and on-brand.
+Make copy persuasive, specific, human, truthful to its current stage, and recognizably on-brand.
 
 ## Routing
 
-- If creating a brand voice, use `ai-brand-voice` if available.
-- If writing marketing, ads, emails, landing pages, headlines, or sales copy, use `100-year-copywriting-engine` if available.
-- If writing product UI copy, use the project brand voice if present; otherwise write clearly and update `docs/brand/voice.md` when a durable voice emerges.
+- Reference sites, audience shift, desired feeling, or reimagining: use `brand-direction` first.
+- Marketing, landing pages, headlines, offers, ads, or emails: use `100-year-copywriting-engine` when available.
+- Final robotic/formulaic writing pass: use `ai-writing-audit` after direction and persuasive force are established.
+- Customer-facing AI persona: use `ai-brand-voice` after the business brand direction exists.
+
+## Creative Posture
+
+Create first; verify for production second.
+
+During concept and preview work:
+
+- Make strong positioning, promise, capability, and outcome claims that align with the brief.
+- Prefer conviction over hedging.
+- Push beyond the inferred comfort zone when the user asked for a bold client concept.
+- Build the full copy architecture, including proof and feature sections that still need client content.
+- Keep the rendered page pristine and persuasive.
+
+Do not invent a named person, quotation, customer, certification, metric, or third-party endorsement and present it as confirmed fact. A preview may design those sections and propose claim-shaped copy, but unresolved proof belongs in `CLIENT_REVIEW.md`.
+
+## Claim Handling
+
+Classify proposed claims outside the page as:
+
+- Positioning or brand promise: client approval.
+- Experience or capability promise: implementation before production.
+- Quantitative claim: evidence before production.
+- Testimonial, customer, certification, or comparison: authorization or proof before production.
+
+If a claim cannot ship, recommend one of:
+
+1. Prove it.
+2. Build the capability that makes it true.
+3. Adjust it without losing the core promise.
+4. Remove it.
+
+Never automatically turn strong copy into vague language such as "aims to", "may help", or "designed to support" merely because verification is pending.
 
 ## Copy Rules
 
-- Benefits over features.
-- Specificity beats generality.
-- No fabricated testimonials, metrics, claims, logos, or social proof.
-- Consumer language beats internal jargon unless the audience truly uses the jargon.
-- Every word earns its place.
-- Empty states, loading states, onboarding, confirmations, and errors should sound like the product, not generic software.
-- Do not let copy imply unfinished software is complete.
+- Lead with the reader's situation, desire, tension, or outcome.
+- Benefits and transformation over internal features.
+- Specificity over generality.
+- Consumer language over internal jargon unless the audience uses the jargon.
+- Each section must add a new reason to care.
+- Do not narrate APIs, authentication mechanics, page structure, or implementation unless the customer needs that detail.
+- Compliance supports the message; it does not automatically become the brand personality.
+- Vary cadence. Write something a person would choose to say aloud.
+- Cut copy that could appear unchanged on fifty unrelated sites.
+- Never imply a production connection in the official production experience unless it exists.
 
-## Brand Memory
+## Clean Preview Rule
 
-Use `docs/brand/voice.md` for project-specific voice. It should include:
+Never place these inside the rendered customer-facing experience:
 
-- Audience.
-- Tone.
-- Do's and don'ts.
-- Words to use.
-- Words to avoid.
-- Example on-brand and off-brand phrasing.
-- Product-specific microcopy patterns.
+- Claim verification flags.
+- Placeholder or fixture labels.
+- Image source notes.
+- Audit tags.
+- Developer comments.
+- Implementation status.
+- Internal uncertainty.
+
+Put them in `CLIENT_REVIEW.md`. After concept approval, transfer production work into `DEPLOYMENT_READINESS.md`.
+
+## Preserve Approved Voice
+
+Record durable voice in `docs/brand/voice.md` or the project's approved direction. Include audience, promise, voice behaviors, do/don't examples, words to use/avoid, approved boldness, and product-specific patterns.
+
+Later audits and implementation passes must flag conflicts rather than silently bleaching approved personality, rhythm, humor, or conviction.
 

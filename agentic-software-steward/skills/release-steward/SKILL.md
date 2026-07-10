@@ -1,68 +1,61 @@
 ---
 name: release-steward
-description: Manage branch discipline, main/master cleanliness, live-app change safety, cleanup after refactors, release readiness, rollback notes, and final verification. Use when preparing changes for merge, deciding whether to branch, pushing to main, removing dead code, cleaning duplicates, or ensuring main remains shippable.
+description: Manage branch discipline, preview-to-production promotion, main/master cleanliness, release readiness, cleanup, rollback, and final verification. Use when preparing changes for client review or production, deciding whether to branch, merging, pushing, preserving a live baseline, removing dead code, resolving deployment scope, or proving what actually shipped.
 ---
 
 # Release Steward
 
-Keep main/master clean, shippable, and understandable.
+Keep the designated production branch shippable and distinguish preview deployment from production promotion.
 
-## Branching Rules
+## Before Work
 
-Check current branch and status before edits.
+- Check current branch, status, remote, default/production branch, and worktrees.
+- Branch for features, refactors, dependency changes, integrations, data/auth changes, or multi-file client-experience work.
+- Preserve unrelated user changes.
 
-Branch for:
+## Preview Release
 
-- Features.
-- Refactors.
-- Auth/security/data changes.
-- Migrations.
-- Dependency changes.
-- Cleanup that removes code.
-- Anything touching multiple modules.
+A preview release is for client or owner review. It may contain documented simulations, fixtures, proposed claims, and provisional imagery.
 
-Small isolated docs/copy/style edits may be direct if repo policy allows.
+Before sharing:
 
-## Small-Project Live App Safety
+- Build successfully.
+- Verify the intended routes.
+- Check desktop and mobile screenshots.
+- Confirm the rendered page has no internal notes or review annotations.
+- Deliver `CLIENT_REVIEW.md` separately.
+- State that approval covers direction and intended behavior, not production connection.
 
-When the app is already live and there is no staging environment, use a safety ladder instead of pretending there are only two options: enterprise staging or YOLO main pushes.
+## Production Promotion
 
-- Level 0: direct-to-main only for docs, copy, tiny styling, and reversible edits.
-- Level 1: branch plus local checks for most small changes.
-- Level 2: branch plus preview deploy for UI/routes/workflows.
-- Level 3: preview plus sandbox/test API credentials for auth, payments, orders, inventory, webhooks, email, and external writes.
-- Level 4: full staging for real users, money, important data, repeated release pain, or teams.
+Use `live-environment-steward` for environment safety details. Before promotion:
 
-Default to the lowest level that is safe for the change, then recommend the next safety upgrade.
+- Resolve all blocking rows in `DEPLOYMENT_READINESS.md`.
+- Verify claims, content, links, images, and legal/customer proof.
+- Connect production auth, data, forms, payments, APIs, workers, and client-owned credentials as required.
+- Exercise critical success, denial, error, retry, and recovery paths.
+- Run build, tests, accessibility, browser, and deployment checks proportionate to risk.
+- Confirm the exact official production target and rollback path.
 
-## New Project Environment Rule
+After promotion, verify the official domain or application, not merely push or deployment success.
 
-For new software, recommend setting up production and live-dev/preview from the beginning when feasible:
+## Preserve The Live Baseline
 
-- `main` deploys production.
-- Feature branches deploy preview/live-dev.
-- Production and dev secrets are separate.
-- External writes use sandbox/test credentials until promoted.
-- Project memory records environment URLs, secret locations, mutation policy, and rollback notes.
+When merging older or parallel work:
 
-When a connector or MCP can set up or inspect this safely, ask the user to connect it instead of making them manually thread everything together.
+- Inspect actual touched files rather than trusting labels.
+- Preserve the current production design and behavior first.
+- Carry forward additive, non-regressive work.
+- Remove replaced code only after reference and behavior checks.
 
-## Cleanup Rules
+## Handoff
 
-After refactoring:
+Report:
 
-- Remove replaced code when safe.
-- Remove stale imports, duplicate helpers, old routes, obsolete docs, and unused files.
-- Verify deletion with search, tests, type checks, or references.
-- If removal is unsafe, record why and create a dated removal plan.
-
-## Release Handoff
-
-Before merge or final response:
-
-- Summarize what changed.
-- Report checks/tests run.
-- Identify any fake/demo/stub behavior.
-- Note risks and rollback if relevant.
-- State the environment level used and any live-only risk remaining.
-- Confirm memory/docs updated where needed.
+- Preview or production.
+- Branch and target.
+- What changed.
+- Checks and visual/behavioral proof.
+- Simulations or provisional content remaining.
+- Rollback and unresolved risk.
+- What actually shipped.

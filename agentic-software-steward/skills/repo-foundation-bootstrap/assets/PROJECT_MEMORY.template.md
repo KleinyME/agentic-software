@@ -9,8 +9,8 @@ Status: Confirmed | Inferred | Open
 ## Current Working Truth
 
 - [What currently works end to end.]
-- [What is partially built.]
-- [What is prototype/demo/stub only.]
+- [What is a concept or functional preview.]
+- [What is simulated, fixture-backed, sandbox-connected, production-connected, or production-verified.]
 
 ## What Must Not Break
 
@@ -43,12 +43,14 @@ Status: Confirmed | Inferred | Open
 ## Environments And Release Safety
 
 - Production URL/app/project:
-- Live-dev/preview URL/app/project:
+- Client-review preview URL/app/project:
+- Sandbox preview URL/app/project:
 - Hosting/deployment:
 - Production secrets location:
 - Dev/test secrets location:
 - External API sandbox/test accounts:
-- Current safety level: 0 direct-main | 1 branch-local | 2 preview | 3 sandbox APIs | 4 full staging
+- Official production designation:
+- Current stage: concept-preview | functional-preview | production-candidate | production-verified
 - Live mutation policy:
 - Rollback/revert notes:
 

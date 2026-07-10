@@ -1,151 +1,81 @@
 ---
 name: live-environment-steward
-description: Plan and enforce live/dev environment safety for small and growing live apps. Use for staging, preview deploys, direct-to-main risk, external APIs, Shopify/Supabase/Vercel/GitHub integrations, environment variables, sandbox credentials, live data mutations, branch-to-preview workflows, rollback planning, and asking the user to connect MCPs or plugins that can set up environments safely.
+description: Separate client-review previews, sandbox-connected previews, production candidates, and official production environments. Use for Vercel or other preview deployments, staging, branch deploys, environment variables, client-owned accounts, API/OAuth credentials, sandbox services, production promotion, live external writes, rollback planning, and deployment readiness.
 ---
 
 # Live Environment Steward
 
-Make live software safer without pretending every small project can afford enterprise staging on day one.
+Enable ambitious previews while keeping production resources and irreversible actions deliberate.
 
-## Principle
+## Environment Names
 
-Do it right when feasible. If the right setup is too much friction today, choose the safest smaller step and make the remaining risk explicit.
+Record what each environment means for the project:
 
-For new software, prefer setting up production and live-dev/preview environments at the beginning. When two environments exist from day one, they feel normal instead of painful retrofits.
+- `local-development`
+- `client-review-preview`
+- `sandbox-preview`
+- `production-candidate`
+- `official-production`
 
-## Environment Safety Ladder
+A shareable `vercel.app` or similar URL is review infrastructure unless the project explicitly designates it as official production. Do not use "live" as shorthand for any deployed URL.
 
-Use the lowest level that is safe for the change. Move up when the change touches real users, real money, real private data, or live external mutations.
+## Preview Default
 
-### Level 0: Direct-To-Main Live Edits
+Client-review previews may include bold claims, realistic synthetic data, generated imagery, and simulated workflows.
 
-Allowed only for docs, copy, tiny styling, and clearly reversible changes.
+Containment should not weaken the design. Use the smallest useful controls:
 
-Requirements:
-
-- Confirm current branch.
-- Run cheap checks.
-- Have a rollback command or revert plan.
-
-### Level 1: Branch Plus Local Checks
-
-Default for most small app work.
-
-Requirements:
-
-- Work on a branch.
-- Run build/lint/tests that exist.
-- Keep feature hidden if unfinished.
-- Do not introduce fake shipped behavior.
-
-### Level 2: Branch Plus Preview Deploy
-
-Use for user-visible UI, routes, onboarding, settings, dashboards, and workflow changes.
-
-Requirements:
-
-- Use a preview deployment if the hosting platform supports it.
-- Verify the core flow in the preview.
-- Keep external writes disabled unless using sandbox credentials.
-
-### Level 3: Preview Plus Sandbox/Test API Credentials
-
-Use for auth, payments, orders, inventory, webhooks, emails, and any external write.
-
-Requirements:
-
-- Separate test/sandbox app or credentials.
+- No production secrets unless explicitly required and safe.
+- No irreversible production writes.
+- No private customer data.
 - Separate environment variables.
-- Dry-run mode where useful.
-- Adapter/service tests for write payloads.
-- Explicit confirmation before any live mutation.
+- Protect or exclude sensitive previews from indexing when appropriate.
+- Put review status in the surrounding review workflow, not inside the designed page.
 
-### Level 4: Full Staging Environment
+## Safety Ladder
 
-Use when the app has real users, repeated release pain, important data, money movement, irreversible workflows, or a team.
+Use the lowest level safe for the change:
 
-Requirements:
-
-- Separate app/project/database/API credentials.
-- Seed or anonymized test data.
-- Deployment path mirrors production.
-- Release and rollback notes.
+- Level 0: docs, copy, or tiny reversible production edits.
+- Level 1: branch plus local checks.
+- Level 2: client-review preview for UI, routes, copy, and workflows.
+- Level 3: preview plus sandbox/test credentials for auth, payments, webhooks, email, orders, inventory, and external writes.
+- Level 4: separate staging for real users, important data, money, repeated release pain, or teams.
 
 ## New Project Default
 
-When planning new software, ask:
+- Official production deploys from the designated production branch.
+- Feature branches create review previews.
+- Production and preview secrets are separate.
+- External writes use sandbox credentials until promotion.
+- Client-owned accounts are preferred for client production resources.
+- Project memory records environment URLs, ownership, credential location, mutation policy, and rollback.
 
-- Where will production run?
-- Can we create preview deploys automatically from branches?
-- Which APIs need sandbox/test credentials?
-- What data store will production use?
-- Can dev use a separate database/project from day one?
-- Which MCPs/plugins/connectors can set this up or manage it?
+## Production Resource Handoff
 
-Recommended default:
+Before promotion, move from developer-owned or simulated resources to the intended client production model:
 
-- `main` deploys production.
-- Feature branches deploy preview/live-dev.
-- Production secrets and dev secrets are separate.
-- External writes use sandbox credentials until explicitly promoted.
-- The project memory records environment names, URLs, credentials location, and mutation policy.
+- Client-owned hosting, database, storage, auth, payment, email, and API accounts when appropriate.
+- Client OAuth applications and redirect URLs.
+- Production environment variables and secret ownership.
+- Data migrations and backup/recovery.
+- Domains, DNS, analytics, and monitoring.
 
-## Existing Live App Default
-
-If a live app has no staging/dev environment:
-
-1. Do not shame the user or block harmless work.
-2. Classify the change by risk.
-3. Prefer read-only first slices.
-4. Branch before changes unless the edit is Level 0.
-5. Use hidden/internal routes or feature flags for unfinished features.
-6. Add dry-run mode or payload tests before live external writes.
-7. Recommend the smallest next safety upgrade.
-
-## MCP And Connector Protocol
-
-When setup can be handled by a connector or plugin, offer that path first.
-
-Examples:
-
-- GitHub: create branches, inspect PRs/checks, review CI.
-- Vercel: inspect projects, preview deploys, deployments, logs.
-- Supabase: separate projects/databases, migrations, environment config.
-- Shopify or other commerce/admin APIs: prefer sandbox/dev stores or test credentials when available.
-
-If a needed connector is unavailable:
-
-- Ask the user whether they want to connect/install it when the platform is supported.
-- Continue with manual instructions or local fallback if they decline.
-- Record the limitation in project memory.
-
-Do not silently create live resources or connect accounts.
+Track these in `DEPLOYMENT_READINESS.md`.
 
 ## Live Mutation Guardrails
 
-For writes to live systems:
+For production writes:
 
-- Prefer sandbox/test credentials.
-- If live credentials are the only option, use read-only first.
-- Require explicit user confirmation before the live mutation path is used.
-- Show exact target, current state, requested change, and expected after-state.
+- Prefer sandbox proof first.
+- Show target, current state, requested change, and expected after-state.
+- Require explicit confirmation for consequential live mutations.
 - Provide undo or rollback when possible.
-- Log/audit who/when/what if the platform exposes identity.
+- Record identity and outcome when the platform supports it.
 
-Examples:
-
-- Receiving Shopify inventory is a live mutation.
-- Sending customer email is a live mutation.
-- Charging/refunding payment is a live mutation.
-- Deleting records is a live mutation.
+Examples include charges/refunds, inventory changes, customer messages, destructive database operations, and public releases of sensitive behavior.
 
 ## Handoff
 
-Report:
-
-- Current environment level.
-- What safety layer was used.
-- What checks ran.
-- What still uses live-only credentials.
-- Recommended next safety upgrade.
+Report environment name, connected resources, checks, simulated or sandbox dependencies remaining, promotion blockers, and the next safe step.
 

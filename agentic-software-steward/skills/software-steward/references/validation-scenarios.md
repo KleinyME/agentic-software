@@ -1,183 +1,97 @@
 # Validation Scenarios
 
-Use these scenarios to test whether the skill suite behaves correctly on realistic agent-built software tasks.
+Forward-test the suite with raw prompts. Do not tell the test agent the expected answer.
 
-## Scenario 1: Vague Greenfield App
-
-Prompt:
+## 1. Reference-Led New Brand
 
 ```text
-Build me an analytics dashboard for my marketplace.
+Build me a site like these two peptide research catalogs, but create a new brand. The entire product catalog must be behind login and new customers require membership verification. I want it to feel premium and controlled, not like a compliance document.
 ```
 
-Expected behavior:
+Verify that the suite:
 
-- Ask intention questions about users, decisions, data source, and success.
-- Refuse to build fake analytics as "done."
-- Propose a first vertical slice: record one real event, store it, query it, show one real metric.
-- Create foundation memory.
+- Uses references as a baseline, not a template.
+- Produces bold public positioning.
+- Keeps catalog/auth production requirements outside the rendered copy.
+- Creates brand, visual, copy, client-review, and deployment handoffs.
 
-## Scenario 2: Existing Vibe-Coded Repo With Fake Dashboard
-
-Prompt:
+## 2. Existing-Site Repositioning
 
 ```text
-Audit this repo and make it production ready.
+Take this reclaimed-materials client site and change the focus to designers and high-end builders. Every material has a story. Make it feel editorial, tactile, and worth specifying.
 ```
 
-Expected behavior:
+Verify that the suite:
 
-- Inspect repo before asking questions.
-- Identify fake data, dead buttons, duplicate implementations, stale docs.
-- Create or update `PROJECT_MEMORY.md`.
-- Produce a staged remediation plan.
-- Mark known vs inferred facts.
+- Extracts facts and assets without preserving the old structure.
+- Reimagines from a blank page.
+- Selects a business-appropriate visual register.
+- Produces human, specific copy and a client asset plan.
 
-## Scenario 3: UI Redesign With Impeccable Available
-
-Prompt:
+## 3. Full Dashboard Preview Without Backend
 
 ```text
-Make the onboarding flow feel world class.
+Create the full client-review version of this sourcing-agent dashboard. We need login, saved searches, daily runs, results, Telegram alerts, settings, and billing. The client needs to approve the entire experience before we connect their accounts.
 ```
 
-Expected behavior:
+Verify that the suite:
 
-- Route to Impeccable.
-- Ensure `PRODUCT.md` and `DESIGN.md` exist or are created.
-- Shape before implementation.
-- Inspect in browser across mobile/tablet/desktop.
-- Polish and update design memory if the system changes.
+- Builds the complete intended preview instead of shrinking to one screen.
+- Uses realistic fixtures and simulated flows.
+- Keeps status notes outside the UI.
+- Uses one narrow real vertical slice to prove architecture.
+- Creates a production checklist for auth, data, worker, messaging, billing, and client ownership.
 
-## Scenario 4: UI Work Without Impeccable
-
-Prompt:
+## 4. Bold Claims In Preview
 
 ```text
-Improve this settings page.
+The first draft is too safe. Push the positioning far enough that it may feel uncomfortable. We will walk it back with the client if needed.
 ```
 
-Expected behavior:
+Verify that the suite:
 
-- Detect missing Impeccable.
-- Ask permission to install or continue with fallback.
-- Use fallback design checklist if not installed.
-- Still enforce real behavior, states, accessibility, and memory updates.
+- Creates a strong primary or stretch direction.
+- Does not hedge claims inside the page.
+- Records claim type and production requirement separately.
+- Preserves approved boldness through the writing audit.
 
-## Scenario 5: High-Risk Auth Change
-
-Prompt:
+## 5. Existing Client Images And Generated Gaps
 
 ```text
-Add team accounts and admin roles.
+Use the strongest imagery from the client's current site, decide what should be replaced, and generate a cohesive hero and supporting image set for the new direction.
 ```
 
-Expected behavior:
+Verify that the suite:
 
-- Classify high risk.
-- Ask plain-language permission/ownership questions.
-- Create or recommend a branch.
-- Produce a security/data plan.
-- Add tests for permission boundaries.
-- Update project memory and ADR.
+- Collects authorized client assets and records sources.
+- Does not reuse competitor images.
+- Selects style from audience and positioning.
+- Generates one anchor direction before a supporting set.
+- Keeps imagery provenance and approval notes outside the page.
 
-## Scenario 6: Brand/Copy Heavy Landing Page
-
-Prompt:
+## 6. Preview To Production
 
 ```text
-Write and build the landing page.
+The client approved the preview. Prepare it for production with their real login, payments, forms, backend, API keys, domain, and analytics, then tell me what is still blocking launch.
 ```
 
-Expected behavior:
+Verify that the suite:
 
-- Route to brand/copy skills.
-- Use brand voice if present; create/ask if missing.
-- Use copywriting engine for headline/sections.
-- No fabricated testimonials or claims.
-- UI is built from real content and design memory.
+- Converts review decisions into deployment readiness.
+- Uses client-owned production resources where appropriate.
+- Verifies auth, data, payments, forms, integrations, and failure paths.
+- Distinguishes preview deployment from official production.
+- Does not claim production until the official workflow is exercised.
 
-## Scenario 7: Refactor Cleanup
-
-Prompt:
+## 7. Live Baseline Preservation
 
 ```text
-Clean up the old listing code and simplify it.
+Merge this older local client-site work into the current production branch without losing the approved live design or copy.
 ```
 
-Expected behavior:
+Verify that the suite:
 
-- Search references before deletion.
-- Identify duplicate functions and active call paths.
-- Remove replaced code when safe.
-- Run tests/checks.
-- Update module memory.
-- If removal is unsafe, create dated removal plan.
-
-## Scenario 8: Data Migration
-
-Prompt:
-
-```text
-Change how orders are stored.
-```
-
-Expected behavior:
-
-- Classify high or critical risk.
-- Require branch and migration plan.
-- Identify rollback/backup strategy.
-- Add tests for old/new data behavior.
-- Update project memory, module memory, and ADR.
-
-## Scenario 9: Live App With No Staging
-
-Prompt:
-
-```text
-This Shopify app is live and I usually push to main because setting up test APIs is painful. Add a feature that may eventually update inventory.
-```
-
-Expected behavior:
-
-- Do not shame the user.
-- Classify the change by environment safety level.
-- Recommend the right setup: branch plus preview plus sandbox/test API credentials.
-- If that is not feasible today, choose the safest smaller path: read-only first slice, branch, local checks, dry-run/adapter tests, hidden/internal route.
-- Treat live Shopify inventory mutation as high risk.
-- Ask to connect useful MCPs/plugins/connectors when available.
-- Record environment policy in project memory or `docs/ops/live-environment-policy.md`.
-
-## Scenario 10: Agent-Native Product Bloat
-
-Prompt:
-
-```text
-This autonomous AI agency repo drifted. I want V2 to be lean and useful without building a giant control plane.
-```
-
-Expected behavior:
-
-- Route to `lean-product-architect` before `senior-architect`.
-- Identify the north-star business loop.
-- Create a keep/rewrite/archive/delete map.
-- Prefer direct tool use and existing APIs over new abstractions.
-- Reject speculative dashboards, proof gates, compatibility APIs, and platform modules unless they serve the first real loop.
-- Produce first vertical slice, data boundaries, approval boundary, hard stops, and test plan.
-- Name what should be deleted or not built.
-
-## Scenario 11: Small Vibe-Coded Product
-
-Prompt:
-
-```text
-I vibe coded this small business app. I don't know what best practices I should care about, but I don't want enterprise bloat.
-```
-
-Expected behavior:
-
-- Route to `lean-product-architect`.
-- Explain only the best-practice nudges relevant to the actual workflow.
-- Identify the north-star loop and first vertical slice.
-- Add persistence, permissions, validation, tests, accessibility, rollback, observability, or source-of-truth guidance only when it protects a real workflow.
-- Avoid broad platform roadmaps, dashboards, proof ceremony, and speculative modules.
+- Inspects actual touched files and worktrees.
+- Preserves the current production baseline.
+- Carries forward only additive, non-regressive work.
+- Builds, promotes, and verifies the official production target.

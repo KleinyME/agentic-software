@@ -52,6 +52,8 @@ Create when relevant:
 - `docs/ops/live-environment-policy.md`
 - `docs/architecture/decisions/*.md`
 - `docs/brand/voice.md`
+- `CLIENT_REVIEW.md` for a client-review preview.
+- `DEPLOYMENT_READINESS.md` when an approved preview is moving toward production.
 
 Do not create docs without a reader and a maintenance rule.
 

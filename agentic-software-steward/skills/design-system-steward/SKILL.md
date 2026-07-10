@@ -16,6 +16,8 @@ Use:
 
 Before UI work, read both if present. If missing, create minimal versions from existing UI and user intention.
 
+For client-facing work, use `brand-direction` for positioning and `visual-direction` for business-appropriate art direction, existing client asset reuse, and generated imagery before locking the design system.
+
 ## UI Quality Rules
 
 - Build the actual usable experience, not a landing page unless requested.
@@ -25,6 +27,7 @@ Before UI work, read both if present. If missing, create minimal versions from e
 - Keep text inside containers at mobile and desktop sizes.
 - Do not introduce fake data unless clearly labeled demo/fixture.
 - Use browser or screenshot verification when available.
+- Verify imagery, typography, hierarchy, and responsive crops against the approved visual direction, not only against generic consistency rules.
 
 ## DESIGN.md Minimum
 

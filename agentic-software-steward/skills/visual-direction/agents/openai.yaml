@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Direction"
+  short_description: "Select and produce cohesive site imagery"
+  default_prompt: "Use $visual-direction to choose the right visual style, reuse client assets, and plan or generate cohesive site imagery."

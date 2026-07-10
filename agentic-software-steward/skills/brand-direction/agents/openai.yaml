@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brand Direction"
+  short_description: "Turn references and intent into bold brand direction"
+  default_prompt: "Use $brand-direction to turn my references, differences, and desired feeling into a fresh brand direction."

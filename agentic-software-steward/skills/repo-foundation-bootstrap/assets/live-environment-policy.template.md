@@ -4,8 +4,9 @@
 
 | Environment | Purpose | URL/App/Project | Data Source | Secrets | Notes |
 |---|---|---|---|---|---|
-| Production | Live users/data |  |  |  |  |
-| Live-dev/Preview | Safe review before production |  |  |  |  |
+| Official production | Real users/data |  |  |  |  |
+| Client-review preview | Look, feel, copy, and intended workflow approval |  | Fixture/simulated as documented | Preview only |  |
+| Sandbox preview | Functional integration testing |  | Sandbox/test | Test credentials |  |
 | Local | Developer/agent work |  |  |  |  |
 
 ## Safety Level
@@ -22,6 +23,7 @@ Current level:
 
 - Branch by default for live apps.
 - Keep main/master shippable.
+- Do not call a shareable preview production unless the project designates it as the official production target.
 - Use read-only first slices for risky live systems.
 - Do not test new write behavior first against production when sandbox, dry-run, or adapter tests are possible.
 - Hide unfinished features behind internal routes or feature flags.

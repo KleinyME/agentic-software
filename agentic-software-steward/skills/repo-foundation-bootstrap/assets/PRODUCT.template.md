@@ -12,6 +12,14 @@ product
 
 [What this product helps them do and how success is recognized.]
 
+## Desired Perception And Feeling
+
+[What the audience should believe and feel after experiencing this product.]
+
+## Central Promise
+
+[The strongest clear promise the approved experience should make.]
+
 ## Primary Workflows
 
 1. [Workflow]
@@ -19,7 +27,7 @@ product
 
 ## Brand Personality
 
-[3-5 traits. Include tone boundaries.]
+[Three observable voice/design behaviors. Include approved boldness and tone boundaries.]
 
 ## Anti-References
 

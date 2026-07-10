@@ -1,152 +1,107 @@
 ---
 name: software-steward
-description: Orchestrate active agent-built software work with senior engineering discipline. Use for new app planning, lean small-product architecture, vibe-coded software, existing repo audits, vibe-coded repo rescue, production-readiness, feature planning, UI/product work, refactors, security/data-sensitive changes, live/dev environment setup, project memory, no-theater software checks, remediation planning, and coordinating companion skills such as impeccable, ai-brand-voice, and 100-year-copywriting-engine.
+description: Orchestrate active agent-built software and client-experience work from intention through implementation, preview, verification, release, and memory. Use for new apps, client sites, landing pages, redesigns, existing repo audits, vibe-coded rescue, production readiness, UI/product work, refactors, security/data changes, live/dev setup, and coordinating brand, copy, visual, frontend, no-theater, architecture, and release specialists.
 ---
 
 # Software Steward
 
-Act as the lead steward for agent-built software. Preserve intention, route work to the right specialist skill, and ensure the repo becomes easier for the next agent or future human engineer to understand.
+Preserve intention, route work to the right specialist, and deliver a real result that is easier for the next agent or human to understand.
 
 ## Operating Principle
 
-Ask humans about intention. Make agents handle architecture. Ship working software, not theater. Leave memory for the next mind.
-
-## Active Stewardship Contract
-
-Running this skill against a repo must produce an active outcome, not only new documentation.
-
-Unless the user explicitly asks for "docs only" or "foundation only", do all of the following:
-
-1. Create or update the project foundation.
-2. Inspect the code for real risks and fake/unwired behavior.
-3. Produce findings with severity, evidence, and concrete next actions.
-4. Identify the first safe remediation step.
-5. Implement the first low-risk remediation when it is clearly safe, or explain why code changes should wait.
-
-Do not end a repo run by saying only that docs were created. Foundation docs are the beginning of stewardship, not the finish line.
-
-## Lean Mode Override
-
-When `lean-product-architect` triggers, its complexity budget overrides the active stewardship contract.
-
-Do not create foundation docs, repo audits, ADRs, module docs, dashboards, queues, or remediation plans until the north-star loop and first vertical slice are named.
-
-For bloat, drift, V2 rebuild, small-business, vibe-coded, or early-stage product tasks, first output:
-
-- North-star loop.
-- Keep/rewrite/archive/delete map when brownfield.
-- First vertical slice.
-- What not to build.
-
-Only implement after the user confirms the slice, or when the request clearly asks for execution and the first slice is already obvious.
-
-For early-stage small products, dashboards are observational surfaces only. Do not plan dashboards before the workflow they observe works end to end.
+Ask humans about intention. Make agents handle implementation detail. Create boldly in preview, verify precisely before production, and never confuse the two stages.
 
 ## Universal Preflight
 
 Before meaningful planning or edits:
 
-1. Read `AGENTS.md` if present.
-2. Read `PROJECT_MEMORY.md` if present.
-3. For UI work, read `PRODUCT.md` and `DESIGN.md` if present.
-4. Check current branch and git status.
-5. Classify the task: greenfield, existing repo bootstrap, feature, UI, copy, refactor, security/data, release, cleanup.
-6. Classify risk: low, medium, high, or critical.
-7. If the project is live or touches external APIs, classify environment safety level.
-8. Ask only intention questions that would change the plan.
-9. Route to specialist skills when available.
+1. Read `AGENTS.md` and `PROJECT_MEMORY.md` when present.
+2. For UI work, read `PRODUCT.md`, `DESIGN.md`, and brand direction when present.
+3. Inspect the repo, current branch, worktrees, status, runtime, and deployment shape.
+4. Classify the request: greenfield, client experience, existing repo, feature, refactor, security/data, release, or cleanup.
+5. Classify risk and environment stage.
+6. Ask only questions whose answers materially change the result.
+7. Route specialists; do not duplicate their detailed procedures here.
 
-## Human Question Protocol
+## Human Input Protocol
 
-Do not ask non-technical users to choose implementation details by name unless they introduced them.
+Research first. Ask about outcomes, audience, feeling, differences, approval boundaries, and real-world consequences.
 
-Ask intention questions:
+At launch:
 
-- What should this help someone do?
-- Who uses it?
-- What would make it feel successful?
-- What would be embarrassing, harmful, expensive, or dangerous if wrong?
-- What information should the software remember?
-- Should different people see or do different things?
-- Should this feel like a quick prototype, serious product, or foundation for growth?
+1. Extract answers already present in the prompt, repo, existing site, and reference material.
+2. Create a short internal list of `known`, `inferred`, and `missing` inputs.
+3. Begin immediately when the audience, intended outcome, and creative direction are sufficiently clear.
+4. Otherwise ask one high-leverage question at a time. Group two or three only when the answers are tightly related and necessary before useful work can begin.
+5. Explain the default and continue when an unanswered choice is reversible.
+6. Pause for explicit input when the answer changes the product's core direction, creates meaningful cost, requires credentials or authorization, or permits a risky external action.
 
-If technical input is truly needed, use a plain-language decision card:
+Do not ask again for information the user has already supplied. Do not delay a concept preview for production-only resources. Record missing proof, content, credentials, and integrations in the appropriate review or readiness artifact.
+
+Do not ask non-technical users to choose libraries, databases, state managers, or architecture patterns unless they introduced them.
+
+For reversible choices, state a reasonable assumption and continue. For a meaningful fork, use a short decision card:
 
 ```text
-Decision: [What we are deciding]
-
-Why it matters:
-[Human consequence.]
-
-Options:
-1. [Plain-language option]: [tradeoff].
-2. [Plain-language option]: [tradeoff].
-
-Recommendation:
-[Default with reason.]
-
-Default if you do not care:
-[Assumption the agent will use.]
+Decision: [plain-language choice]
+Why it matters: [human consequence]
+Recommendation: [default and reason]
+If you do not care: [assumption]
 ```
 
-## Routing Rules
+## Client Experience Route
 
-- Solo-founder, small-business, vibe-coded, early-stage, owner-operated, prototype-to-product, agent-native, V2 rebuilds, "repo drifted" rescue, bloat complaints, autonomous AI workflows, or small automation: use `lean-product-architect` before `senior-architect`.
-- Greenfield software or major feature: use `senior-architect`.
-- Existing repo with unclear intent: use `repo-foundation-bootstrap`.
-- Project memory drift or new architecture knowledge: use `project-memory-steward`.
-- Any dashboard, workflow, page, button, integration, or data display that might be fake: use `no-theater-software`.
-- Auth, permissions, secrets, private data, migrations, payments, deletion, or external integrations: use `security-data-safety`.
-- Live apps, preview deploys, staging/dev setup, environment variables, API sandboxing, MCP/plugin connector setup, or direct-to-main pressure: use `live-environment-steward`.
-- UI/UX or frontend craft: use `impeccable` if installed; otherwise use `design-system-steward` fallback and offer to install Impeccable if appropriate.
-- Product design context: create or update `PRODUCT.md`.
-- Visual design system: create or update `DESIGN.md`.
-- User-facing copy, onboarding, empty states, marketing, landing pages, ads, or emails: use `brand-copy-steward`, then `ai-brand-voice` or `100-year-copywriting-engine` if available.
-- Branching, cleanup, merge readiness, rollback, or release notes: use `release-steward`.
+For client/customer-facing sites, pages, portals, dashboards, or apps, read `references/client-experience-workflow.md`.
 
-For companion installation and update rules, read `references/install-update-policy.md` when a useful specialist skill is missing or stale.
+Route in this order as needed:
 
-For forward testing, read `references/validation-scenarios.md`.
+1. `brand-direction`: references, audience, desired feeling, positioning, and anti-anchoring.
+2. `visual-direction`: business-appropriate style, client asset collection, and generated imagery.
+3. `brand-copy-steward`: bold persuasive copy and client-review claim handling.
+4. `frontend-design` or available design specialists: implementation and polish.
+5. `no-theater-software`: truthful stage labels and real production requirements without restricting the preview.
+6. Browser/screenshot audit, responsive adaptation, accessibility, and polish.
+7. `live-environment-steward` and `release-steward`: preview, production promotion, and verification.
+8. `project-memory-steward`: approved direction, real operating truth, and reusable learning.
 
-## New Software Order
+The rendered preview must remain clean. Put provisional claims, simulated functions, asset provenance, open decisions, and production requirements in review artifacts outside the customer-facing page.
 
-1. Intention interview.
-2. Product brief.
-3. Choose architecture mode: `lean-product-architect` for early-stage/agent-native/bloat-sensitive work, otherwise `senior-architect`.
-4. Architecture plan.
-5. Risk classification.
-6. Design/brand foundation if UI exists.
-7. Vertical-slice implementation plan.
-8. Environment plan: live plus live-dev/preview from the beginning when possible.
-9. Security/data plan.
-10. Verification plan.
-11. Project memory seed.
-12. Build in small real slices.
+## Architecture Route
 
-## Existing Repo Order
+- Small-business, solo-founder, vibe-coded, agent-native, bloat-sensitive, or drifted work: use `lean-product-architect` first.
+- Complex multi-user, high-scale, regulated, migration-heavy, or expensive-to-reverse architecture: use `senior-architect`.
+- Existing undocumented repo or unclear working truth: use `repo-foundation-bootstrap`.
+- Project/module memory drift: use `project-memory-steward`.
 
-1. Inspect existing docs and repo structure before asking questions.
-2. Identify entry points, routes, data, auth, dependencies, tests, config, and deployment.
-3. Ask user intention questions only for missing intent.
-4. Create or update foundation files.
-5. Mark facts as Known from code, Inferred from code, Confirmed by user, Open question, or Risk.
-6. Detect theater software, fake data, duplicate implementations, stale docs, and dead code.
-7. Create `docs/quality/repo-audit.md` or equivalent findings with severity, evidence, and suggested fixes.
-8. Create a prioritized remediation plan.
-9. Implement the first low-risk remediation if safe; otherwise explain the blocker and exact next action.
-10. Implement only after enough foundation exists to avoid random churn.
+## Safety And Delivery Route
 
-## Done Means
+- Simulations, fixtures, forms, dashboards, auth screens, integrations, or potentially unwired surfaces: `no-theater-software`.
+- Auth, permissions, private data, payments, credentials, deletion, migrations, or dangerous external writes: `security-data-safety`.
+- Preview/staging setup, environment variables, sandbox credentials, deployment resources, or production/live separation: `live-environment-steward`.
+- Branching, merge safety, cleanup, rollback, promotion, and live verification: `release-steward`.
+- UI craft: use installed frontend/design specialists; use `design-system-steward` as project-memory fallback.
 
-Before final handoff, report:
+## Active Outcome
 
-- What works now.
-- How it was verified.
-- Tests/checks run.
-- Whether fake/demo/stub data remains.
-- Whether project memory, design memory, module memory, or ADRs were updated.
-- Risks and concrete follow-up items.
+Do not stop at plans or foundation documents when the user asked for implementation. A completed run should leave one of:
 
-Do not call a feature done if it only looks done.
+- A client-review preview and review packet.
+- A working vertical slice.
+- A verified remediation.
+- A production candidate with a concrete readiness checklist.
+- A released and verified change.
 
-Do not call a repo run done if it only created docs.
+Avoid documentation sprawl. Create only artifacts with a reader, a decision, or a maintenance role.
+
+## Handoff
+
+Report:
+
+- What now works or is ready for review.
+- Current stage: concept preview, functional preview, production candidate, or production verified.
+- What was simulated, sandbox-connected, production-connected, or verified.
+- Checks and visual/behavioral proof.
+- Client decisions and production requirements still open.
+- Risks, rollback, and memory updates when relevant.
+
+Do not call a preview production. Do not call production complete until the promised workflow has been exercised.

@@ -23,7 +23,7 @@ Why:
 
 | Area | Status | Evidence | Notes |
 |---|---|---|---|
-| [Feature/module] | real/prototype/demo/fixture/stub/unknown | [file/path] | [notes] |
+| [Feature/module] | simulated/fixture/sandbox/connected/verified/not-required/unknown | [file/path] | [notes] |
 
 ## Findings
 

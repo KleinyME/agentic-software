@@ -1,20 +1,61 @@
 # Agentic Software Steward
 
-This package is a v1 Codex skill suite for active agent-built software stewardship.
+A Codex skill suite for turning client intention into a bold review preview, then connecting and verifying the real production experience.
 
-Use `software-steward` as the lead skill. It coordinates lean small-product architecture, senior architecture, project memory, no-theater software, design, brand/copy, security/data safety, live/dev environment safety, release hygiene, repo audits, and remediation planning.
+## What It Does
 
-The suite is intentionally modular. Specialist skills should load only when relevant.
+The lead `software-steward` routes one cohesive workflow:
 
-Running the steward against a repo should not stop at documentation. It should create foundation memory, inspect the code, produce findings, classify risk, identify fake/unwired behavior, and recommend or perform the first safe remediation.
+```text
+intent and references
+-> brand and visual direction
+-> copy and implementation
+-> clean client-review preview
+-> production readiness
+-> promotion and verification
+-> memory
+```
 
-For live apps, the suite uses a safety ladder. It prefers production plus live-dev/preview environments from the beginning, asks to connect MCPs/plugins when they can set that up safely, and falls back to branch/local/read-only/dry-run workflows when full staging is too much friction.
+The suite supports sites, landing pages, portals, dashboards, applications, repo rescue, architecture, security/data work, preview environments, and releases.
 
-For solo-founder, small-business, vibe-coded, early-stage, owner-operated, prototype-to-product, or agent-native products, use `lean-product-architect` before `senior-architect`. It prevents architecture theater by enforcing a complexity budget, deletion-first rescue, direct tool use, shared memory, and one working business loop before dashboards, gates, queues, or control planes.
+## Starting A Project
+
+Invoke `$software-steward` and provide whatever you already know: an existing site, reference sites, desired audience, feeling, meaningful differences, business goal, or constraints.
+
+The skill inspects those inputs first. It then asks only for missing answers that materially change the work. It does not force a questionnaire. When the direction is sufficiently clear, it begins immediately; when a choice is reversible, it states a reasonable assumption and continues.
+
+Production credentials and integrations normally wait until after concept approval. A first preview can show the complete intended experience while `CLIENT_REVIEW.md` records proposed claims, provisional assets, and simulated behavior outside the page.
+
+Example:
+
+```text
+Use $software-steward to reimagine [existing URL] for [new audience].
+Use [reference URLs] as a grounding baseline, not templates.
+I want it to feel [feeling], and the important difference is [difference].
+Inspect what exists and ask me only for missing decisions that would materially change the result.
+```
+
+## Important Boundaries
+
+- Prototypes and simulations are encouraged during client review.
+- Review notes never bleed into the rendered page.
+- Bold proposed claims are allowed in previews and resolved before production.
+- A shareable deployment is not production unless the project designates it as the official production target.
+- Production is complete only when required services are connected and the promised workflow is exercised.
+
+## Key Skills
+
+- `brand-direction`: references, desired feeling, positioning, and anti-anchoring.
+- `visual-direction`: business-fit art direction, client imagery, and generated assets.
+- `brand-copy-steward`: persuasive copy and claim review.
+- `ai-writing-audit`: remove formulaic AI patterns without bleaching voice.
+- `no-theater-software`: stage-aware preview and production truth.
+- `live-environment-steward`: preview, sandbox, client resources, and production boundaries.
+- `release-steward`: promotion and live verification.
 
 ## Updating Installed Skills
 
-Codex loads installed skills from `C:\Users\<you>\.codex\skills` when it starts. Restarting Codex picks up whatever is already installed there, but it does not automatically pull fresh changes from GitHub.
+Codex loads installed skills from `C:\Users\<you>\.codex\skills` when it starts.
 
 From this repo, run:
 
@@ -22,44 +63,30 @@ From this repo, run:
 powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1
 ```
 
-That script:
-
-- pulls the latest repo changes with `git pull --ff-only`
-- copies every bundled skill into `~\.codex\skills`
-- reminds you to restart Codex
-
-For a local-only sync without pulling:
+For local sync without pulling:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1 -NoPull
 ```
 
-Avoid silent auto-updates by default. If the suite later gets a scheduled update job, it should be opt-in and should report what changed.
+Restart Codex after syncing changed skills.
 
-## Personal Auto-Update
+Validate the complete suite before syncing:
 
-If this skill suite is only for you and you are the person changing the repo, auto-update is reasonable.
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\validate-skill-suite.ps1
+```
 
-Install an auto-update hook that updates installed skills at logon:
+Auto-update remains optional for a personal installation:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\install-auto-update.ps1
 ```
-
-The installer tries to create a Windows scheduled task. If Windows denies that, it falls back to a per-user Startup shortcut.
-
-The auto-update hook:
-
-- runs at user logon
-- executes `scripts/update-installed-skills.ps1`
-- pulls with `git pull --ff-only`
-- syncs bundled skills into `~\.codex\skills`
-- writes logs to `.\logs\skill-auto-update.log`
-
-It does not merge, rebase, or resolve conflicts. If the repo cannot fast-forward, it fails closed and leaves the installed skills as-is.
 
 Remove it with:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\uninstall-auto-update.ps1
 ```
+
+The updater uses fast-forward-only pulls and does not resolve conflicts.
