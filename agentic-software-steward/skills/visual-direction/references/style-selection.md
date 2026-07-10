@@ -42,4 +42,3 @@ A useful recommendation explains:
 - How it will remain coherent across hero, sections, social previews, and responsive crops.
 
 Avoid adjective piles. Translate every trait into lighting, subject, composition, material, color, scale, and rhythm.
-

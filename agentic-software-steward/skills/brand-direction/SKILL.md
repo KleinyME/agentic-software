@@ -107,4 +107,3 @@ The client-facing preview must remain visually complete and persuasive.
 Concept approval means the client approves the intended audience, look, feeling, layout, copy, claims, and customer journey. It does not mean the backend or integrations are production-connected.
 
 After approval, preserve the chosen boldness and personality. Later copy audits, implementation passes, and release hardening must flag conflicts instead of silently bleaching the direction.
-

@@ -52,4 +52,3 @@ This checklist is adapted from Aaron Makelky's MIT-licensed `ai-writing-audit`, 
 - An approved brand mannerism is not an AI tell merely because it appears on this list.
 
 Flag the effect, not the token.
-

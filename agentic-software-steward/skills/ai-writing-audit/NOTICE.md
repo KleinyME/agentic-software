@@ -7,4 +7,3 @@ This skill is adapted from `ai-writing-audit` by Aaron Makelky.
 - Upstream files used as reference: `SKILL.md` and `references/checklist.md`
 
 This adaptation changes absolute pattern bans into context-aware editorial checks, protects approved brand voice and persuasive force, and routes provisional claim verification into separate client-review artifacts rather than customer-facing copy.
-

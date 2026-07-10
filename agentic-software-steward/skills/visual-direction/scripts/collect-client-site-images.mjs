@@ -320,4 +320,3 @@ if (isCli) {
     process.exitCode = 1;
   }
 }
-

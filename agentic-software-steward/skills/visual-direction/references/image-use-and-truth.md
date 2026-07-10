@@ -25,4 +25,3 @@ Use extra care when an image could imply documentary truth:
 - Generated atmospheric, editorial, conceptual, and abstract imagery is appropriate when it accurately supports the intended brand.
 
 Record these decisions in `CLIENT_REVIEW.md`, never as badges or warnings inside the page.
-

@@ -46,4 +46,3 @@ Before implementation, ask:
 - Does each section have a new job?
 - Is anything preserved only because it was already present?
 - Does the result express the requested difference, or merely reskin the baseline?
-

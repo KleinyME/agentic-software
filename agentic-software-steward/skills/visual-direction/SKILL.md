@@ -112,4 +112,3 @@ Provide:
 7. Production asset requirements for deployment readiness.
 
 Hand the selected direction and assets to frontend design, then verify the rendered result with screenshots before client review.
-

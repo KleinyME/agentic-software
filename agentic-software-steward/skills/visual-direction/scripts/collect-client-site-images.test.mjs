@@ -80,4 +80,3 @@ test("collectSiteImages crawls same-origin pages and deduplicates downloaded fil
     await rm(output, { recursive: true, force: true });
   }
 });
-
