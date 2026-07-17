@@ -39,6 +39,6 @@ A useful recommendation explains:
 - What proof the imagery should carry.
 - What one visual idea makes the site memorable.
 - Which category cliches it rejects.
-- How it will remain coherent across hero, sections, social previews, and responsive crops.
+- How it will remain coherent across pages, heroes, sections, social previews, and responsive crops.
 
 Avoid adjective piles. Translate every trait into lighting, subject, composition, material, color, scale, and rhythm.

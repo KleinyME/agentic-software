@@ -68,7 +68,7 @@ Do not narrate speculative low-probability risk to the user or let it shape the 
 - Benefits and transformation over internal features.
 - Specificity over generality.
 - Consumer language over internal jargon unless the audience uses the jargon.
-- Each section must add a new reason to care.
+- Each page and section must add a new reason to care.
 - Do not narrate APIs, authentication mechanics, page structure, or implementation unless the customer needs that detail.
 - Compliance supports the message; it does not automatically become the brand personality.
 - Vary cadence. Write something a person would choose to say aloud.

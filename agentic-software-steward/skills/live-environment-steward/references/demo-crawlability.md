@@ -84,3 +84,14 @@ A canonical public production site with leftover `noindex` is a release blocker.
 - Vercel: [Response headers](https://vercel.com/docs/headers/response-headers)
 
 Recheck platform behavior when deployment infrastructure changes.
+
+## Prospect Preview Modes
+
+Concept work for a prospect ships in one of two modes:
+
+- Public demo: de-indexed per this document, machine-readable, business facts included, no reproduced prospect imagery and no identifiable people. Use when a URL must be openly reachable.
+- Protected preview: enable Vercel Authentication on the project and share a revocable Shareable Link with the owner. The recipient needs no Vercel account. Prospect imagery is allowed per `../../visual-direction/references/image-use-and-truth.md`. This is the default mode for owner pitches.
+
+Plan behavior: Vercel Authentication exists on all plans, but on Hobby the project's production alias remains publicly accessible and Shareable Links are limited - ship protected previews as preview deployments there, or use a Pro team to protect all deployments with unlimited links.
+
+Before sending a protected preview: confirm the canonical URL denies a logged-out request, and confirm the Shareable Link renders the full page in a logged-out browser.

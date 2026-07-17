@@ -1,6 +1,6 @@
 ---
 name: design-distinctiveness
-description: Keep client-facing visual work specific to the business and detect accidental house-style convergence. Use after brand direction and before visual or frontend implementation when producing multiple concepts, redesigning from real business evidence, selecting business-fit typography or page structure, or reviewing work that feels generic, templated, interchangeable, or AI-made.
+description: Keep client-facing visual work specific to the business and detect accidental house-style convergence. Use after brand direction and before visual or frontend implementation when producing multiple concepts, redesigning from real business evidence, selecting business-fit typography, site architecture, or page structure, or reviewing work that feels generic, templated, interchangeable, or AI-made.
 ---
 
 # Design Distinctiveness
@@ -40,6 +40,23 @@ A scroll narrative is one genre, not the default. Choose structure from what the
 - Story-led or considered purchase: a paced narrative may earn its place.
 
 These are starting genres, not a closed taxonomy. Business fit outranks forced variety.
+
+## Decide The Site's Page Architecture
+
+A single-scroll page with anchor links is one architecture, not the default. Before implementation, decide the page inventory explicitly and record why each page exists or why one page is sufficient.
+
+Content earns its own URL when:
+
+- A customer or another site would link to or search for it directly: menu, schedule, service area, individual service, wedding or event information.
+- It grows or changes on its own cycle: galleries, seasonal availability, class sessions, past work.
+- It serves a distinct audience or intent that should not share a scroll position with another: wholesale versus retail, parents versus dancers, new customer versus returning.
+- It is the conversion surface: booking, registration, quote request, ordering.
+
+Answer engines cite and retrieve URLs, not anchors. A one-page site gives assistants a single addressable unit for the whole business; a well-structured multi-page site gives a dedicated, citable answer per question. When machine recommendability is part of the offer, treat the page inventory as product scope, not styling.
+
+A one-pager remains legal when the business is genuinely answerable in one sitting; it must be chosen against the alternative, not inherited from the demo form. Apply the same test as any other default: the choice must survive if the single-scroll form were unavailable.
+
+When multiple pages ship: every page has a stated job and its own title and description, navigation stays consistent across pages, and no navigation link scrolls when its label promises a destination. Verify the intended routes with `release-steward` before presentation.
 
 ## Make Typography Carry The Voice
 
@@ -92,7 +109,8 @@ Keep these with the concept's internal QA evidence, not inside the customer-faci
 
 1. Vernacular inventory with sources, authority conflicts, and asset-use status.
 2. Customer job, primary conversion path, chosen layout genre, and rationale.
-3. Typographic tradition and pairing rationale.
-4. Only-this-business evidence that remains meaningful after a logo swap.
-5. Authored detail or human trace used when the evidence supported it.
-6. Batch rotation record and reviewer sign-off when applicable.
+3. Page inventory with each page's job, or the recorded reason a single page is sufficient.
+4. Typographic tradition and pairing rationale.
+5. Only-this-business evidence that remains meaningful after a logo swap.
+6. Authored detail or human trace used when the evidence supported it.
+7. Batch rotation record and reviewer sign-off when applicable.
