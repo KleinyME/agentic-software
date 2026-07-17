@@ -10,7 +10,8 @@ The suite is not a documentation generator, a copy encyclopedia, or a second con
 
 ```text
 Intent and evidence
--> brand and visual direction
+-> brand direction and business-specific evidence
+-> distinctive structure, copy, typography, and imagery
 -> bold clean preview
 -> client refinement and approval
 -> production connection
@@ -59,6 +60,7 @@ Do not explain why a site is beautiful. Establish a business-appropriate directi
 ### Direction And Communication
 
 - `brand-direction`: reference-led positioning, audience, feeling, differences, anti-anchoring, and provisional claims.
+- `design-distinctiveness`: business vernacular, customer-job page physics, typographic specificity, and batch anti-sameness review.
 - `visual-direction`: business-appropriate style, client asset collection, generated imagery, and image placement.
 - `brand-copy-steward`: persuasive human copy, claim handling, and clean preview separation.
 - `100-year-copywriting-engine`: optional creative accelerator for headlines, offers, frameworks, and strong claims.

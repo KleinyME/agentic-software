@@ -55,6 +55,7 @@ Distinguish three gate families: concept viability, implementation verification,
 ## Route By Primary Craft
 
 - Brand, marketing, copy, visual appearance, art direction, and physical/digital instrument appearance: use `creative-director`.
+- Client-facing redesigns and concept batches where business specificity or cross-output sameness is material: use `design-distinctiveness` after positioning and before visual or frontend execution; keep `creative-director` as lead.
 - Product behavior and interaction: use the relevant frontend/product-design specialist, with `creative-director` when appearance or personality is material.
 - Human factors, accessibility, essential comprehension, spatial experience, or participant-facing behavior: use the relevant design or domain specialist when these shape concept viability.
 - Code, architecture, persistence, identity, concurrency, auth, and runtime behavior: use `software-steward`, `lean-product-architect`, or `senior-architect` as appropriate.

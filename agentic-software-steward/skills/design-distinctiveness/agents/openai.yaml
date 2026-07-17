@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Distinctiveness"
+  short_description: "Make client sites specific instead of formulaic"
+  default_prompt: "Use $design-distinctiveness to ground this design in the business's own evidence and prevent house-style sameness."

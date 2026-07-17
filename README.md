@@ -13,7 +13,8 @@ The suite routes each work unit by its requested stage and primary craft. Creati
 
 ```text
 intent + existing evidence + reference sites
--> brand, copy, and visual direction
+-> brand direction and business-specific evidence
+-> distinctive structure, typography, copy, and imagery
 -> complete client-review preview
 -> client refinement and approval
 -> real services and content connected
@@ -111,6 +112,7 @@ The client approved this direction. Preserve the approved boldness and move the 
 
 - `project-steward`: neutral stage, craft, authority, and risk-overlay router.
 - `creative-director`: high-freedom brand, marketing, visual, interface, campaign, and physical-appearance work.
+- `design-distinctiveness`: business vernacular, customer-job page structure, typographic specificity, and multi-concept anti-sameness review.
 - `software-steward`: implementation, architecture, identity, data, protocol integration, runtime correctness, and technical verification.
 - `brand-direction`: references, audience, feeling, differentiation, and anti-anchoring.
 - `visual-direction`: business-fit art direction, authorized client imagery, and generated assets.

@@ -6,6 +6,7 @@
 - Preserve source URLs and original filenames in the asset manifest.
 - Prefer local project copies over production hotlinks.
 - Treat existing-site ownership as likely but not certain when provenance is unclear; request confirmation in the review document.
+- Treat a fact stated on the client site as source-supported for concept copy, but do not treat its publication as automatic permission to extract and republish every photo, badge, logo, or third-party mark.
 
 ## Reference And Competitor Sites
 
@@ -21,7 +22,7 @@ Use extra care when an image could imply documentary truth:
 - Do not silently present generated people as actual customers, staff, students, testimonial authors, or community members.
 - Use real photography when the identity of people or place is part of the proof.
 - Use actual product or material photography when exact appearance, inventory, finish, or construction matters.
-- Use real certification marks, lab records, documents, and evidence.
+- Use real certification marks, lab records, documents, and evidence. Confirm current association and authorized asset use before production; preserve a source-supported certification in concept copy while that asset check remains open.
 - Generated atmospheric, editorial, conceptual, and abstract imagery is appropriate when it accurately supports the intended brand.
 
 Record these decisions in `CLIENT_REVIEW.md`, never as badges or warnings inside the page.

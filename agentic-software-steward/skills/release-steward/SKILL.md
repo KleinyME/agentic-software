@@ -23,6 +23,7 @@ Before sharing:
 - Verify the intended routes.
 - Check desktop and mobile screenshots.
 - Confirm the rendered page has no internal notes or review annotations.
+- For a public concept or prospect demo, verify the meta robots tag and `X-Robots-Tag` deindexing policy without blocking unauthenticated machine-readable review.
 - Deliver `CLIENT_REVIEW.md` separately.
 - State that approval covers direction and intended behavior, not production connection.
 
@@ -35,6 +36,7 @@ Use `live-environment-steward` for environment safety details. Before promotion:
 - Connect production auth, data, forms, payments, APIs, workers, and client-owned credentials as required.
 - Exercise critical success, denial, error, retry, and recovery paths.
 - Run build, tests, accessibility, browser, and deployment checks proportionate to risk.
+- For public production, confirm the canonical target carries no custom preview `noindex`, deployment protection, or blocking robots rule. Platform-managed preview and outdated-deployment URLs may remain de-indexed.
 - Confirm the exact official production target and rollback path.
 
 After promotion, verify the official domain or application, not merely push or deployment success.

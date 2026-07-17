@@ -17,6 +17,7 @@ Bundled specialists that should be used directly when this suite is installed:
 - `project-steward` for neutral stage, craft, and risk-overlay routing.
 - `creative-director` for high-freedom visual, brand, marketing, and physical-appearance work.
 - `brand-direction` for reference-led brand direction and anti-anchoring.
+- `design-distinctiveness` for business-specific page structure, typography, and cross-concept sameness review.
 - `visual-direction` for art direction, client asset collection, and generated imagery.
 - `ai-writing-audit` for context-aware final editorial review.
 

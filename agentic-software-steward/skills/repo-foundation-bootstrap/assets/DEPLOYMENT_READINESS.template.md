@@ -21,6 +21,7 @@ Use `simulated`, `fixture`, `sandbox`, `connected`, `verified`, or `not-required
 | APIs and OAuth | | | Client keys/apps, redirect URLs, rate limits, rotation | | | yes / no |
 | Workers and jobs | | | Runtime, schedule, retries, logs, monitoring | | | yes / no |
 | Email and messaging | | | Sender/domain, templates, delivery, unsubscribe, failure path | | | yes / no |
+| Crawl and index policy | | | Canonical public production has intended robots policy and no leftover custom preview `noindex` or protection | | | yes / no |
 
 ## Content, Claims, And Assets
 
@@ -40,6 +41,7 @@ Use `simulated`, `fixture`, `sandbox`, `connected`, `verified`, or `not-required
 - [ ] Secret owners and rotation path recorded.
 - [ ] Database/storage/auth/payment ownership confirmed.
 - [ ] Analytics, consent, privacy, and legal requirements resolved.
+- [ ] Canonical public production crawl/index policy confirmed; custom preview de-indexing and protection removed where required.
 
 ## Experience Verification
 
@@ -59,6 +61,7 @@ Use `simulated`, `fixture`, `sandbox`, `connected`, `verified`, or `not-required
 - [ ] Build and tests passed.
 - [ ] Deployment promoted.
 - [ ] Official production URL checked.
+- [ ] Production response headers, HTML metadata, robots policy, and unauthenticated access verified for the intended public surface.
 - [ ] Critical workflow exercised against production resources.
 - [ ] Evidence recorded.
 

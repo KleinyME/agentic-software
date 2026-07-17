@@ -76,6 +76,7 @@ For a data-backed display, source visibility, checked transformations and units,
 Use only what helps the chosen direction:
 
 - `brand-direction` for audience, promise, positioning, and anti-references.
+- `design-distinctiveness` for business vernacular, customer-job page physics, typographic differentiation, and multi-concept anti-sameness review.
 - `visual-direction` for imagery, art direction, and asset planning.
 - `brand-copy-steward` for customer-facing language.
 - `100-year-copywriting-engine` only when the user requests it or a direct-response framework is specifically useful; do not let it become the default voice.

@@ -46,6 +46,8 @@ Inspect available sources and extract only:
 
 Label facts as `known`, `inferred`, `client-stated`, or `open`.
 
+Treat a fact on a business-owned site or official business profile as source-supported for concept work. Source support is not fabrication. Preserve useful proof while separately tracking currentness, conflicting sources, and asset rights. Reconcile material conflicts such as phone numbers, hours, prices, availability, or certification status before an owner demo or production release when the discrepancy could mislead or break conversion.
+
 ### 2. Analyze References
 
 For each reference, record:
@@ -91,6 +93,8 @@ Classify proposed claims outside the page:
 - `social-proof`: needs authorized proof before production.
 - `certification-or-comparison`: needs confirmation or evidence before production.
 
+A business-owned source is evidence that a certification, service, perk, season, award, owner name, or operating fact is supported for concept copy. Do not strip the claim or hedge the rendered copy solely because currentness still needs production confirmation. Reusing a badge, photo, or third-party mark remains a separate authorization and asset-provenance question.
+
 Record claim status in `CLIENT_REVIEW.md`; never annotate or hedge the rendered copy. Use `proposed`, `client-approved`, `proof-required`, `implementation-required`, `verified`, `production-approved`, or `remove-or-rewrite`.
 
 ### 5. Hand Off Cleanly
@@ -100,7 +104,7 @@ Provide:
 1. A concise brand direction suitable for `PRODUCT.md`, `docs/brand/voice.md`, or the client artifact store.
 2. The approved direction and unresolved decisions for `CLIENT_REVIEW.md`.
 3. Production dependencies for `DEPLOYMENT_READINESS.md` only after creative approval.
-4. Direction for `brand-copy-steward`, `visual-direction`, and frontend design.
+4. Direction for `design-distinctiveness` when business vernacular or batch differentiation is material, then `brand-copy-steward`, `visual-direction`, and frontend design.
 
 The client-facing preview must remain visually complete and persuasive.
 

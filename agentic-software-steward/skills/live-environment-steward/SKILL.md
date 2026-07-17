@@ -1,6 +1,6 @@
 ---
 name: live-environment-steward
-description: Separate client-review previews, sandbox-connected previews, production candidates, and official production environments. Use for Vercel or other preview deployments, staging, branch deploys, environment variables, client-owned accounts, API/OAuth credentials, sandbox services, production promotion, live external writes, rollback planning, and deployment readiness.
+description: Separate client-review previews, sandbox-connected previews, production candidates, and official production environments. Use for Vercel or other preview deployments, public demo crawlability and noindex policy, staging, branch deploys, environment variables, client-owned accounts, API/OAuth credentials, sandbox services, production promotion, live external writes, rollback planning, and deployment readiness.
 ---
 
 # Live Environment Steward
@@ -29,8 +29,9 @@ Containment should not weaken the design. Use the smallest useful controls:
 - No irreversible production writes.
 - No private customer data.
 - Separate environment variables.
-- Protect or exclude sensitive previews from indexing when appropriate.
-- Put review status in the surrounding review workflow, not inside the designed page.
+- For a public prospect or client demo, deindex without blocking machine-readable review. Follow `references/demo-crawlability.md`.
+- For a genuinely private preview, use authentication or deployment protection instead of relying on crawler directives.
+- Put review status in the surrounding review workflow, not inside the designed page. Exception: an unaffiliated public prospect concept needs a concise visible unofficial/not-affiliated disclosure.
 
 ## Safety Ladder
 
@@ -63,6 +64,8 @@ Before promotion, move from developer-owned or simulated resources to the intend
 
 Track these in `DEPLOYMENT_READINESS.md`.
 
+For public production, remove every custom preview `noindex` control from the canonical production target and verify the intended robots policy. A canonical production site that remains de-indexed is blocked from promotion; platform-managed preview and outdated-deployment URLs may remain de-indexed.
+
 ## Live Mutation Guardrails
 
 For production writes:
@@ -77,5 +80,5 @@ Examples include charges/refunds, inventory changes, customer messages, destruct
 
 ## Handoff
 
-Report environment name, connected resources, checks, simulated or sandbox dependencies remaining, promotion blockers, and the next safe step.
+Report environment name, connected resources, crawl/index policy, checks, simulated or sandbox dependencies remaining, promotion blockers, and the next safe step.
 

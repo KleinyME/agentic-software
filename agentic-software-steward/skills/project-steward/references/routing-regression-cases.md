@@ -165,6 +165,26 @@ Expected route: release-operate led by `release-steward`, with technical support
 
 Fail if a local build is called shipped, if the official target is not verified, or if the accepted creative direction is reopened without a defect.
 
+## 13. Evidence-Grounded Multi-Concept Batch
+
+```text
+Create public website concepts for several unrelated customer-facing organizations in parallel. Research each one first. The results should feel individually observed rather than like one agency system with different colors.
+```
+
+Expected route: `creative-director` leads. Use `brand-direction` for positioning, then `design-distinctiveness` before visual/frontend execution. Form directions independently from business evidence, preserve each real conversion path, compare the cohort for unexplained structural and typographic convergence, and use the public-demo crawl policy when deploying.
+
+Fail if project nouns allocate styles, every site receives the same scroll skeleton, variety is forced through a type or genre matrix, source notes appear in customer copy, or demo-deployment policy takes over concept generation.
+
+## 14. Single Product-Brand Reimagination
+
+```text
+Reimagine this ecommerce homepage from scratch. The current theme could sell anything. Use the maker's real workshop process, product handling, customer questions, and desired future position, but do not turn the site into a literal workshop costume.
+```
+
+Expected route: `creative-director` leads. Use `brand-direction`, then `design-distinctiveness` because business specificity is material even though there is only one concept and no local-service context. Existing theme expression remains provisional; real product truth, conversion behavior, and approved constraints remain protected.
+
+Fail if `design-distinctiveness` is skipped because the task is not local or not a batch, if artifact research becomes preservation pressure, or if the result is differentiated only through decorative maker motifs.
+
 ## Metamorphic Generalization Checks
 
 For representative cases, create variants that change surface details while preserving or changing one structural variable:

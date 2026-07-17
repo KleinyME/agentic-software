@@ -28,9 +28,19 @@ During concept and preview work:
 
 Do not invent a named person, quotation, customer, certification, metric, or third-party endorsement and present it as confirmed fact. A preview may design those sections and propose claim-shaped copy, but unresolved proof belongs in `CLIENT_REVIEW.md`.
 
+Facts published on a business-owned site or official business profile are source-supported for concept copy. Carry useful services, perks, seasons, owner names, awards, and certifications forward rather than treating them as inventions.
+
 ## Claim Handling
 
 Use owner-supplied or owner-authorized ordinary qualitative positioning directly when it fits the offer and is not contradicted. Do not require substantiation, hedging, or a production blocker solely because non-quantified language about audience fit, approachability, ease, or experience is theoretically testable.
+
+Keep three questions separate:
+
+- Source support: did the business publish or supply the fact?
+- Currentness: is a time-sensitive operating fact still accurate and consistent across authoritative sources?
+- Asset authorization: may a badge, photo, logo, quotation, or other protected expression be reproduced?
+
+Source support is enough to preserve a fact in concept copy. Resolve material conflicts and currentness before an owner demo or production release when the discrepancy could mislead or break conversion. Handle asset reuse through the visual provenance workflow. Do not delete a supported claim merely because one of the other questions remains open.
 
 Apply the formal claim register only when the language creates a material truth dependency:
 
@@ -39,7 +49,7 @@ Classify proposed claims outside the page as:
 - Positioning or brand promise: client approval.
 - Experience or capability promise: implementation before production.
 - Quantitative claim: evidence before production.
-- Testimonial, customer, certification, or comparison: authorization or proof before production.
+- Testimonial, customer, certification, or comparison: source, authorization, and current production proof as applicable.
 
 If a claim cannot ship, recommend one of:
 

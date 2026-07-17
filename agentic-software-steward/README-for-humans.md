@@ -7,11 +7,12 @@ Use `project-steward` as the neutral lead for mixed or ambiguous projects. It se
 Key roles:
 
 - `creative-director`: blank-page invention, brand, marketing, copy, visual and industrial design, campaigns, interfaces, and instrument appearance.
+- `design-distinctiveness`: evidence-backed business specificity, customer-job page structure, typography, and cross-concept sameness review.
 - `software-steward`: implementation, architecture, data identity, concurrency, integrations, runtime behavior, tests, and technical hardening.
 - `project-memory-steward`: progressive lane-scoped memory, technical evidence, and explicit provisional/approved/rejected/superseded decision authority.
 - `release-steward`: production promotion and live verification after the result is accepted.
 
-The suite also includes focused brand, visual, copy, frontend-memory, security, environment, no-theater, lean architecture, senior architecture, and repo-foundation specialists. Load them only when the routed work needs them.
+The suite also includes focused brand, visual, copy, frontend-memory, security, environment, no-theater, lean architecture, senior architecture, and repo-foundation specialists. For evidence-grounded client-facing redesigns and concept batches, `design-distinctiveness` runs after positioning and before visual/frontend execution. Load specialists only when the routed work needs them.
 
 ## Updating Installed Skills
 

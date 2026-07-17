@@ -38,6 +38,10 @@ if ($LASTEXITCODE -ne 0) {
 
 $requiredFiles = @(
   "agentic-software-steward\skills\brand-direction\SKILL.md",
+  "agentic-software-steward\skills\design-distinctiveness\SKILL.md",
+  "agentic-software-steward\skills\design-distinctiveness\agents\openai.yaml",
+  "agentic-software-steward\skills\design-distinctiveness\references\batch-rotation.md",
+  "agentic-software-steward\skills\design-distinctiveness\references\vernacular-artifacts.md",
   "agentic-software-steward\skills\visual-direction\SKILL.md",
   "agentic-software-steward\skills\ai-writing-audit\SKILL.md",
   "agentic-software-steward\skills\ai-writing-audit\LICENSE",
@@ -45,6 +49,7 @@ $requiredFiles = @(
   "agentic-software-steward\skills\project-steward\SKILL.md",
   "agentic-software-steward\skills\project-steward\references\routing-regression-cases.md",
   "agentic-software-steward\skills\creative-director\SKILL.md",
+  "agentic-software-steward\skills\live-environment-steward\references\demo-crawlability.md",
   "agentic-software-steward\skills\repo-foundation-bootstrap\assets\CLIENT_REVIEW.template.md",
   "agentic-software-steward\skills\repo-foundation-bootstrap\assets\DEPLOYMENT_READINESS.template.md",
   "agentic-software-steward\third_party\ai-writing-audit\LICENSE",
@@ -69,11 +74,14 @@ $requiredConcepts = @(
   "CLIENT_REVIEW.md",
   "DEPLOYMENT_READINESS.md",
   "brand-direction",
+  "design-distinctiveness",
   "visual-direction",
   "ai-writing-audit",
   "project-steward",
   "creative-director",
-  "x-authority"
+  "x-authority",
+  "Only-This-Business Test",
+  "Demo Crawlability"
 )
 
 foreach ($concept in $requiredConcepts) {
@@ -108,12 +116,20 @@ $behaviorContracts = @(
     Phrases = @("Default to broad freedom", "Use ordinary qualitative marketing language confidently", "Treat expressive depiction separately", "Do not escalate from category association alone")
   },
   @{
+    Path = "agentic-software-steward\skills\design-distinctiveness\SKILL.md"
+    Phrases = @("Start from observed business truth", "Business fit outranks forced variety", "source-supported for concept work", "not a roulette wheel")
+  },
+  @{
+    Path = "agentic-software-steward\skills\live-environment-steward\SKILL.md"
+    Phrases = @("deindex without blocking machine-readable review", "canonical production site that remains de-indexed is blocked from promotion")
+  },
+  @{
     Path = "agentic-software-steward\skills\software-steward\SKILL.md"
     Phrases = @("Role Boundary", "Technical Contract", "Experience Integration")
   },
   @{
     Path = "agentic-software-steward\skills\release-steward\SKILL.md"
-    Phrases = @("preview release is for client or owner review", "official production target", "Preserve The Live Baseline")
+    Phrases = @("preview release is for client or owner review", "official production target", "Preserve The Live Baseline", "For public production, confirm the canonical target")
   }
 )
 
@@ -133,6 +149,7 @@ $universalSkillPaths = @(
   "agentic-software-steward\skills\software-steward\SKILL.md",
   "agentic-software-steward\skills\brand-copy-steward\SKILL.md",
   "agentic-software-steward\skills\brand-direction\SKILL.md",
+  "agentic-software-steward\skills\design-distinctiveness\SKILL.md",
   "agentic-software-steward\skills\project-memory-steward\SKILL.md"
 )
 
