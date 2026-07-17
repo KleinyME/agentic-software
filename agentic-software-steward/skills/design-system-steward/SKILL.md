@@ -12,9 +12,13 @@ Use this when UI/UX work is needed and Impeccable is not available, or when main
 Use:
 
 - `PRODUCT.md` for product users, workflows, brand personality, anti-references, and design principles.
-- `DESIGN.md` for visual source of truth: tokens plus prose.
+- `DESIGN.md` for visual tokens and prose at an explicit authority state and scope.
 
-Before UI work, read both if present. If missing, create minimal versions from existing UI and user intention.
+Read authority metadata before loading the full artifact. A direction is a source of truth only when `x-authority.state` is `approved` and its scope matches the work. Missing metadata means `provisional` during creative work.
+
+If files are missing, create minimal provisional versions from owner intention and product evidence. Treat the existing UI as reference material, not automatic approval. Never promote template tokens, a preview, or repeated implementation into canonical design without an explicit owner decision.
+
+For blank-page reimagination, use `creative-director`. Do not normalize the new work back to provisional or rejected tokens merely for consistency.
 
 For client-facing work, use `brand-direction` for positioning and `visual-direction` for business-appropriate art direction, existing client asset reuse, and generated imagery before locking the design system.
 
@@ -33,6 +37,7 @@ For client-facing work, use `brand-direction` for positioning and `visual-direct
 
 Include:
 
+- `x-authority` state, scope, basis, and approval evidence.
 - Overview.
 - Colors.
 - Typography.
@@ -41,6 +46,8 @@ Include:
 - Shapes.
 - Components.
 - Do's and don'ts.
+
+Separate approved decisions, provisional explorations, and rejected or superseded directions. Split partially approved surfaces into scoped design files rather than marking a mixed document globally approved.
 
 When possible, validate with `npx @google/design.md lint DESIGN.md`.
 

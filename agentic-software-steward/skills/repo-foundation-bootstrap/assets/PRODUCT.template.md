@@ -1,3 +1,11 @@
+---
+x-authority:
+  state: provisional
+  scope: global
+  basis: foundation-template
+  approval: null
+---
+
 # Product
 
 ## Register
@@ -36,6 +44,13 @@ product
 ## Design Principles
 
 - [Principle tied to user/product intent.]
+
+## Decision Authority
+
+- Approved product decisions:
+- Provisional assumptions:
+- Rejected or superseded directions:
+- Approval evidence:
 
 ## Accessibility And Inclusion
 

@@ -1,13 +1,13 @@
-# Agentic Software Steward
+# Project Steward
 
-Agentic Software Steward is a coordinated Codex skill suite for building client-facing websites, pages, portals, and applications from initial intention through client approval and verified production delivery.
+Project Steward is a coordinated Codex skill suite for work that may be creative, product-focused, technical, data-sensitive, hardware-dependent, operational, or a mixture of several disciplines.
 
 It is designed to solve two common problems in AI-built work:
 
 - Generic, literal, over-explained copy and design.
 - Interfaces that look finished while their forms, data, authentication, payments, or integrations are not actually connected.
 
-The suite supports bold concept work without confusing a preview with production. A client may review a complete visual experience with proposed claims, generated imagery, realistic states, and simulated functionality. The page stays clean; everything requiring approval, evidence, replacement, or implementation is tracked in separate review documents.
+The suite routes each work unit by its requested stage and primary craft. Creative work receives broad freedom. Technical work receives precise invariants and proof. Mixed work connects the two through a narrow contract so engineering caution does not suppress invention and visual freedom does not corrupt identity, protocol, or runtime truth.
 
 ## How It Works
 
@@ -21,7 +21,7 @@ intent + existing evidence + reference sites
 -> durable project memory
 ```
 
-The lead skill is `software-steward`. It routes work to focused skills for brand direction, copywriting, visual direction, frontend craft, architecture, security, environment safety, production truth, and release verification.
+The neutral lead skill is `project-steward`. It routes visual and marketing work to `creative-director`, implementation and integrity work to `software-steward`, and activates security, data, hardware, or release overlays only when the affected artifact requires them.
 
 ## What the Skill Asks You
 
@@ -73,6 +73,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1 -
 
 Restart Codex after syncing. Installed skills are copied into `C:\Users\<you>\.codex\skills`.
 
+If an older installation exists without sync state, review its local changes and use `-NoPull -Force` for the intentional first managed replacement. The updater backs up replaced folders and refuses untracked drift without that explicit flag.
+
 To update later from the remote repository:
 
 ```powershell
@@ -81,10 +83,10 @@ powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1
 
 ## Use
 
-Invoke the lead skill explicitly when you want the full workflow:
+Invoke the neutral lead skill when a project is mixed or when you want the requested deliverable—not an inherited role label—to determine the posture:
 
 ```text
-Use $software-steward to build a client-review preview for this business.
+Use $project-steward to build a client-review preview for this business.
 Here is the existing site: [URL]
 Here are two reference sites: [URL], [URL]
 I like [specific qualities]. It must feel [desired feeling].
@@ -95,7 +97,7 @@ Ask me only for missing decisions that would materially change the result.
 You can also start with less information:
 
 ```text
-Use $software-steward to redesign this site for high-end builders and designers: [URL].
+Use $project-steward to redesign this site for high-end builders and designers: [URL].
 Our materials each have a story. Inspect what exists, then ask me what you still need.
 ```
 
@@ -107,7 +109,9 @@ The client approved this direction. Preserve the approved boldness and move the 
 
 ## Skill Map
 
-- `software-steward`: lead router and delivery contract.
+- `project-steward`: neutral stage, craft, authority, and risk-overlay router.
+- `creative-director`: high-freedom brand, marketing, visual, interface, campaign, and physical-appearance work.
+- `software-steward`: implementation, architecture, identity, data, protocol integration, runtime correctness, and technical verification.
 - `brand-direction`: references, audience, feeling, differentiation, and anti-anchoring.
 - `visual-direction`: business-fit art direction, authorized client imagery, and generated assets.
 - `brand-copy-steward`: persuasive copy, brand alignment, and claims workflow.

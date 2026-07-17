@@ -1,12 +1,14 @@
 {
   "name": "agentic-software-steward",
-  "version": "0.5.0",
-  "description": "A Codex skill suite for active agent-built software stewardship: intention discovery, lean small-product architecture, senior architecture, repo memory, no-theater software, UI/design routing, security/data safety, live/dev environment safety, release hygiene, brand/copy coordination, repo audits, and remediation plans.",
+  "version": "0.6.0",
+  "description": "A neutral Codex project-steward suite that routes creative, product, technical, data, hardware, and release work without letting one discipline dominate another.",
   "author": {
     "name": "Adam / Codex"
   },
   "license": "UNLICENSED",
   "keywords": [
+    "project-orchestration",
+    "creative-direction",
     "software-architecture",
     "agentic-engineering",
     "project-memory",
@@ -16,19 +18,20 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Agentic Software Steward",
-    "shortDescription": "Make agents plan, build, verify, and remember software like a disciplined senior team.",
-    "longDescription": "Agentic Software Steward coordinates lean small-product architecture, senior architecture, project memory, UI/UX, brand voice, copywriting, security, release hygiene, and no-theater software rules so agent-built repos stay understandable, modular, secure, and genuinely working without enterprise cosplay.",
+    "displayName": "Project Steward",
+    "shortDescription": "Route creative and technical work without cross-lane bias.",
+    "longDescription": "Project Steward selects the right stage and primary craft for each work unit, gives creative direction broad freedom, protects named technical invariants, connects the two through narrow contracts, and applies release or risk guardrails only when the affected artifact requires them.",
     "developerName": "Adam / Codex",
-    "category": "Engineering",
+    "category": "Productivity",
     "capabilities": [
       "Read",
       "Write"
     ],
     "defaultPrompt": [
-      "Audit this repo and build the project foundation",
-      "Plan this app like a senior engineer",
-      "Make sure this feature is real, not theater"
+      "Reimagine this customer experience without inheriting the rough draft",
+      "Make this instrument beautiful while preserving verified protocol truth",
+      "Implement this data workflow without identity collisions",
+      "Release the accepted result and verify it live"
     ]
   }
 }

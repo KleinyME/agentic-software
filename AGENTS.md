@@ -8,7 +8,7 @@ This repository maintains a cohesive skill suite, not a loose collection of prom
 
 1. Read the root `README.md` and `agentic-software-steward-definition.md`.
 2. Read the complete `SKILL.md` for every skill being changed.
-3. Follow `agentic-software-steward/skills/software-steward/SKILL.md` as the routing contract.
+3. Follow `agentic-software-steward/skills/project-steward/SKILL.md` as the neutral routing contract.
 4. Read only task-relevant referenced resources, but read selected instruction files completely.
 5. Check the current branch and working tree. Preserve unrelated user changes.
 
@@ -26,6 +26,9 @@ This repository maintains a cohesive skill suite, not a loose collection of prom
 - Permit strong proposed marketing claims in preview; prove, build, adjust, or remove them before production.
 - Treat reference sites as direction, never as sources to copy wording, layouts, or imagery.
 - Never call a capability production-ready until its promised workflow has been exercised.
+- Let the primary craft chair the current pass. Supporting disciplines may protect named invariants but must not take over the task.
+- Treat creative direction as provisional, approved, rejected, or superseded with explicit scope. Existing files and implementations are not approval.
+- Load memory progressively by current stage, craft, and activated overlay instead of preloading the project's entire risk history.
 
 ## Documentation Responsibilities
 

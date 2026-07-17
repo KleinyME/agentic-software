@@ -1,107 +1,105 @@
 ---
 name: software-steward
-description: Orchestrate active agent-built software and client-experience work from intention through implementation, preview, verification, release, and memory. Use for new apps, client sites, landing pages, redesigns, existing repo audits, vibe-coded rescue, production readiness, UI/product work, refactors, security/data changes, live/dev setup, and coordinating brand, copy, visual, frontend, no-theater, architecture, and release specialists.
+description: Implement, integrate, diagnose, and harden software with technical discipline after the intended outcome and any creative direction are known. Use for code changes, architecture, domain logic, persistent identity, schemas, concurrency, auth, permissions, integrations, runtime behavior, tests, production readiness, and technically verifying agent-built software. Do not use as the lead for standalone brand, copy, visual invention, art direction, or blank-page redesign; use project-steward or creative-director for those.
 ---
 
 # Software Steward
 
-Preserve intention, route work to the right specialist, and deliver a real result that is easier for the next agent or human to understand.
+Own technical correctness and delivery without turning engineering temperament into the personality of the entire project.
 
-## Operating Principle
+## Role Boundary
 
-Ask humans about intention. Make agents handle implementation detail. Create boldly in preview, verify precisely before production, and never confuse the two stages.
+If the primary deliverable is brand, marketing, copy, visual appearance, physical appearance, or blank-page reimagination, stop leading and use `creative-director`. If the request mixes creative and technical work, use `project-steward` to choose the primary craft and pass this skill a narrow integration contract.
 
-## Universal Preflight
+Do not preserve an existing design because it is already implemented. Do not reopen an approved creative direction during implementation unless it conflicts with a named invariant, cannot be built as intended, or the user asks.
 
-Before meaningful planning or edits:
+## Technical Contract
 
-1. Read `AGENTS.md` and `PROJECT_MEMORY.md` when present.
-2. For UI work, read `PRODUCT.md`, `DESIGN.md`, and brand direction when present.
-3. Inspect the repo, current branch, worktrees, status, runtime, and deployment shape.
-4. Classify the request: greenfield, client experience, existing repo, feature, refactor, security/data, release, or cleanup.
-5. Classify risk and environment stage.
-6. Ask only questions whose answers materially change the result.
-7. Route specialists; do not duplicate their detailed procedures here.
+Before changing a fragile system, identify only what applies:
 
-## Human Input Protocol
+- protected identity and uniqueness rules;
+- canonical data source and persistence behavior;
+- permitted and forbidden mutations;
+- module or protocol ownership;
+- failure, stale, unavailable, retry, and recovery behavior;
+- security, privacy, physical-control, or production boundaries;
+- tests or observations that prove the change.
 
-Research first. Ask about outcomes, audience, feeling, differences, approval boundaries, and real-world consequences.
+Keep this contract precise. Do not turn every historical incident or speculative risk into a current requirement.
 
-At launch:
+## Preflight
 
-1. Extract answers already present in the prompt, repo, existing site, and reference material.
-2. Create a short internal list of `known`, `inferred`, and `missing` inputs.
-3. Begin immediately when the audience, intended outcome, and creative direction are sufficiently clear.
-4. Otherwise ask one high-leverage question at a time. Group two or three only when the answers are tightly related and necessary before useful work can begin.
-5. Explain the default and continue when an unanswered choice is reversible.
-6. Pause for explicit input when the answer changes the product's core direction, creates meaningful cost, requires credentials or authorization, or permits a risky external action.
+1. Read `AGENTS.md` and the compact front door in `PROJECT_MEMORY.md` when present.
+2. Load only the module, domain, protocol, environment, or approved design memory relevant to the task.
+3. Treat `DESIGN.md` without matching approval metadata as provisional. It may inform implementation but must not constrain a requested reimagination.
+4. Inspect the actual repo, branch, worktrees, status, entry points, runtime, tests, and deployment shape.
+5. Determine whether the user asked to implement, diagnose, validate, or release. Do not expand a diagnostic request into a fix without authorization.
+6. Activate security, data, hardware, or production guardrails only when the affected code or action crosses those boundaries.
+7. Ask only questions whose answers materially change the implementation or authority.
 
-Do not ask again for information the user has already supplied. Do not delay a concept preview for production-only resources. Record missing proof, content, credentials, and integrations in the appropriate review or readiness artifact.
-
-Do not ask non-technical users to choose libraries, databases, state managers, or architecture patterns unless they introduced them.
-
-For reversible choices, state a reasonable assumption and continue. For a meaningful fork, use a short decision card:
-
-```text
-Decision: [plain-language choice]
-Why it matters: [human consequence]
-Recommendation: [default and reason]
-If you do not care: [assumption]
-```
-
-## Client Experience Route
-
-For client/customer-facing sites, pages, portals, dashboards, or apps, read `references/client-experience-workflow.md`.
-
-Route in this order as needed:
-
-1. `brand-direction`: references, audience, desired feeling, positioning, and anti-anchoring.
-2. `visual-direction`: business-appropriate style, client asset collection, and generated imagery.
-3. `brand-copy-steward`: bold persuasive copy and client-review claim handling.
-4. `frontend-design` or available design specialists: implementation and polish.
-5. `no-theater-software`: truthful stage labels and real production requirements without restricting the preview.
-6. Browser/screenshot audit, responsive adaptation, accessibility, and polish.
-7. `live-environment-steward` and `release-steward`: preview, production promotion, and verification.
-8. `project-memory-steward`: approved direction, real operating truth, and reusable learning.
-
-The rendered preview must remain clean. Put provisional claims, simulated functions, asset provenance, open decisions, and production requirements in review artifacts outside the customer-facing page.
+Preserve unrelated work in dirty repositories. Prefer focused edits and evidence from the real system.
 
 ## Architecture Route
 
-- Small-business, solo-founder, vibe-coded, agent-native, bloat-sensitive, or drifted work: use `lean-product-architect` first.
-- Complex multi-user, high-scale, regulated, migration-heavy, or expensive-to-reverse architecture: use `senior-architect`.
+- Small-business, solo-founder, vibe-coded, bloat-sensitive, or drifted software: use `lean-product-architect` first.
+- Complex multi-user, high-scale, migration-heavy, regulated, or expensive-to-reverse systems: use `senior-architect`.
 - Existing undocumented repo or unclear working truth: use `repo-foundation-bootstrap`.
-- Project/module memory drift: use `project-memory-steward`.
+- Project or module memory drift: use `project-memory-steward`.
+
+Architecture supports the product outcome. It does not automatically govern brand, copy, or visual direction.
+
+## Integrity Route
+
+For identity, schemas, persistence, concurrency, protocols, or calculations:
+
+1. Locate the authoritative representation and every write path.
+2. Name the invariant in plain language.
+3. Check database, application, generated-code, and concurrent behavior where relevant.
+4. Prefer constraints, idempotency, transactions, typed contracts, and focused tests over convention alone.
+5. Avoid solving presentation needs by mutating underlying identity.
+6. Separate source confidence, captured evidence, and production proof for hardware or protocol work.
+
+Examples:
+
+- Parts Syndicate may expose a human-friendly stock number while preserving stable assembly identity and seller isolation.
+- SmartDash may render any approved gauge language while using canonical channel definitions, checked decode math, honest source state, and disabled TX until bench proof.
+- Haltech planner facts may require source, load, current, protection, wiring, connector, ground, control, and verification fields without forcing the UI to look like an audit report.
+
+## Experience Integration
+
+When implementing an approved customer-facing or instrument direction:
+
+- receive the selected expression and authority state;
+- receive real inputs, state semantics, immutable fields, and forbidden mutations;
+- keep demo, replay, stale, unavailable, sandbox, and live states truthful;
+- implement accessibility and resilience without bleaching the visual concept;
+- return conflicts to `project-steward` instead of silently redesigning them.
+
+Visual consistency is not proof of creative quality. Technical hardening is not permission to normalize a distinctive direction into generic software.
 
 ## Safety And Delivery Route
 
-- Simulations, fixtures, forms, dashboards, auth screens, integrations, or potentially unwired surfaces: `no-theater-software`.
-- Auth, permissions, private data, payments, credentials, deletion, migrations, or dangerous external writes: `security-data-safety`.
-- Preview/staging setup, environment variables, sandbox credentials, deployment resources, or production/live separation: `live-environment-steward`.
-- Branching, merge safety, cleanup, rollback, promotion, and live verification: `release-steward`.
-- UI craft: use installed frontend/design specialists; use `design-system-steward` as project-memory fallback.
+- Fake, simulated, fixture, or unwired behavior: `no-theater-software`.
+- Auth, permissions, secrets, private data, payments, migrations, deletion, or dangerous writes: `security-data-safety`.
+- Preview/staging setup, credentials, deployment resources, or production/live separation: `live-environment-steward`.
+- Branching, merge safety, rollback, promotion, and live verification: `release-steward`.
+
+Apply these specialists to the affected work. Their constraints do not become project-wide creative direction.
 
 ## Active Outcome
 
-Do not stop at plans or foundation documents when the user asked for implementation. A completed run should leave one of:
+When the user asks for a change, carry it through an appropriate technical result:
 
-- A client-review preview and review packet.
-- A working vertical slice.
-- A verified remediation.
-- A production candidate with a concrete readiness checklist.
-- A released and verified change.
+- a working vertical slice;
+- a verified repair;
+- an integrated approved experience;
+- a production candidate with explicit remaining gates;
+- or a released and live-verified change.
 
-Avoid documentation sprawl. Create only artifacts with a reader, a decision, or a maintenance role.
+Do not stop at foundation documents when safe implementation remains in scope. Do not claim production from a local build or visual preview.
+
+For companion installation rules, read `references/install-update-policy.md`. For forward testing, read `references/validation-scenarios.md`.
 
 ## Handoff
 
-Report:
-
-- What now works or is ready for review.
-- Current stage: concept preview, functional preview, production candidate, or production verified.
-- What was simulated, sandbox-connected, production-connected, or verified.
-- Checks and visual/behavioral proof.
-- Client decisions and production requirements still open.
-- Risks, rollback, and memory updates when relevant.
-
-Do not call a preview production. Do not call production complete until the promised workflow has been exercised.
+Report what works, what changed, the invariant preserved, checks run, environment stage, and any real remaining blocker. Mention creative implications only when the implementation actually conflicts with the selected direction.

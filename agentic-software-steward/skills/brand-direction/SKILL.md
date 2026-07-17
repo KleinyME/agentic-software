@@ -79,6 +79,8 @@ Avoid adjective-only direction such as "modern, trustworthy, premium." Translate
 
 Marketing claims are allowed and expected in concept previews. Generate the strongest coherent claims that align with the business and desired outcome.
 
+Use owner-approved ordinary qualitative language directly. `No experience required`, `beginner-friendly`, and similar non-regulated positioning do not enter the proof register merely because they could theoretically be tested.
+
 Classify proposed claims outside the page:
 
 - `positioning`: needs client alignment.
@@ -107,3 +109,5 @@ The client-facing preview must remain visually complete and persuasive.
 Concept approval means the client approves the intended audience, look, feeling, layout, copy, claims, and customer journey. It does not mean the backend or integrations are production-connected.
 
 After approval, preserve the chosen boldness and personality. Later copy audits, implementation passes, and release hardening must flag conflicts instead of silently bleaching the direction.
+
+Record the direction as `provisional`, `approved`, `rejected`, or `superseded`, with exact scope and approval evidence. Existence, implementation, screenshots, and repeated reuse do not constitute approval.

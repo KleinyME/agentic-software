@@ -21,6 +21,8 @@ Read the brand direction when present. Otherwise infer from:
 
 Business category is a prior, not a template. Positioning and desired difference outrank category convention.
 
+Treat existing visual systems and `DESIGN.md` files as constraints only when their matching scope is explicitly approved. Provisional, rejected, or unscoped direction is evidence that may be replaced.
+
 ## Workflow
 
 ### 1. Recommend The Visual Register
@@ -110,5 +112,7 @@ Provide:
 5. Placement and responsive-crop plan.
 6. Client-review image table outside the page.
 7. Production asset requirements for deployment readiness.
+
+Include direction status, scope, and approval evidence in the handoff. Never promote a generated preview or inherited visual system to approved memory merely because it was implemented.
 
 Hand the selected direction and assets to frontend design, then verify the rendered result with screenshots before client review.

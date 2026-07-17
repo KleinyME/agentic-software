@@ -26,8 +26,8 @@ If the repo has obvious low-risk issues, fix one or more in the same pass after 
 1. Read existing docs, package files, config, routes, entry points, tests, and deployment files.
 2. Identify app type, runtime, framework, storage, auth, integrations, and test commands.
 3. Ask only intention questions needed to resolve ambiguity.
-4. Create or update minimum useful foundation files.
-5. Mark each statement as Known from code, Inferred from code, Confirmed by user, Open question, or Risk.
+4. Create or update minimum useful foundation files. Mark new product and design direction `provisional` unless explicit approval evidence already exists.
+5. Mark technical statements as Known from code, Inferred from code, Confirmed by user, Open question, or Risk. Track creative and product decisions separately as provisional, approved, rejected, or superseded.
 6. Identify theater software, fake data, dead buttons, duplicate systems, stale docs, and dead code.
 7. Search for concrete evidence: `mock`, `fake`, `sample`, `placeholder`, `TODO`, `FIXME`, `later`, `stub`, `dummy`, hard-coded dashboard values, empty handlers, disabled controls, skipped tests, duplicate helpers, commented-out legacy code, and direct secret usage.
 8. Create or update `docs/quality/repo-audit.md` using the repo audit template when useful.
@@ -59,6 +59,8 @@ Do not create docs without a reader and a maintenance rule.
 
 Do not create docs as a substitute for fixing known broken or fake behavior.
 
+Do not make the observed UI or starter template canonical merely because foundation files are being created. Record exact approval scope and evidence before promoting a direction.
+
 ## Honesty Labels
 
 Use:
@@ -80,7 +82,7 @@ Use this format for actionable findings:
 Evidence: file/path:line or search result
 Why it matters: plain-language risk
 Recommended action: concrete next step
-Owner skill: no-theater-software | security-data-safety | senior-architect | design-system-steward | release-steward
+Owner skill: project-steward | creative-director | software-steward | no-theater-software | security-data-safety | senior-architect | design-system-steward | release-steward
 ```
 
 Severity:

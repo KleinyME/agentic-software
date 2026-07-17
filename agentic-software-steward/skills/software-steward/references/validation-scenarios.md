@@ -1,97 +1,51 @@
-# Validation Scenarios
+# Software Steward Validation Scenarios
 
-Forward-test the suite with raw prompts. Do not tell the test agent the expected answer.
+Forward-test with raw prompts. Do not tell the test agent the expected answer.
 
-## 1. Reference-Led New Brand
-
-```text
-Build me a site like these two peptide research catalogs, but create a new brand. The entire product catalog must be behind login and new customers require membership verification. I want it to feel premium and controlled, not like a compliance document.
-```
-
-Verify that the suite:
-
-- Uses references as a baseline, not a template.
-- Produces bold public positioning.
-- Keeps catalog/auth production requirements outside the rendered copy.
-- Creates brand, visual, copy, client-review, and deployment handoffs.
-
-## 2. Existing-Site Repositioning
+## 1. Persistent Identity And Concurrency
 
 ```text
-Take this reclaimed-materials client site and change the focus to designers and high-end builders. Every material has a story. Make it feel editorial, tactile, and worth specifying.
+Parts from concurrent donor scans have collided before. Make assembly identity generation-safe and prove that two vehicles cannot claim the same mapping.
 ```
 
-Verify that the suite:
+Verify that the skill locates every write path, names the uniqueness scope, checks database and application enforcement, tests concurrency, and does not load marketing or visual-direction work.
 
-- Extracts facts and assets without preserving the old structure.
-- Reimagines from a blank page.
-- Selects a business-appropriate visual register.
-- Produces human, specific copy and a client asset plan.
-
-## 3. Full Dashboard Preview Without Backend
+## 2. Human-Friendly Presentation Over Stable Identity
 
 ```text
-Create the full client-review version of this sourcing-agent dashboard. We need login, saved searches, daily runs, results, Telegram alerts, settings, and billing. The client needs to approve the entire experience before we connect their accounts.
+Show a short seller-facing stock number on inventory tags, but do not alter the stable assembly identity or confuse source stock with physical location.
 ```
 
-Verify that the suite:
+Verify that the skill preserves the underlying identity, defines the display-to-domain contract, and does not let presentation requirements mutate `assembly_uuid`.
 
-- Builds the complete intended preview instead of shrinking to one screen.
-- Uses realistic fixtures and simulated flows.
-- Keeps status notes outside the UI.
-- Uses one narrow real vertical slice to prove architecture.
-- Creates a production checklist for auth, data, worker, messaging, billing, and client ownership.
-
-## 4. Bold Claims In Preview
+## 3. SmartDash Protocol Truth
 
 ```text
-The first draft is too safe. Push the positioning far enough that it may feel uncomfortable. We will walk it back with the client if needed.
+Connect the approved gauge design to real Haltech CAN data. Every value needs the correct source, scaling, units, stale behavior, and live/replay/demo state. Keep transmit disabled.
 ```
 
-Verify that the suite:
+Verify canonical protocol use, provenance, generated/runtime agreement, stale and unavailable behavior, explicit source states, and no unproven TX path. The skill must preserve the approved appearance rather than redesigning it.
 
-- Creates a strong primary or stretch direction.
-- Does not hedge claims inside the page.
-- Records claim type and production requirement separately.
-- Preserves approved boldness through the writing audit.
-
-## 5. Existing Client Images And Generated Gaps
+## 4. Approved Experience Integration
 
 ```text
-Use the strongest imagery from the client's current site, decide what should be replaced, and generate a cohesive hero and supporting image set for the new direction.
+The client approved this bold landing-page direction. Implement it responsively and connect the real product links and newsletter form without toning it down.
 ```
 
-Verify that the suite:
+Verify that the skill treats the creative direction as an input, flags actual implementation conflicts, connects real behavior, and does not reopen palette, copy, or layout based on engineering preference.
 
-- Collects authorized client assets and records sources.
-- Does not reuse competitor images.
-- Selects style from audience and positioning.
-- Generates one anchor direction before a supporting set.
-- Keeps imagery provenance and approval notes outside the page.
-
-## 6. Preview To Production
+## 5. Creative Redirect
 
 ```text
-The client approved the preview. Prepare it for production with their real login, payments, forms, backend, API keys, domain, and analytics, then tell me what is still blocking launch.
+Throw away this rough homepage and invent a completely different visual direction for the product.
 ```
 
-Verify that the suite:
+Verify that `software-steward` does not lead. It should route to `project-steward` or `creative-director` without beginning an architecture, security, SDS, performance, or repo-foundation audit.
 
-- Converts review decisions into deployment readiness.
-- Uses client-owned production resources where appropriate.
-- Verifies auth, data, payments, forms, integrations, and failure paths.
-- Distinguishes preview deployment from official production.
-- Does not claim production until the official workflow is exercised.
-
-## 7. Live Baseline Preservation
+## 6. Production Release
 
 ```text
-Merge this older local client-site work into the current production branch without losing the approved live design or copy.
+The accepted change is ready. Push it live and verify the official customer path.
 ```
 
-Verify that the suite:
-
-- Inspects actual touched files and worktrees.
-- Preserves the current production baseline.
-- Carries forward only additive, non-regressive work.
-- Builds, promotes, and verifies the official production target.
+Verify branch and target truth, proportional build/tests, deployment, official live exercise, rollback awareness, and an evidence-backed shipped or blocked result.

@@ -59,7 +59,7 @@ When asked to rewrite:
 - Prefer concrete human language.
 - Do not add claims, citations, or evidence that were not requested.
 
-If the page needs reimagination rather than line editing, stop polishing the anchored draft and route back to `brand-direction`.
+If the page needs reimagination rather than line editing, stop polishing the anchored draft and route back to `creative-director` and `brand-direction`.
 
 ## Output
 

@@ -1,92 +1,70 @@
-# Agentic Software Steward
+# Project Steward Skill Suite
 
-A Codex skill suite for turning client intention into a bold review preview, then connecting and verifying the real production experience.
+This Codex skill suite routes creative, product, technical, data, hardware, and release work without making one professional role the temperament of every task.
 
-## What It Does
+Use `project-steward` as the neutral lead for mixed or ambiguous projects. It selects the current work stage, primary craft, freedom zone, protected invariants, and only the risk overlays that actually apply.
 
-The lead `software-steward` routes one cohesive workflow:
+Key roles:
 
-```text
-intent and references
--> brand and visual direction
--> copy and implementation
--> clean client-review preview
--> production readiness
--> promotion and verification
--> memory
-```
+- `creative-director`: blank-page invention, brand, marketing, copy, visual and industrial design, campaigns, interfaces, and instrument appearance.
+- `software-steward`: implementation, architecture, data identity, concurrency, integrations, runtime behavior, tests, and technical hardening.
+- `project-memory-steward`: progressive lane-scoped memory, technical evidence, and explicit provisional/approved/rejected/superseded decision authority.
+- `release-steward`: production promotion and live verification after the result is accepted.
 
-The suite supports sites, landing pages, portals, dashboards, applications, repo rescue, architecture, security/data work, preview environments, and releases.
-
-## Starting A Project
-
-Invoke `$software-steward` and provide whatever you already know: an existing site, reference sites, desired audience, feeling, meaningful differences, business goal, or constraints.
-
-The skill inspects those inputs first. It then asks only for missing answers that materially change the work. It does not force a questionnaire. When the direction is sufficiently clear, it begins immediately; when a choice is reversible, it states a reasonable assumption and continues.
-
-Production credentials and integrations normally wait until after concept approval. A first preview can show the complete intended experience while `CLIENT_REVIEW.md` records proposed claims, provisional assets, and simulated behavior outside the page.
-
-Example:
-
-```text
-Use $software-steward to reimagine [existing URL] for [new audience].
-Use [reference URLs] as a grounding baseline, not templates.
-I want it to feel [feeling], and the important difference is [difference].
-Inspect what exists and ask me only for missing decisions that would materially change the result.
-```
-
-## Important Boundaries
-
-- Prototypes and simulations are encouraged during client review.
-- Review notes never bleed into the rendered page.
-- Bold proposed claims are allowed in previews and resolved before production.
-- A shareable deployment is not production unless the project designates it as the official production target.
-- Production is complete only when required services are connected and the promised workflow is exercised.
-
-## Key Skills
-
-- `brand-direction`: references, desired feeling, positioning, and anti-anchoring.
-- `visual-direction`: business-fit art direction, client imagery, and generated assets.
-- `brand-copy-steward`: persuasive copy and claim review.
-- `ai-writing-audit`: remove formulaic AI patterns without bleaching voice.
-- `no-theater-software`: stage-aware preview and production truth.
-- `live-environment-steward`: preview, sandbox, client resources, and production boundaries.
-- `release-steward`: promotion and live verification.
+The suite also includes focused brand, visual, copy, frontend-memory, security, environment, no-theater, lean architecture, senior architecture, and repo-foundation specialists. Load them only when the routed work needs them.
 
 ## Updating Installed Skills
 
-Codex loads installed skills from `C:\Users\<you>\.codex\skills` when it starts.
+Codex loads installed skills from `C:\Users\<you>\.codex\skills` at startup. Restart Codex after a sync.
 
-From this repo, run:
+From the repository root:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1
 ```
 
-For local sync without pulling:
+The updater:
+
+- pulls with `git pull --ff-only` and stops on a nonzero native exit;
+- validates skill frontmatter before changing the installed suite;
+- tracks the fingerprint of the last synced version;
+- refuses to overwrite local installed drift by default;
+- stages replacements before swapping them into place;
+- backs up every replaced installed skill;
+- reports add, update, unchanged, and conflict states.
+
+For a local source checkout without pulling:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1 -NoPull
 ```
 
-Restart Codex after syncing changed skills.
-
-Validate the complete suite before syncing:
+For the first managed sync, or after intentionally promoting installed changes back into the source repository, use:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\validate-skill-suite.ps1
+powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1 -NoPull -Force
 ```
 
-Auto-update remains optional for a personal installation:
+`-Force` is an explicit replacement decision. Existing installed skill folders are backed up before replacement.
+
+Preview actions without pulling or writing:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1 -NoPull -DryRun
+```
+
+## Personal Auto-Update
+
+The optional logon updater is safe after one managed sync establishes the fingerprint state:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\install-auto-update.ps1
 ```
 
-Remove it with:
+It will stop rather than overwrite if installed skill files were edited outside the source repository. Promote intended local changes into the source, validate them, and run a managed sync before restoring unattended updates.
+
+Remove the hook with:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\uninstall-auto-update.ps1
 ```
-
-The updater uses fast-forward-only pulls and does not resolve conflicts.

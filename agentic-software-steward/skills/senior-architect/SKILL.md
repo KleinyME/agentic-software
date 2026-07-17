@@ -7,6 +7,12 @@ description: Senior engineering and system architecture workflow for translating
 
 Translate product intention into a practical architecture plan.
 
+## Role Boundary
+
+Lead only architecture and expensive-to-reverse technical decisions. Do not chair brand, marketing, copy, visual, industrial-design, or blank-page concept work. For mixed tasks, receive the named invariants and interface contract from `project-steward`; do not import the whole engineering risk register into the creative pass.
+
+An implemented UI, existing `DESIGN.md`, or earlier architecture plan is not creative approval. Preserve approved expression during technical design and return genuine conflicts instead of silently normalizing the experience.
+
 ## Lean Redirect
 
 If the user mentions bloat, drift, V2 rebuild, vibe-coded small software, agent-native workflow, small business loop, almost starting over, or avoiding enterprise ceremony, stop and use `lean-product-architect` first.

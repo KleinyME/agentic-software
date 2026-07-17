@@ -42,7 +42,9 @@ $requiredFiles = @(
   "agentic-software-steward\skills\ai-writing-audit\SKILL.md",
   "agentic-software-steward\skills\ai-writing-audit\LICENSE",
   "agentic-software-steward\skills\ai-writing-audit\NOTICE.md",
-  "agentic-software-steward\skills\software-steward\references\client-experience-workflow.md",
+  "agentic-software-steward\skills\project-steward\SKILL.md",
+  "agentic-software-steward\skills\project-steward\references\routing-regression-cases.md",
+  "agentic-software-steward\skills\creative-director\SKILL.md",
   "agentic-software-steward\skills\repo-foundation-bootstrap\assets\CLIENT_REVIEW.template.md",
   "agentic-software-steward\skills\repo-foundation-bootstrap\assets\DEPLOYMENT_READINESS.template.md",
   "agentic-software-steward\third_party\ai-writing-audit\LICENSE",
@@ -68,7 +70,10 @@ $requiredConcepts = @(
   "DEPLOYMENT_READINESS.md",
   "brand-direction",
   "visual-direction",
-  "ai-writing-audit"
+  "ai-writing-audit",
+  "project-steward",
+  "creative-director",
+  "x-authority"
 )
 
 foreach ($concept in $requiredConcepts) {
@@ -95,8 +100,16 @@ $behaviorContracts = @(
     Phrases = @("Full intended dashboards", "Do not reduce the intended experience", "production-verified")
   },
   @{
-    Path = "agentic-software-steward\skills\software-steward\references\client-experience-workflow.md"
-    Phrases = @("broad visual prototype and a narrow real vertical slice", "The clean preview", "official production target")
+    Path = "agentic-software-steward\skills\project-steward\SKILL.md"
+    Phrases = @("The primary craft chairs", "Conditional Risk Overlays", "Mixed-Work Sequence")
+  },
+  @{
+    Path = "agentic-software-steward\skills\creative-director\SKILL.md"
+    Phrases = @("Default to broad freedom", "No experience required", "Treat lifestyle depiction separately")
+  },
+  @{
+    Path = "agentic-software-steward\skills\software-steward\SKILL.md"
+    Phrases = @("Role Boundary", "Technical Contract", "Experience Integration")
   },
   @{
     Path = "agentic-software-steward\skills\release-steward\SKILL.md"

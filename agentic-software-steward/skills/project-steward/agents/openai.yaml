@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Steward"
+  short_description: "Route creative, technical, and mixed project work"
+  default_prompt: "Use $project-steward to route and execute this project without letting one discipline dominate."

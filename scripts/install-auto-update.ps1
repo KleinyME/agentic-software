@@ -62,7 +62,7 @@ function Install-StartupShortcut {
   $shortcut.TargetPath = "powershell.exe"
   $shortcut.Arguments = "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$RunnerPath`""
   $shortcut.WorkingDirectory = $RepoRoot
-  $shortcut.Description = "Pulls and installs the latest Agentic Software Steward skills at user logon."
+  $shortcut.Description = "Pulls and installs the latest Project Steward skills at user logon."
   $shortcut.Save()
 
   return $shortcutPath
@@ -90,7 +90,7 @@ if (-not $StartupShortcutOnly) {
       -Action $action `
       -Trigger $trigger `
       -Settings $settings `
-      -Description "Pulls and installs the latest Agentic Software Steward skills at user logon." `
+      -Description "Pulls and installs the latest Project Steward skills at user logon." `
       -Force | Out-Null
 
     $installedMode = "scheduled task"

@@ -18,6 +18,16 @@ Status: Confirmed | Inferred | Open
 - [Important data.]
 - [Security/privacy promises.]
 
+## Authority And Loading Map
+
+| Artifact | Lane Or Scope | Authority Or Evidence | Load When |
+|---|---|---|---|
+| `PRODUCT.md` | global product | provisional | Product intention or direction is in scope |
+| `DESIGN.md` | global visual | provisional | Visual work is in scope; approved matching scope constrains implementation |
+| | | | |
+
+Missing creative authority metadata defaults to provisional. Technical truth uses evidence labels such as verified-from-system, source-backed, user-confirmed, inferred, open, or risk.
+
 ## Architecture Map
 
 - UI:
@@ -75,3 +85,4 @@ Status: Confirmed | Inferred | Open
 ## Recent Meaningful Changes
 
 - YYYY-MM-DD: [Architecture/product/security/design change.]
+- YYYY-MM-DD: [Direction approved, rejected, or superseded; include scope and evidence.]

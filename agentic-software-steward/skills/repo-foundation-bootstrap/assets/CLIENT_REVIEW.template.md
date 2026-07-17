@@ -29,6 +29,8 @@ Approval of this preview does not mean production services are connected.
 
 ## Claims To Confirm
 
+Do not list owner-approved ordinary qualitative positioning here merely because it could theoretically be tested. Use this table for material unapproved, quantitative, regulated, guaranteed, comparative, precise unconfirmed, capability-dependent, or factual social-proof claims.
+
 | Proposed claim | Type | Why it fits | Status | Client decision |
 |---|---|---|---|---|
 | | positioning / promise / capability / quantitative / proof | | proposed | approve / revise / remove |
@@ -69,3 +71,6 @@ Approval of this preview does not mean production services are connected.
 
 Approved by:
 Date:
+Approved artifacts and scope:
+Approval evidence/reference:
+Supersedes:

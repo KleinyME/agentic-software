@@ -10,7 +10,7 @@ Make copy persuasive, specific, human, truthful to its current stage, and recogn
 ## Routing
 
 - Reference sites, audience shift, desired feeling, or reimagining: use `brand-direction` first.
-- Marketing, landing pages, headlines, offers, ads, or emails: use `100-year-copywriting-engine` when available.
+- Marketing, landing pages, headlines, offers, ads, or emails: use `creative-director` or the approved brand direction first. Use `100-year-copywriting-engine` only when the user requests it or a direct-response framework is specifically useful; do not make it the default voice.
 - Final robotic/formulaic writing pass: use `ai-writing-audit` after direction and persuasive force are established.
 - Customer-facing AI persona: use `ai-brand-voice` after the business brand direction exists.
 
@@ -30,6 +30,10 @@ Do not invent a named person, quotation, customer, certification, metric, or thi
 
 ## Claim Handling
 
+Use owner-supplied or owner-authorized ordinary qualitative claims directly when they fit the offer and are not contradicted. Phrases such as `No experience required`, `beginner-friendly`, `made for date night`, and similar positioning do not automatically require substantiation, hedging, or a production blocker.
+
+Apply the formal claim register only when the language creates a material truth dependency:
+
 Classify proposed claims outside the page as:
 
 - Positioning or brand promise: client approval.
@@ -45,6 +49,8 @@ If a claim cannot ship, recommend one of:
 4. Remove it.
 
 Never automatically turn strong copy into vague language such as "aims to", "may help", or "designed to support" merely because verification is pending.
+
+Do not narrate speculative low-probability risk to the user or let it shape the rendered marketing copy.
 
 ## Copy Rules
 

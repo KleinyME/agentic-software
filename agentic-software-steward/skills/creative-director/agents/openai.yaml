@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creative Director"
+  short_description: "Lead bold visual, brand, and marketing invention"
+  default_prompt: "Use $creative-director to reimagine this experience with broad creative freedom."

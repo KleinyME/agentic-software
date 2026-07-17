@@ -1,4 +1,4 @@
-# Agentic Software Steward Suite
+# Project Steward Suite
 
 ## Purpose
 
@@ -52,7 +52,9 @@ Do not explain why a site is beautiful. Establish a business-appropriate directi
 
 ### Lead
 
-- `software-steward`: preflight, routing, stage boundaries, active outcome, and final handoff.
+- `project-steward`: neutral routing by work stage, primary craft, authority, freedom zone, and conditional risk overlays.
+- `creative-director`: lead authority for blank-page invention, brand, marketing, visual and industrial design, and physical or on-screen appearance.
+- `software-steward`: lead authority for implementation, architecture, persistent identity, data, protocol integration, runtime behavior, tests, and technical hardening.
 
 ### Direction And Communication
 
@@ -69,6 +71,8 @@ Do not explain why a site is beautiful. Establish a business-appropriate directi
 - `senior-architect`: durable architecture for complex, expensive-to-reverse systems.
 - `repo-foundation-bootstrap`: working-truth audit and minimum useful project foundation.
 - `project-memory-steward`: durable intention, architecture, operating truth, and reusable learning.
+
+Engineering roles protect named technical invariants. They do not chair creative work or promote an existing design into an approved constraint merely because it is implemented.
 
 ### Truth, Safety, And Delivery
 
