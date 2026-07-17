@@ -30,7 +30,7 @@ Do not invent a named person, quotation, customer, certification, metric, or thi
 
 ## Claim Handling
 
-Use owner-supplied or owner-authorized ordinary qualitative claims directly when they fit the offer and are not contradicted. Phrases such as `No experience required`, `beginner-friendly`, `made for date night`, and similar positioning do not automatically require substantiation, hedging, or a production blocker.
+Use owner-supplied or owner-authorized ordinary qualitative positioning directly when it fits the offer and is not contradicted. Do not require substantiation, hedging, or a production blocker solely because non-quantified language about audience fit, approachability, ease, or experience is theoretically testable.
 
 Apply the formal claim register only when the language creates a material truth dependency:
 

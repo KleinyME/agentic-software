@@ -79,7 +79,7 @@ Avoid adjective-only direction such as "modern, trustworthy, premium." Translate
 
 Marketing claims are allowed and expected in concept previews. Generate the strongest coherent claims that align with the business and desired outcome.
 
-Use owner-approved ordinary qualitative language directly. `No experience required`, `beginner-friendly`, and similar non-regulated positioning do not enter the proof register merely because they could theoretically be tested.
+Use owner-approved ordinary qualitative positioning directly. Non-quantified language about audience fit, approachability, ease, or experience does not enter the proof register merely because it could theoretically be tested.
 
 Classify proposed claims outside the page:
 

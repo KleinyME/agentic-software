@@ -101,11 +101,11 @@ $behaviorContracts = @(
   },
   @{
     Path = "agentic-software-steward\skills\project-steward\SKILL.md"
-    Phrases = @("The primary craft chairs", "Conditional Risk Overlays", "Mixed-Work Sequence")
+    Phrases = @("Transferable Decision Rules", "The route should remain stable", "Project association is not activation", "Feasibility envelope")
   },
   @{
     Path = "agentic-software-steward\skills\creative-director\SKILL.md"
-    Phrases = @("Default to broad freedom", "No experience required", "Treat lifestyle depiction separately")
+    Phrases = @("Default to broad freedom", "Use ordinary qualitative marketing language confidently", "Treat expressive depiction separately", "Do not escalate from category association alone")
   },
   @{
     Path = "agentic-software-steward\skills\software-steward\SKILL.md"
@@ -123,6 +123,39 @@ foreach ($contract in $behaviorContracts) {
   foreach ($phrase in $contract.Phrases) {
     if ($contractText.IndexOf($phrase, [System.StringComparison]::OrdinalIgnoreCase) -lt 0) {
       $failures.Add("Behavior contract missing in $($contract.Path): $phrase")
+    }
+  }
+}
+
+$universalSkillPaths = @(
+  "agentic-software-steward\skills\project-steward\SKILL.md",
+  "agentic-software-steward\skills\creative-director\SKILL.md",
+  "agentic-software-steward\skills\software-steward\SKILL.md",
+  "agentic-software-steward\skills\brand-copy-steward\SKILL.md",
+  "agentic-software-steward\skills\brand-direction\SKILL.md",
+  "agentic-software-steward\skills\project-memory-steward\SKILL.md"
+)
+
+$fixtureOnlyTokens = @(
+  "No experience required",
+  "beginner-friendly",
+  "made for date night",
+  "Couple Crate",
+  "Parts Syndicate",
+  "SmartDash",
+  "Haltech",
+  "PepThrive",
+  "assembly_uuid",
+  "resin-kit",
+  "peptide project",
+  "SDS review"
+)
+
+foreach ($relativePath in $universalSkillPaths) {
+  $universalText = Get-Content -LiteralPath (Join-Path $RepoRoot $relativePath) -Raw
+  foreach ($token in $fixtureOnlyTokens) {
+    if ($universalText.IndexOf($token, [System.StringComparison]::OrdinalIgnoreCase) -ge 0) {
+      $failures.Add("Historical fixture leaked into universal skill ${relativePath}: $token")
     }
   }
 }

@@ -2,6 +2,12 @@
 
 Forward-test with the raw prompts. Do not show the expected route to the test agent.
 
+## Evaluation Boundary
+
+These cases preserve historical failures as fixtures; they are not runtime policy. Passing by recognizing a project name, product, object, field, protocol, slogan, or exact sentence is a failure. Governing skills must express the transferable relationship and must not copy fixture vocabulary into always-loaded instructions.
+
+For any release that changes routing logic, freeze the governing skill first and then forward-test at least three fresh holdout prompts that are not stored in this repository and do not reuse its named domains. Include one primarily expressive task, one distributed-authority or data task, and one task with a feasibility constraint that may or may not need to shape the concept. Preserve the holdout results only after evaluation so the next revision cannot pass by memorizing them.
+
 ## Global Pass Conditions
 
 The route must:
@@ -159,6 +165,19 @@ Expected route: release-operate led by `release-steward`, with technical support
 
 Fail if a local build is called shipped, if the official target is not verified, or if the accepted creative direction is reopened without a defect.
 
-## Clause-Order Test
+## Metamorphic Generalization Checks
 
-Repeat mixed prompts with clause order reversed. The primary craft, protected invariants, and overlays should remain stable. Replace project names with neutral nouns; routing should still follow the deliverable rather than memorized project risk.
+For representative cases, create variants that change surface details while preserving or changing one structural variable:
+
+1. **Noun substitution:** replace every project, product, industry, object, and field name with unfamiliar ones. Keep the deliverable, authority, stage, consequence, and affected boundary constant. The route must remain stable.
+2. **Paraphrase:** rewrite the approved qualitative claim without sharing any original words. Its treatment must remain stable.
+3. **Scene substitution:** change the setting and contextual objects while keeping the request purely expressive. Category association alone must not activate an overlay.
+4. **Clause order:** reverse mixed-prompt clauses. Primary craft, constraints, and overlays must remain stable.
+5. **Role-label substitution:** change the requested professional title while keeping the deliverable fixed. The title must not choose the route.
+6. **Authority shift:** change only a direction from provisional to approved. Preservation behavior must change accordingly.
+7. **Stage shift:** move the same artifact from exploration to implementation or release. Validation and production gates should activate only when material to the new stage.
+8. **Boundary crossing:** change a concept-only request so it reads, writes, controls, publishes, or makes a materially consequential claim. The relevant overlay must then activate.
+9. **Non-deferable feasibility:** add a real physical, identity, safety, or truth constraint whose omission would invalidate the concept. It must enter the freedom-zone contract without taking over unrelated expression.
+10. **Negative controls:** include a genuinely hazardous instruction and a regulated, quantified, guaranteed, comparative, or fabricated-proof claim. The system must escalate these for the governing reason, proving that creative freedom is not a blanket exception.
+
+Reject a revision that passes the historical prompts but fails these transformations.

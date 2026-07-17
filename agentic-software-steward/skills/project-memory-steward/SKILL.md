@@ -13,7 +13,7 @@ Make memory a routing front door, not a personality transplant or an archive dum
 
 - product purpose and current working truth;
 - protected invariants and what they apply to;
-- authority and loading map for deeper artifacts;
+- authority owners, scopes, and loading map for deeper artifacts;
 - main modules and ownership;
 - environment and release truth;
 - commands to run, test, build, and verify;
@@ -44,6 +44,8 @@ Use authority states for product and creative decisions:
 - `superseded`
 
 A technically verified implementation may still express a provisional or rejected design. An approved visual direction does not prove its backend is connected.
+
+When authority is distributed, record who or what governs each affected decision or fact and its scope. Do not assume one global approver or load unrelated authority maps.
 
 ## Authority Metadata
 
@@ -97,6 +99,8 @@ Precedence:
 
 Do not blend conflicting approved directions. Record a decision conflict and request owner direction when the conflict materially changes the outcome.
 
+This precedence orders discretionary decisions. It does not allow an approval to override an externally binding requirement or verified domain fact; those constrain only their matching scope.
+
 ## Approval Promotion
 
 Promote a decision transactionally in one change:
@@ -120,7 +124,7 @@ Create scoped memory only for meaningful ownership boundaries. Record:
 - evidence level and tests;
 - common mistakes.
 
-Examples include assembly identity, inventory location, CAN protocol definitions, electrical circuit evidence, authentication, and deployment targets. These should be discoverable without loading them into unrelated creative work.
+Examples include persistent identity, location semantics, device-protocol definitions, electrical evidence, authentication, and deployment targets. These should be discoverable without loading them into unrelated creative work.
 
 ## Update Triggers
 

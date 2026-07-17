@@ -18,10 +18,11 @@ Do not preserve an existing design because it is already implemented. Do not reo
 Before changing a fragile system, identify only what applies:
 
 - protected identity and uniqueness rules;
-- canonical data source and persistence behavior;
+- authoritative representation and persistence behavior; add ownership, provenance, and reconciliation only when authority is distributed;
 - permitted and forbidden mutations;
 - module or protocol ownership;
 - failure, stale, unavailable, retry, and recovery behavior;
+- timing, resource, calibration, fault-containment, safe-state, interlock, and override behavior when applicable;
 - security, privacy, physical-control, or production boundaries;
 - tests or observations that prove the change.
 
@@ -32,7 +33,7 @@ Keep this contract precise. Do not turn every historical incident or speculative
 1. Read `AGENTS.md` and the compact front door in `PROJECT_MEMORY.md` when present.
 2. Load only the module, domain, protocol, environment, or approved design memory relevant to the task.
 3. Treat `DESIGN.md` without matching approval metadata as provisional. It may inform implementation but must not constrain a requested reimagination.
-4. Inspect the actual repo, branch, worktrees, status, entry points, runtime, tests, and deployment shape.
+4. Inspect the actual artifact and its operating environment. For code this includes repository, branch, worktrees, status, entry points, runtime, tests, and deployment shape. When relevant, also inspect firmware, configuration, generated artifacts, design files, supplier specifications, calibration, test rigs, installation state, and physical rollback.
 5. Determine whether the user asked to implement, diagnose, validate, or release. Do not expand a diagnostic request into a fix without authorization.
 6. Activate security, data, hardware, or production guardrails only when the affected code or action crosses those boundaries.
 7. Ask only questions whose answers materially change the implementation or authority.
@@ -52,18 +53,18 @@ Architecture supports the product outcome. It does not automatically govern bran
 
 For identity, schemas, persistence, concurrency, protocols, or calculations:
 
-1. Locate the authoritative representation and every write path.
+1. Locate the authoritative representation and every write path. When authority is distributed, map the relevant owners, provenance, reconciliation, and conflict behavior.
 2. Name the invariant in plain language.
 3. Check database, application, generated-code, and concurrent behavior where relevant.
 4. Prefer constraints, idempotency, transactions, typed contracts, and focused tests over convention alone.
 5. Avoid solving presentation needs by mutating underlying identity.
 6. Separate source confidence, captured evidence, and production proof for hardware or protocol work.
 
-Examples:
+General patterns:
 
-- Parts Syndicate may expose a human-friendly stock number while preserving stable assembly identity and seller isolation.
-- SmartDash may render any approved gauge language while using canonical channel definitions, checked decode math, honest source state, and disabled TX until bench proof.
-- Haltech planner facts may require source, load, current, protection, wiring, connector, ground, control, and verification fields without forcing the UI to look like an audit report.
+- Presentation identifiers must not mutate canonical persistent identity or its isolation scope.
+- Data-backed displays may use any approved visual language while preserving canonical definitions, transformations, provenance, state semantics, and safe write behavior.
+- Evidence-rich tools can preserve required domain facts without inheriting an audit-report aesthetic.
 
 ## Experience Integration
 
@@ -85,6 +86,8 @@ Visual consistency is not proof of creative quality. Technical hardening is not 
 - Branching, merge safety, rollback, promotion, and live verification: `release-steward`.
 
 Apply these specialists to the affected work. Their constraints do not become project-wide creative direction.
+
+When real physical actuation is consequential, choose validation proportionate to the actual hazard, reversibility, applicable requirements, and available test environment. Do not energize unproven actuation without the controls required by its concrete boundary or treat it as an ordinary vertical slice.
 
 ## Active Outcome
 

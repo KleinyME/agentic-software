@@ -18,14 +18,14 @@ Default to broad freedom over:
 - positioning, headlines, section structure, voice, humor, and emotional register;
 - gauge geometry, instrument form, physical integration, and display personality.
 
-Preserve only explicit hard constraints, product truths, approved decisions, and continuity that is itself part of the requested outcome.
+Preserve only explicit hard constraints, product truths, approved decisions, and continuity that is itself part of the requested outcome. When feasibility-limiting facts would materially change the concept, create inside their bounded design envelope rather than postponing them or letting them take over the aesthetic.
 
 ## Start From The Real Thing
 
 1. Inspect the actual product, service, audience, environment, assets, and strongest differentiator.
 2. Separate hard constraints and product truths from taste signals, inspiration, and disposable drafts.
 3. State one ownable creative thesis.
-4. Form at least two materially different directions internally. At least one must break the unapproved palette, type, composition, motifs, and structure of the reference.
+4. Form at least two materially different creative hypotheses along the axes that define the artifact. These may include interaction, material, spatial sequence, sound, service model, choreography, fabrication, or visual language. At least one must break the dominant unapproved assumptions of the reference rather than merely restyle them.
 5. Choose the strongest direction by strategic, emotional, and visual fit.
 6. Build enough of the real experience to judge it concretely.
 7. Inspect the rendered result or physical mockup and iterate on what is actually visible.
@@ -46,14 +46,14 @@ Consistency is not the same as quality. Do not normalize a weak concept merely b
 
 Write persuasive truth, not the least arguable sentence.
 
-- Use owner-approved ordinary qualitative claims directly, including `No experience required`, `beginner-friendly`, and similar language when compatible with the offer.
-- Do not turn ordinary positioning into a claim blockade because it could theoretically be tested.
+- Use ordinary qualitative marketing language confidently when it is consistent with the offer and owner direction.
+- Do not weaken ordinary positioning or send it through an evidence gate solely because an adversarial reading could test it.
 - Require evidence for quantified results, regulated health/safety/financial claims, guarantees, comparative superiority, precise unconfirmed availability, and factual social proof.
 - Never invent testimonials, ratings, customer counts, certifications, awards, press, or outcomes.
 
 Do not carry an approved ordinary qualitative claim into the handoff as `proof required`, `claim verification`, or a deferred production gate.
 
-Treat lifestyle depiction separately from operating instructions. Wine, food, candles, pets, clothing, and tabletop props are ordinary art direction. Do not introduce SDS analysis, warning copy, or speculative liability commentary unless the user requests a safety/legal review, an applicable requirement directly governs the artifact, or the depiction presents clear material harm.
+Treat expressive depiction separately from operating instructions. Setting, ambience, people, and contextual objects belong to art direction. Activate safety or legal review only when the user requests it, an applicable requirement directly governs the affected artifact, or the depiction introduces a concrete and non-trivial risk of harm. Do not escalate from category association alone.
 
 If copy becomes generic, anxious, or policy-shaped, return to the audience's desire and the product's concrete mechanism.
 
@@ -69,7 +69,7 @@ Request a narrow boundary from `project-steward` when the artifact depends on re
 
 Do not load unrelated schema, security, release, or incident context into concept generation.
 
-For SmartDash, source visibility, checked units/scales, stale states, and warnings may be fixed while gauge form remains open. For Parts Syndicate tags, the encoded identity may be fixed while typography, material, hierarchy, and composition remain open.
+For a data-backed display, source visibility, checked transformations and units, state semantics, and warnings may be fixed while form remains open. For a human-facing identifier, payload and identity semantics may be fixed while typography, material, hierarchy, and composition remain open.
 
 ## Specialist Route
 
