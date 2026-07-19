@@ -101,7 +101,7 @@ When the user asks for a change, carry it through an appropriate technical resul
 
 Do not stop at foundation documents when safe implementation remains in scope. Do not claim production from a local build or visual preview.
 
-For companion installation rules, read `references/install-update-policy.md`. For forward testing, read `references/validation-scenarios.md`.
+For companion installation rules, read `references/install-update-policy.md`. For forward testing, read `references/validation-scenarios.md`. For client-facing websites, the stack is not an open choice: read `references/web-stack-direction.md` before scaffolding (Astro HTML-first, islands never `client:only` for primary content, machine files in the template, previews unindexable at the deployment layer only).
 
 ## Handoff
 
