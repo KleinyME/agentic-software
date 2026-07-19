@@ -74,6 +74,18 @@ Full audits produce a `visibility_blueprint_v3` record
 (schema vendored from the Karbon-AI repo, `contracts/visibility-blueprint.v3.schema.json`);
 the record — not a reviewer's impression — is the before/after proof.
 
+**Evidence retention rules for fix passes:**
+
+- The record's `internal.evidence` holds every collected measurement category
+  (Lighthouse detail with estimated savings, axe violations, crawl samples,
+  structured-data issues, model-poll results). **Read it before measuring
+  anything** — if the audit already collected it, re-measuring is waste.
+- `internal` is never rendered or sent to a client. If a record file itself
+  is ever shared externally, strip `internal` first.
+- The raw `audit-payload.json` stored beside each record is the reprocessing
+  source: when the adapter improves, records regenerate from stored payloads
+  without re-auditing.
+
 ## When not Astro
 
 - **Commerce:** Shopify, built in the client's own account (per the posted
