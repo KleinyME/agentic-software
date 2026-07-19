@@ -1,0 +1,342 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visibility-blueprint.v3.schema.json",
+  "title": "Karbon Visibility Blueprint Record (v3)",
+  "description": "Shared contract between the Karbon-AI audit pipeline and the agentic-software site-scorecard skill. One record drives the client document, the DIY fix guide, the agent work queue, and drift/preview deltas. TypeScript source of truth: src/lib/blueprintContract.ts in Karbon-AI.",
+  "type": "object",
+  "required": ["meta", "business", "readout", "questions", "dimensions", "instruments", "findings", "restructurePlan", "fixGuide", "blockers", "factsVerified", "stillOpen"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["contract", "runType", "runId", "generatedAt", "targetUrl", "stackId", "stackVersion", "sourceAccess"],
+      "properties": {
+        "contract": { "const": "karbon_visibility_blueprint_v3" },
+        "runType": { "enum": ["baseline", "preview", "drift"] },
+        "runId": { "type": "string", "minLength": 1 },
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "targetUrl": { "type": "string", "format": "uri" },
+        "stackId": { "type": "string", "minLength": 1 },
+        "stackVersion": { "type": "string", "minLength": 1 },
+        "generation": { "type": "string", "description": "Cohort label when produced under agentic-software, e.g. v3" },
+        "repoCommit": { "type": "string", "description": "agentic-software commit the cohort was built under" },
+        "previousRunId": { "type": "string" },
+        "sourceAccess": {
+          "type": "object",
+          "required": ["ok", "status", "issue"],
+          "properties": {
+            "ok": { "type": "boolean" },
+            "status": { "type": ["integer", "null"] },
+            "issue": { "type": "string" }
+          }
+        }
+      }
+    },
+    "business": {
+      "type": "object",
+      "required": ["businessName", "domain", "services", "locations", "keyPages"],
+      "properties": {
+        "businessName": { "type": "string", "minLength": 1 },
+        "domain": { "type": "string", "minLength": 1 },
+        "industry": { "type": "string" },
+        "summary": { "type": "string" },
+        "services": { "type": "array", "items": { "type": "string" } },
+        "locations": { "type": "array", "items": { "type": "string" } },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" },
+        "hours": { "type": "string" },
+        "keyPages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title", "url"],
+            "properties": {
+              "title": { "type": "string" },
+              "url": { "type": "string", "format": "uri" }
+            }
+          }
+        },
+        "averageJobValue": { "type": ["number", "null"] }
+      }
+    },
+    "readout": {
+      "type": "object",
+      "required": ["peopleView", "machinesView", "diagnosis", "planningSignal"],
+      "properties": {
+        "peopleView": { "type": "array", "items": { "$ref": "#/$defs/readoutMeter" } },
+        "machinesView": { "type": "array", "items": { "$ref": "#/$defs/readoutMeter" } },
+        "diagnosis": { "type": "string", "minLength": 1 },
+        "planningSignal": {
+          "type": "object",
+          "description": "The single headline number. Always rendered with its honesty caption — a planning score, never a ranking promise.",
+          "required": ["value", "status", "caption"],
+          "properties": {
+            "value": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+            "status": { "enum": ["observed", "not_collected", "blocked"] },
+            "caption": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["id", "question", "liveStatus", "liveNote"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "question": { "type": "string", "minLength": 1 },
+          "liveStatus": { "$ref": "#/$defs/answerStatus" },
+          "liveNote": { "type": "string" },
+          "liveUrl": { "type": "string" },
+          "conceptStatus": { "$ref": "#/$defs/answerStatus" },
+          "conceptNote": { "type": "string" },
+          "homeworkId": { "type": "string" }
+        }
+      }
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["dimensionId", "live", "evidence", "citedChecks"],
+        "properties": {
+          "dimensionId": { "$ref": "#/$defs/dimensionId" },
+          "live": { "type": ["integer", "null"], "minimum": 0, "maximum": 10 },
+          "concept": { "type": ["integer", "null"], "minimum": 0, "maximum": 10 },
+          "evidence": { "type": "string", "minLength": 1, "description": "What was observed, at which URL, supporting the score" },
+          "citedChecks": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "instruments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["checkId", "measureId", "status", "observed", "measuredAt"],
+        "properties": {
+          "checkId": { "type": "string", "minLength": 1 },
+          "measureId": { "$ref": "#/$defs/measureId" },
+          "status": { "enum": ["pass", "warn", "fail", "not_collected", "blocked"] },
+          "score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+          "observed": { "type": "array", "items": { "type": "string" } },
+          "measuredAt": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "rank", "severity", "lane", "title", "plainEnglish", "whatItCosts", "evidence", "sourceRef", "fixRef"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "rank": { "type": "integer", "minimum": 1 },
+          "severity": { "enum": ["high", "medium", "low"] },
+          "lane": { "enum": ["instrument", "judgment"] },
+          "title": { "type": "string", "minLength": 1 },
+          "plainEnglish": { "type": "string", "minLength": 1 },
+          "whatItCosts": { "type": "string", "minLength": 1 },
+          "evidence": { "type": "array", "items": { "type": "string" } },
+          "sourceRef": {
+            "type": "object",
+            "required": ["kind"],
+            "oneOf": [
+              { "properties": { "kind": { "const": "check" }, "checkId": { "type": "string" } }, "required": ["kind", "checkId"] },
+              { "properties": { "kind": { "const": "question" }, "questionId": { "type": "string" } }, "required": ["kind", "questionId"] },
+              { "properties": { "kind": { "const": "dimension" }, "dimensionId": { "$ref": "#/$defs/dimensionId" } }, "required": ["kind", "dimensionId"] }
+            ]
+          },
+          "fixRef": { "$ref": "#/$defs/fixRef" }
+        }
+      }
+    },
+    "restructurePlan": {
+      "type": "array",
+      "description": "Page-level disposition table: what to keep, rewrite, merge, redirect, add, or validate before implementation starts",
+      "items": {
+        "type": "object",
+        "required": ["title", "disposition", "reason"],
+        "properties": {
+          "url": { "type": "string", "description": "Absent for 'add' — the page does not exist yet" },
+          "title": { "type": "string", "minLength": 1 },
+          "disposition": { "enum": ["keep", "rewrite", "merge", "redirect", "add", "validate"] },
+          "reason": { "type": "string", "minLength": 1 },
+          "homeworkId": { "type": "string" }
+        }
+      }
+    },
+    "fixGuide": {
+      "type": "object",
+      "required": ["recipes", "homework"],
+      "properties": {
+        "recipes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["recipeId", "checkId", "title", "effort", "steps", "missingFacts", "acceptance"],
+            "properties": {
+              "recipeId": { "type": "string", "minLength": 1 },
+              "checkId": { "type": "string", "minLength": 1 },
+              "title": { "type": "string", "minLength": 1 },
+              "effort": { "enum": ["minutes", "an_hour", "an_afternoon", "developer_needed"] },
+              "steps": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+              "snippet": { "type": "string" },
+              "missingFacts": { "type": "array", "items": { "type": "string" } },
+              "acceptance": {
+                "type": "object",
+                "required": ["description", "verify", "checkId"],
+                "properties": {
+                  "description": { "type": "string", "minLength": 1 },
+                  "verify": { "const": "rerun_check" },
+                  "checkId": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          }
+        },
+        "homework": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["homeworkId", "objective", "pageSpec", "acceptance"],
+            "properties": {
+              "homeworkId": { "type": "string", "minLength": 1 },
+              "questionId": { "type": "string" },
+              "objective": { "type": "string", "minLength": 1 },
+              "pageSpec": {
+                "type": "object",
+                "required": ["suggestedTitle", "suggestedUrlPath", "mustContain"],
+                "properties": {
+                  "suggestedTitle": { "type": "string", "minLength": 1 },
+                  "suggestedUrlPath": { "type": "string", "minLength": 1 },
+                  "mustContain": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+                }
+              },
+              "acceptance": {
+                "type": "object",
+                "required": ["description", "verify", "questionId"],
+                "properties": {
+                  "description": { "type": "string", "minLength": 1 },
+                  "verify": { "const": "rerun_question" },
+                  "questionId": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Presentation blockers (fabricated proof, unverified contact facts). Must be empty before the document goes to an owner."
+    },
+    "factsVerified": {
+      "type": "object",
+      "description": "Contact facts checked against official sources before rendering",
+      "properties": {
+        "phone": { "type": "boolean" },
+        "address": { "type": "boolean" },
+        "hours": { "type": "boolean" }
+      }
+    },
+    "stillOpen": { "type": "string", "minLength": 1, "description": "The most important unresolved gap, owner-facing" },
+    "deltas": {
+      "type": "object",
+      "required": ["previousRunId", "previousGeneratedAt", "checks", "dimensions", "questions", "summary"],
+      "properties": {
+        "previousRunId": { "type": "string", "minLength": 1 },
+        "previousGeneratedAt": { "type": "string", "format": "date-time" },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["checkId", "previous", "current", "direction"],
+            "properties": {
+              "checkId": { "type": "string" },
+              "previous": { "enum": ["pass", "warn", "fail", "not_collected", "blocked"] },
+              "current": { "enum": ["pass", "warn", "fail", "not_collected", "blocked"] },
+              "previousScore": { "type": ["number", "null"] },
+              "currentScore": { "type": ["number", "null"] },
+              "direction": { "enum": ["improved", "regressed", "unchanged", "not_retested"] }
+            }
+          }
+        },
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["dimensionId", "previous", "current", "direction"],
+            "properties": {
+              "dimensionId": { "$ref": "#/$defs/dimensionId" },
+              "previous": { "type": ["integer", "null"] },
+              "current": { "type": ["integer", "null"] },
+              "direction": { "enum": ["improved", "regressed", "unchanged", "not_rescored"] }
+            }
+          }
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["questionId", "previous", "current", "direction"],
+            "properties": {
+              "questionId": { "type": "string" },
+              "previous": { "$ref": "#/$defs/answerStatus" },
+              "current": { "$ref": "#/$defs/answerStatus" },
+              "direction": { "enum": ["improved", "regressed", "unchanged", "not_retested"] }
+            }
+          }
+        },
+        "summary": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "internal": {
+      "type": "object",
+      "description": "Never rendered client-side and never emailed. Sales fit, agent queue, judge notes, research sources."
+    }
+  },
+  "$defs": {
+    "measureId": {
+      "enum": ["performance", "search_visibility", "ai_answer_visibility", "crawlability", "structure_schema", "contact_path", "accessibility"]
+    },
+    "dimensionId": {
+      "enum": ["first_glance_clarity", "design_communication", "owner_pride", "trust_and_proof", "mobile_experience", "ai_readability"]
+    },
+    "answerStatus": {
+      "enum": ["answered_at_url", "answered_buried", "not_stated", "contradictory"]
+    },
+    "readoutMeter": {
+      "type": "object",
+      "required": ["label", "value", "status", "tone", "source"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "value": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "status": { "enum": ["observed", "not_collected", "blocked"] },
+        "tone": { "enum": ["good", "mixed", "bad"] },
+        "source": {
+          "type": "object",
+          "required": ["kind"],
+          "oneOf": [
+            { "properties": { "kind": { "const": "dimension" }, "dimensionId": { "$ref": "#/$defs/dimensionId" } }, "required": ["kind", "dimensionId"] },
+            { "properties": { "kind": { "const": "measure" }, "measureId": { "$ref": "#/$defs/measureId" } }, "required": ["kind", "measureId"] }
+          ]
+        }
+      }
+    },
+    "fixRef": {
+      "type": "object",
+      "required": ["kind"],
+      "oneOf": [
+        { "properties": { "kind": { "const": "recipe" }, "recipeId": { "type": "string" } }, "required": ["kind", "recipeId"] },
+        { "properties": { "kind": { "const": "homework" }, "homeworkId": { "type": "string" } }, "required": ["kind", "homeworkId"] },
+        { "properties": { "kind": { "const": "none" }, "reason": { "type": "string" } }, "required": ["kind", "reason"] }
+      ]
+    }
+  }
+}
