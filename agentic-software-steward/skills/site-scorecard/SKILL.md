@@ -42,7 +42,13 @@ Recommended:
    Baseline runs of sites this agent never touched are fine. On preview or
    drift runs after this agent's own changes, the dimension scoring goes to a
    separate judge session (or the owner scores the six dimensions); this
-   agent may prepare everything else.
+   agent may prepare everything else. Every judgment session runs under a
+   dedicated judge identity and records it in the completed record as
+   `internal.judge = { "identity": "<judge-id>", "judgedAt": "<ISO>",
+   "runtime": "<runtime-name>" }`. The Karbon delivery gate rejects records
+   without a judge identity, and rejects preview/drift records whose judge
+   identity matches a builder identity — that rejection is the separation
+   rule working, not an error to route around.
 3. **No invented facts.** Every `factsVerified` flag set true requires a
    named official source. Fabricated proof anywhere caps `trust_and_proof`
    at 2 and adds a presentation blocker (see anchors).
@@ -79,7 +85,8 @@ Recommended:
 8. **Gate bookkeeping** — set `factsVerified` honestly; write `stillOpen`
    (the most important unresolved gap, owner-facing); remove the
    "judgment pass not yet completed" blocker only when steps 3–7 are done;
-   add any presentation blockers the anchors require.
+   add any presentation blockers the anchors require; write
+   `internal.judge` with this session's judge identity (Hard Rule 2).
 9. **Validate** the completed record against
    `references/visibility-blueprint.v3.schema.json`. A record that fails
    validation is not done.
