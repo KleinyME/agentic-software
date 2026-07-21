@@ -31,8 +31,14 @@ If the repo has obvious low-risk issues, fix one or more in the same pass after 
 6. Identify theater software, fake data, dead buttons, duplicate systems, stale docs, and dead code.
 7. Search for concrete evidence: `mock`, `fake`, `sample`, `placeholder`, `TODO`, `FIXME`, `later`, `stub`, `dummy`, hard-coded dashboard values, empty handlers, disabled controls, skipped tests, duplicate helpers, commented-out legacy code, and direct secret usage.
 8. Create or update `docs/quality/repo-audit.md` using the repo audit template when useful.
-9. Produce a prioritized plan: stabilize, clarify, modularize, harden, polish.
-10. Take the first safe remediation step or state why implementation should wait.
+9. For web builds, set link-preview metadata in the FIRST iteration — per-page
+   `<title>`, meta description, canonical, `og:title/description/url/type/site_name`,
+   `og:image` (1200×630 with width/height/alt), and `twitter:card/title/description/image`.
+   A first preview shared in chat or social must never render as a bare URL.
+   Mark the og:image `provisional` if it is a placeholder; release-steward
+   re-verifies all of it at go-live.
+10. Produce a prioritized plan: stabilize, clarify, modularize, harden, polish.
+11. Take the first safe remediation step or state why implementation should wait.
 
 ## Foundation Files
 

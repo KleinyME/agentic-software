@@ -37,6 +37,7 @@ Use `live-environment-steward` for environment safety details. Before promotion:
 - Exercise critical success, denial, error, retry, and recovery paths.
 - Run build, tests, accessibility, browser, and deployment checks proportionate to risk.
 - For public production, confirm the canonical target carries no custom preview `noindex`, deployment protection, or blocking robots rule. Platform-managed preview and outdated-deployment URLs may remain de-indexed.
+- Verify link-preview metadata against the LIVE domain on every public route: canonical and `og:url` point at the production domain (not a preview URL), `og:image` resolves 200 at its absolute production URL, titles/descriptions/alt text name only current offers (no retired product names), and `twitter:card` renders. Bootstrap set these in iteration one; go-live is when they get re-checked and updated.
 - Confirm the exact official production target and rollback path.
 
 After promotion, verify the official domain or application, not merely push or deployment success.
