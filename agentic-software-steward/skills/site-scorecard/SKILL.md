@@ -1,16 +1,27 @@
 ---
 name: site-scorecard
-description: Complete the judgment lane of a Karbon visibility_blueprint_v3 draft record — customer question table, six anchored dimension scores, restructure plan, homework specs, and the people-side readout — so the record passes its delivery gate and can be rendered as the client Blueprint. Use when a draft record has the "judgment pass not yet completed" blocker, when a preview/drift run needs re-judging, or when someone asks to "run the scorecard", "fill the judgment lane", "complete the Blueprint", or "judge this site".
+description: Review a Karbon visibility_blueprint_v3 record as the dedicated judge — research the business, refine the judgment lane (customer question table, six anchored dimension scores, restructure plan, homework specs, people-side readout) where evidence warrants, and write the additive narrativeReview that becomes AbeL's client-facing second read. Use when a Blueprint judgment job is claimed, when a preview/drift run needs re-judging, or when someone asks to "run the scorecard", "judge this site", "review the Blueprint", or "complete the Blueprint".
 ---
 
 # Site Scorecard
 
-Turn a half-filled Blueprint draft into a deliverable client document by adding
-the judgment a machine lane cannot: what customers ask, how the site reads as a
-human artifact, and what the page-by-page plan is.
+Give an already-issued Blueprint its research-driven second read: what
+customers ask, how the site reads as a human artifact, what the page-by-page
+plan is — and AbeL's written review on top.
+
+Since the 2026-07-20 capture-to-client change, the record arrives COMPLETE:
+the Karbon server fills the judgment lane at capture time (marked in
+`internal.immediateJudgment`, mode `model_reviewed` or `instrument_derived`).
+The client has usually already seen it. This pass refines the judgment lane
+where real research contradicts the immediate pass, and adds the narrative
+review — it is a reviewer's improvement pass, not a first fill.
 
 The instrument lane measured; this skill judges. Never re-measure what the
-record already contains, and never present judgment as measurement.
+record already contains, and never present judgment as measurement. The
+measured lane — `instruments`, `readout.machinesView`,
+`readout.planningSignal`, `meta.sourceAccess` — is FROZEN at issuance: the
+Karbon server discards silent edits to it and alerts the owner. If a measured
+value looks seriously wrong, say so in `narrativeReview.stillToConfirm`.
 
 ## Inputs
 
@@ -66,10 +77,11 @@ Recommended:
    `brand-direction` Establish Truth; vernacular and competitor language via
    `design-distinctiveness`. Save to the client's `research/` folder with
    sources and dates.
-3. **Question table** — select 3–5 questions per
-   `references/answer-availability.md`, check each against the live site
-   (and concept on preview runs), record statuses and owner-facing notes.
-   Any `contradictory` becomes the rank-1 finding.
+3. **Question table** — the record arrives with 3–5 questions from the
+   immediate pass. Keep the ones research supports; replace weak or
+   flattering ones per `references/answer-availability.md`; check each
+   against the live site (and concept on preview runs), record statuses and
+   owner-facing notes. Any `contradictory` becomes the rank-1 finding.
 4. **Dimensions** — score all six against `references/scoring-anchors.md`,
    interpolating between bands, citing observed evidence in each
    `evidence` string. `ai_readability` must cite the instrument checks
@@ -82,15 +94,26 @@ Recommended:
    list, acceptance `rerun_question`.
 7. **Readout** — fill `peopleView` meter values from the dimension scores
    (×10), set tones, and write the `diagnosis` paragraph in plain English.
-8. **Gate bookkeeping** — set `factsVerified` honestly; write `stillOpen`
-   (the most important unresolved gap, owner-facing); remove the
-   "judgment pass not yet completed" blocker only when steps 3–7 are done;
-   add any presentation blockers the anchors require; write
+8. **Narrative review** — write the top-level `narrativeReview` object,
+   AbeL's plain-language client-facing review, first person, deadpan, no
+   hype: `{ "whatISee": <one honest paragraph on this business's
+   visibility>, "whatMattersMost": <the single highest-leverage issue and
+   why>, "whatIdChange": <the concrete first change>, "recommendedPackage":
+   { "name": <"Local Site + Care" | "Local Site (full handoff)" |
+   "Online Store" | "Custom Stack">, "why": <why this package fits,
+   grounded in the findings> }, "stillToConfirm": <what could not be
+   verified from the outside> }. This drives the review email and the
+   review section of the delivered document — it is the earned second ask.
+9. **Gate bookkeeping** — set `factsVerified` honestly; write `stillOpen`
+   (the most important unresolved gap, owner-facing); legacy drafts only:
+   remove the "judgment pass not yet completed" blocker once steps 3–7 are
+   done; add any presentation blockers the anchors require; write
    `internal.judge` with this session's judge identity (Hard Rule 2).
-9. **Validate** the completed record against
-   `references/visibility-blueprint.v3.schema.json`. A record that fails
-   validation is not done.
-10. **Store** the completed record back to its run folder. Rendering and
+10. **Validate** the completed record against
+    `references/visibility-blueprint.v3.schema.json` (`narrativeReview` is
+    an additive top-level key the schema tolerates). A record that fails
+    validation is not done.
+11. **Store** the completed record back to its run folder. Rendering and
     delivery happen through the Karbon server
     (`POST /api/blueprint/v3/render`; audience `client` refuses records with
     blockers — that refusal is the gate working, not an error to route
@@ -109,8 +132,9 @@ Recommended:
 - All six dimensions scored with cited evidence; questions 3–5 with statuses
   and owner-safe notes; restructure plan covers every known page; every
   unanswered question has a homework item with an acceptance test.
-- The judgment-pending blocker is gone, remaining blockers are real, and the
-  record validates against the schema.
+- `narrativeReview` is written, complete, and grounded in the findings.
+- The measured lane is byte-identical to what arrived; remaining blockers
+  are real; the record validates against the schema.
 - `meta.repoCommit` / `meta.generation` are set.
 - Research is saved in the client folder with sources; nothing from
   `internal` leaked toward the client.
