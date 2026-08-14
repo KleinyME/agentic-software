@@ -6,6 +6,19 @@ Status: Confirmed | Inferred | Open
 
 [Plain-language description of what this software is for and who it serves.]
 
+- Primary actor:
+- Intended outcome:
+- Success evidence:
+- Prohibited outcomes:
+
+## Current Situation
+
+- Stage: greenfield | prototype | early-live | established | regulated
+- Architecture mode: lean | standard | senior
+- Risk overlays:
+- Sources of truth:
+- Reclassify when:
+
 ## Current Working Truth
 
 - [What currently works end to end.]
@@ -43,6 +56,27 @@ Missing creative authority metadata defaults to provisional. Technical truth use
 | Module | Owns | Must Not Own | Depends On | Memory |
 |---|---|---|---|---|
 
+## Typed Relationships
+
+| Subject | Relationship | Object | Source | Observed/Effective Time | Status |
+|---|---|---|---|---|---|
+
+Use only for load-bearing ownership, dependency, implementation, verification, decision, supersession, risk, or environment relationships.
+
+## Automation Opportunities
+
+| Stable Key | Status | Evidence | Recommended Method/Topology | Next Decision |
+|---|---|---|---|---|
+
+Include only qualified opportunities. Do not add speculative watch items or repeat dismissed suggestions.
+
+## Exponential Strategy Candidates
+
+| Stable Key | Status | Compounding Mechanism | Evidence / Proof Level | Linked Automation | Next Decision |
+|---|---|---|---|---|---|
+
+Include only qualified leverage, intelligence-loop, or rewrite candidates. An MTP, framework score, strategy memo, or agent demo is not proof. Omit this section when no candidate qualifies.
+
 ## Data And Security Notes
 
 - Sensitive data:
@@ -71,6 +105,13 @@ Missing creative authority metadata defaults to provisional. Technical truth use
 - Test:
 - Build:
 - Lint/typecheck:
+
+## Completion Evidence
+
+- Primary user journey:
+- Important failure/permission paths:
+- Last known verified environment:
+- Known verification gaps:
 
 ## Known Risks
 

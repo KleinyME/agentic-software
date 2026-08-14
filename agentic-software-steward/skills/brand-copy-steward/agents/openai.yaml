@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brand Copy Steward"
+  short_description: "Create and protect every user-facing word"
+  default_prompt: "Use $brand-copy-steward to create or review this user-facing copy, preserve product truth, and keep internal AI material out of the final surface."

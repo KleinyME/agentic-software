@@ -6,7 +6,7 @@ This file contains complete AD_KNOWLEDGE_PACKAGE entries for 27 iconic ads. Each
 
 **Use this file when:** Creating video scripts, TV/broadcast copy, cinematic ad concepts, or any content drawing on iconic ad creative principles.
 
-**Safety note:** All "TRANSFERABLE CREATIVE PRINCIPLES" and "ALLOWED" sections are cleared for use. Never replicate the exact IP elements listed in "DO NOT" sections.
+**Safety note:** Treat "TRANSFERABLE CREATIVE PRINCIPLES" and "ALLOWED" sections as abstract creative-study guidance, not legal clearance. Create an original concept, characters, dialogue, sequence, visual identity, and sonic identity. Never replicate the protected elements listed in "DO NOT" sections, and obtain appropriate review when a concept could be substantially similar.
 
 ---
 

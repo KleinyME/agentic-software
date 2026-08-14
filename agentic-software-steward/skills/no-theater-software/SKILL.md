@@ -9,7 +9,7 @@ No-theater governs how maturity is represented, not what may be imagined, design
 
 ## Stage Model
 
-Declare the actual stage instead of defaulting to `real`:
+Declare the actual stage:
 
 - `concept-preview`: complete look, copy, layout, claims, intended journey, and realistic simulation for client review.
 - `functional-preview`: working frontend behavior using deterministic fixtures, local adapters, or sandbox services.
@@ -20,32 +20,13 @@ A deployed URL is not automatically production. The project must designate its o
 
 ## What Is Allowed In Preview
 
-Encourage:
+Encourage full intended dashboards using realistic fixture data; form validation and simulated success/error flows; complete login, membership, checkout, onboarding, and account experiences; proposed marketing claims and proof sections; generated or provisional imagery; and loading, empty, denied, error, recovery, and success states.
 
-- Full intended dashboards using realistic fixture data.
-- Form validation and simulated success/error flows.
-- Complete login, membership, checkout, onboarding, and account experiences.
-- Buttons that navigate through simulated workflows.
-- Proposed marketing claims and proof sections.
-- Generated or provisional imagery.
-- Loading, empty, denied, error, recovery, and success states.
-
-Do not reduce the intended experience because the backend is not connected yet.
-
-Use a broad visual prototype and a narrow real vertical slice together. The preview establishes intent; the vertical slice proves the production architecture.
+Do not reduce the intended experience because the backend is not connected yet. Use a broad visual prototype and a narrow real vertical slice together. The preview establishes intent; the vertical slice proves production architecture.
 
 ## Clean Preview And External Notes
 
-Do not pollute the rendered page with warnings, badges, placeholder labels, audit tags, or implementation notes.
-
-Document outside the page:
-
-- Proposed claims and missing proof.
-- Provisional images and source decisions.
-- Simulated functions and intended production behavior.
-- Client decisions and requested refinements.
-
-Use `CLIENT_REVIEW.md` during concept approval. After approval, use `DEPLOYMENT_READINESS.md` for production work.
+Do not pollute the rendered page with warnings, badges, placeholder labels, audit tags, or implementation notes. Record proposed claims, provisional assets, simulated functions, and client decisions in `CLIENT_REVIEW.md`. After approval, use `DEPLOYMENT_READINESS.md` for production work.
 
 ## Production Gate
 
@@ -57,21 +38,12 @@ Before calling a capability production-ready:
 - Auth has server-side identity and authorization boundaries.
 - Payments use the correct client-owned account, products, prices, and webhooks.
 - Integrations use intended production credentials and have exercised success/failure behavior.
-- Workers and scheduled flows have been run, observed, and recovered from representative failure.
+- Workers and scheduled flows have run, been observed, and recovered from representative failure.
 - Testimonials, customers, metrics, certifications, comparisons, links, and documentary imagery are verified or removed.
 
 ## Truth States Per Capability
 
-Use:
-
-- `simulated`
-- `fixture`
-- `sandbox`
-- `connected`
-- `verified`
-- `not-required`
-
-Track state in deployment readiness, not inside the product UI.
+Use `simulated`, `fixture`, `sandbox`, `connected`, `verified`, or `not-required`. Track state in deployment readiness, not inside product UI.
 
 ## Audit Existing Repos
 
@@ -81,14 +53,17 @@ Classify findings by current environment and intended stage. A fixture in a prot
 
 ## Deferred Work
 
-Every unresolved production item must record:
-
-- Intended final behavior.
-- Current simulated or sandbox behavior.
-- Required production resource.
-- Owner.
-- Implementation step.
-- Verification method.
-- Whether it blocks promotion.
+Every unresolved production item must record intended final behavior, current simulated or sandbox behavior, required production resource, owner, implementation step, verification method, and whether it blocks promotion.
 
 Do not call the system production complete until required items are connected and exercised.
+
+## Clean Output Boundary
+
+Keep prototype, fixture, simulation, claim-evidence, and deployment status truthful without leaking internal machinery into customer-facing copy.
+
+- Put client decisions and preview limitations in the designated review artifact.
+- Put launch blockers and dependencies in deployment-readiness artifacts.
+- Show a public status only when users genuinely need it, translated into deliberate product language.
+- Never send system instructions, private reasoning, audit notes, debug fields, or secrets to a public renderer or client payload.
+
+Use `audience-boundary` when internal truth and user-facing output share a data path.

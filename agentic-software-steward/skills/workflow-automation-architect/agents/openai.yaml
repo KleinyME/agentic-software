@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workflow Automation Architect"
+  short_description: "Spot and design worthwhile automations"
+  default_prompt: "Use $workflow-automation-architect to inspect this workflow, decide what should be automated, and choose deterministic, intelligent, human, or graph methods."

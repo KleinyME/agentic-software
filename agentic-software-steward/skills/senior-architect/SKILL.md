@@ -13,6 +13,10 @@ Lead only architecture and expensive-to-reverse technical decisions. Do not chai
 
 An implemented UI, existing `DESIGN.md`, or earlier architecture plan is not creative approval. Preserve approved expression during technical design and return genuine conflicts instead of silently normalizing the experience.
 
+## Intent Before Architecture
+
+Consume the intent and situation decision from `software-steward` before selecting architecture. If the actor, intended outcome, success evidence, prohibited outcomes, authority, or source of truth is still materially unclear, inspect available context and ask the user before committing to architecture.
+
 ## Lean Redirect
 
 If the user mentions bloat, drift, V2 rebuild, vibe-coded small software, agent-native workflow, small business loop, almost starting over, or avoiding enterprise ceremony, stop and use `lean-product-architect` first.
@@ -46,6 +50,7 @@ Ask yourself:
 Produce:
 
 - Product intention summary.
+- Situation summary: stage, risk, reversibility, uncertainty, sources of truth, and overlays.
 - First real vertical slice.
 - Module boundaries and responsibilities.
 - Data model assumptions.
@@ -54,6 +59,7 @@ Produce:
 - Testing and verification plan.
 - Branching and release recommendation.
 - Project memory updates needed.
+- Reclassification triggers that would require revisiting the architecture.
 
 ## Taste Rules
 

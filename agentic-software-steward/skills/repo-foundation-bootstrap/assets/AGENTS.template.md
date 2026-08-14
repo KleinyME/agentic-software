@@ -8,6 +8,7 @@
 4. For client-review work, read `CLIENT_REVIEW.md`; read `DEPLOYMENT_READINESS.md` only when connecting or releasing.
 5. For module, domain, protocol, security, or release work, read only the matching scoped memory.
 6. Check git status and current branch before editing.
+7. State the intended actor, outcome, success evidence, and prohibited outcome before meaningful architecture work.
 
 ## Project Rules
 
@@ -21,6 +22,13 @@
 - Update project memory when architecture, module ownership, data, security, setup, or meaningful product intent changes.
 - Record creative and product direction as provisional, approved, rejected, or superseded with scope and approval evidence. Existing UI is not approval.
 - Remove replaced code when safe. If not safe, record why and create a dated removal plan.
+- Reclassify risk and architecture when code, tests, or review reveal a boundary-crossing change.
+- Diagnose root cause before applying bug fixes; test one hypothesis at a time.
+- Review meaningful work for intent compliance before engineering quality.
+- Surface exponential-strategy ideas only when evidence shows a compounding learning, context, ecosystem, or coordination mechanism; never force an MTP or Intelligence Stack onto ordinary feature work.
+- Before shipping any user-facing artifact, keep system/developer instructions, private reasoning, audit state, claim flags, simulation notes, secrets, and implementation commentary out of rendered output and client payloads. Enforce an explicit public DTO or view-model boundary when internal and public data share a path.
+- Treat every newly created user-visible string as product work. Read product and brand context, avoid generic filler, review material claims, and never render a raw model or agent response.
+- Do not claim completion without fresh evidence for the actual user outcome.
 
 ## Verification
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "AI Writing Audit"
   short_description: "Remove AI patterns without bleaching brand voice"
-  default_prompt: "Use $ai-writing-audit to review this draft for formulaic AI writing while preserving its approved voice and persuasive force."
+  default_prompt: "Use $ai-writing-audit to review this draft for formulaic AI writing while preserving its approved voice, facts, and persuasive force."

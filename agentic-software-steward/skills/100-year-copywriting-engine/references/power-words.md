@@ -1,27 +1,27 @@
-# Power Words Database — Complete Reference
+# Headline And CTA Language Reference
 
 Source: The 100 Year Copywriting Engine V13.001 — Ken "Spanky" Moskowitz / Ad Zombies
 
-Power words work by triggering emotional or psychological responses. Use them deliberately, not by default. One well-placed power word in a headline beats five scattered through mediocre copy.
+These words can create emphasis, urgency, or specificity when the underlying claim is true. Use them deliberately, not by default. No word is inherently high-converting across audiences.
 
 ---
 
-## TIER 1 — HIGHEST CONVERTING POWER WORDS
+## TIER 1 — COMMON HIGH-ATTENTION WORDS
 
-### Universal High-Performance Words
+### Common Value And Attention Words
 
-**Emotional Triggers (95%+ effectiveness)**
+**Value and outcome language**
 - Free, Guaranteed, You, Because, New, Save, Results, Proven, Instant, Easy
 
-**Urgency and Scarcity (92% effectiveness)**
+**Urgency and scarcity language — only with a real deadline or limit**
 - Limited Time, Last Chance, Deadline, Today Only, Running Out, Final, Act Now
 
-**Exclusivity and Prestige (89% effectiveness)**
+**Exclusivity and prestige language — only when the access distinction is real**
 - Exclusive, VIP, Members Only, Elite, Premium, First, Handpicked, Luxury
 
 ---
 
-### Digital Marketing Power Words (Platform-Optimized)
+### Common Digital Marketing Language
 
 **Call-to-Action Powerhouses**
 - Download Now, Get Started, Join Today, Claim Your, Try Free, Subscribe, Unlock, Discover
@@ -61,8 +61,8 @@ Power words work by triggering emotional or psychological responses. Use them de
 - Secret, Hidden, Insider, Behind-the-Scenes
 - Mistake, Avoid, Warning, Truth, Reality
 
-**Authority Builders**
-- Research Shows, Studies Prove, Experts Agree, Data Reveals
+**Authority language — name and verify the source**
+- Research shows, a named study reports, the measured data shows
 - Experience, Case Study, Analysis, Investigation
 - Professional, Industry, Expert, Specialist
 
@@ -126,6 +126,6 @@ Power words work by triggering emotional or psychological responses. Use them de
 
 1. **Context matters.** "Free" in a luxury brand ad weakens perceived value. Match the word to the brand position.
 2. **Don't cluster.** "Amazing, Exclusive, Breakthrough Results—Free!" reads as spam.
-3. **Specificity amplifies power words.** "Proven" is good. "Proven in 47 independent studies" is better.
+3. **Specificity must be earned.** Use "proven" or a study count only when the exact evidence is available and relevant.
 4. **Power words in subject lines:** Use 1–2 maximum. Subject lines with too many trigger spam filters and reader skepticism.
-5. **Test relentlessly.** "Last Chance" vs. "Ends Tonight" — the winning version varies by audience.
+5. **Test meaningful hypotheses.** "Last Chance" and "Ends Tonight" are valid only when the opportunity actually ends.

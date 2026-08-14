@@ -1,0 +1,4 @@
+interface:
+  display_name: "100 Year Copywriting Engine"
+  short_description: "Strategic direct-response copy with human voice"
+  default_prompt: "Use $100-year-copywriting-engine to create persuasive, truthful copy from this product, audience, offer, and proof."

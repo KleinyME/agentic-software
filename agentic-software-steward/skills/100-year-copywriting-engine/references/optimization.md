@@ -32,17 +32,18 @@ Source: The 100 Year Copywriting Engine V13.001 + CPS V6.000 — Ad Zombies
 
 ### Testing Implementation Protocol
 
-- **Minimum Test Duration:** 7 days OR 1,000 interactions (whichever comes first)
-- **Statistical Significance:** 95% confidence level required before declaring a winner
-- **Sample Size:** Calculate before starting — underpowered tests produce false results
-- **Variable Isolation:** Test ONE element at a time for clean results
-- **Control Version:** Always establish a control before testing
+- **Duration:** Set from traffic cycles, decision risk, and the planned sample size; do not use a universal day or interaction threshold.
+- **Decision rule:** Choose confidence, Bayesian, or practical-significance criteria before starting and document them.
+- **Sample size:** Calculate from baseline rate, minimum detectable effect, allocation, and acceptable error; underpowered tests produce false certainty.
+- **Variable isolation:** Test one element when causal attribution matters. Use a designed multivariate test only when traffic and analysis support it.
+- **Control version:** Establish a baseline or control unless the experiment design has another explicit comparison.
 - **Automated Feedback:** Set up collection before launching
 
 ---
 
-### What NOT to Test Simultaneously
-Never test headline AND CTA AND imagery at the same time. If a winner emerges, you won't know which element drove the improvement. Isolate variables.
+### Simultaneous Changes
+
+Do not change headline, CTA, and imagery together when the goal is to attribute causality to one element. A multi-change concept test can still answer whether the whole concept wins; label it accordingly and do not claim which component caused the result.
 
 ---
 

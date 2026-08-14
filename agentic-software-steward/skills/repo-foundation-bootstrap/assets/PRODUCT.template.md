@@ -37,6 +37,15 @@ product
 
 [Three observable voice/design behaviors. Include approved boldness and tone boundaries.]
 
+## Product Language
+
+- Primary action users should take:
+- Words customers use for the problem:
+- Words customers use for the desired outcome:
+- Supported proof or product facts:
+- Claims or language the product must not use:
+- Intensity difference between marketing and in-product UI:
+
 ## Anti-References
 
 [What this should not feel like, look like, or behave like.]
@@ -55,4 +64,3 @@ product
 ## Accessibility And Inclusion
 
 [WCAG expectations, motion, contrast, keyboard, screen reader, language.]
-

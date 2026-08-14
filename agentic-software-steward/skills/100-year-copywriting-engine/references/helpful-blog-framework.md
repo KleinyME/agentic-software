@@ -6,7 +6,7 @@ Source: The 100 Year Copywriting Engine V13.001 — Ken "Spanky" Moskowitz / Ad 
 
 Use this framework for educational blog posts, how-to guides, industry insights, and any long-form content where organic search traffic is part of the goal.
 
-**Effectiveness:** 87% for organic search growth and engagement
+**Strength:** Reader-first structure for useful, source-backed educational content
 **Best for:** Educational blog posts, how-to guides, industry insights
 **Audience:** Information seekers, problem solvers, learning-focused readers
 **Content types:** Tutorials, explanatory articles, thought leadership pieces
@@ -161,8 +161,8 @@ Use this framework for educational blog posts, how-to guides, industry insights,
 
 ### Primary KPIs
 - Organic search traffic growth (month over month)
-- Average time on page (target: 3+ minutes)
-- Scroll depth and engagement (target: 70%+ scroll depth)
+- Average engaged time compared with the project's baseline
+- Scroll depth and engagement compared with the article's intended reading path
 - Social shares and backlinks
 - Comment quality and quantity
 - Email subscriptions from blog posts

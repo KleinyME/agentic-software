@@ -22,6 +22,14 @@ Make memory a routing front door, not a personality transplant or an archive dum
 
 Put deep design, domain, protocol, security, module, and release material in scoped files. Link them from the front door with a clear `load when` condition.
 
+For meaningful active work, preserve the durable parts of the intent and situation decision: actor, outcome, success evidence, prohibited outcomes, current architecture mode, risk overlays, sources of truth, and specific reclassification triggers. Keep transient task mechanics out of project memory.
+
+`AGENTS.md` tells future agents how to work in the repo.
+
+For repositories with meaningful cross-module, temporal, or supersession relationships, add a compact typed relationship map to `PROJECT_MEMORY.md` or a linked small YAML/JSON file. Prefer edges such as `OWNS`, `DEPENDS_ON`, `IMPLEMENTS`, `VERIFIED_BY`, `DECIDED_BY`, `SUPERSEDES`, `AFFECTS`, and `RUNS_IN` over vague "related to" links. Include a source pointer and effective/observed time for facts that can change. Do not add a graph database when a Markdown table is sufficient; use `graph-engineering` when the relationship model or retrieval path needs design.
+
+For qualified automation opportunities, keep a compact `Automation Opportunities` section or export the portable record from `workflow-automation-architect`. Record only `could_automate`, `should_automate`, or `architecture_input` candidates with a stable key, evidence source, observed time, status, method/topology recommendation, and next decision. Do not store speculative `watch` items or duplicate dismissed suggestions. Keep the user's standing automation preference in user-level memory such as OB1/OpenBrain rather than copying it into every repository.
+
 ## Two Independent Truth Systems
 
 Do not mix factual evidence with decision approval.
@@ -138,5 +146,9 @@ Update memory when any of these change:
 - external integrations or environment ownership;
 - setup, test, build, deploy, or verification commands;
 - known risks or removed behavior.
+- Load-bearing dependency, verification, supersession, environment, or temporal relationships.
+- Accepted, dismissed, implemented, measured, or retired automation opportunities.
+- Product intent, prohibited outcomes, source-of-truth, architecture mode, or risk-overlay changes.
+- New verification commands, regression evidence, or known verification gaps future agents must understand.
 
 Do not record tiny implementation details or speculative concerns that do not help a future task route correctly.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence Before Completion"
+  short_description: "Prove outcomes before claiming success"
+  default_prompt: "Use $evidence-before-completion to choose and run fresh checks that prove this work is actually complete."
