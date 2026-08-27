@@ -1,7 +1,7 @@
 ---
 name: client-website-delivery
 description: Use when auditing, verifying, polishing, or packaging public-facing client website deliverables so audit evidence, build guidance, preview polish, and owner-ready artifacts stay separated but coordinated.
-version: 1.1.0
+version: 1.3.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -56,8 +56,12 @@ When a pipeline or audit field changed:
 - count findings from the current payload shape; in Blueprint findings, severity may live in `severity` rather than `priority`
 - inspect sector/archetype classification, competitor/peer names, and client-facing language before calling a Blueprint usable; schools/nonprofits/community orgs must not inherit local-trade/service-business defaults like buyers, quotes, booked appointments, services/service areas, or restaurant/pub competitors
 - scan the rendered report for empty bullet/list items, grammar artifacts such as "the you confirms", and public PDF/web parity problems; route status 200 is not enough if the content is visibly broken
+- for email delivery, distinguish provider acceptance, recipient-mail-server acceptance, and human receipt; an event named `delivered` usually proves only that the recipient server accepted the message, not that the client can see it in Inbox or Spam
+- when a later-started Blueprint sends but another does not, inspect each exact capture/job pair and its gate result rather than inferring FIFO failure; a local `record.json` can exist while a `422` validator rejection prevents any provider attempt
+- before requeueing a validator-rejected judgment, run the current full delivery-boundary validator; zero blockers and a manually added identity are not enough when required metadata or client-facing sections such as `narrativeReview` are incomplete
+- if a judgment process exits successfully but the attempt-scoped output path is absent, inspect legacy/sibling judged-record paths before rerunning the model; validate any candidate with the full current boundary, then release the exact active claim through the durable retry API and use submit-only recovery after its retry lease opens. A network abort while persisting attempt failure can leave the claim marked running even though a valid judged artifact exists.
 
-A successful compile is not enough; verify through the product surface or API route the user actually cares about. See `references/fresh-audit-rerun-pattern.md` for the reusable fresh-audit/report rerun checklist.
+A successful compile is not enough; verify through the product surface or API route the user actually cares about. When a client screenshot shows HTTP 200 beside “empty or exceeded the audit body limit,” zero/unmeasured score cards, or an unexpectedly empty entity profile, treat it as a collector-boundary incident rather than a site-quality finding: measure the decoded response bytes, preserve bounded network safety, test realistic hosted-builder HTML, and remove script/style/template noise only after extracting JSON-LD. Also separate request acceptance, judgment completion, delivery completion, provider acceptance, recipient-server acceptance, and client-confirmed receipt before saying a PDF or email reached the client. See `references/fresh-audit-rerun-pattern.md` for the reusable fresh-audit/report rerun checklist, `references/blueprint-delivery-recovery.md` for source-ceiling, queue-pickup, corrected-recapture, and delivery-proof recovery, and `references/blueprint-email-receipt-reconciliation.md` for non-receipt investigation and the one-controlled-fallback pattern.
 
 ### 3) Classify and remediate audit findings
 Before turning a Blueprint or visibility report into code:
@@ -67,9 +71,9 @@ Before turning a Blueprint or visibility report into code:
 - implement and verify one slice at a time before running the full focused suite
 - do not claim third-party profiles, reviews, backlinks, DNS, or other external signals were fixed by a repository change
 
-For buyer-facing process gaps, publish customer guidance that explains stages, required inputs, when timing starts, realistic planning ranges, schedule-changing conditions, preview/approval, launch, and handoff. Present timing as a planning range, not a guarantee, and do not invent revision counts or package terms.
+For buyer-facing process gaps, publish customer guidance that explains stages, required inputs, when timing starts, realistic planning ranges, schedule-changing conditions, preview/approval, launch, and handoff. Present timing as a planning range, not a guarantee, and do not invent revision counts or package terms. Delivery timing is owner-sourced business truth: when the owner corrects it, update the source copy, regression coverage, client-handoff language, and deployed review surface together. Keep first-preview timing distinct from completed-build and launch timing.
 
-See `references/visibility-blueprint-remediation.md` for the detailed test-first remediation, self-hosted font, sitemap, responsive-QA, and reporting pattern.
+See `references/visibility-blueprint-remediation.md` for the detailed test-first remediation, Karbon offer-timing truth, self-hosted font, sitemap, responsive-QA, review-preview access, and reporting pattern.
 
 ### 4) Convert audit evidence into build constraints, not page prose
 Use audit output to decide:
@@ -99,14 +103,22 @@ Check and improve:
 - mobile: brand row, hamburger state, open menu, CTA stacking, interior page compositions
 - footer/end-state: intentional, not abandoned
 
+For final visual evidence, build first and test the framework's **production preview server**, not its development server. Confirm the actual bound port from server output before running browser checks; a stale dev child process can keep the requested port while the preview silently moves to another one. Development-only overlays such as Astro's toolbar must not appear in owner screenshots.
+
 Borrow interaction and proof patterns from strong design systems only as mechanics. Do not copy an AI/SaaS aesthetic wholesale onto schools, contractors, nonprofits, or community organizations unless that identity is appropriate.
 
-### 7) Package owner-facing artifacts
+See `references/static-site-preview-verification.md` for the production-preview, browser-assertion, screenshot, and Vercel access-verification pattern.
+
+### 7) Package owner-facing and client-draft artifacts
 When sending results to an owner or chat channel:
 - write a concise Markdown review or summary, not just raw JSON
 - include raw JSON when useful for implementation review
 - decode and send screenshots directly when audit payloads embed them as data URIs
 - clearly separate confirmed evidence, directional findings, and low-confidence/noisy sections
+- prepare the plain-language client draft from `templates/client-improvement-email.md` after the regression-and-polish loop is clean
+- separate measured changes from projected benefits, say “Not measured” when no trustworthy baseline exists, and keep client-send behind explicit owner approval
+- when the owner wants ongoing oversight, configure durable completion notification before launch; after a confirmed send, retrieve the exact provider message, preserve HTML plus `.eml`, download and validate the exact linked PDF/report, and attach those owner copies in chat
+- report blocked, retry-scheduled, failed, or uncertain outcomes instead of producing a synthetic “sent” archive
 
 ## Copy Safety Gate
 
@@ -142,12 +154,20 @@ Safer pattern: translate the audit finding into real visitor information. If adm
 - [ ] For PDF/report availability questions, artifact access was checked in both local report paths and durable audit records before saying yes/no
 - [ ] Audit evidence was converted into constraints, not visible meta-copy
 - [ ] Information architecture fits the content density
-- [ ] Desktop and mobile preview states were visually checked
+- [ ] Desktop and mobile preview states were visually checked from the production build/preview server, with no development toolbar or overlay in the evidence
+- [ ] The browser checks used the actual bound preview port/URL rather than a stale process on the requested port
 - [ ] Mobile verification includes horizontal-overflow measurement and complete navigation-label visibility
 - [ ] Build-generated artifact churn was removed from the final diff unless intentionally changed
 - [ ] CTA contrast, visited states, nav states, and interior CTA stacking are readable
 - [ ] Owner-facing artifact is concise and reviewable
-- [ ] Public preview/share link was browser-checked when external review is expected
+- [ ] Public preview/share link was checked in an unauthenticated browser context; the returned title, H1, CTA, schema, and representative static routes are the intended site, not merely an HTTP 200 or a hosting-provider login shell
+- [ ] The exact URL sent to the owner is publicly readable; any protected immutable preview has an approved access exception/path or is reported as blocked rather than shareable
+- [ ] After a corrected redeploy, both the immutable deployment URL and any stable review alias point to the current build
+- [ ] Client handoff separates measured results, projected benefits, review items, and remaining work; exact client-send still awaits owner approval
+- [ ] Email verification records the exact recipient, sender, subject, provider event, and whether receipt was confirmed by the client
+- [ ] If owner archival was requested, the exact provider email was saved as HTML and `.eml`, and the exact linked report was downloaded and file-signature validated
+- [ ] A provider `delivered` event is reported as recipient-server acceptance, never as proof of inbox placement
+- [ ] A non-receipt fallback, when authorized, uses one simpler message with a new subject/idempotency key, validated PDF attachment, direct links, and a receipt request
 
 ## Common Pitfalls
 
@@ -160,9 +180,19 @@ Safer pattern: translate the audit finding into real visitor information. If adm
 7. **Overstating remediation.** Repository changes do not fix third-party listings, reviews, backlinks, DNS, or other external visibility signals; report those separately.
 8. **Leaving generator churn in the diff.** Production builds may rewrite unrelated PDFs or static artifacts; restore them unless they are intentional deliverables.
 9. **Inventing score deltas.** Cite before/after audit scores only when both measurements completed and were preserved.
+10. **Mistaking request notification for completion.** A “new Blueprint request” alert proves only that the capture and judgment job were created. Before saying a PDF or email exists, inspect the capture record, linked judgment-job status, `blueprintV3` presence, delivery timestamp/failure state, and owner-Telegram document state. A queued or reviewing job has not produced a client-ready Blueprint.
+11. **Treating large HTML as unreadable without checking byte ceilings.** When a browser renders the site but raw-source access is blocked, measure the actual response body and compare it with the same-stack source-body limit before blaming the site. Keep the record blocked until the source collector is safely corrected and rerun; do not bypass the delivery gate or send the client draft manually.
+12. **Equating provider delivery with human receipt.** A mail provider's `delivered` event generally means the recipient's server accepted the message. If the client cannot find it, investigate exact provider metadata, use one controlled plain fallback with the PDF attached, and stop repeated retries after a second server-accepted message.
+13. **Treating a local judged file or zero blockers as deliverability.** The current gate may still reject missing judge metadata or incomplete required sections. Validate the entire recovered output before a compare-and-set requeue; if substantive sections are incomplete, rerun judgment instead of patching one reported field at a time.
+14. **Capturing final evidence from the wrong server.** A dev process can survive its parent, keep the requested port, and inject framework-only UI while the production preview silently binds elsewhere. Stop/identify listeners, use the actual preview URL, and recapture before owner review.
+15. **Calling a protected deployment shareable.** Vercel can return a 200 login page for protected previews, and first deployments can be assigned to production automatically. Assert site identity unauthenticated and distinguish deployment success, review accessibility, and production promotion.
 
 ## References
 
 - `references/audit-language-quarantine.md` — detailed boundary between audit/report language and rendered website copy.
+- `references/blueprint-delivery-recovery.md` — distinguish request/judgment/delivery states; diagnose validator-rejected local judgments; recover with full current validation and guarded compare-and-set requeue; handle large-source/script-noise failures; keep judgment pickup from stalling.
+- `references/blueprint-email-receipt-reconciliation.md` — distinguish provider acceptance from inbox receipt; proactively archive exact provider email plus validated linked report for owner oversight; investigate non-receipt and send one controlled PDF-attached fallback.
 - `references/brand-brief-safety-gate.md` — safer audit-derived brand/copy field shapes and verification checks.
-- `references/visibility-blueprint-remediation.md` — test-first pattern for classifying and implementing first-party visibility findings, including process content, local fonts, sitemap coverage, responsive QA, and honest reporting.
+- `references/static-site-preview-verification.md` — verify static client prototypes from the production preview server; detect stale-port/dev-toolbar contamination; assert real site identity rather than HTTP status; handle Vercel first-deploy and protected-preview access traps.
+- `references/visibility-blueprint-remediation.md` — test-first pattern for classifying and implementing first-party visibility findings, including Karbon timing truth, process content, local fonts, sitemap coverage, responsive QA, public-preview access, and honest reporting.
+- `templates/client-improvement-email.md` — phone-readable post-improvement client email with change summary, review checklist, measured/projected split, limitations, and owner-approval boundary.
