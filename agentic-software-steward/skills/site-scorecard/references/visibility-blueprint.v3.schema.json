@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "visibility-blueprint.v3.schema.json",
+  "$comment": "Karbon-AI contracts/ is the canonical copy of this schema (docs/plans/2026-08-27-vault-to-execution-plan.md Task 0.4). The mirror at KleinyME/agentic-software agentic-software-steward/skills/site-scorecard/references/visibility-blueprint.v3.schema.json must stay byte-identical to this file; check it with `node scripts/verify-blueprint-schema-mirror.mjs` in that repo. Edit here first, copy there, never the reverse.",
   "title": "Karbon Visibility Blueprint Record (v3)",
   "description": "Shared contract between the Karbon-AI audit pipeline and the agentic-software site-scorecard skill. One record drives the client document, the DIY fix guide, the agent work queue, and drift/preview deltas. TypeScript source of truth: src/lib/blueprintContract.ts in Karbon-AI.",
   "type": "object",
