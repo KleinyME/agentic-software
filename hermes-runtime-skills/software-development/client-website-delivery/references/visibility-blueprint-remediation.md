@@ -53,6 +53,29 @@ Write as customer guidance, not an audit explanation. Treat ranges as planning r
 
 Build generators may rewrite PDFs, static HTML, or other generated artifacts even when their bytes are semantically unchanged. After verification, inspect status and diff, restore unrelated generated churn, and keep only the intended remediation changes.
 
+## Offer Timing Is Owner-Sourced Truth
+
+Never invent conservative delivery ranges because they sound safer. Confirm the operator's real fulfillment cadence and state the conditions that start the clock.
+
+For Karbon's current public offer:
+
+- a focused local-business site is usually completed in **24–48 hours** once the needed information, photos, access, and decisions are provided
+- an online store is usually completed in **2–4 days** once product information, shipping rules, payment access, and decisions are ready
+- clients will often receive an initial phone-ready preview **within a few hours** after the required information and access arrive
+
+Keep “first preview,” “completed build,” “approved launch,” and “live-domain promotion” distinct. Missing inputs, unusual integrations, scope changes, or delayed approvals may extend the range. When the owner corrects a business promise, update the source copy, regression test, reusable handoff copy, and review preview together.
+
+## Review Preview Access
+
+A successful deployment command and HTTP 200 are not sufficient proof that a client can review the page. Fetch the exact URL and verify that its title and body are the intended site rather than an authentication or protection screen.
+
+When a project's normal preview URLs are protected, prefer one of these explicit review paths:
+
+1. configure the supported automation/reviewer bypass for the existing project, or
+2. use a dedicated, clearly named review-only Vercel project with a stable public alias.
+
+A dedicated review project is not the client's live production surface. Never attach or move a client domain, change DNS, or promote the real site while solving preview access. After every corrected redeploy, verify both the immutable deployment URL and the stable review alias; aliases can continue pointing at an older deployment until reassigned.
+
 ## Reporting
 
 Report fixed, deferred/external, verified, and blocked items separately. Do not provide exact audit-score deltas unless both baseline and after measurements were successfully preserved. A failed final audit is a verification limitation, not evidence that the implementation failed.
