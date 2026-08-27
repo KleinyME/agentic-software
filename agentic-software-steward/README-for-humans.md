@@ -16,9 +16,35 @@ The suite also includes focused brand, visual, copy, frontend-memory, security, 
 
 ## Updating Installed Skills
 
-Codex loads installed skills from `C:\Users\<you>\.codex\skills` at startup. Restart Codex after a sync.
+This suite has to be installed separately into every context that runs it. A skill is a
+file on disk: a context can only load what is inside its own skills directory, whatever
+any document says.
 
-From the repository root:
+| Context | Reads from |
+| --- | --- |
+| Codex CLI | `~/.codex/skills` |
+| Claude Code CLI | `~/.claude/skills` |
+| Hermes runtime | its own tree, e.g. `D:\Hermes\Runtime\karbon\skills` |
+
+`scripts/sync-skills.mjs` covers all three, on any OS, with no dependencies:
+
+```bash
+node scripts/sync-skills.mjs --target all --hermes-dir "D:\Hermes\Runtime\karbon\skills"
+node scripts/sync-skills.mjs --target claude            # one context
+node scripts/sync-skills.mjs --target all --dry-run     # show the plan, change nothing
+node scripts/sync-skills.mjs --report                   # what each context can load today
+```
+
+Destinations come from `--codex-dir` / `--claude-dir` / `--hermes-dir`, or from
+`CODEX_SKILLS_DIR` / `CLAUDE_SKILLS_DIR` / `HERMES_SKILLS_DIR`. Codex and Claude Code
+default to the paths above; Hermes has no default because that tree is machine-specific
+and must never be guessed.
+
+Skills edited directly in a destination are reported as conflicts and are not
+overwritten without `--force`; whatever `--force` replaces is backed up first.
+
+The Windows-only Codex updater remains for its `git pull --ff-only` and frontmatter
+validation:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1
