@@ -41,6 +41,8 @@ Do not use for:
 
 ### 1) Establish the review target
 - Identify whether the target is a live site audit, an implementation preview, a paid audit artifact, a report pipeline, or a candidate production build.
+- Identify the repository's actual production branch, editable feature branch, and stable review branch when one exists. Treat the stable review branch as a movable pointer to the exact candidate commit, never as the place where work is edited or merged.
+- Keep unapproved changes in the non-production review environment. Human approval covers the exact reviewed commit and evidence; any later change requires renewed approval before production promotion.
 - If the owner asks for the "newest audit result" for a known site, default to a fresh current-site baseline plus the current owner-review Blueprint/report unless they explicitly ask for only the free audit.
 - If the user frames work as a fresh paid audit, separate concept, or do-not-overwrite request, build in a standalone project directory and keep artifacts isolated from older previews.
 - Verify the actual public URL when the link is part of the deliverable; do not assume a Vercel preview link is shareable or unauthenticated.

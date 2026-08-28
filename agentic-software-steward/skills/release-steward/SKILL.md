@@ -29,6 +29,18 @@ Choose the lowest safe level:
 
 For new software, prefer `main` as production, feature branches as preview/live-dev, separate production/dev secrets, sandbox writes until promotion, and recorded environment/rollback truth.
 
+## Approval And Branch Authority
+
+Inspect and record the repository's actual production branch and review branch before acting; do not assume their names. When the project uses the common `main` plus `preview` model:
+
+- `main` is the production authority.
+- A feature branch is the editable source of proposed work.
+- `preview` is a movable review pointer to one exact candidate commit, not a workspace or a second development history.
+
+Keep every unapproved change off the production branch. It may be deployed only to a non-production review environment. To update a stable review URL, validate and commit the work on its feature branch, then move the review pointer to that exact commit; never edit, commit, or merge directly on the review branch.
+
+Approval binds to the exact commit and review evidence the human approved. Any code or content change after approval creates a new candidate and requires renewed approval. Production promotion must contain the exact approved commit without opportunistic extra changes. After promotion, verify the official production target and align the review pointer with the production commit unless the project deliberately starts a new review cycle.
+
 ## Preview Release
 
 A preview release is for client or owner review. It may contain documented simulations, fixtures, proposed claims, and provisional imagery.

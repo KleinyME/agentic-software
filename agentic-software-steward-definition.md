@@ -248,6 +248,8 @@ Concept work should be persuasive and ambitious. Strong claims, realistic fixtur
 
 Production promotion is a separate gate. Before production, resolve claims, proof, content, real backends, auth, payments, forms, APIs, workers, credentials, ownership, and verification.
 
+Unapproved work remains on feature branches and in non-production review environments. A stable `preview` branch is a movable pointer to one exact review candidate, not an editable work branch. Approval attaches to that commit and its evidence; production receives only that exact approved commit, and later changes require renewed approval.
+
 ### Keep Review Notes Off The Page
 
 The customer-facing preview must remain visually complete. Put proposed claims, simulated functionality, provisional assets, and open decisions in `CLIENT_REVIEW.md`. Put production implementation and verification in `DEPLOYMENT_READINESS.md`.
