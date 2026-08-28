@@ -39,7 +39,7 @@ Keep temporary crawlers and conversion scripts in the working repo's temp direct
 Do not put this object only under `internal`; validation and the rendered review will miss it.
 9. Add `internal.judge` using the dedicated judge identity. Keep research provenance and detailed notes under `internal`, never in client-visible copy.
 10. Validate with `validateJudgedBlueprintRecord` and the v3 schema before rendering.
-11. Render the client HTML/PDF only when presentation blockers are empty. A factual conflict can be reported without a blocker if the disputed value is omitted as an asserted business fact, `factsVerified` remains false, and the conflict is the rank-1 finding. If the record asserts an unverified value, keep the blocker.
+11. Render the client HTML/PDF only when presentation blockers are empty. A factual conflict can be reported without a blocker if the disputed value is omitted as an asserted business fact, `factsVerified` remains false, and the conflict remains visible with reconciliation work. Rank it by material buyer consequence rather than automatically making it the Blueprint's thesis. If the record asserts an unverified value, keep the blocker.
 
 ## Capture reliability
 
@@ -53,11 +53,13 @@ Do not put this object only under `internal`; validation and the rendered review
 For materially inconsistent address, phone, hours, price, certification, or availability:
 
 - Set the customer question to `contradictory`.
-- Make it the rank-1 judgment finding.
+- Add a judgment finding and rank it by buyer consequence and the owner's stated business goal.
+- Make it rank 1 only when it removes a dependable buyer path, affects emergency or safety-critical routing, creates material transaction or regulatory risk, or is otherwise the highest-leverage issue.
 - Cite both sources precisely.
 - Link a homework item that establishes one owner-verified source of truth and synchronizes priority listings.
 - Set the applicable `factsVerified` flag to false.
 - Put the owner decision in both `stillOpen` and `narrativeReview.stillToConfirm`.
+- When the conflict is subordinate, keep `whatMattersMost` anchored to the larger positioning, proof, offer, or conversion problem and avoid repeating the conflict as the Blueprint's opening thesis.
 - Never pick the majority value and present it as truth.
 
 ## Final verification

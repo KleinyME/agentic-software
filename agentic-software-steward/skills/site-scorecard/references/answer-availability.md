@@ -31,8 +31,8 @@ Score each question once per source:
 ## Rules
 
 - Verify answers against the official source of truth before marking either source correct. An answer present but wrong scores `contradictory`, not `answered_at_url`.
-- A concept that deliberately omits an unverifiable fact scores `not_stated` — which outranks `contradictory`. Removing a contradiction is an improvement worth showing.
-- Any `contradictory` anywhere is a lead finding: rank it first in the record's findings and open the owner conversation with it. Contradictions in a business's own properties are what answer engines amplify, and resolving them often outranks any redesign.
+- A concept that deliberately omits an unverifiable fact scores `not_stated`, a better answer-availability status than `contradictory`. Removing a contradiction is an improvement worth showing; this status comparison does not set the finding's business priority.
+- Every `contradictory` answer is a visible finding with reconciliation work, but contradiction is a status, not an automatic priority score. Rank it against buyer consequence and the owner's stated business goal. A contact contradiction leads only when it removes a dependable buyer path, misroutes an emergency or safety-critical request, creates material transaction or regulatory risk, or otherwise has greater consequence than the positioning, proof, offer, or conversion gaps. Ordinary secondary phone, address, or hours discrepancies stay disclosed without taking over the Blueprint.
 - When a business operates multiple official properties (two domains, conflicting profiles), audit the set as one source and record which property said what.
 
 ## Recording
@@ -42,3 +42,5 @@ Each question becomes an `AnswerAvailabilityItem` in the record: `question`,
 table is owner-facing). On preview runs, add `conceptStatus`/`conceptNote`.
 Questions scoring `not_stated` or `answered_buried` get a homework item
 (`homeworkId` link) whose acceptance is `rerun_question`.
+Contradictory questions also get reconciliation homework even when they are
+not the lead finding.
