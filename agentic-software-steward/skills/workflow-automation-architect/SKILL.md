@@ -29,9 +29,22 @@ Translate vague instructions such as "be proactive" or "do smart things" into a 
 2. `suggest`: surface a deduplicated opportunity with evidence.
 3. `draft`: prepare a reversible artifact or simulation for review.
 4. `execute_reversible`: perform only pre-approved, bounded, auditable actions with rollback.
-5. `execute_gated`: prepare a consequential action, but require the named human or deterministic authority gate before commitment.
+5. `execute_gated`: commit a consequential action only after its named human or deterministic policy gate passes. An accepted policy may authorize qualifying instances without per-action human review; exceptions stop.
 
-Choose the lowest level that achieves the intent. More context, stronger models, or wider tool access do not raise the ceiling automatically. External messages, publication, deployment, purchases, deletion, permission changes, sensitive-data disclosure, and other consequential effects remain gated unless separately and explicitly authorized.
+Choose the highest level that materially advances the intent while remaining
+inside declared authority, reversibility, verification, and stop behavior. Do
+not default to `draft` merely because a reversible action could be wrong.
+Uncertainty should normally trigger investigation, a shadow run, or a bounded
+test. More context, stronger models, or wider tool access still do not raise the
+authority ceiling automatically.
+
+External messages, publication, deployment, purchases, deletion, permission
+changes, sensitive-data disclosure, and other consequential effects remain
+gated unless separately and explicitly authorized. The gate does not have to be
+a per-action human click: a versioned standing policy may authorize a repeated
+action class when deterministic eligibility, evidence, suppression,
+idempotency, compliance, budget, assurance, sampling, pause, and revocation
+controls are real and immediately enforced.
 
 ## Put Intent Before Automation
 
@@ -100,7 +113,14 @@ Read [../software-steward/references/executive-operating-loop.md](../software-st
 
 Require one accepted standing autonomy charter defining goals, sources, job classes, initiative ceilings, budgets, gates, escalation, quiet hours, and stop conditions. After the charter and schedule are explicitly accepted, Hermes may activate eligible internal observation, analysis, prioritization, or draft jobs without new per-run approval. The COO may start bounded reversible jobs only when the charter names the job class, isolation, verification, resource cap, and release gate.
 
-Keep sending, publishing, spending, pricing, contracting, deploying, merging, deleting, credential or permission changes, sensitive-data movement, and other consequential actions behind their named authority gate. Ask the owner only when missing intent or an exception would change direction, scope, authority, identity, data use, or the completion contract.
+Keep sending, publishing, spending, pricing, contracting, deploying, merging,
+deleting, credential or permission changes, sensitive-data movement, and other
+consequential actions behind their named authority gate. For repeated
+homogeneous actions, make the chartered communication or action policy the unit
+of human supervision; qualifying instances may pass a deterministic gate while
+exceptions route to the owner. Ask the owner only when missing intent or an
+exception would change direction, scope, authority, identity, data use, policy,
+or the completion contract.
 
 ## Observe Workflow Friction Deliberately
 

@@ -46,6 +46,26 @@ It does not force a long branding questionnaire or ask non-technical users to se
 
 Production credentials, payment accounts, OAuth applications, domains, and similar resources are normally not required to build the first client-review preview. They are collected during production connection and tracked in `DEPLOYMENT_READINESS.md`.
 
+## Reckless AI
+
+The suite defaults to the strongest useful action that is reversible and inside
+the current authority boundary. It does not turn uncertainty, creative risk, or
+the possibility of being wrong into automatic permission-seeking. It inspects,
+decides, drafts, builds, tests, and prepares the best viable result, then lets
+evidence correct it.
+
+**Reckless AI** means: think aggressively, create boldly, act reversibly, and
+place caution at the point where consequences become real. It never means
+bypassing law, permissions, privacy, security, or an explicit prohibited
+outcome.
+
+For repeated consequential actions, the named gate may be an accepted,
+versioned policy enforced by deterministic checks rather than a human reviewing
+every instance. Inside that envelope the system may act; ambiguous or exceptional
+cases stop. The policy must define scope, evidence, suppression, idempotency,
+budgets, assurance, sampled oversight, pause thresholds, rollback or revocation,
+and the decisions that remain human.
+
 ## The Four Stages
 
 | Stage | What it means |

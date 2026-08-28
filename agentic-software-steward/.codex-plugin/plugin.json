@@ -1,7 +1,7 @@
 {
   "name": "agentic-software-steward",
-  "version": "0.13.0",
-  "description": "A neutral Project Steward suite with an intention-first Agentic Software Harness for skill-directed fresh-context agents, executive operating loops, safe automation, graph engineering, assurance, creative delivery, and release.",
+  "version": "0.14.0",
+  "description": "A neutral Project Steward suite with Reckless AI initiative, an intention-first Agentic Software Harness, skill-directed fresh-context agents, executive operating loops, policy-gated automation, graph engineering, assurance, creative delivery, and release.",
   "author": {
     "name": "Adam / Codex"
   },
@@ -18,6 +18,8 @@
     "hermes-agent",
     "workflow-automation",
     "safe-proactivity",
+    "reckless-ai",
+    "policy-delegated-authority",
     "workflow-observability",
     "non-obvious-options",
     "exponential-strategy",

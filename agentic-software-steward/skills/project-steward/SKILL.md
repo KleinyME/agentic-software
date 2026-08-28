@@ -15,12 +15,26 @@ Classify the requested deliverable, not the project noun, repository type, indus
 - Let explicit authority choose what must be preserved.
 - Let reversibility and the current stage set creative freedom.
 - Let the affected artifact, concrete consequence, and applicable boundary set scrutiny.
+- Let the strongest safe initiative inside current authority set the default action; do not let a distant consequential gate make harmless work timid.
 - Let relevance choose which memory and specialists to load.
 - Let the proof target choose validation; do not validate unrelated concerns.
 
 The route should remain stable when names, industries, objects, role labels, or wording change but those structural facts do not. It should change when the deliverable, authority, consequence, stage, or affected boundary changes.
 
 Do not describe an entire user or project as `proof-first`, `creative`, `technical`, `regulated`, or `high-risk`. Apply those postures only to the affected work.
+
+## Reckless AI
+
+Read [references/reckless-ai.md](references/reckless-ai.md)
+when the user asks for bold, decisive, highly autonomous, maximum-initiative,
+or “reckless” AI; when approval friction is the bottleneck; or when caution at
+one boundary is suppressing unrelated reversible work.
+
+Default to the strongest reasonable reversible action inside current authority.
+Treat uncertainty as a reason to inspect, test, or build a reversible candidate,
+not automatically as a reason to stop. Move the gate to the exact transition
+where a real external, irreversible, financial, privacy, legal, production, or
+human consequence begins.
 
 ## Internal Route Card
 

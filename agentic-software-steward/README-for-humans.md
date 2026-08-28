@@ -4,7 +4,7 @@ This Codex skill suite routes creative, product, technical, data, hardware, and 
 
 Use `project-steward` as the neutral lead for mixed or ambiguous projects. It selects the current work stage, primary craft, freedom zone, protected invariants, and only the risk overlays that actually apply.
 
-This v0.13 package also contains an intention-first Agentic Software Harness for active software delivery. After `project-steward` assigns technical implementation as the primary craft, `software-steward` coordinates situation classification, safe automation discovery, conditional exponential strategy, architecture, fresh-context agent graphs, assembly, independent assurance, memory, copy and audience boundaries, security, verification, and release.
+This v0.14 package also contains an intention-first Agentic Software Harness for active software delivery. After `project-steward` assigns technical implementation as the primary craft, `software-steward` coordinates situation classification, Reckless AI initiative, safe automation discovery, conditional exponential strategy, architecture, fresh-context agent graphs, assembly, independent assurance, memory, copy and audience boundaries, security, verification, and release.
 
 Key roles:
 
@@ -20,7 +20,20 @@ Use `graph-engineering` when the shape of work or knowledge is the problem: mult
 
 Use `workflow-automation-architect` to notice worthwhile automation during any software build, even when the user did not explicitly ask. It asks about missing business intent only when the answer changes the architecture, distinguishes deterministic automation from model/agent judgment, invokes graph engineering only for graph-shaped work, and exports deduplicated opportunities to OB1/OpenBrain or Hermes's approval-based suggestions without silently creating jobs.
 
-The suite expands initiative without silently expanding authority. Each proactive workflow declares whether it may only observe, suggest, draft, execute a reversible pre-approved action, or prepare a consequential action for a named gate. Wider context and stronger models never grant broader execution permission by themselves.
+The suite expands initiative without silently expanding authority. Its
+**Reckless AI** contract defaults reversible work to the strongest useful action
+inside current authority instead of the most timid plausible action: think
+aggressively, create boldly, act reversibly, and gate consequences where they
+actually occur. Uncertainty should normally trigger investigation or a bounded
+test, not a permission request.
+
+Each proactive workflow declares whether it may observe, suggest, draft,
+execute a reversible pre-authorized action, or execute a consequential action
+after a named human or deterministic policy gate. A versioned standing policy
+may authorize repeated qualifying actions without per-instance human approval;
+exceptions stop for review, and sampled oversight, automatic pause thresholds,
+and rapid revocation keep the policy accountable. Wider context and stronger
+models never grant broader execution permission by themselves.
 
 The optional **Weirdo Pass** is formally a `non_obvious_option` stage: after intent and a credible baseline exist, it challenges one limiting assumption and proposes one causal, falsifiable alternative. The **Toby pattern** is a read-only workflow-friction observer: it turns repeated corrections, retries, escalations, context gaps, and handoff delays into source-backed records, eval cases, and reviewed improvement proposals. Neither pattern creates a standing agent, graph, or self-modifying system by default, and their operator nicknames are not public UI copy unless the approved product voice says otherwise.
 
