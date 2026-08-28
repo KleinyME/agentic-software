@@ -24,6 +24,12 @@ intent + existing evidence + reference sites
 
 The neutral lead skill is `project-steward`. It routes visual and marketing work to `creative-director`, implementation and integrity work to `software-steward`, and activates security, data, hardware, or release overlays only when the affected artifact requires them.
 
+## Agentic Software Harness
+
+When software execution is the primary craft, `software-steward` acts as a five-layer technical harness: intent and situation classification; capability selection; bounded execution; independent assurance and release; and observed, versioned learning. For meaningful multi-domain work it can dispatch separate fresh-context specialist agents, require typed returns, assemble through one accountable owner, and verify the integrated result in an independent context.
+
+The harness also identifies qualified automation opportunities, chooses between deterministic code, models, agents, humans, and graph topology, and can support charter-governed CEO, COO, and Marketing loops activated through Hermes with state carried through OB1/OpenBrain. These are instruction contracts, not a claim that the repository already contains a durable worker runtime or control plane.
+
 ## What the Skill Asks You
 
 Yes. When launched, the skill inspects the prompt, repo, existing site, and supplied references first, then asks for information that is both missing and important to the result.
@@ -114,6 +120,13 @@ The client approved this direction. Preserve the approved boldness and move the 
 - `creative-director`: high-freedom brand, marketing, visual, interface, campaign, and physical-appearance work.
 - `design-distinctiveness`: business vernacular, customer-job page structure, typographic specificity, and multi-concept anti-sameness review.
 - `software-steward`: implementation, architecture, identity, data, protocol integration, runtime correctness, and technical verification.
+- `graph-engineering`: loop-vs-graph decisions, fresh-context agent dispatch and assembly, task graphs, knowledge graphs, GraphRAG, and temporal memory.
+- `workflow-automation-architect`: evidence-based automation discovery, method selection, friction observation, and OB1/OpenBrain handoff.
+- `exponential-strategy`: conditional OpenExO strategy, intelligence-loop, coordination, and compounding-leverage analysis.
+- `root-cause-debugging`: evidence-led diagnosis before fixes.
+- `intent-aligned-review`: requirements and authority review before engineering-quality review.
+- `evidence-before-completion`: fresh claim-to-evidence verification before readiness statements.
+- `audience-boundary`: prevents prompts, private reasoning, audit state, secrets, and internal metadata from reaching public output.
 - `brand-direction`: references, audience, feeling, differentiation, and anti-anchoring.
 - `visual-direction`: business-fit art direction, authorized client imagery, and generated assets.
 - `brand-copy-steward`: persuasive copy, brand alignment, and claims workflow.
@@ -122,7 +135,7 @@ The client approved this direction. Preserve the approved boldness and move the 
 - `no-theater-software`: truthful stage representation and production requirements.
 - `live-environment-steward`: preview, sandbox, credentials, and live-environment boundaries.
 - `release-steward`: promotion, rollback awareness, and live verification.
-- Architecture, security, project-memory, and repo-bootstrap skills support the workflow when needed.
+- Architecture, security, project-memory, repo-bootstrap, request-triage, and site-scorecard skills support the workflow when needed.
 
 ## Repository Layout
 

@@ -1,97 +1,96 @@
 ---
 name: brand-copy-steward
-description: Route, create, and review user-facing product and marketing copy across landing pages, websites, onboarding, empty states, ads, emails, and applications. Use when words must establish a brand, make persuasive claims, translate reference-led direction into copy, avoid robotic or ultra-literal language, use the 100-year-copywriting-engine, audit AI-writing patterns, or keep provisional review notes separate from the rendered customer experience.
+description: Route, create, and review user-facing product and marketing copy across landing pages, websites, onboarding, empty states, labels, buttons, errors, ads, emails, notifications, and applications. Use whenever an agent creates or changes visible words in a UI, when product marketing context or customer language is missing, when copy must persuade or convert, when the 100-year-copywriting-engine may help, when existing copy needs systematic editing or humanization, or when internal AI commentary could leak into the customer experience.
 ---
 
 # Brand Copy Steward
 
-Make copy persuasive, specific, human, truthful to its current stage, and recognizably on-brand.
+Make every visible word intentional, useful, truthful to the product's current stage, and recognizably on-brand. Treat copy as part of product behavior, not decoration added after a component is built.
 
-## Routing
+## Automatic UI Rule
 
-- Reference sites, audience shift, desired feeling, or reimagining: use `brand-direction` first.
-- Marketing, landing pages, headlines, offers, ads, or emails: use `creative-director` or the approved brand direction first. Use `100-year-copywriting-engine` only when the user requests it or a direct-response framework is specifically useful; do not make it the default voice.
-- Final robotic/formulaic writing pass: use `ai-writing-audit` after direction and persuasive force are established.
-- Customer-facing AI persona: use `ai-brand-voice` after the business brand direction exists.
+Apply this skill to every newly created or materially changed user-facing surface even when the user did not explicitly request copywriting. This includes navigation, headings, labels, buttons, forms, helper text, onboarding, empty/loading/success/error/permission states, notifications, emails, exports, metadata, generated content, and marketing or checkout pages.
 
-## Creative Posture
+Do not let a coding agent fill the UI with generic copy merely because the component needs text.
 
-Create first; verify for production second.
+## Read Existing Context First
 
-During concept and preview work:
+Read `PRODUCT.md`, approved brand or creative direction, `docs/brand/voice.md`, current customer-facing copy, and source-backed product facts when available.
 
-- Make strong positioning, promise, capability, and outcome claims that align with the brief.
-- Prefer conviction over hedging.
-- Push beyond the inferred comfort zone when the user asked for a bold client concept.
-- Build the full copy architecture, including proof and feature sections that still need client content.
-- Keep the rendered page pristine and persuasive.
+When positioning, audience, customer language, proof, or conversion intent is missing, read [references/product-marketing-context.md](references/product-marketing-context.md). Reuse repository-native memory rather than creating duplicate context. Ask only for missing intent that would change the message, authority, claim, or action.
 
-Do not invent a named person, quotation, customer, certification, metric, or third-party endorsement and present it as confirmed fact. A preview may design those sections and propose claim-shaped copy, but unresolved proof belongs in `CLIENT_REVIEW.md`.
+## Route By Surface
 
-Facts published on a business-owned site or official business profile are source-supported for concept copy. Carry useful services, perks, seasons, owner names, awards, and certifications forward rather than treating them as inventions.
+- Reference-led concept, audience shift, desired feeling, or reimagination: use `brand-direction` and `creative-director` first when available.
+- Blank-page marketing, direct response, offers, campaigns, headlines, ads, or sales emails: use `100-year-copywriting-engine` when its framework expertise is useful. Do not make it the automatic voice.
+- Existing marketing copy: use [references/copy-production-workflow.md](references/copy-production-workflow.md), then `ai-writing-audit`.
+- Product UI and transactional copy: prioritize task clarity, next action, consequence, and recovery. Use brand personality at a lower intensity than campaign copy.
+- Public or generated output: use `audience-boundary` before implementation and final delivery.
+- Technical prose: use technical-writing guidance rather than forcing marketing rules onto it.
+
+## Copy Production Workflow
+
+### 1. Establish The Message Contract
+
+State the audience and situation, artifact and channel, one primary action, central promise or outcome, verified proof and source facts, approved voice behaviors, and what the copy must not imply.
+
+### 2. Separate Truth From Invention
+
+Classify material inputs as:
+
+- `confirmed`: approved by the owner or an authoritative current source;
+- `source_supported`: published by the business and usable for concept work;
+- `inferred`: plausible but not approved as a public claim;
+- `open`: missing or conflicting;
+- `prohibited`: fabricated, private, restricted, or not authorized for publication.
+
+Do not create specificity by inventing metrics, customers, quotes, prices, deadlines, guarantees, awards, integrations, or capabilities.
+
+### 3. Create Direction Before Polishing
+
+When direction is unresolved, explore two or three distinct message concepts. Change the promise, tension, proof, or point of view, not only wording. When direction is approved, write the complete copy architecture in one coherent voice.
+
+### 4. Review In Focused Passes
+
+Review strategy, clarity, voice, value, proof, specificity, and friction. Keep edits reversible and explain meaningful changes. Then use `ai-writing-audit` without bleaching approved rhythm, humor, boldness, or persuasion.
+
+### 5. Enforce The Public Boundary
+
+Only approved public copy may enter UI components, public API responses, metadata, CMS publish fields, emails, or exports.
+
+Never render prompts, private reasoning, copy rationales, framework names, audit labels, claim flags, reviewer notes, implementation status, fixture notes, developer commentary, or raw model/tool output. Keep review and delivery information in designated artifacts; do not hide it in DOM attributes or client payloads.
+
+### 6. Verify The Actual Experience
+
+Inspect the rendered surface and underlying payload. Verify every state has intentional copy; copy matches real actions and permissions; no placeholder or assistant residue remains; claims match the current stage; no internal field reaches the client; and mobile, accessibility, truncation, and localization remain usable.
 
 ## Claim Handling
 
-Use owner-supplied or owner-authorized ordinary qualitative positioning directly when it fits the offer and is not contradicted. Do not require substantiation, hedging, or a production blocker solely because non-quantified language about audience fit, approachability, ease, or experience is theoretically testable.
+Keep source support, currentness, and asset authorization separate. Source support is enough to preserve a fact in concept copy. Resolve material conflicts and time-sensitive facts before owner demo or production when they could mislead or break conversion.
 
-Keep three questions separate:
+Use owner-supplied ordinary qualitative positioning when it fits and is not contradicted. Apply formal proof requirements to material dependencies such as metrics, testimonials, comparisons, certifications, guarantees, deadlines, prices, and capabilities.
 
-- Source support: did the business publish or supply the fact?
-- Currentness: is a time-sensitive operating fact still accurate and consistent across authoritative sources?
-- Asset authorization: may a badge, photo, logo, quotation, or other protected expression be reproduced?
+If a claim cannot ship: prove it, build the capability, adjust it without losing the central promise, or remove it. Do not automatically turn strong preview copy into vague hedging. Keep unresolved proof outside the rendered copy and resolve it before production.
 
-Source support is enough to preserve a fact in concept copy. Resolve material conflicts and currentness before an owner demo or production release when the discrepancy could mislead or break conversion. Handle asset reuse through the visual provenance workflow. Do not delete a supported claim merely because one of the other questions remains open.
+## Product UI Standards
 
-Apply the formal claim register only when the language creates a material truth dependency:
+- A button names the action or value received.
+- Helper text resolves a likely question rather than narrating implementation.
+- Empty states explain what happened and provide a useful next step.
+- Errors say what the user can do next; diagnostics remain internal.
+- Confirmations state what changed and any important consequence.
+- Permission copy names the boundary without exposing security internals.
+- Loading copy does not promise completion the system cannot guarantee.
+- Destructive actions make scope and reversibility clear.
 
-Classify proposed claims outside the page as:
+## Clean Output Package
 
-- Positioning or brand promise: client approval.
-- Experience or capability promise: implementation before production.
-- Quantitative claim: evidence before production.
-- Testimonial, customer, certification, or comparison: source, authorization, and current production proof as applicable.
+For implemented copy, separate `public_copy`, `review_notes`, `implementation_map`, and `test_hypotheses`. Only `public_copy` may reach the rendered surface. The implementation map may identify destinations but must not be displayed.
 
-If a claim cannot ship, recommend one of:
+## Brand Memory
 
-1. Prove it.
-2. Build the capability that makes it true.
-3. Adjust it without losing the core promise.
-4. Remove it.
+Record durable voice in `docs/brand/voice.md` or the approved project direction. Include audience, promise, voice behaviors, do/don't examples, approved boldness, customer language, and product-specific microcopy patterns. Later editing and implementation passes must flag conflicts rather than silently flattening the approved voice.
 
-Never automatically turn strong copy into vague language such as "aims to", "may help", or "designed to support" merely because verification is pending.
+## Completion Standard
 
-Do not narrate speculative low-probability risk to the user or let it shape the rendered marketing copy.
-
-## Copy Rules
-
-- Lead with the reader's situation, desire, tension, or outcome.
-- Benefits and transformation over internal features.
-- Specificity over generality.
-- Consumer language over internal jargon unless the audience uses the jargon.
-- Each page and section must add a new reason to care.
-- Do not narrate APIs, authentication mechanics, page structure, or implementation unless the customer needs that detail.
-- Compliance supports the message; it does not automatically become the brand personality.
-- Vary cadence. Write something a person would choose to say aloud.
-- Cut copy that could appear unchanged on fifty unrelated sites.
-- Never imply a production connection in the official production experience unless it exists.
-
-## Clean Preview Rule
-
-Never place these inside the rendered customer-facing experience:
-
-- Claim verification flags.
-- Placeholder or fixture labels.
-- Image source notes.
-- Audit tags.
-- Developer comments.
-- Implementation status.
-- Internal uncertainty.
-
-Put them in `CLIENT_REVIEW.md`. After concept approval, transfer production work into `DEPLOYMENT_READINESS.md`.
-
-## Preserve Approved Voice
-
-Record durable voice in `docs/brand/voice.md` or the project's approved direction. Include audience, promise, voice behaviors, do/don't examples, words to use/avoid, approved boldness, and product-specific patterns.
-
-Later audits and implementation passes must flag conflicts rather than silently bleaching approved personality, rhythm, humor, or conviction.
-
+Copy is complete only when the user-facing words work in the real interface or channel, claims match current truth, internal material is structurally excluded, and a final contextual writing audit has run.

@@ -4,6 +4,8 @@ Source: Ken's Complete Voice Guide + Scenario Examples — Ken "Spanky" Moskowit
 
 **IMPORTANT:** Only apply Ken's voice when the user explicitly requests it. This is NOT the default style.
 
+Use this as behavioral calibration, not a phrase bank. Do not copy jokes, comparisons, facts, personal experiences, qualifications, or claims from the examples. Biographical notes are source context and require independent confirmation before public use.
+
 ---
 
 ## OVERVIEW
@@ -158,7 +160,7 @@ Each piece should feel custom-written rather than templated. Maintain personalit
 
 ## KEN'S VOICE: SCENARIO EXAMPLES
 
-The following 7 scenarios demonstrate Ken's writing style in action. Use these as calibration examples.
+The following scenarios demonstrate the source style. Analyze their confidence, situational humor, imagery, and pacing; do not reuse their phrases, factual assumptions, promises, or named-brand comparisons.
 
 ---
 

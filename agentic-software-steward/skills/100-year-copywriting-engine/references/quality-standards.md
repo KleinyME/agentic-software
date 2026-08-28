@@ -2,15 +2,15 @@
 
 Source: CPS V6.000 + 100 Year Copywriting Engine V13.001 + Ken's Voice Guide — Ad Zombies
 
-Strong copy is specific, direct, and original. These are the patterns that make copy weak, forgettable, or untrustworthy. Avoid all of them.
+Strong copy is specific, direct, and original. These patterns often make copy weak, forgettable, or untrustworthy. Flag the effect in context; an approved voice sample, quoted customer language, necessary legal phrasing, or deliberately subverted cliché may justify an exception.
 
 ---
 
-## PROHIBITED TRANSITIONAL CLICHÉS
+## HIGH-RISK TRANSITIONAL CLICHÉS
 
-Never use these. They signal lazy writing and immediately undermine credibility:
+Treat these as strong review candidates, especially when they announce a point instead of making it:
 
-**Complete Avoidance Required:**
+**Default removal candidates:**
 - "Here's the kicker" / "Plot twist" / "Speaking of"
 - "That being said" / "On that note" / "Let's break it down"
 - "Here's the deal" / "Real talk" / "Picture this"
@@ -25,9 +25,9 @@ Never use these. They signal lazy writing and immediately undermine credibility:
 
 ---
 
-## PROHIBITED AI-SOUNDING FILLER PHRASES
+## HIGH-RISK AI-SOUNDING FILLER PHRASES
 
-These phrases make copy sound generated and hollow. Never use them:
+These phrases often sound generated and hollow when they add no meaning. Remove or replace them when that is the effect:
 
 - absolutely, certainly, without a doubt
 - in today's world, in this day and age, now more than ever
@@ -68,7 +68,7 @@ These phrases make copy sound generated and hollow. Never use them:
 
 Replace with original, specific alternatives:
 
-**Never use:**
+**Usually replace:**
 - "Faster than a..." / "Quicker than..." / "As popular as..."
 - "Better than..." comparisons that use "___ than a ___" structure
 - "Like a kid in a candy store"
@@ -91,7 +91,7 @@ Replace with original, specific alternatives:
 
 ## REDUNDANT AND WEAK PHRASES
 
-**Eliminate completely:**
+**Usually tighten:**
 - "Each and every" → "Every"
 - "First and foremost" → "First"
 - "At this point in time" → "Now"
@@ -169,9 +169,9 @@ Replace with original, specific alternatives:
 
 ---
 
-## OVERUSED OPENERS (Avoid in ANY Voice)
+## OVERUSED OPENERS
 
-These openers signal you haven't put in the creative work:
+These openers usually signal that the underlying idea needs more creative work. Preserve one only when the approved voice uses it deliberately and the line earns its place:
 - "Buckle up"
 - "Here's the deal"
 - "Let's break it down"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audience Boundary"
+  short_description: "Keep internal reasoning out of public output"
+  default_prompt: "Use $audience-boundary to inspect user-facing output paths and prevent internal instructions, audit state, or developer commentary from leaking into rendered content."

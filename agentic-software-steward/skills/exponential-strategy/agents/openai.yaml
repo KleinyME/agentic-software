@@ -1,0 +1,4 @@
+interface:
+  display_name: "Exponential Strategy"
+  short_description: "Find and prove compounding AI leverage"
+  default_prompt: "Use $exponential-strategy to decide whether this product or workflow has evidence-backed exponential leverage, then design the smallest safe proof without forcing an MTP, agent stack, or organizational rewrite."

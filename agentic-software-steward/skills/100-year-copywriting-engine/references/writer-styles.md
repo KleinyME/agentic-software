@@ -2,7 +2,18 @@
 
 Source: The 100 Year Copywriting Engine V13.001 — Ken "Spanky" Moskowitz / Ad Zombies
 
-When writing in a specific style, internalize the voice characteristics before drafting. Don't imitate surface-level quirks. Understand the underlying approach to the reader.
+Use this library to study transferable techniques and advertising history. Do not imitate a living writer's recognizable voice or automatically select a named person as the hidden author. Translate useful ideas into behavioral attributes that fit the project's own approved voice.
+
+## Technique Bundles
+
+- `evidence-led educator`: specific evidence, practical teaching, clear sequence.
+- `warm relationship builder`: conversational respect, useful detail, low pressure.
+- `direct-response operator`: one buyer, one desire, concrete offer, decisive action.
+- `premium researcher`: informed authority, restraint, detail worth reading.
+- `provocative thinker`: one clear idea, compressed argument, controlled surprise.
+- `customer-language converter`: voice-of-customer research, objection handling, outcome clarity.
+
+Select a bundle or combine attributes. Refer to the profiles below to understand techniques, not to produce pastiche.
 
 ---
 
@@ -188,10 +199,10 @@ When writing in a specific style, internalize the voice characteristics before d
 
 ---
 
-## STYLE SELECTION INTELLIGENCE
+## HISTORICAL TECHNIQUE ROUTING
 
 ### By Audience Type
-| Audience | Best Style Matches |
+| Audience | Profiles to study for techniques |
 |---------|-------------------|
 | B2B Professional | Neil Patel, Brian Clark, Joe Pulizzi |
 | B2C Consumer | Gary Vaynerchuk, Marie Forleo, Joe Sugarman |
@@ -202,7 +213,7 @@ When writing in a specific style, internalize the voice characteristics before d
 | Blog Content | Brian Clark, Neil Patel, Seth Godin |
 
 ### By Platform
-| Platform | Best Style Matches |
+| Platform | Profiles to study for techniques |
 |---------|-------------------|
 | Social Media | Gary Vaynerchuk, Alex Hormozi, Marie Forleo |
 | Email Marketing | Ann Handley, Gary Halbert, Ben Settle |
@@ -215,6 +226,6 @@ When writing in a specific style, internalize the voice characteristics before d
 
 ## KEN'S VOICE (AD ZOMBIES)
 
-Ken's voice is its own entry. Read `references/kens-voice.md` when Ken's style is explicitly requested.
+Ken's voice is a supplied calibration guide. Read `references/kens-voice.md` only when Ken's style is explicitly requested or the project has approved it.
 
 Quick summary: Confident yet playful. Sarcastic with purpose. Authentically approachable. Punchy phrasing. Fresh metaphors. No corporate jargon. No overused openers. No em dashes (unless explicitly requested).

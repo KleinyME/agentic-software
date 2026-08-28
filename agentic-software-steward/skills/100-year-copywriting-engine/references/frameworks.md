@@ -2,15 +2,17 @@
 
 Source: The 100 Year Copywriting Engine V13.001 — Ken "Spanky" Moskowitz / Ad Zombies
 
+Use these as strategic structures, not performance guarantees or visible templates. Choose from audience awareness, offer complexity, evidence, and channel. Do not invent urgency, pain, specificity, or proof to satisfy a framework.
+
 ---
 
-## TIER 1 — MOST EFFECTIVE FOR MODERN DIGITAL MARKETING
+## TIER 1 — BROADLY APPLICABLE STRUCTURES
 
 Use these first. They work across nearly every platform and audience type.
 
 ### AIDA (Attention, Interest, Desire, Action)
 - **Best for:** All platforms, especially beginners and general persuasion
-- **Effectiveness:** 95% success rate across channels
+- **Strength:** Flexible across channels when the audience and action are clear
 - **Use when:** General persuasion needed
 - **Structure:**
   - **Attention** — Stop the scroll. Provocative headline or opening that interrupts.
@@ -22,7 +24,7 @@ Use these first. They work across nearly every platform and audience type.
 
 ### PAS (Problem, Agitation, Solution)
 - **Best for:** Pain-point focused content, B2B
-- **Effectiveness:** 90% for problem-aware audiences
+- **Strength:** Makes an already-recognized problem and its consequence concrete
 - **Use when:** A clear problem exists and you want to drive urgency
 - **Structure:**
   - **Problem** — Name the pain clearly. The reader must feel seen.
@@ -33,7 +35,7 @@ Use these first. They work across nearly every platform and audience type.
 
 ### PASTOR (Problem, Amplify, Story/Solution, Transformation, Offer, Response)
 - **Best for:** Long-form sales copy, email sequences, high-consideration purchases
-- **Effectiveness:** 85% for complex solutions needing relationship-building
+- **Strength:** Supports complex solutions that need trust, narrative, and detail
 - **Use when:** The reader needs to trust you before they'll buy
 - **Structure:**
   - **Problem** — Identify and name the pain point
@@ -47,7 +49,7 @@ Use these first. They work across nearly every platform and audience type.
 
 ### BAB (Before, After, Bridge)
 - **Best for:** Transformation-focused content, lifestyle and improvement products
-- **Effectiveness:** 88% for products with a clear outcome
+- **Strength:** Makes a supported transformation easy to picture
 - **Use when:** A visible, emotionally satisfying transformation exists
 - **Structure:**
   - **Before** — Paint the painful or frustrating current state
@@ -58,7 +60,7 @@ Use these first. They work across nearly every platform and audience type.
 
 ### 4 Us (Urgent, Unique, Ultra-specific, Useful)
 - **Best for:** Headlines, subject lines, social media—any attention-critical content
-- **Effectiveness:** 92% for cutting through noise
+- **Strength:** Provides four useful lenses for headline exploration
 - **Use when:** Grabbing attention is the primary challenge
 - **Structure:** Every headline should ideally score on all 4:
   - **Urgent** — Creates time pressure or emotional immediacy
@@ -70,17 +72,17 @@ Use these first. They work across nearly every platform and audience type.
 
 ### H.E.L.P.F.U.L (Human-Centric SEO Blog Framework)
 - **Best for:** Educational blog posts, long-form SEO content, authority building
-- **Effectiveness:** 87% for organic search growth and engagement
+- **Strength:** Organizes substantive educational content around reader value
 - **Use when:** Creating people-first content that naturally satisfies search engines
 - **Full breakdown:** See `references/helpful-blog-framework.md`
 
 ---
 
-## TIER 2 — SPECIALIZED HIGH-PERFORMANCE FRAMEWORKS
+## TIER 2 — SPECIALIZED STRUCTURES
 
 ### QUEST (Qualify, Understand, Educate, Stimulate, Transition)
 - **Best for:** Educational content marketing, authority building
-- **Effectiveness:** 82% for establishing expertise
+- **Strength:** Builds authority by teaching before transitioning to the offer
 - **Use when:** Goal is to position as the trusted expert
 - **Structure:**
   - **Qualify** — Identify and speak directly to the target reader
@@ -93,7 +95,7 @@ Use these first. They work across nearly every platform and audience type.
 
 ### APP (Align, Position, Prove)
 - **Best for:** Positioning against competitors, differentiation needs
-- **Effectiveness:** 79% for competitive market positioning
+- **Strength:** Connects a shared belief to differentiated, supported proof
 - **Use when:** Need to carve out territory against established players
 - **Structure:**
   - **Align** — Agree with something the reader already believes
@@ -104,7 +106,7 @@ Use these first. They work across nearly every platform and audience type.
 
 ### OATH (Observe, Act, Transform, Habituate)
 - **Best for:** Behavioral change content, habit-forming products
-- **Effectiveness:** 76% for long-term behavior change
+- **Strength:** Maps a product to a recurring behavior and reinforcement loop
 - **Use when:** Product requires the reader to adopt a new habit
 - **Structure:**
   - **Observe** — Help them see their current behavior clearly
@@ -116,7 +118,7 @@ Use these first. They work across nearly every platform and audience type.
 
 ### SCQA (Situation, Complication, Question, Answer)
 - **Best for:** Business presentations, reports, B2B decision-maker content
-- **Effectiveness:** 84% for logical, structured persuasion
+- **Strength:** Gives decision-makers a concise reasoning path
 - **Use when:** Audience expects reasoning before conclusion; rational progression required
 - **Structure:**
   - **Situation** — Establish common ground; what's currently true
@@ -128,7 +130,7 @@ Use these first. They work across nearly every platform and audience type.
 
 ### StoryBrand Framework (Don Miller)
 - **Best for:** Brand messaging, website copy, brand clarity
-- **Effectiveness:** 81% for reducing brand confusion and increasing connection
+- **Strength:** Clarifies the customer's role, problem, guide, plan, and action
 - **Use when:** Brand message is unclear or customer-focus is weak
 - **Key principle:** Customer is the hero. Brand is the guide.
 - **Structure:**
@@ -178,7 +180,7 @@ Use these first. They work across nearly every platform and audience type.
 | Sales Letters | PASTOR, Gary Halbert direct response |
 
 ### By Audience Awareness Stage
-| Awareness Stage | Best Frameworks |
+| Awareness Stage | Useful frameworks to consider |
 |----------------|----------------|
 | Problem Unaware | AIDA, StoryBrand |
 | Problem Aware | PAS, PASTOR |
@@ -188,7 +190,7 @@ Use these first. They work across nearly every platform and audience type.
 | SEO-focused | H.E.L.P.F.U.L, QUEST, SCQA |
 
 ### By Primary Intent
-| Intent | Best Frameworks |
+| Intent | Useful frameworks to consider |
 |--------|----------------|
 | Persuade — Drive action or change beliefs | AIDA, PAS |
 | Inform — Educate or explain | QUEST, SCQA |

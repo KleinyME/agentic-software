@@ -1,0 +1,4 @@
+interface:
+  display_name: "Intent-Aligned Review"
+  short_description: "Review intent first, then code quality"
+  default_prompt: "Use $intent-aligned-review to check this change against user intent and requirements before reviewing its engineering quality."

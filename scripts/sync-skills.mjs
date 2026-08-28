@@ -51,21 +51,24 @@ const STATE_FILE = ".agentic-software-steward-sync.json";
 const TARGETS = {
   codex: {
     label: "Codex CLI",
-    source: "agentic-software-steward/skills",
+    sources: [{ root: "agentic-software-steward/skills", prefix: "" }],
     defaultDir: () => path.join(os.homedir(), ".codex", "skills"),
     envVar: "CODEX_SKILLS_DIR",
     restartHint: "Restart Codex to pick up changed skills.",
   },
   claude: {
     label: "Claude Code CLI",
-    source: "agentic-software-steward/skills",
+    sources: [{ root: "agentic-software-steward/skills", prefix: "" }],
     defaultDir: () => path.join(os.homedir(), ".claude", "skills"),
     envVar: "CLAUDE_SKILLS_DIR",
     restartHint: "Start a new Claude Code session to pick up changed skills.",
   },
   hermes: {
     label: "Hermes runtime",
-    source: "hermes-runtime-skills",
+    sources: [
+      { root: "agentic-software-steward/skills", prefix: "agentic-software-steward" },
+      { root: "hermes-runtime-skills", prefix: "" },
+    ],
     // No default: the runtime tree is machine-specific and is not a git repo,
     // so guessing a path risks writing somewhere unintended.
     defaultDir: () => null,
@@ -188,7 +191,6 @@ function classify(name, sourceDir, destDir, saved) {
 
 function syncTarget(target, args) {
   const config = TARGETS[target];
-  const sourceRoot = path.join(REPO_ROOT, config.source);
   const targetDir = resolveDir(target, args);
 
   if (!targetDir) {
@@ -200,13 +202,22 @@ function syncTarget(target, args) {
         "This path is machine-specific and is never guessed.",
     };
   }
-  if (!existsSync(sourceRoot)) {
-    return { target, skipped: true, reason: `Source ${config.source} not found in this repo.` };
+  const skills = new Map();
+  for (const source of config.sources) {
+    const sourceRoot = path.join(REPO_ROOT, source.root);
+    if (!existsSync(sourceRoot)) {
+      return { target, skipped: true, reason: `Source ${source.root} not found in this repo.` };
+    }
+    for (const [name, sourceDir] of discoverSkills(sourceRoot)) {
+      const targetName = [source.prefix, name].filter(Boolean).join("/");
+      if (skills.has(targetName)) {
+        throw new Error(`Duplicate skill destination for ${target}: ${targetName}`);
+      }
+      skills.set(targetName, sourceDir);
+    }
   }
-
-  const skills = discoverSkills(sourceRoot);
   if (skills.size === 0) {
-    return { target, skipped: true, reason: `No SKILL.md directories under ${config.source}.` };
+    return { target, skipped: true, reason: "No SKILL.md directories under the configured sources." };
   }
 
   const saved = readState(targetDir);

@@ -1,8 +1,8 @@
-# Platform Specifications (2025)
+# Platform Specifications — Historical Working Reference
 
 Source: The 100 Year Copywriting Engine V13.001 — Ken "Spanky" Moskowitz / Ad Zombies
 
-Always verify current limits before launching. Platform specs change. These reflect 2025 guidelines.
+Always verify current limits and policy against the platform's official documentation before drafting, implementing, or launching. These are historical working notes from 2025, not a current compliance source.
 
 ---
 
@@ -43,12 +43,10 @@ Always verify current limits before launching. Platform specs change. These refl
 ### Reels Ads
 - **Primary Text:** 125 characters visible initially
 - **Headlines:** 40 characters
-- **Video Length:** 15–90 seconds optimal
+- **Video Length:** Historical working range was 15–90 seconds; verify current placement guidance
 
 **Meta Writing Tips:**
 - The first 125 characters of primary text must hook — that's what shows before "See more"
-- Facebook Groups content: See Facebook compliance rules in SKILL.md
-- Social media enhanced Unicode formatting available — see SKILL.md for details
 - Double line breaks in social copy preserve formatting when pasting into platforms
 
 ---
@@ -84,8 +82,8 @@ Always verify current limits before launching. Platform specs change. These refl
 - **Twitter Cards:** Title (70 characters), Description (200 characters)
 
 **Twitter/X Writing Tips:**
-- Threads perform better than single tweets for complex ideas
-- Image tweets get significantly more engagement
+- Threads may suit complex ideas when the audience will follow the sequence; test against a concise single post.
+- Images may change engagement; use them only when they add meaning and measure the result.
 - Front-load the value — Twitter truncates early
 - Avoid hashtag stuffing (1–2 max)
 
@@ -98,7 +96,7 @@ Always verify current limits before launching. Platform specs change. These refl
 - **Media:** Up to 10 images or 1 video (5 minutes)
 
 ### TikTok Ads
-- **Video Length:** 9–60 seconds (15–30 seconds optimal)
+- **Video Length:** Historical working range was 9–60 seconds; verify current placement guidance
 - **Text Overlay:** Minimal, focus on video content
 - **Captions:** 2,200 characters
 - **In-Feed Ad Text:** 100 characters
@@ -112,7 +110,7 @@ Always verify current limits before launching. Platform specs change. These refl
 ### Pinterest Ads
 - **Title:** 100 characters
 - **Description:** 500 characters
-- **Video Pins:** 4–15 seconds optimal
+- **Video Pins:** Historical working range was 4–15 seconds; verify current guidance
 
 ---
 
@@ -138,14 +136,14 @@ Always verify current limits before launching. Platform specs change. These refl
 ## EMAIL MARKETING
 
 ### Subject Lines
-- **Optimal length:** 41–50 characters for mobile preview
+- **Historical working range:** 41–50 characters for mobile preview; test with the actual audience and clients
 - **Preview text:** 85–100 characters (shows alongside subject line)
 - **Preheader:** Treat as a second subject line — it shows in inbox preview
 
 ### Email Body
 - No hard character limits, but:
   - Above-the-fold message: First 250–300 pixels (varies by client)
-  - Optimal email length for click-through: 50–125 words (depends on goal)
+  - Short commercial emails often use 50–125 words, but length should follow the message, audience, and measured results
   - Long-form acceptable when content is genuinely valuable
 
 **Email Writing Tips:**

@@ -32,6 +32,13 @@ Required:
   Location convention: `D:\Karbon AI Clients\<slug>\runs\<runId>\`.
 - The live URL (and the concept/preview URL for preview runs).
 
+When the owner requests a full prospect Blueprint without a claimed judgment
+job or canonical run folder, follow
+`references/ad-hoc-prospect-blueprint.md`. It defines the artifact layout,
+raw-audit-to-record scaffold, conflict handling, renderer path, and PDF
+verification gate. An `instrument_derived` immediate record is scaffolding,
+not a substitute for the human judgment pass.
+
 Recommended:
 
 - Research output from `brand-direction` (Establish Truth: facts labeled
@@ -48,7 +55,13 @@ Recommended:
    holds Lighthouse detail, axe violations, crawl samples, structured-data
    issues, and the AI model poll (including who got named instead).
    Re-measuring collected evidence is waste; contradicting it without new
-   observation is fabrication.
+   observation is fabrication. For ad-hoc pre-issuance work, reconcile
+   contact evidence against the independent crawl before rendering: telemetry
+   emails, script digits, and homepage-only form checks can become dangerous
+   false positives. Never let an unverified detected value generate a contact
+   recipe. Follow `references/ad-hoc-prospect-blueprint.md`; correct and rerun
+   capture or block delivery rather than silently rewriting an issued measured
+   lane.
 2. **Judge separation.** Whoever built or fixed the site does not score it.
    Baseline runs of sites this agent never touched are fine. On preview or
    drift runs after this agent's own changes, the dimension scoring goes to a
@@ -91,7 +104,10 @@ Recommended:
    `add` and rewrite-for-answer rows link a homework item.
 6. **Homework** — for each `not_stated` / `answered_buried` question, write a
    `HomeworkSpec`: objective, suggested title and URL path, `mustContain`
-   list, acceptance `rerun_question`.
+   list, acceptance `rerun_question`. A `contradictory` contact or operating
+   fact also gets reconciliation homework even though the structural validator
+   does not require it: identify the authoritative owner-approved value,
+   synchronize priority listings, and rerun the question.
 7. **Readout** — fill `peopleView` meter values from the dimension scores
    (×10), set tones, and write the `diagnosis` paragraph in plain English.
 8. **Narrative review** — write the top-level `narrativeReview` object,
@@ -109,15 +125,17 @@ Recommended:
    remove the "judgment pass not yet completed" blocker once steps 3–7 are
    done; add any presentation blockers the anchors require; write
    `internal.judge` with this session's judge identity (Hard Rule 2).
-10. **Validate** the completed record against
-    `references/visibility-blueprint.v3.schema.json` (`narrativeReview` is
-    an additive top-level key the schema tolerates). A record that fails
-    validation is not done.
-11. **Store** the completed record back to its run folder. Rendering and
-    delivery happen through the Karbon server
+10. **Validate** the completed record against the repository's canonical
+    `contracts/visibility-blueprint.v3.schema.json` and run
+    `validateJudgedBlueprintRecord` so runtime-only requirements such as the
+    exact top-level `narrativeReview` and judge identity are checked too. A
+    record that fails either gate is not done.
+11. **Store and render** the completed record back to its run folder.
+    Canonical jobs render through the Karbon server
     (`POST /api/blueprint/v3/render`; audience `client` refuses records with
-    blockers — that refusal is the gate working, not an error to route
-    around).
+    blockers). Ad-hoc prospect runs may use the repository document renderer
+    as described in `references/ad-hoc-prospect-blueprint.md`, but must still
+    pass the same structural gate and visually verify the PDF.
 
 ## Preview And Drift Runs
 

@@ -7,6 +7,8 @@ description: Lean small-product architecture for solo-founder, small-business, v
 
 Design the smallest real business loop that works. Teach small, practical best practices without enterprise cosplay. Prevent architecture theater.
 
+Consume the intent and situation decision from `software-steward`. If the actor, desired outcome, success evidence, or unacceptable consequence is materially unclear, inspect available context and ask before choosing the north-star loop.
+
 Use this skill before `senior-architect` when the product is solo-founder, small-business, vibe-coded, early-stage, owner-operated, prototype-to-product, agent-native, or already bloated.
 
 ## Bias
@@ -27,6 +29,7 @@ If not, do not add it.
 For small and early-stage products:
 
 - One primary user loop.
+- One proven agent loop before a multi-agent task graph.
 - One durable state model.
 - One approval boundary model.
 - One agent interface.
@@ -36,6 +39,9 @@ For small and early-stage products:
 - No dashboard before the workflow it observes is real.
 - No queue until synchronous/direct execution is proven insufficient.
 - No generic plugin layer until two real integrations need it.
+- No task graph until real work has independent branches, explicit joins, and disjoint write ownership.
+- No graph database until named multi-hop or temporal questions outperform a Markdown/table/vector baseline.
+- No automation opportunity may expand the first vertical slice without user agreement; record worthwhile later opportunities separately.
 
 If the plan exceeds the budget, remove scope before adding architecture.
 
@@ -61,6 +67,7 @@ Do not build app code that tries to replicate the agent's reasoning:
 - Planner engines.
 - Generic operator brains.
 - Proof ceremony.
+- Agent org charts whose nodes could be one loop.
 - Internal job rituals.
 - Large bespoke memory systems.
 - Dashboards that exist mostly for the agent to reassure itself.
@@ -130,6 +137,7 @@ Delete proof ceremony unless it prevents a real near-term mistake.
 
 Produce:
 
+- Intent sentence and lean-mode reason.
 - North-star loop.
 - First vertical slice.
 - Keep/rewrite/archive/delete map for brownfield repos.
