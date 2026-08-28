@@ -26,6 +26,12 @@ Before asking questions, read available product and brand context such as:
 - customer interviews, reviews, support language, or sales notes;
 - verified proof, offer details, pricing, and current product behavior.
 
+When buyer language is material, use the accepted synthesis produced through
+`brand-copy-steward` and its `buyer-language-evidence.md` reference. Trace each
+important hook to observed language, product truth, a public source, or an
+explicitly labeled hypothesis. Do not invent a buyer biography to make the copy
+feel specific.
+
 For client-site work, treat an approved `brand-direction` brief, reference-site delta, desired feeling, and primary customer action as a complete creative brief. Do not restart a long interview.
 
 Ask at most one or two questions at a time, and only when the answer would change the copy strategy. Do not run a fixed interview when the repository or brief already answers the question.
@@ -87,6 +93,12 @@ For every draft:
 - make the next action obvious and proportionate;
 - use humor, urgency, scarcity, and power words only when true and on-brand.
 
+Choose variant breadth from the decision and review budget. A few materially
+different hypotheses are better than a fixed quota of cosmetic alternatives.
+For hooks, preserve the packaging surface, intended promise, payoff, audience
+stage, provenance, and fidelity from direct observed phrase through bounded
+adaptation to speculative test.
+
 Read [references/power-words.md](references/power-words.md) only for headline or CTA exploration. Read [references/super-bowl-ad-bible.md](references/super-bowl-ad-bible.md) for original video or cinematic concept development; use only abstract creative principles.
 
 ## Protect Claims And Stage Truth
@@ -107,7 +119,7 @@ If the user asks for paste-ready copy, lead with clean public copy. Put rational
 
 ## Editorial Passes
 
-Before delivery, review strategy, truth, value, voice, flow, action, audience boundary, and human quality. Use [references/quality-standards.md](references/quality-standards.md) as an effects-based review, not a universal word blacklist. Use [references/optimization.md](references/optimization.md) to turn alternatives into measurable hypotheses. Verify current platform limits before using [references/platform-specs.md](references/platform-specs.md). Finish with `ai-writing-audit` without bleaching the voice.
+Before delivery, review strategy, truth, value, voice, flow, action, audience boundary, and human quality. Use [references/quality-standards.md](references/quality-standards.md) as an effects-based review, not a universal word blacklist. Use [references/optimization.md](references/optimization.md) to turn alternatives into measurable hypotheses through the marketing experiment contract rather than fixed thresholds. Verify current platform limits before using [references/platform-specs.md](references/platform-specs.md). Finish with `ai-writing-audit` without bleaching the voice.
 
 ## Completion Standard
 

@@ -1,7 +1,7 @@
 {
   "name": "agentic-software-steward",
-  "version": "0.14.0",
-  "description": "A neutral Project Steward suite with Reckless AI initiative, an intention-first Agentic Software Harness, skill-directed fresh-context agents, executive operating loops, policy-gated automation, graph engineering, assurance, creative delivery, and release.",
+  "version": "0.15.0",
+  "description": "A neutral Project Steward suite with Reckless AI initiative, an intention-first Agentic Software Harness, evidence-grounded prospecting and marketing contracts, skill-directed fresh-context agents, policy-gated automation, assurance, creative delivery, and release.",
   "author": {
     "name": "Adam / Codex"
   },
@@ -35,6 +35,9 @@
     "output-integrity",
     "instruction-leak-prevention",
     "copywriting",
+    "local-prospecting",
+    "marketing-experiments",
+    "buyer-language-evidence",
     "ui-copy",
     "humanization",
     "project-memory",

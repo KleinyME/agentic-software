@@ -1,0 +1,4 @@
+interface:
+  display_name: "Local Client Prospector"
+  short_description: "Qualify local businesses with public evidence"
+  default_prompt: "Use $local-client-prospector to find and qualify local businesses, preserve sources and unknowns, and return typed prospect briefs without assuming contact permission."

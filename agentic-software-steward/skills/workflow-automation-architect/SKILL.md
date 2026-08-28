@@ -132,6 +132,14 @@ Start with deterministic telemetry and periodic read-only review. Use a bounded 
 
 Read [references/workflow-contract.md](references/workflow-contract.md) when the opportunity is accepted for design or implementation.
 
+For a marketing test, campaign, message, asset, channel, or audience hypothesis,
+also read
+[references/marketing-experiment-contract.md](references/marketing-experiment-contract.md).
+Pre-register the decision, evidence level, one variable, outcome signal, limits,
+and stop rule before producing activity. Keep large discovery or preparation
+populations separate from the much smaller consequential-action cohorts they
+may inform.
+
 Record:
 
 - Intent, trigger, actor, outcome, completion evidence, and prohibited outcomes.
