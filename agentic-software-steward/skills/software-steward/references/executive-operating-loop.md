@@ -65,7 +65,7 @@ Own:
 - Route visible words through product/brand truth, `brand-copy-steward`, the direct-response engine when appropriate, `ai-writing-audit`, and `audience-boundary`.
 - Compare experiment outcomes without inventing attribution or declaring weak signals causal.
 
-Default to research, suggestions, and drafts. Publishing, outreach, list changes, ad spend, pricing, offers, customer promises, and brand repositioning require the charter's named gate.
+Default to research, suggestions, and drafts. Publishing, outreach, list changes, ad spend, pricing, offers, customer promises, and brand repositioning require the charter's named gate. The gate may be per-action human authority or a versioned deterministic policy envelope; an active policy can authorize routine qualifying instances while exceptions stop.
 
 Receive scoped market/customer sources, product and brand truth, active goals, and prior outcome summaries. Do not receive a preferred CEO conclusion before producing the independent `market_brief`. The Marketing agent owns market evidence, not portfolio priority or release.
 
@@ -129,6 +129,18 @@ executive_charter:
     time: "<cap>"
     model_or_tool_cost: "<cap>"
     concurrent_jobs: "<cap>"
+  policy_delegated_effects:
+    - action_class: "<for example one-to-one commercial email>"
+      status: "draft | shadow | active | paused | revoked | expired"
+      policy_version: "<immutable version>"
+      eligibility_rules: []
+      deterministic_gates: []
+      assurance_threshold: "<required independent result>"
+      volume_or_cost_caps: []
+      sampled_oversight: "<sample rule and digest>"
+      automatic_pause_thresholds: []
+      kill_switch: "<owner-visible revocation path>"
+      exception_owner: "<named human role>"
   always_human_decisions: []
   escalation_triggers: []
   review_cadence: "<cadence>"
@@ -139,7 +151,12 @@ executive_charter:
 
 Treat missing or conflicting intent that would change goals, scope, authority, product identity, data use, or consequential action as an escalation. Do not stop for implementation choices the harness can derive safely.
 
-After the charter and Hermes schedule are explicitly accepted, eligible internal runs may proceed without new per-run approval. This standing permission ends at the charter's scope, initiative ceiling, budget, expiry, stop conditions, and consequential gates.
+After the charter and Hermes schedule are explicitly accepted, eligible runs may
+proceed without new per-run approval. A consequential instance may commit
+without per-action human review only when an active `policy_delegated_effect`
+explicitly covers it and every immediate deterministic and assurance gate
+passes. This standing permission ends at the charter's scope, initiative
+ceiling, budget, expiry, stop conditions, and consequential gates.
 
 ## Proactive Operating Loop
 
@@ -161,7 +178,13 @@ flowchart LR
     T --> S
 ```
 
-Internal observation, analysis, prioritization, research, and drafting may begin automatically when the charter permits them. Repository writes may begin only as bounded reversible jobs when the charter names the job class, isolation method, verification, cost cap, and release gate. Never infer permission to merge, deploy, publish, contact people, spend, delete, or change permissions from permission to start an internal job.
+Internal observation, analysis, prioritization, research, and drafting may begin
+automatically when the charter permits them. Repository writes may begin as
+bounded reversible jobs when the charter names the job class, isolation method,
+verification, cost cap, and release gate. Never infer permission to merge,
+deploy, publish, contact people, spend, delete, or change permissions from
+permission to start an internal job. Those effects require their own named
+human gate or active policy-delegated effect.
 
 Typed edges are `produces market_brief`, `produces non_obvious_option`, `produces direction_decision`, `routes_on charter_authority`, `produces harness_job`, `verifies execution`, and `produces workflow_friction_observation`. One owner synthesizes each fan-in; no downstream agent receives upstream hidden reasoning.
 
@@ -213,7 +236,17 @@ Without a more permissive accepted charter:
 - Marketing: observe, research, suggest, and draft private experiments or copy.
 - Hermes: activate approved scans and surface suggestions; do not create schedules from conversation alone.
 
-Require a named gate for external messages, public content, spend, pricing, offers, contracts, purchases, deployments, merges, deletion, credentials, permissions, customer-data movement, or irreversible actions. Allow bounded repository writes only through an explicitly delegated isolated-work job with verification and no automatic release.
+Require a named gate for external messages, public content, spend, pricing,
+offers, contracts, purchases, deployments, merges, deletion, credentials,
+permissions, customer-data movement, or irreversible actions. A gate may be an
+explicit human decision or an accepted deterministic policy for a tightly
+defined repeated action class. Policy-authorized execution requires immediate
+eligibility and suppression checks, idempotency, independent assurance,
+provider reconciliation, sampled oversight, automatic pause thresholds, and a
+rapid kill switch. Missing, stale, failed, or ambiguous checks route the
+instance to the owner. Allow bounded repository writes only through an
+explicitly delegated isolated-work job with verification and no automatic
+release.
 
 ## Proof Before Scale
 

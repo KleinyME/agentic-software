@@ -35,6 +35,14 @@ Read [references/executive-operating-loop.md](references/executive-operating-loo
 
 For an implementation request, carry work to a working vertical slice, verified repair, integrated approved experience, production candidate with explicit gates, or released and live-verified change. Do not stop at foundation documents while safe implementation remains in scope. For a diagnostic request, determine cause without silently expanding into a fix.
 
+Use the project steward's
+[Reckless AI](../project-steward/references/reckless-ai.md)
+contract when the owner asks for bold, decisive, highly autonomous, or
+“reckless” operation. Default to the strongest reversible implementation step
+inside current authority. Do not let uncertainty or a later consequential gate
+become an excuse to stop at planning when inspection, code, tests, an isolated
+branch, a private preview, or a shadow path can safely advance the outcome.
+
 ## Preflight And Intent Kernel
 
 Before meaningful planning or edits:
@@ -104,7 +112,7 @@ Apply specialists only to affected work. Their constraints do not become project
 
 ## Conditional Perspectives And Learning
 
-The Weirdo Pass is an operator nickname for one bounded `non_obvious_option`, not a standing agent or permission grant. It broadens what the system may notice without broadening what it may execute. Suppress it for routine correctness, security, migration, release, and deterministic work.
+The Weirdo Pass is an operator nickname for one bounded `non_obvious_option`, not a standing agent or permission grant. It broadens what the system may notice without broadening what it may execute. Suppress it for routine correctness, security, migration, release, and deterministic work. Reckless AI is an operating contract, not a safety bypass: it raises reversible initiative while keeping consequential authority explicit or policy-delegated.
 
 The Toby pattern observes repeated workflow friction and may produce an eval case or reviewed change proposal. It may not rewrite prompts, policy, permissions, or production behavior on its own.
 
