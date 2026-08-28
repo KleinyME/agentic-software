@@ -4,10 +4,10 @@
  * Karbon-AI's, the decided source of truth (docs/plans/2026-08-27-vault-to-
  * execution-plan.md, Karbon-AI Task 0.4: "Karbon-AI `contracts/` owns it").
  *
- * The two files were byte-identical (both 15,153 bytes) as of 2026-08-26.
- * This script exists so that stops being an accident someone re-verifies by
- * hand and starts being something a check fails on. It is a comparison, not
- * a sync: Karbon-AI's copy is never written here, and this repo's mirror is
+ * The two Git blobs are expected to contain identical JSON text. Working-tree
+ * line endings may differ across repositories on Windows, so the comparison
+ * normalizes CRLF/LF without normalizing any other content. It is a comparison,
+ * not a sync: Karbon-AI's copy is never written here, and this repo's mirror is
  * never written back to Karbon-AI.
  *
  * Zero dependencies on purpose, matching sync-skills.mjs: this repo has no
@@ -83,9 +83,10 @@ function main() {
   const canonicalPath = path.join(karbonAiRoot, RELATIVE_KARBON_PATH);
   const canonical = readFileSync(canonicalPath, "utf8");
   const mirror = readFileSync(MIRROR_PATH, "utf8");
+  const normalizeLineEndings = (value) => value.replace(/\r\n?/g, "\n");
 
-  if (canonical === mirror) {
-    console.log(`OK: mirror matches ${canonicalPath} (${canonical.length} bytes).`);
+  if (normalizeLineEndings(canonical) === normalizeLineEndings(mirror)) {
+    console.log(`OK: mirror matches ${canonicalPath} after line-ending normalization.`);
     process.exit(0);
   }
 
