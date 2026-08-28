@@ -24,6 +24,11 @@ For client-facing work, use `brand-direction` for positioning and `visual-direct
 
 ## UI Quality Rules
 
+Read [references/component-assembly.md](references/component-assembly.md) when
+selecting or adapting external UI components. Reuse mature mechanics where they
+improve the result, but author the composition, hierarchy, content, imagery,
+and signature interaction from the product and accepted creative direction.
+
 - Build the actual usable experience, not a landing page unless requested.
 - Prefer real workflows over decorative surfaces.
 - Include empty, loading, error, success, disabled, and permission states where relevant.

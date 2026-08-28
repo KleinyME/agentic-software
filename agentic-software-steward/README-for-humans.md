@@ -4,7 +4,7 @@ This Codex skill suite routes creative, product, technical, data, hardware, and 
 
 Use `project-steward` as the neutral lead for mixed or ambiguous projects. It selects the current work stage, primary craft, freedom zone, protected invariants, and only the risk overlays that actually apply.
 
-This v0.14 package also contains an intention-first Agentic Software Harness for active software delivery. After `project-steward` assigns technical implementation as the primary craft, `software-steward` coordinates situation classification, Reckless AI initiative, safe automation discovery, conditional exponential strategy, architecture, fresh-context agent graphs, assembly, independent assurance, memory, copy and audience boundaries, security, verification, and release.
+This v0.15 package also contains an intention-first Agentic Software Harness for active software delivery. After `project-steward` assigns technical implementation as the primary craft, `software-steward` coordinates situation classification, Reckless AI initiative, safe automation discovery, conditional exponential strategy, architecture, fresh-context agent graphs, assembly, independent assurance, memory, copy and audience boundaries, security, verification, and release.
 
 Key roles:
 
@@ -19,6 +19,14 @@ The suite also includes focused brand, visual, copy, frontend-memory, security, 
 Use `graph-engineering` when the shape of work or knowledge is the problem: multi-agent fan-out/fan-in, conditional routing, independent verification, durable execution state, knowledge graphs, GraphRAG, or temporal project memory. It keeps sequential work in one loop, separates task graphs from knowledge graphs, requires typed edges and explicit state ownership, and places human gates only where mistakes are expensive to undo.
 
 Use `workflow-automation-architect` to notice worthwhile automation during any software build, even when the user did not explicitly ask. It asks about missing business intent only when the answer changes the architecture, distinguishes deterministic automation from model/agent judgment, invokes graph engineering only for graph-shaped work, and exports deduplicated opportunities to OB1/OpenBrain or Hermes's approval-based suggestions without silently creating jobs.
+
+Use `local-client-prospector` to produce source-backed local-business research
+artifacts with identity confidence, problem evidence, capability fit, unknowns,
+and an explicit abstention path. Downstream business systems retain exact offer,
+suppression, prior-contact, campaign, and communication authority. Marketing
+tests use the workflow-automation experiment contract; buyer language,
+competitive evidence, and component assembly extend their existing owners
+instead of creating a second marketing or frontend router.
 
 The suite expands initiative without silently expanding authority. Its
 **Reckless AI** contract defaults reversible work to the strongest useful action

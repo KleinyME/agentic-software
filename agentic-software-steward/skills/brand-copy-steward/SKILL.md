@@ -19,6 +19,13 @@ Read `PRODUCT.md`, approved brand or creative direction, `docs/brand/voice.md`, 
 
 When positioning, audience, customer language, proof, or conversion intent is missing, read [references/product-marketing-context.md](references/product-marketing-context.md). Reuse repository-native memory rather than creating duplicate context. Ask only for missing intent that would change the message, authority, claim, or action.
 
+For serious sales or campaign copy, read
+[references/buyer-language-evidence.md](references/buyer-language-evidence.md).
+Build a dated evidence model from real business language until the writer can
+predict the next material objection. Preserve source, awareness stage,
+uncertainty, contradictions, and public-use boundaries; do not fill gaps with a
+fictional persona.
+
 ## Route By Surface
 
 - Reference-led concept, audience shift, desired feeling, or reimagination: use `brand-direction` and `creative-director` first when available.

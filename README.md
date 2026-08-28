@@ -28,7 +28,7 @@ The neutral lead skill is `project-steward`. It routes visual and marketing work
 
 When software execution is the primary craft, `software-steward` acts as a five-layer technical harness: intent and situation classification; capability selection; bounded execution; independent assurance and release; and observed, versioned learning. For meaningful multi-domain work it can dispatch separate fresh-context specialist agents, require typed returns, assemble through one accountable owner, and verify the integrated result in an independent context.
 
-The harness also identifies qualified automation opportunities, chooses between deterministic code, models, agents, humans, and graph topology, and can support charter-governed CEO, COO, and Marketing loops activated through Hermes with state carried through OB1/OpenBrain. These are instruction contracts, not a claim that the repository already contains a durable worker runtime or control plane.
+The harness also identifies qualified automation opportunities, chooses between deterministic code, models, agents, humans, and graph topology, and can support charter-governed CEO, COO, and Marketing loops activated through Hermes with state carried through OB1/OpenBrain. The v0.15 marketing expansion adds source-backed local prospect briefs, buyer-language evidence, competitive evidence, honest experiment contracts, and a component-assembly doctrine without installing a competing universal marketing router. These are instruction contracts, not a claim that the repository already contains a durable worker runtime or control plane.
 
 ## What the Skill Asks You
 
@@ -144,12 +144,14 @@ The client approved this direction. Preserve the approved boldness and move the 
 - `software-steward`: implementation, architecture, identity, data, protocol integration, runtime correctness, and technical verification.
 - `graph-engineering`: loop-vs-graph decisions, fresh-context agent dispatch and assembly, task graphs, knowledge graphs, GraphRAG, and temporal memory.
 - `workflow-automation-architect`: evidence-based automation discovery, method selection, friction observation, and OB1/OpenBrain handoff.
+- `local-client-prospector`: public-source local business discovery and typed qualification artifacts without contact authority.
 - `exponential-strategy`: conditional OpenExO strategy, intelligence-loop, coordination, and compounding-leverage analysis.
 - `root-cause-debugging`: evidence-led diagnosis before fixes.
 - `intent-aligned-review`: requirements and authority review before engineering-quality review.
 - `evidence-before-completion`: fresh claim-to-evidence verification before readiness statements.
 - `audience-boundary`: prevents prompts, private reasoning, audit state, secrets, and internal metadata from reaching public output.
 - `brand-direction`: references, audience, feeling, differentiation, and anti-anchoring.
+- `brand-copy-steward`: buyer-language evidence, product truth, claims, and clean public-copy routing.
 - `visual-direction`: business-fit art direction, authorized client imagery, and generated assets.
 - `brand-copy-steward`: persuasive copy, brand alignment, and claims workflow.
 - `100-year-copywriting-engine`: strong promises, offers, headlines, and persuasive structure.

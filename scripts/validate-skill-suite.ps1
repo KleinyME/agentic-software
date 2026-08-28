@@ -137,7 +137,13 @@ $requiredFiles = @(
   "agentic-software-steward\skills\repo-foundation-bootstrap\assets\DEPLOYMENT_READINESS.template.md",
   "agentic-software-steward\skills\100-year-copywriting-engine\SKILL.md",
   "agentic-software-steward\skills\100-year-copywriting-engine\references\frameworks.md",
+  "agentic-software-steward\skills\100-year-copywriting-engine\references\optimization.md",
   "agentic-software-steward\skills\brand-copy-steward\SKILL.md",
+  "agentic-software-steward\skills\brand-copy-steward\references\buyer-language-evidence.md",
+  "agentic-software-steward\skills\brand-direction\references\competitive-evidence.md",
+  "agentic-software-steward\skills\design-system-steward\references\component-assembly.md",
+  "agentic-software-steward\skills\local-client-prospector\SKILL.md",
+  "agentic-software-steward\skills\local-client-prospector\references\prospect-brief.md",
   "agentic-software-steward\skills\ai-writing-audit\SKILL.md",
   "agentic-software-steward\skills\ai-writing-audit\LICENSE",
   "agentic-software-steward\skills\ai-writing-audit\NOTICE.md",
@@ -149,6 +155,7 @@ $requiredFiles = @(
   "agentic-software-steward\skills\software-steward\references\validation-scenarios.md",
   "agentic-software-steward\skills\workflow-automation-architect\SKILL.md",
   "agentic-software-steward\skills\workflow-automation-architect\references\friction-observer.md",
+  "agentic-software-steward\skills\workflow-automation-architect\references\marketing-experiment-contract.md",
   "agentic-software-steward\skills\graph-engineering\SKILL.md",
   "agentic-software-steward\skills\graph-engineering\references\skill-directed-agent-assembly.md",
   "agentic-software-steward\skills\site-scorecard\references\ad-hoc-prospect-blueprint.md",
@@ -156,6 +163,7 @@ $requiredFiles = @(
   "agentic-software-steward\third_party\ai-writing-audit\NOTICE.md",
   "agentic-software-steward\third_party\licenses\humanizer-MIT.txt",
   "agentic-software-steward\third_party\licenses\marketingskills-MIT.txt",
+  "agentic-software-steward\third_party\marketing-skill-sources.md",
   "hermes-runtime-skills\software-development\client-website-delivery\SKILL.md",
   "scripts\sync-skills.test.mjs"
 )
@@ -175,7 +183,9 @@ foreach ($concept in @(
   'CLIENT_REVIEW.md', 'DEPLOYMENT_READINESS.md', 'project-steward', 'creative-director',
   'brand-direction', 'design-distinctiveness', 'visual-direction', 'ai-writing-audit',
   'x-authority', 'Only-This-Business Test', 'Demo Crawlability', 'graph-engineering',
-  'workflow-automation-architect', 'fresh-context', 'audience-boundary'
+  'workflow-automation-architect', 'local-client-prospector', 'prospect_brief',
+  'marketing_experiment', 'buyer_language_evidence', 'market_brief',
+  'fresh-context', 'audience-boundary'
 )) {
   if (-not $skillText.Contains($concept)) {
     $errors.Add("Missing suite concept: $concept")
@@ -217,6 +227,12 @@ $nonObviousOptionPath = Join-Path $skillRoot "software-steward\references\non-ob
 $validationScenariosPath = Join-Path $skillRoot "software-steward\references\validation-scenarios.md"
 $workflowAutomationPath = Join-Path $skillRoot "workflow-automation-architect\SKILL.md"
 $frictionObserverPath = Join-Path $skillRoot "workflow-automation-architect\references\friction-observer.md"
+$marketingExperimentPath = Join-Path $skillRoot "workflow-automation-architect\references\marketing-experiment-contract.md"
+$localProspectorPath = Join-Path $skillRoot "local-client-prospector\SKILL.md"
+$prospectBriefPath = Join-Path $skillRoot "local-client-prospector\references\prospect-brief.md"
+$buyerLanguagePath = Join-Path $skillRoot "brand-copy-steward\references\buyer-language-evidence.md"
+$competitiveEvidencePath = Join-Path $skillRoot "brand-direction\references\competitive-evidence.md"
+$componentAssemblyPath = Join-Path $skillRoot "design-system-steward\references\component-assembly.md"
 $graphEngineeringPath = Join-Path $skillRoot "graph-engineering\SKILL.md"
 $skillDirectedAssemblyPath = Join-Path $skillRoot "graph-engineering\references\skill-directed-agent-assembly.md"
 
@@ -274,9 +290,51 @@ foreach ($pattern in @('Run It Only After A Baseline Exists', 'Cognitive Persona
 }
 
 $workflowAutomation = Get-Content -Raw -Encoding UTF8 -LiteralPath $workflowAutomationPath
-foreach ($pattern in @('Expand Initiative Without Expanding Authority', 'references/friction-observer.md', 'executive-operating-loop.md', 'standing autonomy charter', 'execute_gated')) {
+foreach ($pattern in @('Expand Initiative Without Expanding Authority', 'references/friction-observer.md', 'references/marketing-experiment-contract.md', 'executive-operating-loop.md', 'standing autonomy charter', 'execute_gated')) {
   if ($workflowAutomation -notmatch [regex]::Escape($pattern)) {
     $errors.Add("workflow-automation-architect: missing proactivity invariant '$pattern'")
+  }
+}
+
+$localProspector = Get-Content -Raw -Encoding UTF8 -LiteralPath $localProspectorPath
+foreach ($pattern in @('typed `prospect_brief`', 'Never infer authority to contact', 'abstain', 'Prefer a smaller verified set')) {
+  if ($localProspector -notmatch [regex]::Escape($pattern)) {
+    $errors.Add("local-client-prospector: missing evidence or authority invariant '$pattern'")
+  }
+}
+
+$prospectBrief = Get-Content -Raw -Encoding UTF8 -LiteralPath $prospectBriefPath
+foreach ($pattern in @('identity_confidence', 'evidence_independence', 'capability_fit_key', 'authority: "not_evaluated_here"', 'disposition: "qualify | research_more | skip | abstain"')) {
+  if ($prospectBrief -notmatch [regex]::Escape($pattern)) {
+    $errors.Add("prospect-brief: missing typed contract field '$pattern'")
+  }
+}
+
+$marketingExperiment = Get-Content -Raw -Encoding UTF8 -LiteralPath $marketingExperimentPath
+foreach ($pattern in @('single_variable', 'decision_rule', 'what_it_cannot_support', 'insufficient_signal', 'does not authorize messages')) {
+  if ($marketingExperiment -notmatch [regex]::Escape($pattern)) {
+    $errors.Add("marketing-experiment-contract: missing experiment invariant '$pattern'")
+  }
+}
+
+$buyerLanguage = Get-Content -Raw -Encoding UTF8 -LiteralPath $buyerLanguagePath
+foreach ($pattern in @('public_use', 'disconfirmed_assumptions', 'contradictions', 'do not infer demographics')) {
+  if ($buyerLanguage -notmatch [regex]::Escape($pattern)) {
+    $errors.Add("buyer-language-evidence: missing evidence boundary '$pattern'")
+  }
+}
+
+$competitiveEvidence = Get-Content -Raw -Encoding UTF8 -LiteralPath $competitiveEvidencePath
+foreach ($pattern in @('doing nothing', 'observed_claim', 'proof_missing', 'not proof that the claim is true')) {
+  if ($competitiveEvidence -notmatch [regex]::Escape($pattern)) {
+    $errors.Add("competitive-evidence: missing market-evidence boundary '$pattern'")
+  }
+}
+
+$componentAssembly = Get-Content -Raw -Encoding UTF8 -LiteralPath $componentAssemblyPath
+foreach ($pattern in @('Own the composition; borrow the mechanics', 'one compatible primitive foundation', 'actual license', 'accessibility is not inherited automatically')) {
+  if ($componentAssembly -notmatch [regex]::Escape($pattern)) {
+    $errors.Add("component-assembly: missing integration invariant '$pattern'")
   }
 }
 

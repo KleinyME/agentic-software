@@ -2,6 +2,12 @@
 
 Source: The 100 Year Copywriting Engine V13.001 + CPS V6.000 — Ad Zombies
 
+Use this as a hypothesis menu, not a universal optimization policy. Pre-register
+real tests through
+`../../workflow-automation-architect/references/marketing-experiment-contract.md`.
+The present decision, traffic, channel, risk, and downstream business outcome
+determine the variable, observation target, metric, and stop rule.
+
 ---
 
 ## A/B TESTING FRAMEWORK
@@ -32,12 +38,12 @@ Source: The 100 Year Copywriting Engine V13.001 + CPS V6.000 — Ad Zombies
 
 ### Testing Implementation Protocol
 
-- **Duration:** Set from traffic cycles, decision risk, and the planned sample size; do not use a universal day or interaction threshold.
-- **Decision rule:** Choose confidence, Bayesian, or practical-significance criteria before starting and document them.
-- **Sample size:** Calculate from baseline rate, minimum detectable effect, allocation, and acceptable error; underpowered tests produce false certainty.
+- **Duration:** Set from traffic cycles, decision risk, and the observation target; do not use a universal day threshold.
+- **Decision rule:** Choose the practical decision rule before starting and document what the evidence cannot support.
+- **Sample or time target:** Match the cheapest credible observation to the decision. A workflow-safety cohort, a directional concept test, and a causal conversion test require different evidence.
 - **Variable isolation:** Test one element when causal attribution matters. Use a designed multivariate test only when traffic and analysis support it.
 - **Control version:** Establish a baseline or control unless the experiment design has another explicit comparison.
-- **Automated Feedback:** Set up collection before launching
+- **Collection:** Set up attribution and downstream outcome capture before launching.
 
 ---
 
@@ -49,11 +55,15 @@ Do not change headline, CTA, and imagery together when the goal is to attribute 
 
 ## PERFORMANCE METRICS HIERARCHY
 
-### Primary KPIs (Revenue Impact — Watch These First)
+### Primary Outcomes
 - **Conversion Rate** — What percentage take the desired action?
 - **Revenue Per Visitor** — What does each visitor generate on average?
 - **Customer Acquisition Cost** — What does it cost to get one customer?
 - **Lifetime Value Impact** — How does this content affect long-term customer value?
+
+Use only the outcome that matches the decision and can be measured honestly.
+For early sales work, a qualified reply, fit decision, or reconciled purchase may
+be more useful than a statistically underpowered revenue-rate estimate.
 
 ### Secondary KPIs (Engagement — Leading Indicators)
 - **Click-Through Rate** — Are people engaging with CTAs?
@@ -74,8 +84,8 @@ Do not change headline, CTA, and imagery together when the goal is to attribute 
 
 ### Primary Blog KPIs
 - Organic search traffic growth (month over month)
-- Average time on page (target: 3+ minutes for long-form)
-- Scroll depth and engagement (target: 70%+ scroll depth)
+- Average time on page relative to the page's job and baseline
+- Scroll depth and engagement relative to content structure
 - Social shares and backlinks (authority indicators)
 - Comment quality and quantity (community signal)
 - Email subscriptions from blog posts (list-building signal)
@@ -91,12 +101,12 @@ Do not change headline, CTA, and imagery together when the goal is to attribute 
 
 ## PERSONALIZATION IMPLEMENTATION
 
-### Data-Driven Personalization Options
+### Evidence-Grounded Personalization Options
 
-**User Demographics Integration**
-- Age, location, industry-specific references
-- Cultural and regional considerations
-- Professional level and role-based messaging
+**Situation And Role Evidence**
+- Current job, role, geography, awareness stage, and source-backed problem
+- Regional or industry language only when the audience evidence supports it
+- No inferred sensitive traits, private personal data, or fictional biography
 
 **Behavioral Trigger Implementation**
 - Past interaction patterns
@@ -160,19 +170,26 @@ Do not change headline, CTA, and imagery together when the goal is to attribute 
 
 ## AI-ENHANCED OPTIMIZATION
 
-### Capabilities to Leverage
-- **Predictive Framework Selection:** Based on historical performance data for similar content
-- **Intelligent A/B Test Suggestions:** Data-driven variation recommendations
-- **Cross-Platform Performance Analysis:** Unified reporting across channels
-- **Behavioral Trigger Optimization:** Performance-based trigger refinement
-- **Predictive Personalization:** Content prediction for individual user segments
+### Bounded Capabilities
+- Suggest materially different hypotheses from source-backed buyer and outcome evidence.
+- Classify unstructured replies or owner edits into a typed review artifact with uncertainty.
+- Summarize cross-channel outcomes only after deterministic identity and attribution joins.
+- Recommend the cheapest next observation without changing the active policy or experiment record.
+
+Do not claim prediction, causality, or individual personalization merely because
+a model generated or classified the content. Deterministic rules own exact
+eligibility, suppression, idempotency, budgets, and consequential-action gates.
 
 ---
 
 ## CONTINUOUS IMPROVEMENT PROTOCOL
 
-- **Monthly Platform Updates:** Monitor social media and ad platform specification changes
-- **Quarterly Performance Review:** Analyze framework and style effectiveness
-- **Annual Comprehensive Audit:** Complete system optimization and modernization
-- **User Feedback Integration:** Ongoing improvement based on user experience signals
-- **Blog Performance Tracking:** SEO and engagement metrics monitoring
+- Review when enough new evidence could change the decision, not because a
+  universal calendar says to create work.
+- Recheck platform specifications before each affected launch.
+- Preserve the original hypothesis, owner interventions, attribution limits,
+  and outcome before proposing a new version.
+- Convert repeated buyer feedback, owner corrections, and downstream results
+  into a dated evidence-model change only after review.
+- End with `keep`, `change`, `stop`, or `insufficient_signal`; do not manufacture
+  an optimization merely to keep the loop active.

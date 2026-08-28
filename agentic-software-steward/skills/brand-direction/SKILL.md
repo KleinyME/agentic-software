@@ -59,6 +59,11 @@ For each reference, record:
 
 Do not copy wording, layouts, visual assets, or distinctive expression. Read `references/anti-anchoring.md` for redesign and reference-led work.
 
+When positioning depends on alternatives or repeated category claims, read
+[references/competitive-evidence.md](references/competitive-evidence.md) and
+produce a dated `market_brief`. Treat public competitor claims as observed
+language, not proof of truth, intent, effectiveness, or market size.
+
 ### 3. Create The Direction
 
 Produce a primary direction and, when useful, one bolder stretch direction. Define:
