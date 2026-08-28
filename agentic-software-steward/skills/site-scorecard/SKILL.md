@@ -94,7 +94,13 @@ Recommended:
    immediate pass. Keep the ones research supports; replace weak or
    flattering ones per `references/answer-availability.md`; check each
    against the live site (and concept on preview runs), record statuses and
-   owner-facing notes. Any `contradictory` becomes the rank-1 finding.
+   owner-facing notes. Every `contradictory` answer becomes a visible finding,
+   but rank findings by material consequence and the owner's stated business
+   goal. A contact-fact conflict is rank 1 only when it leaves no dependable
+   buyer path, affects emergency or safety-critical routing, creates material
+   transaction or regulatory risk, or is otherwise the highest-leverage issue.
+   Do not let an easy-to-state phone, address, or hours discrepancy displace a
+   larger positioning, proof, offer, or conversion problem.
 4. **Dimensions** — score all six against `references/scoring-anchors.md`,
    interpolating between bands, citing observed evidence in each
    `evidence` string. `ai_readability` must cite the instrument checks
@@ -124,6 +130,10 @@ Recommended:
    grounded in the findings> }, "stillToConfirm": <what could not be
    verified from the outside> }. This drives the review email and the
    review section of the delivered document — it is the earned second ask.
+   `whatMattersMost` must name the issue with the greatest likely effect on
+   the stated buyer and business outcome, not merely the clearest unresolved
+   fact. Put subordinate contact discrepancies in `stillToConfirm` and their
+   linked finding/homework without repeating them as the review's thesis.
 9. **Gate bookkeeping** — set `factsVerified` honestly; write `stillOpen`
    (the most important unresolved gap, owner-facing); legacy drafts only:
    remove the "judgment pass not yet completed" blocker once steps 3–7 are
