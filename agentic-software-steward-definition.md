@@ -255,6 +255,8 @@ consequential action may use an owner-accepted deterministic policy gate instead
 of per-instance human approval, but only within its versioned scope, evidence,
 budget, assurance, sampling, pause, and revocation rules.
 
+Unapproved work remains on feature branches and in non-production review environments. A stable `preview` branch is a movable pointer to one exact review candidate, not an editable work branch. Approval attaches to that commit and its evidence; production receives only that exact approved commit, and later changes require renewed approval.
+
 ### Keep Review Notes Off The Page
 
 The customer-facing preview must remain visually complete. Put proposed claims, simulated functionality, provisional assets, and open decisions in `CLIENT_REVIEW.md`. Put production implementation and verification in `DEPLOYMENT_READINESS.md`.

@@ -190,9 +190,9 @@ $behaviorContracts = @(
   @{ Path = "agentic-software-steward\skills\visual-direction\SKILL.md"; Phrases = @('collect-client-site-images.mjs', 'Do not collect competitor imagery for reuse', 'Generate one anchor image first') },
   @{ Path = "agentic-software-steward\skills\brand-copy-steward\SKILL.md"; Phrases = @('every newly created or materially changed user-facing surface', 'Never render prompts', 'Verify The Actual Experience') },
   @{ Path = "agentic-software-steward\skills\no-theater-software\SKILL.md"; Phrases = @('Full intended dashboards', 'Do not reduce the intended experience', 'production-verified', 'Clean Output Boundary') },
-  @{ Path = "agentic-software-steward\skills\live-environment-steward\SKILL.md"; Phrases = @('deindex without blocking machine-readable review', 'canonical production site that remains de-indexed is blocked from promotion') },
+  @{ Path = "agentic-software-steward\skills\live-environment-steward\SKILL.md"; Phrases = @('deindex without blocking machine-readable review', 'canonical production site that remains de-indexed is blocked from promotion', 'movable pointer to the exact proposed feature-branch commit', 'changed commit requires renewed approval') },
   @{ Path = "agentic-software-steward\skills\software-steward\SKILL.md"; Phrases = @('Role Boundary', 'Technical Contract', 'Experience Integration', 'Agentic Software Harness') },
-  @{ Path = "agentic-software-steward\skills\release-steward\SKILL.md"; Phrases = @('preview release is for client or owner review', 'official production target', 'Preserve The Live Baseline', 'deployment protection', 'absolute production `og:image` returns 200', 'no retired product or offer names') }
+  @{ Path = "agentic-software-steward\skills\release-steward\SKILL.md"; Phrases = @('preview release is for client or owner review', 'official production target', 'Preserve The Live Baseline', 'deployment protection', 'absolute production `og:image` returns 200', 'no retired product or offer names', 'movable review pointer to one exact candidate commit', 'Approval binds to the exact commit', 'never edit, commit, or merge directly on the review branch') }
 )
 
 foreach ($contract in $behaviorContracts) {

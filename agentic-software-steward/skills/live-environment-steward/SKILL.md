@@ -47,6 +47,8 @@ Use the lowest level safe for the change:
 
 - Official production deploys from the designated production branch.
 - Feature branches create review previews.
+- When a stable review branch exists, treat it as a movable pointer to the exact proposed feature-branch commit, never as an editable work branch.
+- Unapproved work may appear only in a non-production review environment. Production promotion is limited to the exact commit covered by explicit approval; a changed commit requires renewed approval.
 - Production and preview secrets are separate.
 - External writes use sandbox credentials until promotion.
 - Client-owned accounts are preferred for client production resources.

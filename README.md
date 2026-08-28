@@ -77,6 +77,8 @@ and the decisions that remain human.
 
 A Vercel preview URL or similar shareable deployment remains a review environment unless the project explicitly identifies it as production.
 
+In the common branch model, feature branches hold proposed work, `preview` is a movable pointer to the exact candidate shown at the stable review URL, and the designated production branch receives only the exact commit explicitly approved for release. A change after approval starts a new review candidate.
+
 ## Preview Truth Without Creative Handcuffs
 
 The no-theater rules govern how maturity is represented, not what may be designed.
