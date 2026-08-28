@@ -107,7 +107,11 @@ Recommended:
    list, acceptance `rerun_question`. A `contradictory` contact or operating
    fact also gets reconciliation homework even though the structural validator
    does not require it: identify the authoritative owner-approved value,
-   synchronize priority listings, and rerun the question.
+   synchronize priority listings, and rerun the question. A disclosed conflict
+   between public phone numbers, addresses, or hours is a finding and an open
+   confirmation item, not a delivery blocker. Put it in `stillOpen` and
+   `narrativeReview.stillToConfirm`, leave the disputed fact unverified, and
+   deliver the Blueprint so the client can see what needs reconciliation.
 7. **Readout** — fill `peopleView` meter values from the dimension scores
    (×10), set tones, and write the `diagnosis` paragraph in plain English.
 8. **Narrative review** — write the top-level `narrativeReview` object,
@@ -123,7 +127,11 @@ Recommended:
 9. **Gate bookkeeping** — set `factsVerified` honestly; write `stillOpen`
    (the most important unresolved gap, owner-facing); legacy drafts only:
    remove the "judgment pass not yet completed" blocker once steps 3–7 are
-   done; add any presentation blockers the anchors require; write
+   done; add a delivery blocker only when the Blueprint itself cannot be
+   delivered truthfully or safely — unreadable source evidence, fabricated
+   proof, missing or invalid judgment requirements, a frozen-lane violation,
+   or an unsafe contact recipe built from an unverified detected value. Do not
+   promote an honestly disclosed public-fact discrepancy into a blocker. Write
    `internal.judge` with this session's judge identity (Hard Rule 2).
 10. **Validate** the completed record against the repository's canonical
     `contracts/visibility-blueprint.v3.schema.json` and run
@@ -133,9 +141,10 @@ Recommended:
 11. **Store and render** the completed record back to its run folder.
     Canonical jobs render through the Karbon server
     (`POST /api/blueprint/v3/render`; audience `client` refuses records with
-    blockers). Ad-hoc prospect runs may use the repository document renderer
-    as described in `references/ad-hoc-prospect-blueprint.md`, but must still
-    pass the same structural gate and visually verify the PDF.
+    effective delivery blockers). Ad-hoc prospect runs may use the repository
+    document renderer as described in
+    `references/ad-hoc-prospect-blueprint.md`, but must still pass the same
+    structural gate and visually verify the PDF.
 
 ## Preview And Drift Runs
 
@@ -152,7 +161,9 @@ Recommended:
   unanswered question has a homework item with an acceptance test.
 - `narrativeReview` is written, complete, and grounded in the findings.
 - The measured lane is byte-identical to what arrived; remaining blockers
-  are real; the record validates against the schema.
+  are hard truth or safety failures, while disclosed public-fact conflicts stay
+  visible as findings and confirmation work; the record validates against the
+  schema.
 - `meta.repoCommit` / `meta.generation` are set.
 - Research is saved in the client folder with sources; nothing from
   `internal` leaked toward the client.
