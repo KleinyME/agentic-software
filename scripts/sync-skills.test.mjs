@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
-import { appendFileSync, existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { appendFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
+const { tmpdir } = os;
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import test from "node:test";
@@ -51,4 +52,30 @@ test("Hermes sync refuses local drift without overwriting it", () => {
   } finally {
     rmSync(target, { recursive: true, force: true });
   }
+});
+
+test("retires only manifest-listed skills, backing them up first", () => {
+  const target = mkdtempSync(path.join(tmpdir(), "retire-"));
+  // One retired skill and one unrelated orphan the operator installed themselves.
+  for (const name of ["release-steward", "someone-elses-skill"]) {
+    mkdirSync(path.join(target, name), { recursive: true });
+    writeFileSync(
+      path.join(target, name, "SKILL.md"),
+      `---\nname: ${name}\ndescription: stale copy.\n---\n\nold\n`,
+    );
+  }
+
+  run(["--target", "claude", "--claude-dir", target, "--retire"]);
+
+  assert.equal(existsSync(path.join(target, "release-steward")), false, "retired skill should be removed");
+  assert.equal(existsSync(path.join(target, "someone-elses-skill")), true, "an orphan we never retired must survive");
+
+  const backups = path.join(target, ".agentic-software-steward-backups");
+  const stamps = readdirSync(backups);
+  assert.ok(
+    stamps.some((stamp) => existsSync(path.join(backups, stamp, "release-steward", "SKILL.md"))),
+    "the retired skill must be recoverable from a backup",
+  );
+
+  rmSync(target, { recursive: true, force: true });
 });

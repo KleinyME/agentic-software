@@ -4,7 +4,7 @@ This Codex skill suite routes creative, product, technical, data, hardware, and 
 
 Use `project-steward` as the neutral lead for mixed or ambiguous projects. It selects the current work stage, primary craft, freedom zone, protected invariants, and only the risk overlays that actually apply.
 
-This v0.15 package also contains an intention-first Agentic Software Harness for active software delivery. After `project-steward` assigns technical implementation as the primary craft, `software-steward` coordinates situation classification, Reckless AI initiative, safe automation discovery, conditional exponential strategy, architecture, fresh-context agent graphs, assembly, independent assurance, memory, copy and audience boundaries, security, verification, and release.
+This v0.16 package also contains an intention-first Agentic Software Harness for active software delivery. After `project-steward` assigns technical implementation as the primary craft, `software-steward` coordinates situation classification, Reckless AI initiative, safe automation discovery, conditional exponential strategy, architecture, fresh-context agent graphs, assembly, independent assurance, memory, copy and audience boundaries, security, verification, and release.
 
 Key roles:
 
