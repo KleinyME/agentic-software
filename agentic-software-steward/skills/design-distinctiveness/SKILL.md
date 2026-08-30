@@ -56,7 +56,7 @@ Answer engines cite and retrieve URLs, not anchors. A one-page site gives assist
 
 A one-pager remains legal when the business is genuinely answerable in one sitting; it must be chosen against the alternative, not inherited from the demo form. Apply the same test as any other default: the choice must survive if the single-scroll form were unavailable.
 
-When multiple pages ship: every page has a stated job and its own title and description, navigation stays consistent across pages, and no navigation link scrolls when its label promises a destination. Verify the intended routes with `release-steward` before presentation.
+When multiple pages ship: every page has a stated job and its own title and description, navigation stays consistent across pages, and no navigation link scrolls when its label promises a destination. Verify the intended routes with `environment-and-release` before presentation.
 
 ## Make Typography Carry The Voice
 
@@ -101,7 +101,7 @@ Batch diversity is a guardrail against agent convergence, not a roulette wheel. 
 
 ## Hand Off Demo Publishing
 
-When a concept is published for prospect or client review, load `live-environment-steward` and follow `../live-environment-steward/references/demo-crawlability.md`. Public demos must remain shareable and machine-readable while instructing compliant search engines not to index them. Production promotion must remove custom demo de-indexing from the canonical production target.
+When a concept is published for prospect or client review, load `environment-and-release` and follow `../environment-and-release/references/demo-crawlability.md`. Public demos must remain shareable and machine-readable while instructing compliant search engines not to index them. Production promotion must remove custom demo de-indexing from the canonical production target.
 
 ## Working Record
 

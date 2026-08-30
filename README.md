@@ -154,8 +154,7 @@ The client approved this direction. Preserve the approved boldness and move the 
 - `100-year-copywriting-engine`: strong promises, offers, headlines, and persuasive structure.
 - `ai-writing-audit`: removes formulaic AI habits without flattening approved voice.
 - `no-theater-software`: truthful stage representation and production requirements.
-- `live-environment-steward`: preview, sandbox, credentials, and live-environment boundaries.
-- `release-steward`: promotion, rollback awareness, and live verification.
+- `environment-and-release`: preview, sandbox, and credential boundaries, promotion, rollback, and live verification.
 - `grilling` and `grill-me`: dependency-ordered intake rounds that settle a plan before work starts.
 - `domain-modeling`: the project glossary and its decision records.
 - `handoff`: a compact note for whoever picks the work up next.

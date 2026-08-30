@@ -36,7 +36,7 @@ If the repo has obvious low-risk issues, fix one or more in the same pass after 
    `<title>`, meta description, canonical, `og:title/description/url/type/site_name`,
    `og:image` (1200×630 with width/height/alt), and `twitter:card/title/description/image`.
    A first preview shared in chat or social must never render as a bare URL.
-   Mark the og:image `provisional` if it is a placeholder; release-steward
+   Mark the og:image `provisional` if it is a placeholder; environment-and-release
    re-verifies all of it at go-live.
 10. Produce a prioritized plan: stabilize, clarify, modularize, harden, polish.
 11. Take the first safe remediation step or state why implementation should wait.
@@ -89,7 +89,7 @@ Use this format for actionable findings:
 Evidence: file/path:line or search result
 Why it matters: plain-language risk
 Recommended action: concrete next step
-Owner skill: project-steward | creative-director | software-steward | no-theater-software | security-data-safety | senior-architect | design-system-steward | release-steward
+Owner skill: project-steward | creative-director | software-steward | no-theater-software | security-data-safety | senior-architect | design-system-steward | environment-and-release
 ```
 
 Severity:

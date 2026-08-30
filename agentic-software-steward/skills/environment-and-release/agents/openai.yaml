@@ -1,0 +1,4 @@
+interface:
+  display_name: "Environment And Release"
+  short_description: "Preview, promotion, rollback, and live verification"
+  default_prompt: "Use $environment-and-release to separate preview from production, hold branch and approval discipline, promote or roll back, and verify what is live."

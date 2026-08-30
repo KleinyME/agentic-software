@@ -204,13 +204,13 @@ Use these routing rules:
 - Skills dispatching fresh-context agents, typed fan-out/fan-in, final assembly, context isolation, or independent assurance: use `graph-engineering`; the root harness owns dispatch and one accountable assembler owns integration.
 - Any dashboard, button, page, integration, or workflow that might be fake: `no-theater-software`.
 - Auth, permissions, secrets, private data, migrations, payments, deletion, external integrations: `security-data-safety`.
-- Live apps, preview deploys, staging/dev setup, environment variables, API sandboxing, MCP/plugin connector setup, or direct-to-main pressure: `live-environment-steward`.
+- Live apps, preview deploys, staging/dev setup, environment variables, API sandboxing, MCP/plugin connector setup, or direct-to-main pressure: `environment-and-release`.
 - UI/UX or frontend craft: use `impeccable` if installed. If missing, offer install, then fallback to `design-system-steward` rules.
 - Visual identity/design tokens: create or update `DESIGN.md`.
 - Product/design context: create or update `PRODUCT.md`.
 - Any newly created or materially changed user-facing copy, including ordinary UI states: `brand-copy-steward`. Use `100-year-copywriting-engine` for suitable direct-response and campaign work rather than as the automatic UI voice; run `ai-writing-audit` as the final contextual prose pass.
 - System/developer instructions, private reasoning, audit state, developer commentary, claim flags, debug fields, secrets, or internal status that might reach a rendered, sent, exported, or serialized artifact: `audience-boundary`. Separate fields before serialization; do not rely on hidden UI.
-- Branching, cleanup, final merge readiness: `release-steward`.
+- Branching, cleanup, final merge readiness: `environment-and-release`.
 
 ### Routing Order For New Software
 
@@ -304,8 +304,8 @@ Engineering roles protect named technical invariants. They do not chair creative
 
 - `no-theater-software`: stage-aware simulation and production truth.
 - `security-data-safety`: permissions, sensitive data, destructive actions, and external writes.
-- `live-environment-steward`: preview, sandbox, production resources, credentials, and environment boundaries.
-- `release-steward`: branch discipline, promotion, live baseline preservation, rollback, and proof.
+- `environment-and-release`: preview, sandbox, production resources, credentials, and environment boundaries.
+- `environment-and-release`: branch discipline, promotion, live baseline preservation, rollback, and proof.
 
 ### Design
 

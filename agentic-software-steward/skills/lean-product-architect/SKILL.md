@@ -159,9 +159,9 @@ Do not produce unless asked:
 
 Stop or escalate to companion skills when:
 
-- The slice writes to live external systems: use `security-data-safety` and `live-environment-steward`.
+- The slice writes to live external systems: use `security-data-safety` and `environment-and-release`.
 - The plan contains fake dashboards, unwired forms, or pretend status: use `no-theater-software`.
-- The repo needs branch/deploy/rollback discipline: use `release-steward`.
+- The repo needs branch/deploy/rollback discipline: use `environment-and-release`.
 - The work has grown beyond a small business loop and needs durable multi-user architecture: use `senior-architect`.
 
 Use `senior-architect` when the product has multiple teams, complex permissions, important data migrations, high scale, compliance, deep integrations, or architectural decisions that are expensive to reverse.

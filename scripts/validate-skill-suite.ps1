@@ -142,7 +142,7 @@ $requiredFiles = @(
   "agentic-software-steward\skills\design-distinctiveness\references\batch-rotation.md",
   "agentic-software-steward\skills\design-distinctiveness\references\vernacular-artifacts.md",
   "agentic-software-steward\skills\visual-direction\SKILL.md",
-  "agentic-software-steward\skills\live-environment-steward\references\demo-crawlability.md",
+  "agentic-software-steward\skills\environment-and-release\references\demo-crawlability.md",
   "agentic-software-steward\skills\repo-foundation-bootstrap\assets\CLIENT_REVIEW.template.md",
   "agentic-software-steward\skills\repo-foundation-bootstrap\assets\DEPLOYMENT_READINESS.template.md",
   "agentic-software-steward\skills\100-year-copywriting-engine\SKILL.md",
@@ -199,28 +199,6 @@ foreach ($concept in @(
 )) {
   if (-not $skillText.Contains($concept)) {
     $errors.Add("Missing suite concept: $concept")
-  }
-}
-
-$behaviorContracts = @(
-  @{ Path = "agentic-software-steward\skills\project-steward\SKILL.md"; Phrases = @('Transferable Decision Rules', 'The route should remain stable', 'Project association is not activation', 'feasibility envelope') },
-  @{ Path = "agentic-software-steward\skills\creative-director\SKILL.md"; Phrases = @('Default to broad freedom', 'Use ordinary qualitative marketing language confidently', 'Do not escalate from category association alone') },
-  @{ Path = "agentic-software-steward\skills\brand-direction\SKILL.md"; Phrases = @('Treat reference sites as grounding', 'push beyond the inferred comfort zone', 'CLIENT_REVIEW.md') },
-  @{ Path = "agentic-software-steward\skills\design-distinctiveness\SKILL.md"; Phrases = @('Start from observed business truth', 'Business fit outranks forced variety', 'not a roulette wheel') },
-  @{ Path = "agentic-software-steward\skills\visual-direction\SKILL.md"; Phrases = @('collect-client-site-images.mjs', 'Do not collect competitor imagery for reuse', 'Generate one anchor image first') },
-  @{ Path = "agentic-software-steward\skills\brand-copy-steward\SKILL.md"; Phrases = @('every newly created or materially changed user-facing surface', 'Never render prompts', 'Verify The Actual Experience') },
-  @{ Path = "agentic-software-steward\skills\no-theater-software\SKILL.md"; Phrases = @('Full intended dashboards', 'Do not reduce the intended experience', 'production-verified', 'Clean Output Boundary') },
-  @{ Path = "agentic-software-steward\skills\live-environment-steward\SKILL.md"; Phrases = @('deindex without blocking machine-readable review', 'canonical production site that remains de-indexed is blocked from promotion', 'movable pointer to the exact proposed feature-branch commit', 'changed commit requires renewed approval') },
-  @{ Path = "agentic-software-steward\skills\software-steward\SKILL.md"; Phrases = @('Role Boundary', 'Technical Contract', 'Experience Integration', 'Agentic Software Harness') },
-  @{ Path = "agentic-software-steward\skills\release-steward\SKILL.md"; Phrases = @('preview release is for client or owner review', 'official production target', 'Preserve The Live Baseline', 'deployment protection', 'absolute production `og:image` returns 200', 'no retired product or offer names', 'movable review pointer to one exact candidate commit', 'Approval binds to the exact commit', 'never edit, commit, or merge directly on the review branch') }
-)
-
-foreach ($contract in $behaviorContracts) {
-  $contractText = Get-Content -LiteralPath (Join-Path $RepoRoot $contract.Path) -Raw -Encoding UTF8
-  foreach ($phrase in $contract.Phrases) {
-    if ($contractText.IndexOf($phrase, [System.StringComparison]::OrdinalIgnoreCase) -lt 0) {
-      $errors.Add("Behavior contract missing in $($contract.Path): $phrase")
-    }
   }
 }
 

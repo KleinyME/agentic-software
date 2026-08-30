@@ -102,8 +102,8 @@ For client-facing websites, read [references/web-stack-direction.md](references/
 - Multi-agent fan-out/fan-in, conditional execution, independent verifier nodes, durable task state, knowledge graphs, GraphRAG, temporal memory, or loop-vs-graph decisions: `graph-engineering`.
 - Simulated, fixture, sandbox, or unwired behavior: `no-theater-software`.
 - Auth, permissions, secrets, private data, payments, migrations, deletion, or dangerous writes: `security-data-safety`.
-- Preview/staging setup, credentials, deployment resources, or production separation: `live-environment-steward`.
-- Branching, merge safety, rollback, promotion, and live verification: `release-steward`.
+- Preview/staging setup, credentials, deployment resources, or production separation: `environment-and-release`.
+- Branching, merge safety, rollback, promotion, and live verification: `environment-and-release`.
 - UI/UX craft: `impeccable` when installed, otherwise `design-system-steward`.
 - New or materially changed user-facing words: `brand-copy-steward`; use `100-year-copywriting-engine` only when direct-response or campaign expertise fits, then `ai-writing-audit`.
 - Any chance that prompts, reasoning, audit state, secrets, simulation markers, or implementation metadata reach UI, API payloads, emails, notifications, metadata, exports, or generated content: `audience-boundary` before serialization.

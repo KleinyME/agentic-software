@@ -70,7 +70,7 @@ Distinguish three gate families: concept viability, implementation verification,
 - Human factors, accessibility, essential comprehension, spatial experience, or participant-facing behavior: use the relevant design or domain specialist when these shape concept viability.
 - Code, architecture, persistence, identity, concurrency, auth, and runtime behavior: use `software-steward`, `lean-product-architect`, or `senior-architect` as appropriate.
 - Electrical, protocol, device, and hardware truth: use domain sources and the relevant technical specialist; keep experimental, confirmed, and production-proven facts distinct.
-- Production promotion and live verification: use `release-steward` and `live-environment-steward`.
+- Production promotion and live verification: use `environment-and-release`.
 
 Use one accountable primary craft per decision, not necessarily one craft for the whole pass. A mixed pass may contain linked decisions with different leads.
 

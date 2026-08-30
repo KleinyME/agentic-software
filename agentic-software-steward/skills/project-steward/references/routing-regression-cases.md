@@ -161,7 +161,7 @@ Fail if file name, detail, commit status, or current implementation gives it aut
 The accepted change is ready. Push it live and verify the official customer workflow.
 ```
 
-Expected route: release-operate led by `release-steward`, with technical support as needed.
+Expected route: release-operate led by `environment-and-release`, with technical support as needed.
 
 Fail if a local build is called shipped, if the official target is not verified, or if the accepted creative direction is reopened without a defect.
 

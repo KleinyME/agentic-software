@@ -25,7 +25,7 @@ When a real image cannot be used yet - a child, suspected stock, or a missing as
 
 - For minors, compose stand-ins the way childcare and dance marketing already protects privacy: from behind, mid-motion, wide framing, or detail shots. Avoid photoreal synthetic child faces. Never model a stand-in on a specific real child, and never caption any stand-in as a specific real person.
 - Name every stand-in and generated replacement with the reserved prefix `ai-preview--` and record it in the asset manifest and image plan with status `preview-replacement`, including what authentic asset should replace it.
-- Production promotion swaps every `ai-preview--` asset for authentic client-supplied imagery. A flagged filename surviving into a production release is a release blocker, verified alongside routes in `release-steward`.
+- Production promotion swaps every `ai-preview--` asset for authentic client-supplied imagery. A flagged filename surviving into a production release is a release blocker, verified alongside routes in `environment-and-release`.
 
 The flag lives in filenames and internal records, never as a badge or caveat on the customer-facing page.
 
