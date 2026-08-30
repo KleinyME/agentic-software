@@ -28,12 +28,9 @@ tests use the workflow-automation experiment contract; buyer language,
 competitive evidence, and component assembly extend their existing owners
 instead of creating a second marketing or frontend router.
 
-The suite expands initiative without silently expanding authority. Its
-**Reckless AI** contract defaults reversible work to the strongest useful action
-inside current authority instead of the most timid plausible action: think
-aggressively, create boldly, act reversibly, and gate consequences where they
-actually occur. Uncertainty should normally trigger investigation or a bounded
-test, not a permission request.
+The suite expands initiative without silently expanding authority. That posture is
+`principle-never-block-on-the-human`, and the full initiative bands are in
+`skills/project-steward/references/reckless-ai.md`.
 
 Each proactive workflow declares whether it may observe, suggest, draft,
 execute a reversible pre-authorized action, or execute a consequential action
