@@ -1,6 +1,6 @@
 ---
 name: brand-copy-steward
-description: Route, create, and review user-facing product and marketing copy across landing pages, websites, onboarding, empty states, labels, buttons, errors, ads, emails, notifications, and applications. Use whenever an agent creates or changes visible words in a UI, when product marketing context or customer language is missing, when copy must persuade or convert, when the 100-year-copywriting-engine may help, when existing copy needs systematic editing or humanization, or when internal AI commentary could leak into the customer experience.
+description: Create and review user-facing product copy: pages, onboarding, empty states, labels, buttons, errors, emails. Use whenever visible words in a UI change. Not for long-form ads; use 100-year-copywriting-engine.
 ---
 
 # Brand Copy Steward

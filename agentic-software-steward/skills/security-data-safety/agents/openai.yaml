@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Data Safety"
+  short_description: "Review security, privacy, permissions, secrets, migrations"
+  default_prompt: "Use $security-data-safety to review security, privacy, permissions, secrets, migrations, destructive actions, and external integrations."

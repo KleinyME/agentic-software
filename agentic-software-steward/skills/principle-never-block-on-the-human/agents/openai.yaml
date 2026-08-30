@@ -1,0 +1,6 @@
+interface:
+  display_name: "Principle: Never Block On The Human"
+  short_description: "Act on reversible work; gate the irreversible"
+  default_prompt: "Use $principle-never-block-on-the-human to decide and proceed instead of asking."
+policy:
+  allow_implicit_invocation: false

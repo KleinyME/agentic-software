@@ -331,7 +331,7 @@ This integration test flakes in CI. Increase the sleep from five to fifteen seco
 
 Expected behavior:
 
-- Use `root-cause-debugging` before changing the timeout.
+- Use `diagnosing-bugs` before changing the timeout.
 - Capture the failure pattern and compare CI with a working environment.
 - Inspect the condition being awaited, event ordering, resource pressure, and boundary evidence.
 - Test one hypothesis at a time.

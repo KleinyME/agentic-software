@@ -1,0 +1,8 @@
+{
+  "comment": "Skills removed from the suite. sync-skills.mjs --retire backs up and removes exactly these at a destination, so a synced host cannot end up running both a retired skill and the one that replaced it.",
+  "retired": [
+    { "name": "root-cause-debugging",     "since": "0.16.0", "replacedBy": "diagnosing-bugs" },
+    { "name": "live-environment-steward", "since": "0.16.0", "replacedBy": "environment-and-release" },
+    { "name": "release-steward",          "since": "0.16.0", "replacedBy": "environment-and-release" }
+  ]
+}

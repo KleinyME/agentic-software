@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grilling"
+  short_description: "Settle a plan through dependency-ordered rounds"
+  default_prompt: "Use $grilling to interview me until this plan is fully settled."

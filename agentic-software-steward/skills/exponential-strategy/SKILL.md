@@ -1,6 +1,7 @@
 ---
 name: exponential-strategy
-description: Identify and shape evidence-backed exponential leverage in software, workflows, and AI-native operating models. Use for OpenExO, ExO 3.0, Massive Transformative Purpose, MTP, DRIVE, SHAPE, the Intelligence Stack, REWRITE, AI-native organization design, proactive CEO/COO/Marketing or executive-agent operating models, Hermes-activated portfolios, coordination bottlenecks, recursive learning, decision architecture, safe autonomy, value moats, elastic agency, non-obvious or 10x option exploration, or deciding whether a build deserves an exponential-strategy lens at all.
+description: OpenExO and ExO 3.0 leverage analysis for an operating model.
+disable-model-invocation: true
 ---
 
 # Exponential Strategy

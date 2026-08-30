@@ -1,0 +1,6 @@
+interface:
+  display_name: "Domain Modeling"
+  short_description: "Sharpen the project glossary and decision records"
+  default_prompt: "Use $domain-modeling to sharpen the terms this project keeps confusing."
+policy:
+  allow_implicit_invocation: false

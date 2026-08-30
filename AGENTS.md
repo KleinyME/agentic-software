@@ -32,20 +32,35 @@ This repository maintains a cohesive skill suite, not a loose collection of prom
 
 ## Documentation Responsibilities
 
-When behavior changes, update all affected surfaces:
+Each meaning has one home. When behavior changes, edit that home and let the
+pointers stand:
 
-- Root `README.md` for users and contributors.
-- `agentic-software-steward/README-for-humans.md` for installation and everyday operation.
-- The owning `SKILL.md` for agent behavior.
-- A focused reference file for detailed workflow guidance.
-- `agents/openai.yaml` when a skill's user-facing description or default prompt becomes stale.
-- Templates when projects created by the suite need the changed contract.
+- Executable agent behavior lives in the owning `SKILL.md`.
+- Doctrine cited by more than one skill lives in one principle card and is
+  referenced by name, never restated.
+- Detail lives in a directly linked reference file.
+- The root `README.md` carries the user contract and the install commands only.
+- `agents/openai.yaml` keeps the same invocation setting as its `SKILL.md`.
 
-Avoid duplicating long instructions. Keep core commands and the user contract in the README; keep executable agent behavior in skills; keep details in directly linked references.
+Do not copy an instruction into a second file to make it more visible. A rule a
+script can check belongs in `scripts/validate-suite.mjs`, not in prose.
+
+## Authoring Standard
+
+Follow `agentic-software-steward/skills/writing-for-agents/SKILL.md`. Its bar is
+enforced mechanically: skills default to `disable-model-invocation: true`, a
+model-invoked description stays under 350 characters and names what does not
+trigger it, and the always-loaded surface stays inside its budget.
 
 ## Verification
 
 Run before reporting completion:
+
+```bash
+node scripts/validate-suite.mjs --report
+```
+
+On Windows the full suite validator runs the same checks plus the Codex-specific ones:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\validate-skill-suite.ps1

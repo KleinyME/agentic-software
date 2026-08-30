@@ -1,6 +1,7 @@
 ---
 name: ai-brand-voice
-description: Create a customer-facing AI assistant persona and conversation behavior from an existing business brand direction. Use for branded chatbots, customer-service assistants, AI concierges, knowledge boundaries, dialogue patterns, and assistant-specific tone. For website, product, or marketing brand direction without an AI persona, use brand-direction instead.
+description: Build a customer-facing AI assistant persona from an existing brand direction.
+disable-model-invocation: true
 ---
 
 # AI Brand Voice

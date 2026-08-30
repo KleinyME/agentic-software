@@ -1,0 +1,4 @@
+interface:
+  display_name: "Writing For Agents"
+  short_description: "Author skills and agent docs to a fixed standard"
+  default_prompt: "Use $writing-for-agents to write or revise this skill against the suite's authoring standard."

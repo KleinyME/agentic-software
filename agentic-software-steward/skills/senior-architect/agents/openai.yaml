@@ -1,0 +1,4 @@
+interface:
+  display_name: "Senior Architect"
+  short_description: "Plan modular, testable architecture from product intention"
+  default_prompt: "Use $senior-architect to plan modular, testable architecture from product intention: greenfield planning, major features, module boundaries, expensive-to-reverse decisions."

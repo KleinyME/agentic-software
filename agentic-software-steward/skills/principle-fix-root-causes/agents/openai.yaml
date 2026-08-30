@@ -1,0 +1,6 @@
+interface:
+  display_name: "Principle: Fix Root Causes"
+  short_description: "Reproduce, trace to the cause, fix it there"
+  default_prompt: "Use $principle-fix-root-causes to trace this to its root cause instead of patching the symptom."
+policy:
+  allow_implicit_invocation: false

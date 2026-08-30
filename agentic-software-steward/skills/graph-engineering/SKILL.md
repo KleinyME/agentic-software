@@ -1,6 +1,7 @@
 ---
 name: graph-engineering
-description: Design and audit right-sized task graphs and knowledge graphs for agent-built systems. Use for multi-agent orchestration, skill-directed fresh-context agent dispatch and final assembly, workflow graphs, graph-max, supervisor/worker systems, proactive CEO/COO/Marketing or Hermes-activated executive cells, parallel fan-out and fan-in, conditional routing, independent verifier or perspective nodes, durable agent state, workflow-friction observers, knowledge graphs, GraphRAG, ontology design, entity/relation/event extraction, temporal agent memory, typed project relationships, or deciding whether a workflow should remain a single loop instead of becoming a graph.
+description: Design and audit task graphs, knowledge graphs, and agent dispatch topology.
+disable-model-invocation: true
 ---
 
 # Graph Engineering

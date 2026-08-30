@@ -1,6 +1,7 @@
 ---
 name: design-system-steward
-description: Fallback UI/UX and design-memory workflow when Impeccable is unavailable, and companion workflow for PRODUCT.md and DESIGN.md. Use for UI/UX planning, design system setup, visual consistency, interaction states, accessibility, responsive behavior, and design-memory updates.
+description: Fallback UI/UX and design-memory workflow, with PRODUCT.md and DESIGN.md.
+disable-model-invocation: true
 ---
 
 # Design System Steward

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Show Me Your Work"
+  short_description: "Keep a reviewable TSV decision trail"
+  default_prompt: "Use $show-me-your-work to keep a decision log for this run, with one row per decision, its evidence, and its result."

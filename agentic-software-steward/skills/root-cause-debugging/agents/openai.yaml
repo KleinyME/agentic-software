@@ -1,4 +1,0 @@
-interface:
-  display_name: "Root-Cause Debugging"
-  short_description: "Diagnose failures before changing code"
-  default_prompt: "Use $root-cause-debugging to reproduce this failure, isolate its cause, test one hypothesis, and verify the smallest fix."

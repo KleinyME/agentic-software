@@ -1,0 +1,6 @@
+interface:
+  display_name: "Repo Foundation Bootstrap"
+  short_description: "Drop the stewardship foundation into an existing or undocu"
+  default_prompt: "Use $repo-foundation-bootstrap to drop the stewardship foundation into an existing or undocumented repo."
+policy:
+  allow_implicit_invocation: false

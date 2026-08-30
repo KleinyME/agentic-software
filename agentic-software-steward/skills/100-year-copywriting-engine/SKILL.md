@@ -1,6 +1,7 @@
 ---
 name: 100-year-copywriting-engine
-description: Create strategic direct-response and brand copy using Ken "Spanky" Moskowitz's advertising frameworks and creative judgment. Use for ads, offers, landing and sales pages, emails, headlines, social campaigns, video scripts, blog content, brand messaging, or copy that must persuade without sounding templated; use when the user explicitly requests Ken's voice or the 100 Year engine. Do not use as the automatic voice for ordinary product UI, technical prose, or every marketing task.
+description: Direct-response and brand copy in Ken Moskowitz's frameworks, for ads, offers, and sales pages.
+disable-model-invocation: true
 ---
 
 # 100 Year Copywriting Engine

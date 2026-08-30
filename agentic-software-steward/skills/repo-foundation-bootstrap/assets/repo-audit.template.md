@@ -41,7 +41,7 @@ Recommended action:
 
 Owner skill:
 
-[software-steward/no-theater-software/security-data-safety/senior-architect/design-system-steward/release-steward]
+[software-steward/no-theater-software/security-data-safety/senior-architect/design-system-steward/environment-and-release]
 
 ## First Remediation Step
 

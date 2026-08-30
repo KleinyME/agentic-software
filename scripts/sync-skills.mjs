@@ -14,8 +14,14 @@
  *
  * Safety semantics are deliberately identical to update-installed-skills.ps1:
  * fingerprint every skill directory, keep a state file at each destination,
- * refuse to clobber a locally edited skill without --force, back up whatever
- * is replaced, and leave orphans installed rather than deleting them.
+ * refuse to clobber a locally edited skill without --force, and back up
+ * whatever is replaced.
+ *
+ * Orphans are left installed, with one deliberate exception: a skill named in
+ * retired-skills.json is a skill the suite removed on purpose, usually because
+ * something replaced it. Leaving those behind is how a host ends up answering
+ * with both the retired skill and its replacement, so --retire backs them up
+ * and removes them. Only manifest-listed names are ever deleted.
  *
  * A "skill" is any directory containing SKILL.md. Its path relative to the
  * source root is preserved at the destination, so flat suites stay flat and
@@ -42,6 +48,23 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const RETIRED_MANIFEST = path.join(REPO_ROOT, "agentic-software-steward", "retired-skills.json");
+
+function readRetired() {
+  if (!existsSync(RETIRED_MANIFEST)) return [];
+  try {
+    return JSON.parse(readFileSync(RETIRED_MANIFEST, "utf8")).retired ?? [];
+  } catch {
+    return [];
+  }
+}
+
+// A destination key is flat in the Codex and Claude suites but carries a lane
+// prefix in the Hermes tree, so match the trailing segment either way.
+function matchesRetired(key, name) {
+  return key === name || key.endsWith(`/${name}`);
+}
+
 const STATE_FILE = ".agentic-software-steward-sync.json";
 
 /**
@@ -85,6 +108,7 @@ function parseArgs(argv) {
     if (arg === "--dry-run") args.dryRun = true;
     else if (arg === "--force") args.force = true;
     else if (arg === "--report") args.report = true;
+    else if (arg === "--retire") args.retire = true;
     else if (arg === "--target") args.targets.push(...next().split(",").map((t) => t.trim()));
     else if (arg === "--codex-dir") args.dirs.codex = next();
     else if (arg === "--claude-dir") args.dirs.claude = next();
@@ -227,19 +251,35 @@ function syncTarget(target, args) {
     plan.push({ name, sourceDir, destDir, ...classify(name, sourceDir, destDir, saved) });
   }
 
-  const orphans = Object.keys(saved)
-    .filter((name) => !skills.has(name))
+  const retiredManifest = readRetired();
+  const installedElsewhere = Object.keys(saved).filter((name) => !skills.has(name));
+  // A retired skill can be present without appearing in the state file, e.g. it
+  // was installed by the PowerShell lane, so check the filesystem too.
+  const retired = [];
+  for (const entry of retiredManifest) {
+    const candidates = new Set(installedElsewhere.filter((key) => matchesRetired(key, entry.name)));
+    if (existsSync(path.join(targetDir, entry.name))) candidates.add(entry.name);
+    for (const key of candidates) {
+      if (existsSync(path.join(targetDir, ...key.split("/")))) {
+        retired.push({ ...entry, key, dir: path.join(targetDir, ...key.split("/")) });
+      }
+    }
+  }
+  const retiredKeys = new Set(retired.map((r) => r.key));
+  const orphans = installedElsewhere
+    .filter((name) => !retiredKeys.has(name))
     .filter((name) => existsSync(path.join(targetDir, ...name.split("/"))));
 
   const blocked = plan.filter((item) => item.action === "conflict" || item.action === "unknown-drift");
   const changed = plan.filter((item) => item.action !== "unchanged");
 
-  return { target, label: config.label, targetDir, plan, orphans, blocked, changed, restartHint: config.restartHint };
+  return { target, label: config.label, targetDir, plan, orphans, retired, blocked, changed, restartHint: config.restartHint };
 }
 
 function applyTarget(result, args) {
   const { targetDir, changed } = result;
-  if (changed.length === 0) return { backupDir: null };
+  const retiring = args.retire ? (result.retired ?? []) : [];
+  if (changed.length === 0 && retiring.length === 0) return { backupDir: null, retired: [] };
 
   mkdirSync(targetDir, { recursive: true });
   const stamp = new Date().toISOString().replace(/[:.]/g, "-");
@@ -259,6 +299,15 @@ function applyTarget(result, args) {
     cpSync(item.sourceDir, item.destDir, { recursive: true });
   }
 
+  for (const entry of retiring) {
+    // Same rule as a replaced skill: move it aside, never delete outright.
+    const backupPath = path.join(backupDir, ...entry.key.split("/"));
+    mkdirSync(path.dirname(backupPath), { recursive: true });
+    renameSync(entry.dir, backupPath);
+    usedBackup = true;
+  }
+
+  const retiredKeys = new Set(retiring.map((entry) => entry.key));
   const skills = {};
   for (const item of result.plan) skills[item.name] = fingerprint(item.destDir);
   for (const name of result.orphans) skills[name] = fingerprint(path.join(targetDir, ...name.split("/")));
@@ -267,7 +316,7 @@ function applyTarget(result, args) {
     `${JSON.stringify({ version: 1, repo_root: REPO_ROOT, synced_at: new Date().toISOString(), skills }, null, 2)}\n`,
   );
 
-  return { backupDir: usedBackup ? backupDir : null };
+  return { backupDir: usedBackup ? backupDir : null, retired: retiring.map((e) => e.key) };
 }
 
 function report(args) {
@@ -312,7 +361,7 @@ function main() {
 
   if (args.help) {
     console.log(
-      "Usage: node scripts/sync-skills.mjs [--target codex,claude,hermes|all] [--dry-run] [--force]\n" +
+      "Usage: node scripts/sync-skills.mjs [--target codex,claude,hermes|all] [--dry-run] [--force] [--retire]\n" +
         "       node scripts/sync-skills.mjs --report [--extra-root Label=/path]\n\n" +
         "Destinations: --codex-dir / --claude-dir / --hermes-dir, or CODEX_SKILLS_DIR /\n" +
         "CLAUDE_SKILLS_DIR / HERMES_SKILLS_DIR. Hermes has no default and must be given one.",
@@ -336,6 +385,10 @@ function main() {
     }
     console.log(`destination: ${result.targetDir}`);
     for (const item of result.plan) console.log(`  [${item.action}] ${item.name}`);
+    for (const entry of result.retired ?? []) {
+      const fix = entry.replacedBy ? `replaced by ${entry.replacedBy}` : "removed from the suite";
+      console.log(`  [retired] ${entry.key} (${fix}; run with --retire to back up and remove)`);
+    }
     for (const orphan of result.orphans) {
       console.log(`  [orphan] ${orphan} (left installed; no longer in the source suite)`);
     }
@@ -356,9 +409,13 @@ function main() {
       continue;
     }
 
-    const { backupDir } = applyTarget(result, args);
+    const { backupDir, retired } = applyTarget(result, args);
     console.log(`\nsynced ${result.changed.length} skill(s).`);
+    if (retired?.length) console.log(`retired and removed: ${retired.join(", ")}`);
     if (backupDir) console.log(`replaced copies backed up to: ${backupDir}`);
+    if (!args.retire && result.retired?.length) {
+      console.log(`still installed: ${result.retired.map((e) => e.key).join(", ")} — re-run with --retire to remove`);
+    }
     console.log(result.restartHint);
   }
 

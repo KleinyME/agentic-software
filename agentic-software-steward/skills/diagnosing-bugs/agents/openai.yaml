@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagnosing Bugs"
+  short_description: "Build a red-capable loop, then find the cause"
+  default_prompt: "Use $diagnosing-bugs to reproduce and root-cause this failure before fixing it."

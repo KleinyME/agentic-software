@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Memory Steward"
+  short_description: "Maintain lane-scoped repo memory with explicit evidence an"
+  default_prompt: "Use $project-memory-steward to maintain lane-scoped repo memory with explicit evidence and decision authority: PROJECT_MEMORY."

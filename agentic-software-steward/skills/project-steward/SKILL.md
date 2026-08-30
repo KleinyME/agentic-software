@@ -1,6 +1,6 @@
 ---
 name: project-steward
-description: Neutral orchestration for projects that mix creative, product, technical, data, hardware, and release work. Use when deciding which discipline should lead, when a request combines visual invention with protected technical truth, or when carrying a website, application, physical interface, data workflow, or device experience from concept through implementation without letting engineering caution suppress creative work or creative freedom damage real invariants.
+description: Route a project that mixes creative, product, technical, data, and release work, deciding which craft leads the current pass. Use when a request combines visual invention with protected technical truth. Not for work with one obvious craft; go straight to that skill.
 ---
 
 # Project Steward
@@ -23,18 +23,14 @@ The route should remain stable when names, industries, objects, role labels, or 
 
 Do not describe an entire user or project as `proof-first`, `creative`, `technical`, `regulated`, or `high-risk`. Apply those postures only to the affected work.
 
-## Reckless AI
+## Initiative
 
-Read [references/reckless-ai.md](references/reckless-ai.md)
-when the user asks for bold, decisive, highly autonomous, maximum-initiative,
-or “reckless” AI; when approval friction is the bottleneck; or when caution at
-one boundary is suppressing unrelated reversible work.
+Apply `principle-never-block-on-the-human`.
 
-Default to the strongest reasonable reversible action inside current authority.
-Treat uncertainty as a reason to inspect, test, or build a reversible candidate,
-not automatically as a reason to stop. Move the gate to the exact transition
-where a real external, irreversible, financial, privacy, legal, production, or
-human consequence begins.
+Read [references/reckless-ai.md](references/reckless-ai.md) for the full initiative
+bands when the user asks for bold, decisive, highly autonomous, maximum-initiative,
+or “reckless” AI; when approval friction is the bottleneck; or when caution at one
+boundary is suppressing unrelated reversible work.
 
 ## Internal Route Card
 
@@ -74,7 +70,7 @@ Distinguish three gate families: concept viability, implementation verification,
 - Human factors, accessibility, essential comprehension, spatial experience, or participant-facing behavior: use the relevant design or domain specialist when these shape concept viability.
 - Code, architecture, persistence, identity, concurrency, auth, and runtime behavior: use `software-steward`, `lean-product-architect`, or `senior-architect` as appropriate.
 - Electrical, protocol, device, and hardware truth: use domain sources and the relevant technical specialist; keep experimental, confirmed, and production-proven facts distinct.
-- Production promotion and live verification: use `release-steward` and `live-environment-steward`.
+- Production promotion and live verification: use `environment-and-release`.
 
 Use one accountable primary craft per decision, not necessarily one craft for the whole pass. A mixed pass may contain linked decisions with different leads.
 

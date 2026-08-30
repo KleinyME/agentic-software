@@ -1,0 +1,6 @@
+interface:
+  display_name: "Principle: Encode Lessons In Structure"
+  short_description: "Make the rule a check, not more prose"
+  default_prompt: "Use $principle-encode-lessons-in-structure to encode this lesson as a check instead of more instructions."
+policy:
+  allow_implicit_invocation: false

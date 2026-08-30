@@ -4,7 +4,7 @@ This Codex skill suite routes creative, product, technical, data, hardware, and 
 
 Use `project-steward` as the neutral lead for mixed or ambiguous projects. It selects the current work stage, primary craft, freedom zone, protected invariants, and only the risk overlays that actually apply.
 
-This v0.15 package also contains an intention-first Agentic Software Harness for active software delivery. After `project-steward` assigns technical implementation as the primary craft, `software-steward` coordinates situation classification, Reckless AI initiative, safe automation discovery, conditional exponential strategy, architecture, fresh-context agent graphs, assembly, independent assurance, memory, copy and audience boundaries, security, verification, and release.
+This v0.16 package also contains an intention-first Agentic Software Harness for active software delivery. After `project-steward` assigns technical implementation as the primary craft, `software-steward` coordinates situation classification, Reckless AI initiative, safe automation discovery, conditional exponential strategy, architecture, fresh-context agent graphs, assembly, independent assurance, memory, copy and audience boundaries, security, verification, and release.
 
 Key roles:
 
@@ -12,7 +12,7 @@ Key roles:
 - `design-distinctiveness`: evidence-backed business specificity, customer-job page structure, typography, and cross-concept sameness review.
 - `software-steward`: implementation, architecture, data identity, concurrency, integrations, runtime behavior, tests, and technical hardening.
 - `project-memory-steward`: progressive lane-scoped memory, technical evidence, and explicit provisional/approved/rejected/superseded decision authority.
-- `release-steward`: production promotion and live verification after the result is accepted.
+- `environment-and-release`: production promotion and live verification after the result is accepted.
 
 The suite also includes focused brand, visual, copy, frontend-memory, security, environment, no-theater, lean architecture, senior architecture, and repo-foundation specialists. For evidence-grounded client-facing redesigns and concept batches, `design-distinctiveness` runs after positioning and before visual/frontend execution. Load specialists only when the routed work needs them.
 
@@ -28,12 +28,9 @@ tests use the workflow-automation experiment contract; buyer language,
 competitive evidence, and component assembly extend their existing owners
 instead of creating a second marketing or frontend router.
 
-The suite expands initiative without silently expanding authority. Its
-**Reckless AI** contract defaults reversible work to the strongest useful action
-inside current authority instead of the most timid plausible action: think
-aggressively, create boldly, act reversibly, and gate consequences where they
-actually occur. Uncertainty should normally trigger investigation or a bounded
-test, not a permission request.
+The suite expands initiative without silently expanding authority. That posture is
+`principle-never-block-on-the-human`, and the full initiative bands are in
+`skills/project-steward/references/reckless-ai.md`.
 
 Each proactive workflow declares whether it may observe, suggest, draft,
 execute a reversible pre-authorized action, or execute a consequential action
@@ -57,7 +54,7 @@ This remains an instruction harness, not yet a durable software-factory runtime.
 
 Use `exponential-strategy` when a product, workflow, or organization may have a real compounding learning, decision-context, ecosystem, or coordination mechanism. It implements the current OpenExO 3.0 model as a conditional lens: intent first, then an evidence-backed leverage test, one or two relevant DRIVE/SHAPE constraints, the smallest workflow-level Intelligence Loop, and a proportional REWRITE proof only when warranted. It explicitly keeps ordinary features out of MTP and 10x theater, preserves hard-coded automation where rules are stable, and treats book chat as exploratory rather than canonical.
 
-The steward uses a compact intent-and-situation kernel before architecture and reclassifies when code, tests, review, strategy evidence, or new user input crosses a risk or system boundary. `root-cause-debugging` prevents speculative fixes, `intent-aligned-review` checks whether the right thing was built before code quality, and `evidence-before-completion` limits final claims to fresh, proportionate proof.
+The steward uses a compact intent-and-situation kernel before architecture and reclassifies when code, tests, review, strategy evidence, or new user input crosses a risk or system boundary. `diagnosing-bugs` prevents speculative fixes, `intent-aligned-review` checks whether the right thing was built before code quality, and `evidence-before-completion` limits final claims to fresh, proportionate proof.
 
 Use `audience-boundary` whenever internal instructions, private reasoning, audit state, developer notes, secrets, simulation markers, or implementation metadata could reach a UI, API payload, email, notification, export, metadata field, or generated artifact. It establishes an explicit audience contract, removes internal fields before serialization, and verifies the actual network and render surfaces. It complements copy cleanup: brand truth and audience separation come first, optional marketing or technical-writing specialists come next, and `ai-writing-audit` or an explicitly requested humanizer runs last.
 

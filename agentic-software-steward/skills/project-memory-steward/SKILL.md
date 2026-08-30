@@ -1,6 +1,6 @@
 ---
 name: project-memory-steward
-description: Maintain concise, lane-scoped repo memory with explicit evidence and decision authority. Use when creating or updating PROJECT_MEMORY.md, AGENTS.md, PRODUCT.md, DESIGN.md, module or protocol memory, ADRs, known risks, setup/test commands, approval status, superseded direction, or preserving intention across agents without letting provisional aesthetics or unrelated technical history become universal constraints.
+description: Maintain lane-scoped repo memory with explicit evidence and decision authority: PROJECT_MEMORY.md, PRODUCT.md, DESIGN.md, ADRs, approval status. Not for session handoff notes; use handoff.
 ---
 
 # Project Memory Steward

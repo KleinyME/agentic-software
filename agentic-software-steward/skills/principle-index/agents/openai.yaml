@@ -1,0 +1,6 @@
+interface:
+  display_name: "Principle Index"
+  short_description: "The suite's principles and when each applies"
+  default_prompt: "Use $principle-index to see which principle applies here."
+policy:
+  allow_implicit_invocation: false

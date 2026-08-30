@@ -1,0 +1,6 @@
+interface:
+  display_name: "Principle: Subtract Before You Add"
+  short_description: "Delete first, then build on the simpler base"
+  default_prompt: "Use $principle-subtract-before-you-add to cut this back before adding anything to it."
+policy:
+  allow_implicit_invocation: false

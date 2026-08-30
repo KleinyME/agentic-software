@@ -1,6 +1,6 @@
 {
   "name": "agentic-software-steward",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "A neutral Project Steward suite with Reckless AI initiative, an intention-first Agentic Software Harness, evidence-grounded prospecting and marketing contracts, skill-directed fresh-context agents, policy-gated automation, assurance, creative delivery, and release.",
   "author": {
     "name": "Adam / Codex"
@@ -28,7 +28,7 @@
     "openbrain",
     "graph-engineering",
     "multi-agent-orchestration",
-    "root-cause-debugging",
+    "diagnosing-bugs",
     "code-review",
     "verification",
     "audience-boundary",

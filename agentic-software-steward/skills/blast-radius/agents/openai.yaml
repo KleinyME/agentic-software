@@ -1,0 +1,6 @@
+interface:
+  display_name: "Blast Radius"
+  short_description: "Find what a change breaks somewhere else"
+  default_prompt: "Use $blast-radius to work out what this change could break elsewhere and prove the one fact it is safe because of."
+policy:
+  allow_implicit_invocation: false

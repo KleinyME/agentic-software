@@ -1,6 +1,7 @@
 ---
 name: workflow-automation-architect
-description: Discover, qualify, and design worthwhile automation opportunities in new or existing software. Use when a build contains repeated manual work, schedules, monitoring, triage, handoffs, approvals, copy-paste between systems, recurring decisions, queues, imports, notifications, operational workflows, proactive-agent requests, CEO/COO/Marketing operating loops, Hermes-activated executive work, or repeated agent friction - including when the user did not explicitly ask for automation. Determine whether each step should use deterministic code, rules, an integration, a bounded model call, an agent loop, a task graph, or human judgment; set a safe initiative ceiling; design read-only workflow-friction observers; and recognize when coordination or recursive learning also creates an exponential-strategy candidate. Ask about intent when the missing answer would change whether or how to automate. Produce portable OB1/OpenBrain candidates and use native Hermes automation suggestions when available.
+description: Discover and design automation opportunities in a build.
+disable-model-invocation: true
 ---
 
 # Workflow Automation Architect

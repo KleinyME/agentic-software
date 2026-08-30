@@ -1,6 +1,6 @@
 ---
 name: lean-product-architect
-description: Lean small-product architecture for solo-founder, small-business, vibe-coded, early-stage, owner-operated, prototype-to-product, agent-native, V2 rebuild, and drifted repos. Use when the user wants useful software without enterprise bloat, needs best-practice guidance they may not know to ask for, wants the smallest real business loop, complains about bloat, ceremony, control planes, dashboards, gates, proof systems, speculative modules, or says an agent-built repo drifted. Prefer one working vertical loop, direct tool use, shared memory, and deletion over platform architecture.
+description: Right-size architecture for solo-founder, small-business, vibe-coded, and drifted repos. Use when the user wants useful software without enterprise bloat. Not for multi-team, compliance, or high-scale systems.
 ---
 
 # Lean Product Architect
@@ -159,9 +159,9 @@ Do not produce unless asked:
 
 Stop or escalate to companion skills when:
 
-- The slice writes to live external systems: use `security-data-safety` and `live-environment-steward`.
+- The slice writes to live external systems: use `security-data-safety` and `environment-and-release`.
 - The plan contains fake dashboards, unwired forms, or pretend status: use `no-theater-software`.
-- The repo needs branch/deploy/rollback discipline: use `release-steward`.
+- The repo needs branch/deploy/rollback discipline: use `environment-and-release`.
 - The work has grown beyond a small business loop and needs durable multi-user architecture: use `senior-architect`.
 
 Use `senior-architect` when the product has multiple teams, complex permissions, important data migrations, high scale, compliance, deep integrations, or architectural decisions that are expensive to reverse.

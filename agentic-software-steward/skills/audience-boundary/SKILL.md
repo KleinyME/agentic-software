@@ -1,6 +1,6 @@
 ---
 name: audience-boundary
-description: Keep internal instructions, private reasoning, audit state, developer notes, secrets, simulation markers, and implementation metadata out of user-facing output. Use when building or reviewing UI copy, websites, APIs, emails, notifications, generated content, exports, SEO metadata, error messages, client-review artifacts, or any public/private content boundary; when a prompt, chain-of-thought, debug field, claim flag, TODO, or internal status might leak through a renderer or payload; or when combining humanizer, anti-slop, technical-writing, brand, or marketing skills.
+description: Keep internal instructions, private reasoning, audit state, secrets, and simulation markers out of user-facing output. Use before shipping UI copy, APIs, emails, exports, and metadata. Not for judging whether copy is good.
 ---
 
 # Audience Boundary
