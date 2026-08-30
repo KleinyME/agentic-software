@@ -7,7 +7,7 @@ description: Revise copy for formulaic AI writing without flattening approved vo
 
 Identify writing patterns, not authorship. Improve the draft without turning distinctive copy into bland correctness.
 
-Adapted from Aaron Makelky's `ai-writing-audit` and Siqi Chen's Humanizer, both MIT licensed. See `NOTICE.md`, `LICENSE`, and the suite's `third_party` records.
+Adapted from Aaron Makelky's `ai-writing-audit`, Siqi Chen's Humanizer, and pstack's `unslop`, all MIT licensed. See `NOTICE.md`, `LICENSE`, and the suite's `third_party` records.
 
 ## Before Auditing
 
@@ -58,9 +58,22 @@ Do not soften an unverified preview claim into lifeless hedging. Keep the public
 
 If the page needs a new concept rather than line editing, stop polishing the anchored draft and route back to `brand-copy-steward`, `creative-director`, or `brand-direction`.
 
+### 3b. Put The Soul Back
+
+Removing patterns is half the job. Sterile, voiceless copy is just as obviously machine-made as the patterns you cut. Within the approved voice, and never overriding it:
+
+- Have an opinion where the brand is allowed one, instead of listing neutral pros and cons.
+- Vary rhythm. Short sentences. Then longer ones that take their time.
+- Be specific. Name the thing, the number, or the moment rather than the feeling it produces.
+- Let some texture stay. Perfectly uniform structure reads as generated.
+
+If the approved voice is deliberately neutral, restrained, or regulated, that voice wins. Add specificity, not personality the brand did not authorize.
+
 ### 4. Run A Second Audit
 
-Confirm that the revision removed the diagnosed effects, introduced no new facts, preserved approved voice and important information, contains no assistant residue or review notes, and fits the actual surface. Do not chase a zero-pattern score; a clean draft may intentionally retain a pattern.
+Confirm that the revision removed the diagnosed effects, introduced no new facts, preserved approved voice and important information, contains no assistant residue or review notes, and fits the actual surface.
+
+Then ask one question of the finished draft: what still makes this read as generated? Fix what that surfaces. Do not chase a zero-pattern score; a clean draft may intentionally retain a pattern.
 
 ## Public Output Rule
 

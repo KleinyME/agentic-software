@@ -1,6 +1,6 @@
 # Project Steward
 
-Project Steward is a coordinated Codex skill suite for work that may be creative, product-focused, technical, data-sensitive, hardware-dependent, operational, or a mixture of several disciplines.
+Project Steward is a coordinated skill suite for work that may be creative, product-focused, technical, data-sensitive, hardware-dependent, operational, or a mixture of several disciplines.
 
 It is designed to solve two common problems in AI-built work:
 
@@ -32,7 +32,7 @@ The harness also identifies qualified automation opportunities, chooses between 
 
 ## What the Skill Asks You
 
-Yes. When launched, the skill inspects the prompt, repo, existing site, and supplied references first, then asks for information that is both missing and important to the result.
+When launched, the skill inspects the prompt, repo, existing site, and supplied references first, then asks for information that is both missing and important to the result.
 
 Typical questions cover:
 
@@ -46,25 +46,19 @@ It does not force a long branding questionnaire or ask non-technical users to se
 
 Production credentials, payment accounts, OAuth applications, domains, and similar resources are normally not required to build the first client-review preview. They are collected during production connection and tracked in `DEPLOYMENT_READINESS.md`.
 
-## Reckless AI
+## Principles
 
-The suite defaults to the strongest useful action that is reversible and inside
-the current authority boundary. It does not turn uncertainty, creative risk, or
-the possibility of being wrong into automatic permission-seeking. It inspects,
-decides, drafts, builds, tests, and prepares the best viable result, then lets
-evidence correct it.
+Doctrine the suite cites by name rather than restating in each skill. Each card is
+user-invoked, so it costs nothing until you reach for it. `principle-index` lists them.
 
-**Reckless AI** means: think aggressively, create boldly, act reversibly, and
-place caution at the point where consequences become real. It never means
-bypassing law, permissions, privacy, security, or an explicit prohibited
-outcome.
-
-For repeated consequential actions, the named gate may be an accepted,
-versioned policy enforced by deterministic checks rather than a human reviewing
-every instance. Inside that envelope the system may act; ambiguous or exceptional
-cases stop. The policy must define scope, evidence, suppression, idempotency,
-budgets, assurance, sampled oversight, pause thresholds, rollback or revocation,
-and the decisions that remain human.
+| principle | rule |
+| --- | --- |
+| `never-block-on-the-human` | Act on reversible work without asking; gate the irreversible at the boundary where consequences become real. This is the suite's Reckless AI posture; the full initiative bands are in `project-steward/references/reckless-ai.md`. |
+| `prove-it-works` | Verify against the real artifact, never a proxy or a self-report. |
+| `fix-root-causes` | Reproduce first, ask why until you reach the cause, and fix it at the source. |
+| `subtract-before-you-add` | Remove dead weight first, then build on the simpler base. |
+| `guard-the-context-window` | Route bulk to dispatched agents in fresh contexts; keep summaries in the main thread. |
+| `encode-lessons-in-structure` | Encode a lesson as a type, lint, test, or script instead of more instruction text. |
 
 ## The Four Stages
 
@@ -93,22 +87,26 @@ The no-theater rules govern how maturity is represented, not what may be designe
 
 ## Install
 
-Clone the repository, then run these commands from its root in PowerShell:
+Clone the repository, then install into whichever contexts you use. The Node
+installer is cross-platform and covers Codex, Claude Code, and the Hermes runtime:
+
+```bash
+node scripts/validate-suite.mjs --report
+node scripts/sync-skills.mjs --report
+node scripts/sync-skills.mjs --target claude
+```
+
+It fingerprints every skill, refuses to overwrite local edits without `--force`,
+backs up whatever it replaces, and leaves orphans alone.
+
+On Windows the PowerShell lane additionally runs the Codex-specific validation:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\validate-skill-suite.ps1
 powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1 -NoPull
 ```
 
-Restart Codex after syncing. Installed skills are copied into `C:\Users\<you>\.codex\skills`.
-
-If an older installation exists without sync state, review its local changes and use `-NoPull -Force` for the intentional first managed replacement. The updater backs up replaced folders and refuses untracked drift without that explicit flag.
-
-To update later from the remote repository:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\update-installed-skills.ps1
-```
+Restart the host after syncing.
 
 ## Use
 
@@ -153,12 +151,15 @@ The client approved this direction. Preserve the approved boldness and move the 
 - `brand-direction`: references, audience, feeling, differentiation, and anti-anchoring.
 - `brand-copy-steward`: buyer-language evidence, product truth, claims, and clean public-copy routing.
 - `visual-direction`: business-fit art direction, authorized client imagery, and generated assets.
-- `brand-copy-steward`: persuasive copy, brand alignment, and claims workflow.
 - `100-year-copywriting-engine`: strong promises, offers, headlines, and persuasive structure.
 - `ai-writing-audit`: removes formulaic AI habits without flattening approved voice.
 - `no-theater-software`: truthful stage representation and production requirements.
 - `live-environment-steward`: preview, sandbox, credentials, and live-environment boundaries.
 - `release-steward`: promotion, rollback awareness, and live verification.
+- `grilling` and `grill-me`: dependency-ordered intake rounds that settle a plan before work starts.
+- `domain-modeling`: the project glossary and its decision records.
+- `handoff`: a compact note for whoever picks the work up next.
+- `writing-for-agents`: the authoring standard every skill in this suite is held to.
 - Architecture, security, project-memory, repo-bootstrap, request-triage, and site-scorecard skills support the workflow when needed.
 
 ## Repository Layout
@@ -167,15 +168,32 @@ The client approved this direction. Preserve the approved boldness and move the 
 agentic-software-steward/
   skills/                 installable skills and their resources
   third_party/            attribution for adapted third-party work
+hermes-runtime-skills/    skills deployed into the Hermes agent runtime
+docs/reviews/             suite reviews and the import plan
 scripts/
+  validate-suite.mjs      cross-platform structural validation
+  sync-skills.mjs         cross-context installer (codex, claude, hermes)
+  verify-blueprint-schema-mirror.mjs
   validate-skill-suite.ps1
   update-installed-skills.ps1
+AGENTS.md
 agentic-software-steward-definition.md
 ```
 
 Read [the human guide](agentic-software-steward/README-for-humans.md) for a shorter operational overview. Agents working on this repository must also follow [AGENTS.md](AGENTS.md).
 
 ## Validate Changes
+
+```bash
+node scripts/validate-suite.mjs --report
+```
+
+This checks frontmatter, that each skill's name matches its directory, description
+budgets, that the invocation setting agrees between `SKILL.md` and `agents/openai.yaml`,
+that every relative link resolves, that no skill references a retired one, and that the
+always-loaded description surface stays inside its budget.
+
+On Windows, the PowerShell validator runs the same checks plus the Codex-specific ones:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\validate-skill-suite.ps1

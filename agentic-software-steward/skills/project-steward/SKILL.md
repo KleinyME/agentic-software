@@ -23,18 +23,14 @@ The route should remain stable when names, industries, objects, role labels, or 
 
 Do not describe an entire user or project as `proof-first`, `creative`, `technical`, `regulated`, or `high-risk`. Apply those postures only to the affected work.
 
-## Reckless AI
+## Initiative
 
-Read [references/reckless-ai.md](references/reckless-ai.md)
-when the user asks for bold, decisive, highly autonomous, maximum-initiative,
-or “reckless” AI; when approval friction is the bottleneck; or when caution at
-one boundary is suppressing unrelated reversible work.
+Apply `principle-never-block-on-the-human`.
 
-Default to the strongest reasonable reversible action inside current authority.
-Treat uncertainty as a reason to inspect, test, or build a reversible candidate,
-not automatically as a reason to stop. Move the gate to the exact transition
-where a real external, irreversible, financial, privacy, legal, production, or
-human consequence begins.
+Read [references/reckless-ai.md](references/reckless-ai.md) for the full initiative
+bands when the user asks for bold, decisive, highly autonomous, maximum-initiative,
+or “reckless” AI; when approval friction is the bottleneck; or when caution at one
+boundary is suppressing unrelated reversible work.
 
 ## Internal Route Card
 
