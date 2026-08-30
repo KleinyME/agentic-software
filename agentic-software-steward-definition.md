@@ -95,7 +95,7 @@ agentic-software-steward/
     workflow-automation-architect/
     graph-engineering/
     exponential-strategy/
-    root-cause-debugging/
+    diagnosing-bugs/
     intent-aligned-review/
     evidence-before-completion/
     audience-boundary/
@@ -191,7 +191,7 @@ Use these routing rules:
 - Solo-founder, small-business, vibe-coded, early-stage, owner-operated, prototype-to-product, agent-native products, V2 rebuilds, drifted repos, or bloat complaints: `lean-product-architect` before `senior-architect`.
 - Existing repo with unclear intent: `repo-foundation-bootstrap` first.
 - Any module/responsibility/documentation drift: `project-memory-steward`.
-- Bugs, failed tests, unexpected behavior, build or integration failures, flaky behavior, incidents, and performance regressions: `root-cause-debugging` before fixes.
+- Bugs, failed tests, unexpected behavior, build or integration failures, flaky behavior, incidents, and performance regressions: `diagnosing-bugs` before fixes.
 - Meaningful diffs, pull requests, plans, agent-produced implementations, and external review feedback: `intent-aligned-review`, with intent compliance before engineering quality.
 - Any imminent completion, fixed, passing, ready, merge, deploy, or production-ready claim: `evidence-before-completion`.
 - Repeated manual work, schedules, monitoring, triage, handoffs, approvals, copy-paste between systems, recurring decisions, operational workflows, or deciding whether steps need deterministic code, models, agents, humans, or graphs: `workflow-automation-architect`. Run a lightweight opportunity scan during every software build even when automation was not requested.

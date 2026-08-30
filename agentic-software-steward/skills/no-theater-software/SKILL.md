@@ -1,6 +1,6 @@
 ---
 name: no-theater-software
-description: Keep prototypes, simulations, fixtures, sandbox integrations, production candidates, and verified production behavior honestly separated without limiting the intended design. Use for client-review previews, dashboards, charts, settings, buttons, forms, auth, payments, integrations, generated UI, analytics, deployment readiness, or any surface that may look complete before its production dependencies are connected.
+description: Keep prototypes, simulations, fixtures, sandboxes, and verified production behavior honestly separated. Use when representing how finished something is. Does not limit what may be designed.
 ---
 
 # No Theater Software

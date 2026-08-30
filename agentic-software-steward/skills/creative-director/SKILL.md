@@ -1,6 +1,6 @@
 ---
 name: creative-director
-description: Lead high-freedom brand, marketing, copy, visual, interface, campaign, and physical-product appearance work. Use for blank-page invention, complete redesigns, website reimagination, visual systems, gauge or instrument appearance, art direction, bold consumer marketing, lifestyle imagery, or any request where the user wants the strongest creative result rather than cautious preservation of an existing sketch.
+description: Lead blank-page brand, marketing, visual, interface, and campaign invention, including redesigns, visual systems, and art direction. Not for implementation or for protecting technical invariants.
 ---
 
 # Creative Director

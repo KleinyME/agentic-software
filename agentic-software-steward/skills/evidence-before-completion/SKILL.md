@@ -1,6 +1,6 @@
 ---
 name: evidence-before-completion
-description: Select and run fresh, proportionate verification before claiming software work is complete, fixed, passing, production-ready, or safe to merge, deploy, commit, or hand off. Use after implementation, bug fixes, refactors, migrations, UI work, agent or subagent contributions, documentation/config changes, and before final status claims. Match tests to user intent and risk, inspect actual artifacts and diffs, distinguish verified from unverified claims, and report exact evidence and remaining gaps.
+description: Run fresh, proportionate verification before claiming work is complete, fixed, passing, or production-ready. Use after implementation, fixes, migrations, and agent contributions. Not for deciding what to build.
 ---
 
 # Evidence Before Completion

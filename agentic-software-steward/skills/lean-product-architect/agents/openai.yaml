@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lean Product Architect"
+  short_description: "Right-size architecture for solo-founder, small-business, "
+  default_prompt: "Use $lean-product-architect to right-size architecture for solo-founder, small-business, vibe-coded, and drifted repos."

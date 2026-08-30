@@ -1,6 +1,7 @@
 ---
 name: local-client-prospector
-description: Find and qualify local businesses with public evidence.
+description: Find and qualify local businesses from public evidence.
+disable-model-invocation: true
 ---
 
 # Local Client Prospector

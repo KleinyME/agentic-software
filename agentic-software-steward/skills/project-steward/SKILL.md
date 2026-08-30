@@ -1,6 +1,6 @@
 ---
 name: project-steward
-description: Neutral orchestration for projects that mix creative, product, technical, data, hardware, and release work. Use when deciding which discipline should lead, when a request combines visual invention with protected technical truth, or when carrying a website, application, physical interface, data workflow, or device experience from concept through implementation without letting engineering caution suppress creative work or creative freedom damage real invariants.
+description: Route a project that mixes creative, product, technical, data, and release work, deciding which craft leads the current pass. Use when a request combines visual invention with protected technical truth. Not for work with one obvious craft; go straight to that skill.
 ---
 
 # Project Steward

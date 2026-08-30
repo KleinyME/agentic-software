@@ -1,6 +1,6 @@
 ---
 name: senior-architect
-description: Senior engineering and system architecture workflow for translating user intention into modular, maintainable, secure, testable software plans. Use for greenfield planning, major features, architectural decisions, module boundaries, tradeoff explanations, and making agent-built software understandable to future human engineers. If the user mentions bloat, drift, V2 rebuild, vibe-coded small software, agent-native workflow, small business loop, almost starting over, or avoiding enterprise ceremony, use lean-product-architect first.
+description: Plan modular, testable architecture from product intention: greenfield planning, major features, module boundaries, expensive-to-reverse decisions. For bloat, drift, or a V2 rebuild, use lean-product-architect first.
 ---
 
 # Senior Architect

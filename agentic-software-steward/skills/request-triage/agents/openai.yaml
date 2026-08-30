@@ -1,0 +1,6 @@
+interface:
+  display_name: "Request Triage"
+  short_description: "Classify a Karbon client request into its lane and draft t"
+  default_prompt: "Use $request-triage to classify a Karbon client request into its lane and draft the client reply."
+policy:
+  allow_implicit_invocation: false

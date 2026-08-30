@@ -1,6 +1,6 @@
 ---
 name: brand-direction
-description: Turn reference sites, an existing business or site, audience changes, desired feeling, and user-stated differences into a fresh, bold brand direction without a long branding interview. Use for prompts such as "build something like these sites but...", "reimagine this client site", "make this speak to a different audience", "define the voice quickly", "what style fits this business", or any client-facing site/app project that needs positioning before copy, imagery, or frontend implementation.
+description: Turn reference sites, an existing site, and a desired feeling into a bold brand direction without a long interview. Use for "build something like these but different" and client-site reimagination. Not for editing approved copy.
 ---
 
 # Brand Direction

@@ -1,6 +1,6 @@
 ---
 name: visual-direction
-description: Select a business-appropriate visual style, collect and audit imagery from an existing client site, decide what to reuse/edit/replace, and generate a cohesive image set for client-facing sites, pages, and apps. Use for art direction, mood and style selection, reference-site analysis, image inventories, existing-site redesigns, hero or supporting imagery, AI image generation, and prompts such as "use images from their current site" or "what visual style fits this business?"
+description: Choose a business-fit visual style, audit and collect imagery from an existing client site, and generate a cohesive image set. Not for competitor imagery, which is never collected for reuse.
 ---
 
 # Visual Direction

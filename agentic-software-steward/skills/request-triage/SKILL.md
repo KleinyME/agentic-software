@@ -1,6 +1,7 @@
 ---
 name: request-triage
-description: Classify a Karbon client request into its lane (in_lane / out_of_lane), set the earliest honest status, and draft the client-facing reply. Use when a client_requests entry is in "submitted" or returns to "triage", when someone asks to "triage the queue", "classify this request", or when the Hermes request lane needs its next action decided.
+description: Classify a Karbon client request into its lane and draft the client reply.
+disable-model-invocation: true
 ---
 
 # Request Triage

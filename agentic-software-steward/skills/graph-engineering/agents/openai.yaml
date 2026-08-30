@@ -2,3 +2,5 @@ interface:
   display_name: "Graph Engineering"
   short_description: "Right-size task and knowledge graphs"
   default_prompt: "Use $graph-engineering to decide whether this workflow needs a loop or graph and design the smallest reliable topology."
+policy:
+  allow_implicit_invocation: false

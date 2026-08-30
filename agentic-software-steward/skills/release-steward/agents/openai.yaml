@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Steward"
+  short_description: "Manage branch discipline, preview-to-production promotion,"
+  default_prompt: "Use $release-steward to manage branch discipline, preview-to-production promotion, rollback, and live verification."

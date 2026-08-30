@@ -1,6 +1,6 @@
 ---
 name: live-environment-steward
-description: Separate client-review previews, sandbox-connected previews, production candidates, and official production environments. Use for Vercel or other preview deployments, public demo crawlability and noindex policy, staging, branch deploys, environment variables, client-owned accounts, API/OAuth credentials, sandbox services, production promotion, live external writes, rollback planning, and deployment readiness.
+description: Separate client-review previews, sandboxes, production candidates, and real production, including noindex policy and client-owned credentials. Not for the promotion decision; use release-steward.
 ---
 
 # Live Environment Steward

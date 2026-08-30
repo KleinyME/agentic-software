@@ -1,6 +1,6 @@
 ---
 name: ai-writing-audit
-description: Audit and revise marketing, product, editorial, documentation, UI, and client-facing copy for formulaic AI-writing patterns without flattening approved brand voice, persuasive force, or intentional rhythm. Use to humanize copy, remove assistant residue and AI tells, review a draft before publication, repair robotic or ultra-literal language, match a supplied voice sample, or perform the final editorial pass after brand, copy direction, and public-output boundaries are established.
+description: Revise copy for formulaic AI writing without flattening approved voice or persuasive force. Use as the final editorial pass before publication. Not a substitute for brand direction or blank-page copy strategy.
 ---
 
 # AI Writing Audit

@@ -1,6 +1,6 @@
 ---
 name: design-distinctiveness
-description: Keep client-facing visual work specific to the business and detect accidental house-style convergence. Use after brand direction and before visual or frontend implementation when producing multiple concepts, redesigning from real business evidence, selecting business-fit typography, site architecture, or page structure, or reviewing work that feels generic, templated, interchangeable, or AI-made.
+description: Keep client-facing design specific to the business and catch house-style sameness. Use after brand direction and before implementation, when producing concepts or choosing typography and page structure. Not for polishing one approved concept.
 ---
 
 # Design Distinctiveness

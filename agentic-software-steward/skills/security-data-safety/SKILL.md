@@ -1,6 +1,6 @@
 ---
 name: security-data-safety
-description: Review and plan security, privacy, data safety, permissions, secrets, migrations, destructive actions, and external integrations. Use for auth, roles, sensitive data, payments, credentials, deletion, data model changes, backups, rollback, threat modeling, and high-risk changes.
+description: Review security, privacy, permissions, secrets, migrations, destructive actions, and external integrations. Use for auth, sensitive data, payments, and deletion. Not a full threat model for regulated work.
 ---
 
 # Security And Data Safety

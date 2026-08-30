@@ -123,6 +123,16 @@ if (Test-Path -LiteralPath $syncTest -PathType Leaf) {
   $errors.Add("Missing cross-context skill sync test: $syncTest")
 }
 
+# Structural checks (frontmatter, invocation axis, description budgets, links)
+# live in the cross-platform validator so both lanes enforce one rule set.
+$structural = Join-Path $RepoRoot "scripts\validate-suite.mjs"
+if (Test-Path -LiteralPath $structural) {
+  & node $structural
+  if ($LASTEXITCODE -ne 0) { $errors.Add("Structural suite validation failed (scripts/validate-suite.mjs)") }
+} else {
+  $errors.Add("Missing structural validator: scripts/validate-suite.mjs")
+}
+
 $requiredFiles = @(
   "agentic-software-steward\skills\project-steward\SKILL.md",
   "agentic-software-steward\skills\project-steward\references\routing-regression-cases.md",

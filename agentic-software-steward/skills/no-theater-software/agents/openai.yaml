@@ -1,0 +1,4 @@
+interface:
+  display_name: "No Theater Software"
+  short_description: "Keep prototypes, simulations, fixtures, sandboxes, and ver"
+  default_prompt: "Use $no-theater-software to keep prototypes, simulations, fixtures, sandboxes, and verified production behavior honestly separated."

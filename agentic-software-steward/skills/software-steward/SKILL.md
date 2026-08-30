@@ -1,6 +1,6 @@
 ---
 name: software-steward
-description: Implement, integrate, diagnose, and harden software through an intention-first Agentic Software Harness. Use for code changes, architecture, agentic software-factory design, skill-directed fresh-context agent dispatch and assembly, CEO/COO/Marketing operating loops, Hermes-activated work, proactive automation discovery, graph engineering, domain logic, identity, schemas, auth, integrations, runtime behavior, testing, and production readiness. Do not lead standalone brand, copy, visual invention, or blank-page redesign; route mixed work through project-steward.
+description: Implement, integrate, and harden software: code changes, architecture, schemas, auth, integrations, runtime behavior, production readiness. Do not lead brand, copy, or visual invention; route mixed work through project-steward.
 ---
 
 # Software Steward
@@ -92,7 +92,7 @@ For client-facing websites, read [references/web-stack-direction.md](references/
 
 ## Specialist Routing
 
-- Bugs, failed tests, flaky behavior, incidents, integration failures, or regressions: `root-cause-debugging` before fixes.
+- Bugs, failed tests, flaky behavior, incidents, integration failures, or regressions: `diagnosing-bugs` before fixes.
 - Meaningful diffs, plans, PRs, implementations, or review feedback: `intent-aligned-review`, with intent before code quality.
 - Any completion, fixed, passing, ready, safe, mergeable, deployable, or production claim: `evidence-before-completion`.
 - Repeated manual work, schedules, monitoring, triage, handoffs, approvals, copy-paste, operational workflows, or method selection between deterministic code, models, agents, humans, and graphs: `workflow-automation-architect`. Silently scan nearby workflow friction even when automation was not requested; surface only qualified opportunities.

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Ai Brand Voice"
+  short_description: "Build a customer-facing AI assistant persona from an exist"
+  default_prompt: "Use $ai-brand-voice to build a customer-facing AI assistant persona from an existing brand direction."
+policy:
+  allow_implicit_invocation: false

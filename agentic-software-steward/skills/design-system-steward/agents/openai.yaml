@@ -1,0 +1,6 @@
+interface:
+  display_name: "Design System Steward"
+  short_description: "Fallback UI/UX and design-memory workflow, with PRODUCT"
+  default_prompt: "Use $design-system-steward to fallback UI/UX and design-memory workflow, with PRODUCT."
+policy:
+  allow_implicit_invocation: false

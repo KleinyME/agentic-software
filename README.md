@@ -146,7 +146,7 @@ The client approved this direction. Preserve the approved boldness and move the 
 - `workflow-automation-architect`: evidence-based automation discovery, method selection, friction observation, and OB1/OpenBrain handoff.
 - `local-client-prospector`: public-source local business discovery and typed qualification artifacts without contact authority.
 - `exponential-strategy`: conditional OpenExO strategy, intelligence-loop, coordination, and compounding-leverage analysis.
-- `root-cause-debugging`: evidence-led diagnosis before fixes.
+- `diagnosing-bugs`: evidence-led diagnosis before fixes.
 - `intent-aligned-review`: requirements and authority review before engineering-quality review.
 - `evidence-before-completion`: fresh claim-to-evidence verification before readiness statements.
 - `audience-boundary`: prevents prompts, private reasoning, audit state, secrets, and internal metadata from reaching public output.

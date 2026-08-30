@@ -1,6 +1,6 @@
 ---
 name: intent-aligned-review
-description: Review software changes, plans, diffs, pull requests, implementations, and external review feedback in two passes. Check user intent, requirements, permissions, and promised behavior first, then check correctness, security, reliability, tests, maintainability, and release risk. Use before merging meaningful work, after major features or complex fixes, when reviewing agent-produced changes, and before applying reviewer suggestions that may be unclear, unnecessary, or wrong for the repository.
+description: Review changes in two passes: user intent and requirements first, then correctness, security, tests, and release risk. Use before merging meaningful work. Not for diagnosing a failure; use diagnosing-bugs.
 ---
 
 # Intent-Aligned Review

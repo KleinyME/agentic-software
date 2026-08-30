@@ -1,6 +1,7 @@
 ---
 name: site-scorecard
-description: Review a Karbon visibility_blueprint_v3 record as the dedicated judge — research the business, refine the judgment lane (customer question table, six anchored dimension scores, restructure plan, homework specs, people-side readout) where evidence warrants, and write the additive narrativeReview that becomes AbeL's client-facing second read. Use when a Blueprint judgment job is claimed, when a preview/drift run needs re-judging, or when someone asks to "run the scorecard", "judge this site", "review the Blueprint", or "complete the Blueprint".
+description: Judge a Karbon visibility Blueprint and write its narrative review.
+disable-model-invocation: true
 ---
 
 # Site Scorecard

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Site Scorecard"
+  short_description: "Judge a Karbon visibility Blueprint and write its narrativ"
+  default_prompt: "Use $site-scorecard to judge a Karbon visibility Blueprint and write its narrative review."
+policy:
+  allow_implicit_invocation: false

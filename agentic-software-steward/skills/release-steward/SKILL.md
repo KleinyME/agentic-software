@@ -1,6 +1,6 @@
 ---
 name: release-steward
-description: Manage branch discipline, preview-to-production promotion, main/master cleanliness, release readiness, cleanup, rollback, and final verification. Use when preparing changes for client review or production, deciding whether to branch, merging, pushing, preserving a live baseline, removing dead code, resolving deployment scope, or proving what actually shipped.
+description: Manage branch discipline, preview-to-production promotion, rollback, and live verification. Use when preparing changes for review or production. Not for choosing environments; use live-environment-steward.
 ---
 
 # Release Steward

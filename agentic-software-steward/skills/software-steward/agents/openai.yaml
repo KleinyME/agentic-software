@@ -1,0 +1,4 @@
+interface:
+  display_name: "Software Steward"
+  short_description: "Implement, integrate, and harden software: code changes, a"
+  default_prompt: "Use $software-steward to implement, integrate, and harden software: code changes, architecture, schemas, auth, integrations, runtime behavior, production readiness."

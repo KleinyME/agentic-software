@@ -1,6 +1,7 @@
 ---
 name: repo-foundation-bootstrap
-description: Drop the agentic software stewardship foundation into an existing repository. Use for vibe-coded repos, undocumented projects, production-readiness audits, repo rescue, project memory creation, AGENTS.md creation, PRODUCT.md/DESIGN.md setup, module memory, and identifying fake data, stale docs, dead code, duplicate implementations, and risky areas.
+description: Drop the stewardship foundation into an existing or undocumented repo.
+disable-model-invocation: true
 ---
 
 # Repo Foundation Bootstrap

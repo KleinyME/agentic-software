@@ -1,0 +1,4 @@
+interface:
+  display_name: "Live Environment Steward"
+  short_description: "Separate client-review previews, sandboxes, production can"
+  default_prompt: "Use $live-environment-steward to separate client-review previews, sandboxes, production candidates, and real production, including noindex policy and client-owned credentials."
