@@ -10,7 +10,12 @@ Re-run with: `scripts/security-scan.sh [--llm]`
 **No skill in this suite is malicious, and none needs to be removed.** Of 44 raw
 findings, every finding produced by the pattern matcher is a false positive that
 was verified line by line against source. Three findings produced by the semantic
-(LLM) stage are real and worth acting on, plus two hardening gaps.
+(LLM) stage were real; all three are fixed in this commit. One hardening gap
+remains open by choice.
+
+Update: `handoff`, `site-scorecard` and `design-system-steward` were re-scanned
+with the semantic stage after the fixes and come back complete (4/4, 4/4, 3/3
+LLM calls) with the three findings gone.
 
 The headline verdicts the tool printed unfiltered — `DO_NOT_INSTALL` on
 `software-steward` (100/CRITICAL), `project-steward` (99/CRITICAL) and
@@ -20,8 +25,8 @@ understanding before anyone runs this tool again.
 | | count | verdict |
 |---|---|---|
 | Pattern-matcher findings (static) | 24 | all false positives, individually verified |
-| Semantic findings (LLM only) | 9 | 3 actionable, 6 scope/quality observations |
-| Hardening gaps | 2 | both real, both cheap to fix |
+| Semantic findings (LLM only) | 9 | 3 actionable and now fixed, 6 scope/quality observations |
+| Hardening gaps | 2 | one fixed (item 3), one open by choice (item 4) |
 
 ## The failure mode you have to know about
 
@@ -104,26 +109,30 @@ positive.
 The semantic stage earned its keep here: these three are real and none were
 visible to static analysis.
 
-**1. `handoff` writes a full conversation summary to the OS temp directory.**
-`agentic-software-steward/skills/handoff/SKILL.md:7` — "Save to the temporary
-directory of the user's OS - not the current workspace." On a shared machine
-`/tmp` is typically world-readable, and the file sits outside version control.
-The skill does instruct redaction of keys, passwords and PII, so this is a
-considered design rather than negligence — but the destination is worth
-revisiting. Writing under the user's own runtime dir would preserve the intent
-(keep it out of the workspace) without the shared-readability exposure.
+**1. `handoff` wrote a full conversation summary to the OS temp directory. Fixed.**
+`agentic-software-steward/skills/handoff/SKILL.md` said "Save to the temporary
+directory of the user's OS". On a shared machine `/tmp` is world-readable and a file
+written there keeps default permissions. The skill already required redacting keys,
+passwords and PII, so this was a considered design with one bad destination. It now
+names a user-private directory per platform (`$XDG_STATE_HOME` on Linux, the
+per-user `$TMPDIR` on macOS, `%LOCALAPPDATA%` on Windows) and requires `0700` on the
+directory and `0600` on the file. The original intent — keep it out of the
+workspace — is preserved.
 
-**2. `site-scorecard` instructs an unattended dependency install.**
-`references/ad-hoc-prospect-blueprint.md:74` — "If the PDF parser/rendering
-dependency is missing, install or use an available equivalent and continue
-verification." No named package, no pin, no confirmation step. Name the
-dependency and have the agent stop and ask when it is missing.
+**2. `site-scorecard` instructed an unattended dependency install. Fixed.**
+`references/ad-hoc-prospect-blueprint.md` said "install or use an available
+equivalent and continue verification" — no named package, no pin, no confirmation.
+It now requires stopping to ask the owner first, naming the exact package and
+version, and forbids silently substituting an equivalent. If the dependency is
+unavailable the PDF checks are recorded as blocked rather than passed, which matches
+the suite's evidence-or-abstain stance instead of quietly weakening verification.
 
-**3. `design-system-steward` calls an unpinned `npx`.**
-`SKILL.md:58` — `npx @google/design.md lint DESIGN.md`. This is the only unpinned
-`npx` in the repo and a genuine rug-pull vector. Karbon-AI already pins the same
-tool at `^0.4.0` as a devDependency, so the skill is the outlier; registry latest
-is 0.4.0. Fix: `npx @google/design.md@0.4.0 lint DESIGN.md`.
+**3. `design-system-steward` called an unpinned `npx`. Fixed.**
+`SKILL.md` ran `npx @google/design.md lint DESIGN.md` — the only unpinned `npx` in
+the repo and a genuine rug-pull vector. Karbon-AI already pins the same tool at
+`^0.4.0` as a devDependency, so the skill was the outlier. It is now pinned to
+`@google/design.md@0.4.0` (registry latest), with a one-line note on why. Bump it
+deliberately; a 0.x pin means manual upgrades, which is the intended trade.
 
 ### Hardening
 
@@ -162,6 +171,18 @@ scripts/security-scan.sh --llm    # + semantic stage (slow; needs a pinned model
 ```
 
 The script scans each skill separately, applies the baseline, and exits non-zero
-on a HIGH/CRITICAL finding **or** on any degraded scan. With the baseline applied,
-the suite currently reports two LOW findings — items 3 and 4 above, deliberately
-left unsuppressed so they stay visible until fixed.
+on a HIGH/CRITICAL finding **or** on any degraded scan. With items 1—3 fixed and the
+baseline applied, the static suite reports one LOW finding: `visual-direction`, item
+4 above, deliberately left unsuppressed so it stays visible until fixed.
+
+### A note on fixing findings in a scanned repo
+
+Fixing item 1 made `handoff` score *worse*: 0 to 16, on two new rules. The phrase
+"world-readable" — used in the sentence forbidding a world-readable location, beside
+an explicit `0700`/`0600` requirement — matched Tool Misuse / Unsafe Defaults, and
+the skill's entire declared purpose matched Rogue Agent / Session Persistence.
+
+Both are suppressed with rules scoped by message text rather than reworded away.
+Writing around a keyword matcher would have made the guidance vaguer for the humans
+and agents who read it, which is the same mistake as trusting the score in the first
+place. If a fix raises a score, read the finding before touching the prose.

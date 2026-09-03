@@ -65,6 +65,30 @@ rules:
       shell template's usage comment describing a `step "<instruction>"` helper.
 
   # ---------------------------------------------------------------------
+  # Security prose flagged as the insecurity it warns about.
+  # ---------------------------------------------------------------------
+  - id: "TM3"
+    path: "SKILL.md"
+    message: "*world-readable*"
+    reason: >-
+      Verified false positive. Matches the literal phrase "world-readable" in the
+      sentence instructing the agent NOT to use a world-readable location, next to
+      an explicit `0700`/`0600` requirement. Describing an unsafe default in order
+      to forbid it reads to the matcher as configuring one. Scoped to this file:
+      "world-readable" as an actual instruction elsewhere must still fire.
+
+  - id: "RA2"
+    path: "SKILL.md"
+    message: "*handoff document summarising*"
+    reason: >-
+      Verified false positive. "Session Persistence" matches this skill writing a
+      note that outlives the session, which is its entire declared purpose and the
+      thing the user invokes it to do. It is user-invoked only
+      (`disable-model-invocation: true`), writes one document to a user-private
+      directory, and installs no cron job, startup script or hook. Re-review if
+      this skill ever gains a scheduling or auto-invocation mechanism.
+
+  # ---------------------------------------------------------------------
   # Attribution treated as snooping.
   # ---------------------------------------------------------------------
   - id: "AS3"

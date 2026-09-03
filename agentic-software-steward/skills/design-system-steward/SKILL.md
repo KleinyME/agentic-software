@@ -55,5 +55,5 @@ Include:
 
 Separate approved decisions, provisional explorations, and rejected or superseded directions. Split partially approved surfaces into scoped design files rather than marking a mixed document globally approved.
 
-When possible, validate with `npx @google/design.md lint DESIGN.md`.
+When possible, validate with `npx @google/design.md@0.4.0 lint DESIGN.md`. Pin the version: a bare `npx` specifier resolves to whatever the registry serves at run time, so a compromised release would execute here.
 

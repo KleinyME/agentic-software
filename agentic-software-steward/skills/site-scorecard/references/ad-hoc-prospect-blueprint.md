@@ -71,7 +71,7 @@ A file existing is not enough.
 - Parse the produced PDF: verify page count, non-empty text on every page, expected headline score, top finding, question table, restructure plan, fix guide, and measurement appendix.
 - Run a semantic red-flag scan over extracted text for cross-client names, placeholders, `undefined`, raw HTML such as `<a href`, monitoring/telemetry addresses, invalid phone strings, and factual claims that the independent crawl disproved. Treat a hit as a blocker until explained or corrected at its source.
 - Render PDF pages to images and visually inspect at least the first page, a dense findings page, a fix-guide page, and the last page. Check clipping, overlap, escaped markup, fonts, page breaks, accidental blank areas, and unreadable small type.
-- If the PDF parser/rendering dependency is missing, install or use an available equivalent and continue verification; file existence and browser `page.pdf()` success are not sufficient.
+- If the PDF parser or renderer is missing, stop and ask the owner before installing anything. Name the exact package and version in the request. Do not install unattended and do not silently substitute an equivalent. Until it is available, record the PDF checks as blocked rather than passed: file existence and browser `page.pdf()` success are not evidence that the document is correct.
 - Report the frozen planning signal as a planning score, never as a ranking promise.
 
 ## Prospect-facing summary
