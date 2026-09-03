@@ -1,0 +1,91 @@
+# SkillSpector baseline for this suite.
+#
+# Every entry below was verified by reading the flagged line in context.
+# Glob rules are used in preference to fingerprints so the suppression
+# survives ordinary edits: a fingerprint dies the moment a line is rewritten,
+# and a dead fingerprint silently un-suppresses a known false positive.
+#
+# Regenerate machine fingerprints only for one-off cases:
+#   skillspector baseline <path> -o .skillspector-baseline.yaml
+#
+# Reviewed 2026-09-03. See docs/reviews/2026-09-03-skillspector-security-scan.md.
+version: 2
+
+rules:
+  # ---------------------------------------------------------------------
+  # Negation blindness: the scanner's pattern matcher keys on a phrase and
+  # ignores the "do not" / "never" that governs it. Every hit in this suite
+  # was prose *prohibiting* the behaviour it was flagged for.
+  # ---------------------------------------------------------------------
+  - id: "RA1"
+    reason: >-
+      Verified false positive. All three hits are prohibitions, not capabilities:
+      "Do not let either role self-modify prompts, policies, permissions, skills,
+      routing, or production behavior" (software-steward), "it may not self-modify
+      prompts, policies, permissions, skills, or production behavior"
+      (workflow-automation-architect), and a scenario heading "Toby Observes
+      Friction Without Self-Modifying". No skill in this suite writes its own files.
+
+  - id: "MP3"
+    reason: >-
+      Verified false positive. show-me-your-work states "Append-only. A wrong call
+      gets a new row that supersedes it. Never edit or delete history" - a
+      tamper-resistance rule flagged as memory manipulation. The
+      repo-foundation-bootstrap hit matches the substring "clear state" inside the
+      words "a clear statement of whether code was changed".
+
+  - id: "AR2"
+    reason: >-
+      Verified false positive. Matches the scenario heading "Capability Packet
+      Cannot Drop Safety", which asserts the safety constraint it was flagged for
+      removing.
+
+  - id: "EA2"
+    reason: >-
+      Verified false positive across all 11 hits. Each matches "do not ask" /
+      "without asking" / "automatically" inside a restraint or a scoped autonomy
+      policy - e.g. project-steward's Initiative Bands grant judgment "without
+      asking for approval" only "when work is private, reversible, and confined to
+      the authorized workspace", with Yellow and Red bands above it. Genuine
+      excessive agency would lack that scoping; re-review if a hit ever appears
+      outside a banded or negated clause.
+
+  - id: "EA3"
+    reason: >-
+      Verified false positive. Matches "expand scope" in a review checklist that
+      asks a reviewer to confirm scope did not expand.
+
+  - id: "P6"
+    reason: >-
+      Verified false positive. The strongest hit is ai-writing-audit's "Public
+      Output Rule" section - "Never place audit tags, warnings, rationales,
+      framework names, verification language, or private working notes inside
+      customer-facing copy" - which is an anti-leakage control. Matched on the
+      heading "Output Rule" near the word "Prompt". The diagnosing-bugs hit is a
+      shell template's usage comment describing a `step "<instruction>"` helper.
+
+  # ---------------------------------------------------------------------
+  # Attribution treated as snooping.
+  # ---------------------------------------------------------------------
+  - id: "AS3"
+    path: "NOTICE.md"
+    reason: >-
+      Verified false positive on all 7 hits. These are third-party licence
+      attributions naming the upstream file a skill was adapted from (e.g.
+      "Files used as reference: `skills/unslop/SKILL.md`", pstack v0.14.5, MIT,
+      pinned ref). A citation in NOTICE.md is not a runtime read of a peer skill.
+      Scoped to NOTICE.md deliberately: the same rule id firing in a SKILL.md or a
+      script would be a real finding and must still surface.
+
+  # ---------------------------------------------------------------------
+  # Coverage artefact, not evasion.
+  # ---------------------------------------------------------------------
+  - id: "AE1"
+    reason: >-
+      Verified false positive. "Referenced artifact was not completely inspected"
+      fires on ordinary local reference files that exist and are readable
+      (references/checklist.md 10,847 B; scripts/collect-client-site-images.mjs
+      11,000 B; assets/*.template.ts). It reports the scanner's own per-component
+      budget, not withheld content, and it multiplies when the LLM stage degrades.
+      Treat a spike here as a signal to re-run, not as a finding - and see the
+      degradation gate in scripts/security-scan.sh.
