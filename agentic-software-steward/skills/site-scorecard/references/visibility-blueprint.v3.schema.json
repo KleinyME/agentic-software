@@ -122,7 +122,7 @@
         "properties": {
           "checkId": { "type": "string", "minLength": 1 },
           "measureId": { "$ref": "#/$defs/measureId" },
-          "status": { "enum": ["pass", "warn", "fail", "not_collected", "blocked"] },
+          "status": { "enum": ["pass", "warn", "fail", "informational", "not_collected", "blocked"] },
           "score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
           "observed": { "type": "array", "items": { "type": "string" } },
           "measuredAt": { "type": "string", "format": "date-time" }
@@ -260,8 +260,8 @@
             "required": ["checkId", "previous", "current", "direction"],
             "properties": {
               "checkId": { "type": "string" },
-              "previous": { "enum": ["pass", "warn", "fail", "not_collected", "blocked"] },
-              "current": { "enum": ["pass", "warn", "fail", "not_collected", "blocked"] },
+              "previous": { "enum": ["pass", "warn", "fail", "informational", "not_collected", "blocked"] },
+              "current": { "enum": ["pass", "warn", "fail", "informational", "not_collected", "blocked"] },
               "previousScore": { "type": ["number", "null"] },
               "currentScore": { "type": ["number", "null"] },
               "direction": { "enum": ["improved", "regressed", "unchanged", "not_retested"] }

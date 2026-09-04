@@ -29,8 +29,8 @@ const MIRROR_PATH = path.join(
 );
 const RELATIVE_KARBON_PATH = path.join("contracts", "visibility-blueprint.v3.schema.json");
 
-/** Common sibling-checkout locations, same pattern as sync-skills.mjs --hermes-dir defaults. */
-const DEFAULT_CANDIDATES = ["../Karbon-AI", "../karbon-ai", "../../Karbon-AI"];
+/** Only discover release-source checkouts. Historical clones require an explicit path. */
+const DEFAULT_CANDIDATES = ["../Karbon-AI-active", "../../Karbon-AI-active"];
 
 function parseArgs(argv) {
   const args = { karbonAiPath: null };
