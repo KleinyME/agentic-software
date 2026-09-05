@@ -16,7 +16,7 @@
 
 Use the executive cell to turn standing goals and new signals into prioritized, bounded harness jobs without requiring the owner to initiate every internal analysis or draft.
 
-This cell sits above the Agentic Software Harness and uses separate fresh-context agents for CEO, COO, and Marketing. Do not simulate the cell by asking one accumulating conversation to change hats:
+This cell is an optional decomposition above the Agentic Software Harness. An owner-facing partner may combine CEO and COO responsibilities; create separate fresh contexts only when independent judgment or bounded execution needs them. Do not present one accumulating conversation as multiple independent reviewers:
 
 - The executive cell decides what deserves attention within delegated authority.
 - The harness decides how to perform and verify each accepted job.
@@ -24,7 +24,7 @@ This cell sits above the Agentic Software Harness and uses separate fresh-contex
 - OB1/OpenBrain preserves sourced goals, decisions, opportunities, and outcomes.
 - The human owner retains purpose, capital, identity, and consequential authority defined in the charter.
 
-Do not create agents merely to imitate an executive org chart. These three roles earn separation through distinct inputs, outputs, decision rights, memory scopes, and evaluation criteria. Fresh context is the mechanism that protects cognitive diversity; a shared transcript would collapse the intended independence.
+Do not create agents merely to imitate an executive org chart. Roles earn separation through distinct inputs, outputs, decision rights, memory scopes, and evaluation criteria. When an executive graph is selected, fresh context protects independence. For owner-partner, business-lead, and messaging-topic arrangements, follow [Shared Agent Workspace](shared-agent-workspace.md).
 
 ## Executive Cell
 
@@ -198,7 +198,7 @@ Use Hermes for:
 
 Use OB1/OpenBrain for:
 
-- Versioned goals, charter, decisions, qualified opportunities, work-item state, outcome evidence, and friction summaries.
+- Sourced goals, charter references, decisions, qualified opportunities, outcome evidence, and friction summaries. Runtime/job systems own work-item state; connected business systems own approvals and records.
 - Source pointers and observation times rather than copied private source content.
 - Deduplicated records linked to project and workflow identity.
 
