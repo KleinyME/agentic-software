@@ -29,7 +29,7 @@ The current suite is a skill-based instruction harness, not a durable job runtim
 
 For meaningful multi-domain jobs, use selected skills as contracts for bounded fresh-context agents. The root harness owns dispatch, total budget, context exclusions, concurrency, write scopes, and one accountable assembler. Workers return typed artifacts or findings; the assembler resolves conflicts instead of concatenating or voting. A separate fresh-context assurance pass verifies the integrated whole. Keep small sequential work in one loop and never spawn one worker per skill automatically.
 
-Read [references/executive-operating-loop.md](references/executive-operating-loop.md) when CEO, COO, Marketing, chief-of-staff, portfolio, or proactive agents should refine ideas and initiate eligible work through Hermes. CEO, COO, and Marketing remain distinct fresh contexts. A standing autonomy charter, not a role name, defines initiative, budgets, permissions, gates, and stop conditions. OB1/OpenBrain carries typed work state and learning across contexts.
+Read [references/executive-operating-loop.md](references/executive-operating-loop.md) for portfolio or proactive work. One owner-facing partner may combine executive responsibilities; use separate fresh contexts when independent judgment earns separation. A standing autonomy charter, not a role name, defines initiative and authority. Read [references/shared-agent-workspace.md](references/shared-agent-workspace.md) when aligning messaging topics, runtime profiles, cross-project recall, or coding assistants. Operational systems own work state; OB1/OpenBrain carries sourced decisions and learning.
 
 ## Active Outcome
 
