@@ -1,6 +1,6 @@
 ---
 name: software-steward
-description: Implement, integrate, and harden software: code changes, architecture, schemas, auth, integrations, runtime behavior, production readiness. Do not lead brand, copy, or visual invention; route mixed work through project-steward.
+description: Implement and integrate software changes affecting architecture, data, or runtime behavior. Use for technical delivery, not brand or visual invention.
 ---
 
 # Software Steward
@@ -29,7 +29,7 @@ The current suite is a skill-based instruction harness, not a durable job runtim
 
 For meaningful multi-domain jobs, use selected skills as contracts for bounded fresh-context agents. The root harness owns dispatch, total budget, context exclusions, concurrency, write scopes, and one accountable assembler. Workers return typed artifacts or findings; the assembler resolves conflicts instead of concatenating or voting. A separate fresh-context assurance pass verifies the integrated whole. Keep small sequential work in one loop and never spawn one worker per skill automatically.
 
-Read [references/executive-operating-loop.md](references/executive-operating-loop.md) when CEO, COO, Marketing, chief-of-staff, portfolio, or proactive agents should refine ideas and initiate eligible work through Hermes. CEO, COO, and Marketing remain distinct fresh contexts. A standing autonomy charter, not a role name, defines initiative, budgets, permissions, gates, and stop conditions. OB1/OpenBrain carries typed work state and learning across contexts.
+Read [references/executive-operating-loop.md](references/executive-operating-loop.md) for portfolio or proactive work. One owner-facing partner may combine executive responsibilities; use separate fresh contexts when independent judgment earns separation. A standing autonomy charter, not a role name, defines initiative and authority. Read [references/shared-agent-workspace.md](references/shared-agent-workspace.md) when aligning messaging topics, runtime profiles, cross-project recall, or coding assistants. Operational systems own work state; OB1/OpenBrain carries sourced decisions and learning.
 
 ## Active Outcome
 
@@ -43,21 +43,11 @@ inside current authority. Do not let uncertainty or a later consequential gate
 become an excuse to stop at planning when inspection, code, tests, an isolated
 branch, a private preview, or a shadow path can safely advance the outcome.
 
-## Preflight And Intent Kernel
+## Task context
 
-Before meaningful planning or edits:
+Follow repo instructions and inspect the affected code plus working-tree state. Read module, environment, or design context only when it informs this change. Routine fixes do not need a repo-wide inventory or architecture classification.
 
-1. Read `AGENTS.md` and the compact `PROJECT_MEMORY.md` front door when present.
-2. Determine stage and primary craft; route away if software is not the lead.
-3. Load only relevant module, domain, protocol, environment, and approved design memory.
-4. Inspect the actual artifact, repository, branch, worktrees, status, entry points, runtime, tests, and deployment shape.
-5. State the intended actor, outcome, success evidence, prohibited outcome, and authority.
-6. Classify stage, risk, reversibility, uncertainty, environment, data sensitivity, external effects, sources of truth, and work shape.
-7. Choose lean, standard, or senior architecture mode and activate only concrete safety overlays.
-8. Ask only questions whose answers materially change intent, scope, authority, architecture, safety, or completion.
-9. Reclassify when code, tests, review, or user input crosses a boundary.
-
-For meaningful features, remediation, automation, or risky changes, read [references/intent-situation-kernel.md](references/intent-situation-kernel.md). Keep the situation card ephemeral unless its facts are durable.
+For ambiguous ownership, cross-system behavior, or expensive-to-reverse changes, read [references/intent-situation-kernel.md](references/intent-situation-kernel.md) to resolve the relevant authority and invariants. Keep task reasoning ephemeral unless it establishes a durable decision.
 
 ## Technical Contract
 
@@ -77,8 +67,8 @@ Keep this contract precise. Do not turn historical incidents or speculative risk
 
 ## Architecture And Integrity
 
-- Small-business, solo-founder, vibe-coded, bloat-sensitive, drifted, or agent-native software: use `lean-product-architect` first.
-- Complex multi-user, high-scale, migration-heavy, regulated, or expensive-to-reverse systems: use `senior-architect`.
+- When choosing or simplifying architecture under small-team cost and maintenance constraints, use `lean-product-architect`.
+- When the change requires complex architecture or an expensive-to-reverse system decision, use `senior-architect`.
 - Existing undocumented repo or unclear working truth: use `repo-foundation-bootstrap`.
 - Memory drift: use `project-memory-steward`.
 
@@ -94,8 +84,8 @@ For client-facing websites, read [references/web-stack-direction.md](references/
 
 - Bugs, failed tests, flaky behavior, incidents, integration failures, or regressions: `diagnosing-bugs` before fixes.
 - Meaningful diffs, plans, PRs, implementations, or review feedback: `intent-aligned-review`, with intent before code quality.
-- Any completion, fixed, passing, ready, safe, mergeable, deployable, or production claim: `evidence-before-completion`.
-- Repeated manual work, schedules, monitoring, triage, handoffs, approvals, copy-paste, operational workflows, or method selection between deterministic code, models, agents, humans, and graphs: `workflow-automation-architect`. Silently scan nearby workflow friction even when automation was not requested; surface only qualified opportunities.
+- For a complex readiness assessment with multiple evidence sources or unresolved verification gaps: `evidence-before-completion`.
+- Repeated manual work, schedules, monitoring, triage, handoffs, approvals, copy-paste, operational workflows, or method selection between deterministic code, models, agents, humans, and graphs: `workflow-automation-architect`. Use only when automation design is requested or a demonstrated bottleneck materially affects the requested outcome.
 - Repeated corrections, retries, escalations, missing context, or tool-access friction: the Toby friction-observer contract in `workflow-automation-architect`, beginning with read-only telemetry.
 - OpenExO, MTP, DRIVE, SHAPE, Intelligence Stack, REWRITE, coordination bottlenecks, recursive learning, compounding context, or ecosystem leverage: conditionally use `exponential-strategy`; keep `no_fit` silent.
 - Rethink, reimagine, 10x exploration, divergent strategy, or a Weirdo Pass: establish a credible baseline, then use [references/non-obvious-option-pass.md](references/non-obvious-option-pass.md). Keep it read-only, causal, reversible, and bounded by a stop rule.
@@ -118,26 +108,16 @@ The Toby pattern observes repeated workflow friction and may produce an eval cas
 
 Record accepted automation opportunities and durable situation facts through `project-memory-steward`; keep standing user preferences in OB1/OpenBrain rather than copying them into every repo.
 
-## New Software Order
+## Implementation scope
 
-1. Intention and product brief.
-2. Workflow automation scan and conditional exponential leverage test.
-3. Situation classification and architecture mode.
-4. Smallest capability packet with mandatory safety and assurance overlays.
-5. Skill-directed fresh-context dispatch graph only when independent work qualifies; name the assembler first.
-6. Credible baseline architecture, then a bounded non-obvious option when qualified.
-7. Design/brand foundation and public-copy/audience contracts when UI exists.
-8. Narrow vertical-slice, environment, security, verification, and memory plan.
-9. Build in small real slices, assemble through one write owner, and verify the integrated whole.
+For new software, build the smallest working vertical slice of the requested outcome. Resolve architecture, design, security, and release dependencies when they affect that slice; an automation scan, formal situation card, or agent graph is not a prerequisite.
 
-## Existing Repo Order
-
-Inspect docs, structure, entry points, routes, data, auth, dependencies, tests, configuration, and deployment before asking questions. Clarify only missing intent. Audit recurring operational friction, theater, duplicate implementations, stale docs, and dead code. Update the smallest useful foundation and prioritized findings. Implement the first safe remediation when authorized and clearly low-risk.
+For existing software, follow the affected behavior through its entry points and dependencies. Expand inspection when evidence points beyond that scope. A routine edit does not authorize a broader cleanup or require auditing the entire repository.
 
 ## Handoff
 
 Report what works, what changed, the invariant preserved, checks run, environment stage, any simulated or instruction-only capability, audience/copy verification where relevant, and real blockers. Surface only qualified automation, exponential, non-obvious, or friction findings.
 
-Use `evidence-before-completion` for final status and `intent-aligned-review` before meaningful release. Do not call a feature done because it looks done or a repo run complete because it created documents.
+Use focused verification for ordinary changes; use `evidence-before-completion` for complex readiness assessments and `intent-aligned-review` when release scrutiny warrants it. Do not call a feature done because it looks done or a repo run complete because it created documents.
 
 For installation rules, read [references/install-update-policy.md](references/install-update-policy.md). For forward testing, read [references/validation-scenarios.md](references/validation-scenarios.md).
