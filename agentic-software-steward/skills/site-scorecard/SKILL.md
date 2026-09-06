@@ -91,8 +91,8 @@ Recommended:
    `brand-direction` Establish Truth; vernacular and competitor language via
    `design-distinctiveness`. Save to the client's `research/` folder with
    sources and dates.
-3. **Question table** — the record arrives with 3–5 questions from the
-   immediate pass. Keep the ones research supports; replace weak or
+3. **Question table** — the record arrives with up to five questions from the
+   immediate pass. There is no minimum; preserve unknowns instead of adding filler. Keep the ones research supports; replace weak or
    flattering ones per `references/answer-availability.md`; check each
    against the live site (and concept on preview runs), record statuses and
    owner-facing notes. Every `contradictory` answer becomes a visible finding,
@@ -169,7 +169,7 @@ Recommended:
 
 ## Done Means
 
-- All six dimensions have supported scores or explicit null reasons; questions 3–5 with statuses
+- All six dimensions have supported scores or explicit null reasons; up to five supported questions with statuses
   and owner-safe notes; restructure plan covers every known page; every
   demonstrated answer defect has a homework item with an acceptance test.
 - `narrativeReview` is written, complete, and grounded in the findings.
