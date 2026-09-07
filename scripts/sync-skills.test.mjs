@@ -54,6 +54,67 @@ test("Hermes sync refuses local drift without overwriting it", () => {
   }
 });
 
+test("selected sync preserves unrelated local changes and their recorded baselines", () => {
+  const target = mkdtempSync(path.join(tmpdir(), "agentic-selected-sync-"));
+  try {
+    assert.equal(run(["--target", "claude", "--claude-dir", target]).status, 0);
+    const statePath = path.join(target, ".agentic-software-steward-sync.json");
+    const before = JSON.parse(readFileSync(statePath, "utf8"));
+    const localPath = path.join(target, "software-steward", "SKILL.md");
+    appendFileSync(localPath, "\nlocal instruction to preserve\n");
+    const localBytes = readFileSync(localPath);
+    const selectedDir = path.join(target, "project-memory-steward");
+    rmSync(selectedDir, { recursive: true });
+
+    const sync = run(["--target", "claude", "--claude-dir", target, "--skill", "project-memory-steward"]);
+    assert.equal(sync.status, 0, sync.stderr || sync.stdout);
+    assert.ok(existsSync(path.join(selectedDir, "references", "shared-memory.md")));
+    assert.deepEqual(readFileSync(localPath), localBytes);
+    const after = JSON.parse(readFileSync(statePath, "utf8"));
+    assert.deepEqual(after.skills, before.skills, "untouched fingerprints must not adopt local edits");
+    assert.deepEqual(after.selected_skills, ["project-memory-steward"]);
+    assert.equal(run(["--target", "claude", "--claude-dir", target, "--dry-run"]).status, 1,
+      "a full sync must still detect the preserved local conflict");
+  } finally {
+    rmSync(target, { recursive: true, force: true });
+  }
+});
+
+test("selected Hermes skills use their normal nested paths and back up replacements", () => {
+  const target = mkdtempSync(path.join(tmpdir(), "agentic-selected-hermes-"));
+  try {
+    const args = ["--target", "hermes", "--hermes-dir", target, "--skill", "project-memory-steward,project-steward"];
+    assert.equal(run(args).status, 0);
+    const localPath = path.join(target, "agentic-software-steward", "project-memory-steward", "SKILL.md");
+    appendFileSync(localPath, "\nprevious local version\n");
+    assert.equal(run(args).status, 1, "selection must not bypass conflict protection");
+    assert.equal(run([...args, "--force"]).status, 0);
+    const backups = path.join(target, ".agentic-software-steward-backups");
+    assert.ok(readdirSync(backups).some(stamp =>
+      readFileSync(path.join(backups, stamp, "agentic-software-steward", "project-memory-steward", "SKILL.md"), "utf8")
+        .includes("previous local version")));
+    assert.equal(existsSync(path.join(target, "agentic-software-steward", "software-steward")), false);
+    const before = readFileSync(path.join(target, ".agentic-software-steward-sync.json"));
+    assert.equal(run([...args, "--dry-run"]).status, 0);
+    assert.deepEqual(readFileSync(path.join(target, ".agentic-software-steward-sync.json")), before);
+  } finally {
+    rmSync(target, { recursive: true, force: true });
+  }
+});
+
+test("invalid selections and retirement combinations fail before installing anything", () => {
+  const target = mkdtempSync(path.join(tmpdir(), "agentic-invalid-selection-"));
+  try {
+    for (const selection of [["--skill", "no-such-skill"], ["--skill", "../project-steward"],
+      ["--skill", "project-steward", "--retire"]]) {
+      assert.equal(run(["--target", "claude", "--claude-dir", target, ...selection]).status, 1);
+      assert.deepEqual(readdirSync(target), []);
+    }
+  } finally {
+    rmSync(target, { recursive: true, force: true });
+  }
+});
+
 test("retires only manifest-listed skills, backing them up first", () => {
   const target = mkdtempSync(path.join(tmpdir(), "retire-"));
   // One retired skill and one unrelated orphan the operator installed themselves.

@@ -101,7 +101,7 @@ const TARGETS = {
 };
 
 function parseArgs(argv) {
-  const args = { targets: [], dryRun: false, force: false, report: false, dirs: {}, extraRoots: [] };
+  const args = { targets: [], skills: [], dryRun: false, force: false, report: false, dirs: {}, extraRoots: [] };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     const next = () => argv[++i];
@@ -110,6 +110,7 @@ function parseArgs(argv) {
     else if (arg === "--report") args.report = true;
     else if (arg === "--retire") args.retire = true;
     else if (arg === "--target") args.targets.push(...next().split(",").map((t) => t.trim()));
+    else if (arg === "--skill") args.skills.push(...next().split(",").map((s) => s.trim()));
     else if (arg === "--codex-dir") args.dirs.codex = next();
     else if (arg === "--claude-dir") args.dirs.claude = next();
     else if (arg === "--hermes-dir") args.dirs.hermes = next();
@@ -123,6 +124,10 @@ function parseArgs(argv) {
   for (const target of args.targets) {
     if (!TARGETS[target]) throw new Error(`Unknown target "${target}". Known: ${Object.keys(TARGETS).join(", ")}, all`);
   }
+  if (args.skills.some((name) => !name || name.includes("/") || name.includes("\\"))) {
+    throw new Error("--skill requires one or more skill directory names, without paths.");
+  }
+  if (args.skills.length && args.retire) throw new Error("--skill cannot be combined with --retire.");
   return args;
 }
 
@@ -246,7 +251,13 @@ function syncTarget(target, args) {
 
   const saved = readState(targetDir);
   const plan = [];
+  for (const name of args.skills) {
+    if (![...skills.keys()].some((key) => path.posix.basename(key) === name)) {
+      throw new Error(`Unknown skill "${name}" for ${config.label}; nothing was written.`);
+    }
+  }
   for (const [name, sourceDir] of [...skills].sort()) {
+    if (args.skills.length && !args.skills.includes(path.posix.basename(name))) continue;
     const destDir = path.join(targetDir, ...name.split("/"));
     plan.push({ name, sourceDir, destDir, ...classify(name, sourceDir, destDir, saved) });
   }
@@ -308,12 +319,16 @@ function applyTarget(result, args) {
   }
 
   const retiredKeys = new Set(retiring.map((entry) => entry.key));
-  const skills = {};
+  // A selective sync must retain the previous baseline of untouched skills,
+  // including local conflicts, rather than silently adopting their current bytes.
+  const skills = args.skills.length ? { ...readState(targetDir) } : {};
   for (const item of result.plan) skills[item.name] = fingerprint(item.destDir);
-  for (const name of result.orphans) skills[name] = fingerprint(path.join(targetDir, ...name.split("/")));
+  if (!args.skills.length) {
+    for (const name of result.orphans) skills[name] = fingerprint(path.join(targetDir, ...name.split("/")));
+  }
   writeFileSync(
     path.join(targetDir, STATE_FILE),
-    `${JSON.stringify({ version: 1, repo_root: REPO_ROOT, synced_at: new Date().toISOString(), skills }, null, 2)}\n`,
+    `${JSON.stringify({ version: 1, repo_root: REPO_ROOT, synced_at: new Date().toISOString(), ...(args.skills.length ? { selected_skills: args.skills } : {}), skills }, null, 2)}\n`,
   );
 
   return { backupDir: usedBackup ? backupDir : null, retired: retiring.map((e) => e.key) };
@@ -361,7 +376,7 @@ function main() {
 
   if (args.help) {
     console.log(
-      "Usage: node scripts/sync-skills.mjs [--target codex,claude,hermes|all] [--dry-run] [--force] [--retire]\n" +
+      "Usage: node scripts/sync-skills.mjs [--target codex,claude,hermes|all] [--skill name,...] [--dry-run] [--force] [--retire]\n" +
         "       node scripts/sync-skills.mjs --report [--extra-root Label=/path]\n\n" +
         "Destinations: --codex-dir / --claude-dir / --hermes-dir, or CODEX_SKILLS_DIR /\n" +
         "CLAUDE_SKILLS_DIR / HERMES_SKILLS_DIR. Hermes has no default and must be given one.",

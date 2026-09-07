@@ -99,6 +99,10 @@ node scripts/sync-skills.mjs --target claude
 It fingerprints every skill, refuses to overwrite local edits without `--force`,
 backs up whatever it replaces, and leaves orphans alone.
 
+Use `--skill project-memory-steward,project-steward,visual-direction` for a
+scoped update. It preserves every unselected skill and its recorded fingerprint,
+so unrelated local changes do not require a forced full-suite replacement.
+
 On Windows the PowerShell lane additionally runs the Codex-specific validation:
 
 ```powershell
