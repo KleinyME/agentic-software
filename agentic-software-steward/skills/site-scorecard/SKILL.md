@@ -91,8 +91,8 @@ Recommended:
    `brand-direction` Establish Truth; vernacular and competitor language via
    `design-distinctiveness`. Save to the client's `research/` folder with
    sources and dates.
-3. **Question table** — the record arrives with 3–5 questions from the
-   immediate pass. Keep the ones research supports; replace weak or
+3. **Question table** — the record arrives with up to five questions from the
+   immediate pass. There is no minimum; preserve unknowns instead of adding filler. Keep the ones research supports; replace weak or
    flattering ones per `references/answer-availability.md`; check each
    against the live site (and concept on preview runs), record statuses and
    owner-facing notes. Every `contradictory` answer becomes a visible finding,
@@ -102,12 +102,16 @@ Recommended:
    transaction or regulatory risk, or is otherwise the highest-leverage issue.
    Do not let an easy-to-state phone, address, or hours discrepancy displace a
    larger positioning, proof, offer, or conversion problem.
-4. **Dimensions** — score all six against `references/scoring-anchors.md`,
+4. **Dimensions** — retain all six with supported scores or explicit null reasons.
+   Keep design_communication and owner_pride null without rendered review.
+   For supported scores use `references/scoring-anchors.md`,
    interpolating between bands, citing observed evidence in each
    `evidence` string. `ai_readability` must cite the instrument checks
    already in `citedChecks`; do not overwrite the machine lane's facts.
+   Use `not_checked` when answer availability has not been established.
+   That status is neither a defect nor a reason for publication homework.
 5. **Restructure plan** — one row per existing page (keep / rewrite / merge /
-   redirect / validate) plus `add` rows for missing answer-addresses.
+   redirect / validate) prefer improving existing pages before adding URLs.
    `add` and rewrite-for-answer rows link a homework item.
 6. **Homework** — for each `not_stated` / `answered_buried` question, write a
    `HomeworkSpec`: objective, suggested title and URL path, `mustContain`
@@ -121,20 +125,18 @@ Recommended:
    deliver the Blueprint so the client can see what needs reconciliation.
 7. **Readout** — fill `peopleView` meter values from the dimension scores
    (×10), set tones, and write the `diagnosis` paragraph in plain English.
-8. **Narrative review** — write the top-level `narrativeReview` object,
-   AbeL's plain-language client-facing review, first person, deadpan, no
-   hype: `{ "whatISee": <one honest paragraph on this business's
-   visibility>, "whatMattersMost": <the single highest-leverage issue and
-   why>, "whatIdChange": <the concrete first change>, "recommendedPackage":
-   { "name": <"Local Site + Care" | "Local Site (full handoff)" |
-   "Online Store" | "Custom Stack">, "why": <why this package fits,
-   grounded in the findings> }, "stillToConfirm": <what could not be
-   verified from the outside> }. This drives the review email and the
-   review section of the delivered document — it is the earned second ask.
-   `whatMattersMost` must name the issue with the greatest likely effect on
-   the stated buyer and business outcome, not merely the clearest unresolved
-   fact. Put subordinate contact discrepancies in `stillToConfirm` and their
-   linked finding/homework without repeating them as the review's thesis.
+8. **Narrative review** - write `whatISee`, `whatMattersMost`, `whatIdChange`,
+   `action`, `evidenceIds`, `recommendedPackage`, and `stillToConfirm`.
+   Choose `keep`, `improve`, `rebuild`, or `undetermined` before any package.
+   A healthy site can need no work. Prefer specific improvements to an existing
+   site. Rebuilding requires material observed problems or an explicit owner
+   goal, explaining why selective improvement is insufficient.
+   Improve/rebuild cite observed warn/fail check IDs; `owner_direction` cites
+   an active owner-stated audience or offer change. Preservation alone cannot
+   justify rebuilding. Templates, absent staff photos, optional metadata and
+   AI-list samples do not establish business harm or lost traffic or leads.
+   Set `recommendedPackage` to null except for rebuilding; then use a current
+   Karbon offer name and evidence-grounded `why`. `stillToConfirm` may be empty.
 9. **Gate bookkeeping** — set `factsVerified` honestly; write `stillOpen`
    (the most important unresolved gap, owner-facing); legacy drafts only:
    remove the "judgment pass not yet completed" blocker once steps 3–7 are
@@ -167,9 +169,9 @@ Recommended:
 
 ## Done Means
 
-- All six dimensions scored with cited evidence; questions 3–5 with statuses
+- All six dimensions have supported scores or explicit null reasons; up to five supported questions with statuses
   and owner-safe notes; restructure plan covers every known page; every
-  unanswered question has a homework item with an acceptance test.
+  demonstrated answer defect has a homework item with an acceptance test.
 - `narrativeReview` is written, complete, and grounded in the findings.
 - The measured lane is byte-identical to what arrived; remaining blockers
   are hard truth or safety failures, while disclosed public-fact conflicts stay

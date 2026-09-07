@@ -81,7 +81,7 @@
     },
     "questions": {
       "type": "array",
-      "minItems": 3,
+      "minItems": 0,
       "maxItems": 5,
       "items": {
         "type": "object",
@@ -121,7 +121,7 @@
         "required": ["checkId", "measureId", "status", "observed", "measuredAt"],
         "properties": {
           "checkId": { "type": "string", "minLength": 1 },
-          "measureId": { "$ref": "#/$defs/measureId" },
+          "measureId": { "anyOf": [{ "$ref": "#/$defs/measureId" }, { "type": "null" }] },
           "status": { "enum": ["pass", "warn", "fail", "informational", "not_collected", "blocked"] },
           "score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
           "observed": { "type": "array", "items": { "type": "string" } },
@@ -310,7 +310,7 @@
       "enum": ["first_glance_clarity", "design_communication", "owner_pride", "trust_and_proof", "mobile_experience", "ai_readability"]
     },
     "answerStatus": {
-      "enum": ["answered_at_url", "answered_buried", "not_stated", "contradictory"]
+      "enum": ["answered_at_url", "answered_buried", "not_stated", "contradictory", "not_checked"]
     },
     "readoutMeter": {
       "type": "object",
