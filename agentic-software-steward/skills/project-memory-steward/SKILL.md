@@ -1,11 +1,15 @@
 ---
 name: project-memory-steward
-description: Maintain lane-scoped repo memory with explicit evidence and decision authority: PROJECT_MEMORY.md, PRODUCT.md, DESIGN.md, ADRs, approval status. Not for session handoff notes; use handoff.
+description: Maintain project truth and shared cross-agent learning with scoped evidence and decision authority. Use for durable discoveries, intention changes and task-start/completion memory checkpoints; not raw transcripts or routine Git summaries.
 ---
 
 # Project Memory Steward
 
 Make memory a routing front door, not a personality transplant or an archive dump.
+
+## Shared memory checkpoints
+
+For substantial work using a configured shared memory service, follow [shared-memory.md](references/shared-memory.md) at task start and completion, including PR preparation or merge when it changes what is verified. This applies independently of custom creative-skill use. A transient handoff file does not replace shared recall.
 
 ## Front Door
 

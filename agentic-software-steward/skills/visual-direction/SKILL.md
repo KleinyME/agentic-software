@@ -77,7 +77,9 @@ Choose the correct source per placement:
 
 Use the `imagegen` skill for raster generation or edits. Use frontend/code tools for vectors, icons, diagrams, and native interface graphics.
 
-Generate one anchor image first. Once approved, derive supporting assets from the same visual DNA rather than producing unrelated one-off images.
+Create one anchor image first, then derive supporting assets from its visual direction within existing authority. Review the complete composition; a separate human approval of each image is required only when the project asks for it.
+
+For a complete preview, fill intended photographic areas with suitable usable imagery before judging the render. Record acquisition failure as incomplete visual work rather than silently substituting a text panel. Keep a compact subject, framing, aspect-ratio and focal-point brief for important replacement slots.
 
 The shared visual DNA should define medium, subject, camera/composition, lighting, palette, texture, emotional register, negative space, invariants, and avoid items.
 
