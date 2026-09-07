@@ -146,6 +146,8 @@ Patterns:
 
 ## Progressive Memory
 
+For substantial work with shared memory, use the [shared-memory checkpoints](../project-memory-steward/references/shared-memory.md) at start and completion; the accountable parent owns them for isolated workers.
+
 Read the project front door, then load only memory relevant to the current stage, craft, and overlays. Do not preload every operational risk, archive, rejected design, or historical incident into a creative task.
 
 Use `project-memory-steward` to keep:

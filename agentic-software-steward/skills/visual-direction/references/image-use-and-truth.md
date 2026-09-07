@@ -14,7 +14,7 @@ A prospect's published imagery may appear in a concept built to show that busine
 
 - Always allowed in any mode: analyzing prospect imagery as evidence. Extract palette, scenes, subjects, equipment, lighting, and material texture to drive the visual direction. Analysis is not reproduction, and it is how the concept inherits the business's real visual world.
 - Access-protected preview shared with the owner through a revocable link: prospect imagery may be reproduced in the design, including the owner, team, and bio photography - the people are part of the business's authenticity and belong in the pitch. Use local project copies, never production hotlinks.
-- Publicly reachable URL before the owner engages: do not reproduce the prospect's imagery or people. Keep public demos imagery-light or use generated, owned, or code-native assets.
+- Publicly reachable URL before the owner engages: do not reproduce the prospect's imagery or people. Use suitable licensed, generated, owned, or code-native assets to complete the intended composition.
 - Minors are the exception in every mode: never reproduce a real child's image in any preview, protected or not. Use the stand-in rules below.
 
 Owner engagement is the authorization event. Once the owner requests or approves the work, adult and business imagery follows the client-asset rules above; imagery of children waits for authentic client-supplied photos obtained through the client's own consent relationship.
@@ -24,7 +24,7 @@ Owner engagement is the authorization event. Once the owner requests or approves
 When a real image cannot be used yet - a child, suspected stock, or a missing asset - generate a stand-in that fits the scene and the visual DNA:
 
 - For minors, compose stand-ins the way childcare and dance marketing already protects privacy: from behind, mid-motion, wide framing, or detail shots. Avoid photoreal synthetic child faces. Never model a stand-in on a specific real child, and never caption any stand-in as a specific real person.
-- Name every stand-in and generated replacement with the reserved prefix `ai-preview--` and record it in the asset manifest and image plan with status `preview-replacement`, including what authentic asset should replace it.
+- Name assets that require authentic replacement with the reserved prefix `ai-preview--` and record it in the asset manifest and image plan with status `preview-replacement`, including what authentic asset should replace it.
 - Production promotion swaps every `ai-preview--` asset for authentic client-supplied imagery. A flagged filename surviving into a production release is a release blocker, verified alongside routes in `environment-and-release`.
 
 The flag lives in filenames and internal records, never as a badge or caveat on the customer-facing page.
@@ -33,7 +33,7 @@ The flag lives in filenames and internal records, never as a badge or caveat on 
 
 Small-business sites often carry stock or vendor-supplied imagery the business may not hold rights to redistribute. Treat these as stock tells: stock-library filenames or URL paths, watermarks, scenes inconsistent with the business's geography, equipment, or season, generic model photography, and reverse-search hits on licensing libraries.
 
-Do not reuse suspected stock in any preview. Replace it under the stand-in and flag rules above, and record the substitution in the image plan. Generated replacements follow the documentary-truth rules below; a stock swap is also a finding worth telling the owner about.
+Check suspected stock provenance; suspicion alone is not evidence of misuse or a website defect. Use a confirmed suitable license or a generated alternative when reuse cannot be established. Record substitutions in the image plan. Generated alternatives follow the documentary-truth rules below and may remain final when approved; only assets requiring authentic replacement receive the replacement flag.
 
 ## Reference And Competitor Sites
 

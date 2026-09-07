@@ -24,7 +24,7 @@ This repository maintains a cohesive skill suite, not a loose collection of prom
 - Keep claim flags, simulation notes, provenance, implementation status, and developer commentary out of rendered customer experiences.
 - Track preview decisions in `CLIENT_REVIEW.md` and production dependencies in `DEPLOYMENT_READINESS.md`.
 - Permit strong proposed marketing claims in preview; prove, build, adjust, or remove them before production.
-- Treat reference sites as direction, never as sources to copy wording, layouts, or imagery.
+- Analyze reference sites for direction. Reuse authorized client assets and appropriately licensed templates/components where useful; source availability alone is not reuse permission. Judge the result rather than requiring originality of every ingredient.
 - Never call a capability production-ready until its promised workflow has been exercised.
 - Let the primary craft chair the current pass. Supporting disciplines may protect named invariants but must not take over the task.
 - Treat creative direction as provisional, approved, rejected, or superseded with explicit scope. Existing files and implementations are not approval.
